@@ -1,0 +1,13 @@
+{
+  "global" : false,
+  "placeholder" : {
+    "show_module_icon" : true,
+    "title" : "Heading",
+    "description" : "Add heading element"
+  },
+  "icon" : "fontawesome-5.14.0:heading:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 47905066709,
+  "label" : "Heading",
+  "is_available_for_new_content" : true
+}

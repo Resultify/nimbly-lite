@@ -1,0 +1,75 @@
+<!--
+  templateType: none
+  isAvailableForNewContent: false
+-->
+
+{# macro attributes scheme #}
+{# render_richtext_tmpl(data, style, global_data, class_id) #}
+
+{# 1 #}
+{# data - [object: module.richtext] #}
+{# 'macro main data' #}
+{# {% set richtext_data = {"rich_text":"","truncate":""}%} #}
+
+{# 2 #}
+{# style [object: module.style.richtext] #}
+{# macro main style #}
+
+{# 3 #}
+{# global_data [object: module] #}
+{# global data [module], usualy for general style setting [style tab -> general panel] #}
+
+{# 4 #}
+{# class_id [string: 0|'class_id'] #}
+{# macro class_id to add a unique class if we have two or more same macros in one module as a components #}
+
+{# example #}
+{# {{render_richtext_tmpl(module.richtext, module.style.richtext, module, 'unique')}} #}
+{# ========================= #}
+
+
+{% import '../../css/macros/macros.css' %}
+
+{%- macro render_richtext_tmpl(data, style, global_data, class_id) -%}
+  {%- if data.rich_text -%}
+
+    {%- if class_id -%}
+      {%- set richtext_class = 'richtext-style--' ~ class_id -%}
+    {%- else -%}
+      {%- set richtext_class = 'richtext-style' -%}
+    {%- endif -%}
+
+    {# module global css #}
+    {%- require_css -%}
+    <style>
+    </style>
+    {%- end_require_css -%}
+
+    {# module scope css #}<style>
+      {%- scope_css -%}
+        {% if global_data.style.general.custom_styling.color.css %}
+          .{{richtext_class}} .g-module-macros-richtext,
+          .{{richtext_class}} .g-module-macros-richtext a,
+          .{{richtext_class}} .g-module-macros-richtext blockquote,
+          .{{richtext_class}} .g-module-macros-richtext h1,
+          .{{richtext_class}} .g-module-macros-richtext h2,
+          .{{richtext_class}} .g-module-macros-richtext h3,
+          .{{richtext_class}} .g-module-macros-richtext h4,
+          .{{richtext_class}} .g-module-macros-richtext h5,
+          .{{richtext_class}} .g-module-macros-richtext h6 {
+            color: {{global_data.style.general.custom_styling.color.css}};
+          }
+          .{{richtext_class}} .g-module-macros-richtext a:hover {
+            color: {{rgb(global_data.style.general.custom_styling.color.color, global_data.style.general.custom_styling.color.opacity, +30, -20)}};
+          }
+        {% endif %}
+      {%- end_scope_css -%}
+    </style><span class="g-module-macros-richtext-wrp {{richtext_class}}">
+      {%- if data.truncate -%}
+        {%- rich_text 'richtext' extra_classes='g-module-macros-richtext' html='{{data.rich_text|truncatehtml(data.truncate, "..." , false)}}' -%}
+      {%- else -%}
+        {%- rich_text 'richtext' extra_classes='g-module-macros-richtext' html='{{data.rich_text}}' -%}
+      {%- endif -%}</span>
+
+  {%- endif -%}
+{%- endmacro -%}

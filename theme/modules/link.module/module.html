@@ -1,0 +1,33 @@
+{% import '../macros/link.html' as link_macros %}
+
+{# module global css #}
+{% require_css %}
+  <style>
+  </style>
+{% end_require_css %}
+
+{# module scope css #}
+<style>
+  {% scope_css %}
+
+    .link-module {
+      text-align: {{module.style.alignment.alignment.horizontal_align}};
+      {% if module.style.background.color.css %}
+        background-color: {{module.style.background.color.css}};
+      {% endif %}
+      {{module.style.spacing.spacing.css}}
+    }
+
+  {% end_scope_css %}
+</style>
+
+
+{% if module.text %}
+  <div class="link-module-wrp">
+    <div class="link-module link-module--{{module_id}} {{module.style.presets.custom_preset}}">
+      {{link_macros.render_link_tmpl(module, module.style)}}
+    </div>
+  </div>
+{% else %}
+  {% editor_placeholder %}
+{% endif %}

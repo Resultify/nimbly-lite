@@ -1,0 +1,205 @@
+[ {
+  "id" : "ea5d7916-ee8c-e68a-2bb7-368f18852e6f",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "style.presets",
+    "name" : "presets",
+    "display_width" : null,
+    "label" : "Presets",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.presets.custom_preset",
+      "name" : "custom_preset",
+      "display_width" : null,
+      "label" : "Custom preset",
+      "help_text" : "Custom presets to globally restyle module",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
+      "type" : "choice"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : { }
+  }, {
+    "id" : "f4547dbc-86d1-0001-1bd6-2421d96ec2a9",
+    "name" : "alignment",
+    "display_width" : null,
+    "label" : "Alignment",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "08121153-5246-e088-4007-813a634bc77b",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : false,
+      "locked" : false,
+      "alignment_direction" : "HORIZONTAL",
+      "type" : "alignment",
+      "default" : {
+        "horizontal_align" : "LEFT"
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "alignment" : {
+        "horizontal_align" : "LEFT"
+      }
+    }
+  }, {
+    "id" : "631a8469-10d0-84f3-f223-48b3eea1531f",
+    "name" : "spacing",
+    "display_width" : null,
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "18595520-3342-3ae3-d852-30bccafb93e7",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { }
+    }
+  }, {
+    "id" : "d6ee3629-222b-39cb-7d80-a48762d358a9",
+    "name" : "background",
+    "display_width" : null,
+    "label" : "Background",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "cd10b959-eaaf-1354-93fc-5b9e0c5d9dcb",
+      "name" : "color",
+      "display_width" : null,
+      "label" : "Color",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "color" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }
+  }, {
+    "id" : "81f5dd4c-dca5-8fee-2b8c-a1f43088d966",
+    "name" : "custom_styling",
+    "display_width" : null,
+    "label" : "Custom theme overrides",
+    "help_text" : "Override global theme settings for the current component",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "52f9d42b-bb92-0628-e78b-12d2d5dd0d7e",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    }, {
+      "id" : "af87938d-586a-12f6-950b-c253917782c0",
+      "name" : "background",
+      "display_width" : null,
+      "label" : "Background",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "fd4e217f-526f-6737-6725-778eeafbf3da",
+      "name" : "font",
+      "display_width" : null,
+      "label" : "Font",
+      "required" : false,
+      "locked" : false,
+      "load_external_fonts" : true,
+      "type" : "font",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { },
+      "background" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "font" : { }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "presets" : { },
+    "alignment" : {
+      "alignment" : {
+        "horizontal_align" : "LEFT"
+      }
+    },
+    "spacing" : {
+      "spacing" : { }
+    },
+    "background" : {
+      "color" : {
+        "color" : null,
+        "opacity" : null
+      }
+    },
+    "custom_styling" : {
+      "spacing" : { },
+      "background" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "font" : { }
+    }
+  }
+}, {
+  "id" : "c65b2ef2-41ba-fb8b-4fa8-3d6ec7ec94a1",
+  "name" : "text",
+  "display_width" : null,
+  "label" : "Text",
+  "help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : true,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

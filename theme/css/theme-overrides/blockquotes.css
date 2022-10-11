@@ -1,0 +1,28 @@
+{% import '../macros/macros.css' %}
+
+{% set blockquote_font = theme.typography.blockquote.font %}
+
+/* blockquote */
+blockquote,
+.blockquote {
+  {% if blockquote_font.font == null %}
+    font-family: var(--system-fonts);
+  {% endif %}
+  {% if blockquote_font.style %}
+    {{blockquote_font.style}};
+  {% endif %}
+
+  color: {{blockquote_font.color}};
+  border-left: 6px solid #ccc;
+  padding-left: 0.8rem;
+  margin-left: 3rem;
+  border-color: {{rgb(blockquote_font.color, 30)}};
+  font-size: {{blockquote_font.size ~ 'px'}};
+}
+
+blockquote p,
+.blockquote p {
+  {% if blockquote_font.style %}
+    {{blockquote_font.style}};
+  {% endif %}
+}

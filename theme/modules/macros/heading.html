@@ -1,0 +1,198 @@
+<!--
+  templateType: none
+  isAvailableForNewContent: false
+-->
+
+{# macro attributes scheme #}
+{# render_heading_tmpl(data, style, global_data, class_id, stretched_link, link_aria_attrs) #}
+
+{# 1 #}
+{# data - [object: module.heading] #}
+{# 'macro main data' #}
+{# {% set heading_data = {
+  "display":"","heading_tag":"h2","text":"",
+  "link":{"link":{"url":{"href":"","type":"EXTERNAL"},"open_in_new_tab":false,"rel":""},"accessible_link":true},
+  "icon":{
+    "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
+    "icon_position":"left","accessibility_options":{"purpose":"decorative"}
+  }
+}%} #}
+
+{# 2 #}
+{# style [object: module.style.heading] #}
+{# macro main style #}
+
+{# 3 #}
+{# global_data [object: module] #}
+{# global data [module], usualy for general style setting [style tab -> general panel] #}
+
+{# 4 #}
+{# class_id [string: 0|'class_id'] #}
+{# macro class_id to add a unique class if we have two or more same macros in one module as a components #}
+
+{# 5 #}
+{# stretched_link [boolean: 0|1] #}
+{# enable/disable stretched_link option #}
+
+{# 6 #}
+{# link_aria_attrs [string: 'ARIA attributes'] #}
+{# add additional aria attributes for the link #}
+
+{# example #}
+{# {{render_heading_tmpl(module.heading, module.style.heading, module, 'unique', 0, 'role="ROLE_NAME"')}} #}
+{# ========================= #}
+
+
+{% import './target-blank.html' as target_blank_macros %}
+{% import './icon.html' as icon_macros %}
+{% import '../../css/macros/macros.css' %}
+
+{%- macro render_heading_tmpl(data, style, global_data, class_id, stretched_link, link_aria_attrs) -%}
+  {%- if data.text -%}
+
+    {%- if class_id -%}
+      {%- set heading_class = 'heading-style--' ~ class_id -%}
+    {%- else -%}
+      {%- set heading_class = 'heading-style' -%}
+    {%- endif -%}
+
+    {# module global css #}
+    {%- require_css -%}
+      <style>
+      </style>
+    {%- end_require_css -%}
+
+    {# module scope css #}<style>
+      {%- scope_css -%}
+        {% if style.custom_styling.spacing.css %}
+          .{{heading_class}} .g-module-macros-heading {
+            {{style.custom_styling.spacing.css}}
+          }
+        {% endif %}
+
+        {% if global_data.style.general.custom_styling.color.css %}
+          .{{heading_class}} .g-module-macros-heading,
+          .{{heading_class}} .g-module-macros-heading__link {
+            color: {{global_data.style.general.custom_styling.color.css}};
+          }
+          .{{heading_class}} .g-module-macros-heading__link:hover {
+            color: {{rgb(global_data.style.general.custom_styling.color.color, global_data.style.general.custom_styling.color.opacity, +20, -15)}};
+          }
+          .{{heading_class}} .g-module-macros-heading__icon svg {
+            fill: {{global_data.style.general.custom_styling.color.css}};
+          }
+        {% endif %}
+
+        {% if style.custom_styling.color.css %}
+          .{{heading_class}} .g-module-macros-heading,
+          .{{heading_class}} .g-module-macros-heading__link {
+            color: {{style.custom_styling.color.css}};
+          }
+          .{{heading_class}} .g-module-macros-heading__link:hover {
+            color: {{rgb(style.custom_styling.color.color, style.custom_styling.color.opacity, +20, -15)}};
+          }
+          .{{heading_class}} .g-module-macros-heading__icon svg {
+            fill: {{style.custom_styling.color.css}};
+          }
+        {% endif %}
+
+        {% if data.icon.icon.name %}
+          .{{heading_class}} .g-module-macros-heading {
+            display: inline-block;
+          }
+          .{{heading_class}} .g-module-macros-heading__icon {
+            line-height: 0;
+          }
+          .{{heading_class}} .g-module-macros-heading__icon .icon svg {
+            vertical-align: -0.125em;
+          }
+          .{{heading_class}} .g-module-macros-heading-wrp {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 10px;
+          }
+          .{{heading_class}} .g-module-macros-icon {
+            padding-left: 4px;
+            padding-right: 4px;
+          }
+        {% endif %}
+
+        {% if stretched_link %}
+          .{{heading_class}} .g-module-macros-heading__link.stretched-link {
+            position: static;
+          }
+        {% endif %}
+
+      {%- end_scope_css -%}</style>
+
+    {%- if data.display -%}
+      {%- set heading_style = data.display -%}
+    {%- else -%}
+      {%- set heading_style = data.heading_tag -%}
+    {%- endif -%}
+
+    {%- if data.link.link.url.href -%}
+      {%- set href = data.link.link.url.href -%}
+    {%- endif -%}
+
+    {%- if data.link.link.url.type is equalto 'EMAIL_ADDRESS' -%}
+      {%- set href = 'mailto:' + href -%}
+    {%- endif -%}
+
+    {%- if data.link.link.rel -%}
+      {%- set rel = 'rel="{{data.link.link.rel}}"' -%}
+    {%- endif -%}
+
+    {%- if data.link.link.open_in_new_tab -%}
+      {%- set open_in_new_tab_class = 'target-blank-link'  -%}
+    {%- endif -%}
+
+    {%- if stretched_link -%}
+      {%- set stretched_link_class = 'stretched-link' -%}
+    {%- endif -%}
+
+    {%- macro render_text() -%}
+      {%- text
+        'text'
+        extra_classes='g-module-macros-heading__text'
+        label='Text',
+        value='{{data.text}}'
+      %}
+    {%- endmacro -%}
+
+    {# g-module-macros... = global module macros #}
+    <span class="g-module-macros-heading-wrp {{heading_class}}">
+
+      {%- if data.icon.icon.name -%}
+        {%- if data.icon.icon_position == 'left' -%}
+          <span class="g-module-macros-heading__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data, 'heading')}}</span>
+        {%- endif -%}
+      {%- endif -%}
+
+      <{{data.heading_tag}} class="{{heading_style}} g-module-macros-heading">
+
+        {%- if href -%}
+          <a href="{{href}}" class="{{open_in_new_tab_class}} {{stretched_link_class}} heading-link g-module-macros-heading__link"
+          {% if data.link.link.open_in_new_tab %} target="_blank" {% endif %}
+          {{rel}} {{link_aria_attrs}}>{{render_text()}}
+            {%- if data.link.link.open_in_new_tab -%}
+              {%- if data.link.accessible_link -%}
+                {{target_blank_macros.render_target_blank_tmpl('0.7em')}}
+              {%- endif -%}
+            {%- endif -%}
+          </a>
+        {%- else -%}{{render_text()}}
+        {%- endif -%}
+
+      </{{data.heading_tag}}>
+
+      {%- if data.icon.icon.name -%}
+        {%- if data.icon.icon_position == 'right' -%}
+          <span class="g-module-macros-heading__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data, 'heading')}}</span>
+        {%- endif -%}
+      {%- endif -%}
+
+    </span>
+
+  {%- endif -%}
+{%- endmacro -%}

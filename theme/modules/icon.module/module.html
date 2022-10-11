@@ -1,0 +1,34 @@
+{% import '../macros/icon.html' as icon_macros %}
+
+{# module global css #}
+{% require_css %}
+  <style>
+  </style>
+{% end_require_css %}
+
+{# module scope css #}
+<style>
+  {% scope_css %}
+
+    .icon-module {
+      text-align: {{module.style.alignment.alignment.horizontal_align}};
+      {% if module.style.background.color.css %}
+        background-color: {{module.style.background.color.css}};
+      {% endif %}
+      {{module.style.spacing.spacing.css}}
+    }
+
+  {% end_scope_css %}
+</style>
+
+{% if module.icon.name %}
+  <div class="icon-module-wrp">
+    <div class="icon-module icon-module--{{module_id}} {{module.style.presets.custom_preset}}">
+
+      {{icon_macros.render_icon_tmpl(module, module.style)}}
+
+    </div>
+  </div>
+{% else %}
+  {% editor_placeholder %}
+{% endif %}

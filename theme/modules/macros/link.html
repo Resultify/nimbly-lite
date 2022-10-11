@@ -1,0 +1,178 @@
+<!--
+  templateType: none
+  isAvailableForNewContent: false
+-->
+
+{# macro attributes scheme #}
+{# render_link_tmpl(data, style, global_data, class_id, stretched_link, link_aria_attrs) #}
+
+{# 1 #}
+{# data - [object: module.link] #}
+{# 'macro main data' #}
+{# {% set link_data = {
+  "text":"","accessible_link":true,
+  "link":{"url":{"href":"#","type":"EXTERNAL"},"open_in_new_tab":false,"rel":""},
+  "icon":{
+    "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
+    "icon_position":"left"
+  }
+}%} #}
+
+{# 2 #}
+{# style [object: module.style.link] #}
+{# macro main style #}
+
+{# 3 #}
+{# global_data [object: module] #}
+{# global data [module], usualy for general style setting [style tab -> general panel] #}
+
+{# 4 #}
+{# class_id [string: 0|'class_id'] #}
+{# macro class_id to add a unique class if we have two or more same macros in one module as a components #}
+
+{# 5 #}
+{# stretched_link [boolean: 0|1] #}
+{# enable/disable stretched_link option #}
+
+{# 6 #}
+{# link_aria_attrs [string: 'ARIA attributes'] #}
+{# add additional aria attributes for the link #}
+
+{# example #}
+{# {{render_link_tmpl(module.link, module.style.link, module, 'unique', 0, 'role="ROLE_NAME"')}} #}
+{# ========================= #}
+
+
+{% import './target-blank.html' as target_blank_macros %}
+{% import './icon.html' as icon_macros %}
+{% import '../../css/macros/macros.css' %}
+
+{%- macro render_link_tmpl(data, style, global_data, class_id, stretched_link, link_aria_attrs) -%}
+  {%- if data.text -%}
+
+    {%- if class_id -%}
+      {%- set link_class = 'link-style--' ~ class_id -%}
+    {%- else -%}
+      {%- set link_class = 'link-style' -%}
+    {%- endif -%}
+
+    {# module global css #}
+    {%- require_css -%}
+      <style>
+      </style>
+    {%- end_require_css -%}
+    {# module scope css #}<style>
+      {%- scope_css -%}
+
+        {% set link_font = style.custom_styling.font %}
+        {% if style.custom_styling.hover.color.color %}
+          {% set link_hover_color = style.custom_styling.hover.color.color %}
+          {% set link_hover_opacity = style.custom_styling.hover.color.opacity %}
+        {% else %}
+          {% set link_hover_color = color_variant(link_font.color, +30) %}
+          {% set link_hover_opacity = 80 %}
+        {% endif %}
+
+        {% if global_data.style.general.custom_styling.color.css %}
+          .{{link_class}} .g-module-macros-link {
+            color: {{global_data.style.general.custom_styling.color.css}};
+          }
+          .{{link_class}} .g-module-macros-link:hover {
+            color: {{rgb(global_data.style.general.custom_styling.color.color, global_data.style.general.custom_styling.color.opacity, +30, -20)}};
+          }
+        {% endif %}
+
+        .{{link_class}} .g-module-macros-link {
+          {% if link_font.style %}
+            {{link_font.style}};
+          {% endif %}
+          {% if link_font.size %}
+            font-size: {{link_font.size ~ 'px'}};
+          {% endif %}
+          {% if link_font.color %}
+            color: {{link_font.color}};
+          {% endif %}
+          {% if style.custom_styling.underline %}
+            text-decoration: {{style.custom_styling.underline}};
+          {% endif %}
+        }
+
+        .{{link_class}} .g-module-macros-link:hover {
+          {% if link_hover_color %}
+            color: {{rgb(link_hover_color, link_hover_opacity)}};
+          {% endif %}
+          {% if style.custom_styling.hover.underline %}
+            text-decoration: {{style.custom_styling.hover.underline}};
+          {% endif %}
+        }
+
+        {% if data.icon.icon.name %}
+          .{{link_class}} .g-module-macros-icon {
+            line-height: 0;
+            padding-left: 4px;
+            padding-right: 4px;
+          }
+          .{{link_class}} .g-module-macros-link__icon .icon svg {
+            vertical-align: -0.125em;
+          }
+        {% endif %}
+
+        {% if stretched_link %}
+          .{{link_class}} .g-module-macros-link.stretched-link {
+            position: static;
+          }
+        {% endif %}
+
+      {%- end_scope_css -%}
+    </style>
+
+    {%- if data.link.url.href -%}
+      {% set href =data.link.url.href %}
+    {%- endif -%}
+    {%- if data.link.url.type is equalto 'EMAIL_ADDRESS' -%}
+      {% set href = 'mailto:' + href %}
+    {%- endif -%}
+    {%- if data.link.rel -%}
+      {% set rel = 'rel="{{data.link.rel}}"' %}
+    {%- endif -%}
+    {%- if data.link.open_in_new_tab -%}
+      {% set open_in_new_tab_class = "target-blank-link" %}
+    {%- endif- %}
+    {%- if stretched_link -%}
+      {% set stretched_link_class = 'stretched-link' %}
+    {%- endif -%}<span class="g-module-macros-link-wrp {{link_class}}">
+        {%- if href -%}
+          <a href="{{href}}" class="{{open_in_new_tab_class}} {{stretched_link_class}} g-module-macros-link"
+          {% if data.link.open_in_new_tab %} target="_blank" {% endif %}
+          {{link_aria_attrs}} {{rel}}>
+
+            {%- if data.icon.icon.name -%}
+              {%- if data.icon.icon_position == 'left' -%}
+                <span class="g-module-macros-link__icon">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data, 'link')}}</span>
+              {%- endif -%}
+            {%- endif -%}
+
+            {%- text
+              'text'
+              extra_classes='g-module-macros-link__text'
+              label='Text',
+              value='{{data.text}}'
+            %}
+
+            {%- if data.icon.icon.name %}
+              {%- if data.icon.icon_position == 'right' -%}
+                <span class="g-module-macros-link__icon">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data, 'link')}}</span>
+              {%- endif -%}
+            {%- endif -%}
+
+            {%- if data.link.open_in_new_tab -%}
+              {%- if data.accessible_link -%}
+                {{target_blank_macros.render_target_blank_tmpl('1em')}}
+              {%- endif -%}
+            {%- endif -%}
+          </a>
+        {%- else -%}
+          {{data.text}}
+        {%- endif -%}</span>
+  {%- endif -%}
+{%- endmacro -%}

@@ -1,0 +1,13 @@
+{
+  "global" : false,
+  "placeholder" : {
+    "show_module_icon" : true,
+    "title" : "Text",
+    "description" : "Add text element"
+  },
+  "icon" : "fontawesome-5.14.0:font:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 47905066722,
+  "label" : "Text",
+  "is_available_for_new_content" : true
+}

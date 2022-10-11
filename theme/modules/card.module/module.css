@@ -1,0 +1,9 @@
+/* module css / no hubl variables */
+
+.card-module {
+  position: relative;
+}
+
+.card-module__text-body {
+  padding: 1.5rem;
+}

@@ -1,0 +1,34 @@
+{% import '../macros/figure.html' as figure_macros %}
+
+{# module global css #}
+{% require_css %}
+  <style>
+  </style>
+{% end_require_css %}
+
+{# module scope css #}
+<style>
+  {% scope_css %}
+
+    .image-module {
+      text-align: {{module.style.alignment.alignment.horizontal_align}};
+      {% if module.style.background.color.css %}
+        background-color: {{module.style.background.color.css}};
+      {% endif %}
+      {{module.style.spacing.spacing.css}}
+    }
+
+  {% end_scope_css %}
+</style>
+
+{% if module.image.src %}
+  <div class="image-module-wrp">
+    <div class="image-module image-module--{{module_id}} {{module.style.presets.custom_preset}}">
+
+      {{figure_macros.render_figure_tmpl(module, module.style)}}
+
+    </div>
+  </div>
+{% else %}
+  {% editor_placeholder %}
+{% endif %}

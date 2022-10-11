@@ -1,0 +1,82 @@
+<!--
+  templateType: none
+  isAvailableForNewContent: false
+-->
+
+{# macro attributes scheme #}
+{# render_text_tmpl(data, style, global_data, class_id) #}
+
+{# 1 #}
+{# data - [object: module.text] #}
+{# 'macro main data' #}
+{# {% set text_data = {"text": ""}%} #}
+
+{# 2 #}
+{# style [object: module.style.text] #}
+{# macro main style #}
+
+{# 3 #}
+{# global_data [object: module] #}
+{# global data [module], usualy for general style setting [style tab -> general panel] #}
+
+{# 4 #}
+{# class_id [string: 0|'class_id'] #}
+{# macro class_id to add a unique class if we have two or more same macros in one module as a components #}
+
+{# example #}
+{# {{render_text_tmpl(module.text, module.style.text, module, 'unique')}} #}
+{# ========================= #}
+
+
+{%- macro render_text_tmpl(data, style, global_data, class_id) -%}
+  {%- if data.text -%}
+
+    {%- if class_id -%}
+      {%- set text_class = 'text-style--' ~ class_id -%}
+    {%- else -%}
+      {%- set text_class = 'text-style' -%}
+    {%- endif -%}
+
+    {# module global css #}
+    {%- require_css -%}
+      <style>
+      </style>
+    {%- end_require_css -%}
+
+    {# module scope css #}<style>
+      {%- scope_css -%}
+
+        {% if global_data.style.general.custom_styling.color.css %}
+          .{{text_class}} .g-module-macros-text {
+            color: {{global_data.style.general.custom_styling.color.css}};
+          }
+        {% endif %}
+
+        .{{text_class}} .g-module-macros-text {
+          display: inline-block;
+          {% if style.custom_styling.font.color %}
+            color: {{style.custom_styling.font.color}};
+          {% endif %}
+          {% if style.custom_styling.background.color %}
+            background-color: {{style.custom_styling.background.color}};
+          {% endif %}
+          {% if style.custom_styling.font.size %}
+            font-size: {{style.custom_styling.font.size ~ 'px'}};
+          {% endif %}
+          {% if style.custom_styling.font.style %}
+            {{style.custom_styling.font.style}};
+          {% endif %}
+          {{style.custom_styling.spacing.css}}
+        }
+
+      {%- end_scope_css -%}
+    </style><span class="g-module-macros-text-wrp {{text_class}}">
+      {%- text
+        'text'
+        extra_classes='g-module-macros-text'
+        label='Text',
+        value='{{data.text}}'
+      %}</span>
+
+  {%- endif -%}
+{%- endmacro -%}

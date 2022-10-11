@@ -1,0 +1,36 @@
+{% set main_text_font = theme.typography.text.font %}
+
+:root {
+  /* system-fonts */
+  /* https://markdotto.com/2018/02/07/github-system-fonts/ */
+  --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; /* stylelint-disable-line */
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  overflow-wrap: break-word;
+  color: {{main_text_font.color}};
+  background-color: {{theme.global_colors.main_background.color}};
+  line-height: 1.5;
+  font-size: {{main_text_font.size ~ main_text_font.size_unit}};
+
+  {% if main_text_font.font == null %}
+    font-family: var(--system-fonts);
+  {% else %}
+    {% if main_text_font.fallback %}
+      font-family: {{main_text_font.font ~ ',' ~ main_text_font.fallback}};
+    {% else %}
+      font-family: {{main_text_font.font}};
+    {% endif %}
+  {% endif %}
+}
+
+p,
+.g-module-macros-text {
+  {% if main_text_font.style %}
+    {{main_text_font.style}};
+  {% endif %}
+}

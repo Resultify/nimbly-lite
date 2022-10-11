@@ -1,0 +1,36 @@
+{# module global css #}
+{% require_css %}
+  <style>
+  </style>
+{% end_require_css %}
+
+{# module scope css #}
+<style>
+  {% scope_css %}
+    {% if module.cover == 'bottom' %}
+      .svg-divider-module {
+        top: 30px;
+      }
+    {% endif %}
+
+    {% if module.style.background.color.css %}
+      .svg-divider-module svg {
+        color: {{module.style.background.color.css}};
+        fill: {{module.style.background.color.css}};
+      }
+    {% endif %}
+  {% end_scope_css %}
+</style>
+
+
+{% if module.svg %}
+  <div class="svg-divider-module-container">
+    <div class="svg-divider-module-wrp">
+      <div class="svg-divider-module svg-divider-module--{{module_id}} {{module.style.presets.custom_preset}}">
+        {{module.svg}}
+      </div>
+    </div>
+  </div>
+{% else %}
+  {% editor_placeholder %}
+{% endif %}

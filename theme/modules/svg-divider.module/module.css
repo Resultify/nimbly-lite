@@ -1,0 +1,20 @@
+/* module css / no hubl variables */
+.svg-divider-module-container {
+  height: 30px;
+}
+
+.svg-divider-module-wrp {
+  position: relative;
+  z-index: 2;
+}
+
+.svg-divider-module {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.svg-divider-module svg {
+  margin: -1px 0;
+}

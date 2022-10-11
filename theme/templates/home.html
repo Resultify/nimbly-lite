@@ -1,0 +1,31 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  enableDomainStylesheets: false
+  label: Home
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+  {% dnd_area 'dnd_area'
+    label='Main section',
+    class='home-container'
+  %}
+
+    {% include_dnd_partial path='../sections/3x3colgrid--card--imagetext.html' context={} %}
+    {% include_dnd_partial path='../sections/3colgrid--card--with-background-v3.html' context={} %}
+    {% include_dnd_partial path='../sections/2colgrid--card--image-left.html' context={} %}
+    {% include_dnd_partial path='../sections/1colgrid--card--banner.html' context={} %}
+    {% include_dnd_partial path='../sections/2colgrid--card--image-right.html' context={} %}
+    {% include_dnd_partial path='../sections/3colgrid--card--imagetext-with-topheading.html' context={} %}
+    {% include_dnd_partial path='../sections/3colgrid--card--with-background-v2.html' context={} %}
+    {% include_dnd_partial path='../sections/2x2colgrid--card--image-left-right.html' context={} %}
+    {% include_dnd_partial path='../sections/3colgrid--card--with-background.html' context={} %}
+    {% include_dnd_partial path='../sections/3x3colgrid--card--with-odd-background.html' context={} %}
+    {% include_dnd_partial path='../sections/3colgrid--card--imagetext.html' context={} %}
+
+  {% end_dnd_area %}
+
+{% endblock body %}

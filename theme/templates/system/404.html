@@ -1,0 +1,58 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  label: 404 error
+  screenshotPath: ../../images/template-previews/404.png
+-->
+
+{% set template_css = '../../css/templates/system.css' %}
+{% extends '../layouts/base.html' %}
+{% set pageTitle = "Error 404 | Page not found" %}
+
+{% block body %}
+
+  <div class="error-page-wrp system-page-wrp">
+    <div class="error-page error404 system-page" data-error="404">
+
+      {% module 'sdfdsg'
+        path="../../modules/heading",
+        offset=0,
+        width=12,
+        style={
+          "alignment" : {
+            "alignment" : {
+              "horizontal_align" : "CENTER"
+            }
+          }
+        },
+        text="Page not found.",
+        heading_tag="h1"
+      %}
+
+      {% module 'dsfgsdgsd'
+        path="../../modules/button",
+        offset=0,
+        width=12,
+        accessible_link_label="Return to start page",
+        link={
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "/",
+            "type" : "EXTERNAL"
+          }
+        },
+        style={
+          "alignment" : {
+            "alignment" : {
+              "horizontal_align" : "CENTER"
+            }
+          }
+        },
+        text="Go Home"
+      %}
+
+    </div>
+  </div>
+
+{% endblock body %}

@@ -1,0 +1,35 @@
+{% import '../macros/text.html' as text_macros %}
+
+{# module global css #}
+{% require_css %}
+  <style>
+  </style>
+{% end_require_css %}
+
+{# module scope css #}
+<style>
+  {% scope_css %}
+
+    .text-module {
+      {% if module.style.background.color.css %}
+        background-color: {{module.style.background.color.css}};
+      {% endif %}
+      text-align: {{module.style.alignment.alignment.horizontal_align}};
+      {{module.style.spacing.spacing.css}}
+    }
+
+  {% end_scope_css %}
+</style>
+
+
+{% if module.text %}
+  <div class="text-module-wrp">
+    <div class="text-module text-module--{{module_id}} {{module.style.presets.custom_preset}}">
+
+        {{text_macros.render_text_tmpl(module, module.style)}}
+
+    </div>
+  </div>
+{% else %}
+  {% editor_placeholder %}
+{% endif %}

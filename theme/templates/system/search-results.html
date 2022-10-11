@@ -1,0 +1,33 @@
+<!--
+  templateType: search_results_page
+  isAvailableForNewContent: true
+  label: Search results
+  screenshotPath: ../../images/template-previews/search-results.png
+-->
+
+{% set template_css = '../../css/templates/system.css' %}
+{% extends '../layouts/base.html' %}
+{% set pageTitle = "Search results" %}
+
+{% block body %}
+  <div class="search-results-wrp system-page-wrp">
+    <div class="search-results system-page">
+
+      <div class="search-results--heading">
+        {% module_block module 'richtext' path="../../modules/richtext" %}
+          {% module_attribute "rich_text" %}
+            <h1>Results for "{{request.query_dict.term|escape}}"</h1>
+          {% end_module_attribute %}
+        {% end_module_block %}
+      </div>
+
+      <div class="search-results--list-wrp">
+        {% module 'search_results'
+          extra_classes="search-results--list"
+          path='@hubspot/search_results'
+        %}
+      </div>
+
+    </div>
+  </div>
+{% endblock body %}

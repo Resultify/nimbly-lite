@@ -1,0 +1,305 @@
+<!--
+  templateType: none
+  isAvailableForNewContent: false
+-->
+
+{# macro attributes scheme #}
+{# render_btn_tmpl(data, style, global_data, id, stretched_link, link_aria_attrs, options) #}
+
+{# 1 #}
+{# data - [object: module.button] #}
+{# 'macro main data' #}
+{# {% set button_data = {
+  "text":"","accessible_link_label":"","accessible_link":true,
+  "link":{"url":{"href":"#","type":"EXTERNAL"},"open_in_new_tab":false,"rel":""},
+  "icon":{
+    "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
+    "icon_position":"left","accessibility_options":{"purpose":"decorative"}
+  }
+}%} #}
+
+{# 2 #}
+{# style [object: module.style.button] #}
+{# macro main style #}
+
+{# 3 #}
+{# global_data [object: 0|module] #}
+{# global data [module], usualy for general style setting [style tab -> general panel] #}
+
+{# 4 #}
+{# id [string: 0|'id'] #}
+{# macro id to add a unique class if we have two or more same macros in one module as a components #}
+
+{# 5 #}
+{# stretched_link [boolean: 0|1] #}
+{# enable/disable stretched_link option #}
+
+{# 6 #}
+{# link_aria_attrs [string: 0|'ARIA attributes'] #}
+{# add additional aria attributes for the link #}
+
+
+{# 7 #}
+{# options [object: {key: value}] #}
+{# add additional options for the button #}
+{# Supported features #}
+{# {% set btn_options = {
+  "is_btn":0|1,
+  "data_attrs":['data-filter="test"', 'data-bs-toggle="super-dropdown"'],
+  "class":['additional-class-1','additional-class-2'],
+  "wrapper":0|1
+}%} #}
+
+{# example #}
+{# {{render_btn_tmpl(module.button, module.style.button, module, 'unique', 0, 'role="ROLE_NAME"', btn_options)}} #}
+{# ========================= #}
+
+
+{% import './target-blank.html' as target_blank_macros %}
+{% import './icon.html' as icon_macros %}
+{% import '../../css/macros/macros.css' %}
+
+{%- macro render_btn_tmpl(data, style, global_data, id, stretched_link, link_aria_attrs, options) -%}
+  {%- if data.text -%}
+
+    {%- if id -%}
+      {% set btn_class = 'btn-style--' ~ id -%}
+    {%- else -%}
+      {%- set btn_class = 'btn-style' -%}
+    {%- endif -%}
+    {%- if options.is_btn -%}
+      {% set btn_tag = 'button' -%}
+    {%- else -%}
+      {%- set btn_tag = 'a' -%}
+    {%- endif -%}
+    {%- if link_aria_attrs -%}
+      {% set link_aria_attr = link_aria_attrs -%}
+    {%- endif -%}
+    {%- if options.data_attrs -%}
+      {% set data_attrs = options.data_attrs|join(' ') %}
+    {%- endif -%}
+    {%- if options.class -%}
+      {% set class = options.class|join(' ') %}
+    {%- endif -%}
+    {%- if options.wrapper == null || options.wrapper == 0 -%}
+      {%- set btn_style_selector = '{{btn_class}} ' %}
+    {%- else -%}
+      {%- set btn_style_selector = '{{btn_class}}' %}
+    {%- endif -%}
+
+    {# module global css #}
+    {%- require_css -%}
+      <style>
+      </style>
+    {%- end_require_css -%}
+
+    {# module scope css #}<style>
+      {%- scope_css -%}
+
+        {% set btn_spacing = style.custom_styling.spacing %}
+        {% set btn_border = style.custom_styling.border %}
+
+        {% set btn_background = style.custom_styling.background %}
+        {% set btn_text_font = style.custom_styling.font %}
+
+        {% if style.custom_styling.hover.color.color %}
+          {% set btn_hover_color = style.custom_styling.hover.color.color %}
+        {% else %}
+          {% set btn_hover_color = color_variant(btn_text_font.color, -20) %}
+        {% endif %}
+
+        {% if style.custom_styling.hover.background.color %}
+          {% set btn_hover_background_color = style.custom_styling.hover.background.color %}
+          {% set btn_hover_background_opacity = style.custom_styling.hover.background.opacity %}
+        {% else %}
+          {% set btn_hover_background_color = color_variant(btn_background.color, -25) %}
+          {% set btn_hover_background_opacity = btn_background.opacity %}
+        {% endif %}
+
+        {% if style.custom_styling.hover.border_color.color %}
+          {% set btn_hover_border_color = style.custom_styling.hover.border_color.color %}
+          {% set btn_hover_border_opacity = style.custom_styling.hover.border_color.opacity %}
+        {% else %}
+          {% set btn_hover_border_color = color_variant(btn_border.top.color, -25) %}
+          {% set btn_hover_border_opacity = btn_border.top.opacity %}
+        {% endif %}
+
+        {% if btn_hover_background_opacity == 100 %}
+          {% set btn_hover_shadow_opacity = 50 %}
+        {% else %}
+          {% if btn_hover_background_opacity < 45 %}
+            {% set btn_hover_shadow_opacity = btn_hover_background_opacity + 25 %}
+          {% elif btn_hover_background_opacity < 65 %}
+            {% set btn_hover_shadow_opacity = btn_hover_background_opacity - 20 %}
+          {% elif btn_hover_background_opacity < 85 %}
+            {% set btn_hover_shadow_opacity = btn_hover_background_opacity - 30 %}
+          {% elif btn_hover_background_opacity < 100 %}
+            {% set btn_hover_shadow_opacity = btn_hover_background_opacity - 45 %}
+          {% endif %}
+        {% endif %}
+
+        .{{btn_style_selector}}.btn {
+          {% if style.custom_styling.radius != null %}
+            border-radius: {{style.custom_styling.radius ~ 'px'}};
+          {% endif %}
+          {% if btn_text_font.color %}
+            color: {{btn_text_font.color}};
+            fill: {{btn_text_font.color}};
+          {% endif %}
+          {% if btn_text_font.size %}
+            font-size: {{btn_text_font.size ~ 'px'}};
+          {% endif %}
+          {% if btn_background.css %}
+            background-color: {{btn_background.css}};
+          {% endif %}
+          {% if btn_text_font.style %}
+            {{btn_text_font.style}};
+          {% endif %}
+          {{btn_border.css}}
+          {{btn_spacing.css}}
+        }
+
+        .{{btn_style_selector}}.btn:hover {
+          {% if btn_hover_color %}
+            color: {{btn_hover_color}};
+            fill: {{btn_hover_color}};
+          {% endif %}
+          {% if btn_hover_background_color %}
+            background-color: {{rgb(btn_hover_background_color, btn_hover_background_opacity)}};
+          {% endif %}
+          {% if btn_hover_border_color %}
+            border-color: {{rgb(btn_hover_border_color, btn_hover_border_opacity)}};
+          {% endif %}
+        }
+
+        .{{btn_style_selector}}.btn:focus,
+        .{{btn_style_selector}}.btn.focus {
+          {% if btn_hover_color %}
+            color: {{btn_hover_color}};
+            fill: {{btn_hover_color}};
+          {% endif %}
+          {% if btn_hover_background_color %}
+              background-color: {{rgb(btn_hover_background_color, btn_hover_background_opacity)}};
+              box-shadow: 0 0 0 0.25rem {{rgb(btn_hover_background_color, btn_hover_shadow_opacity)}};
+          {% endif %}
+          {% if btn_hover_border_color %}
+            border-color: {{rgb(btn_hover_border_color, btn_hover_border_opacity)}};
+          {% endif %}
+        }
+
+        .{{btn_style_selector}}.btn:active,
+        .{{btn_style_selector}}.btn.active {
+          {% if btn_hover_color %}
+            color: {{btn_hover_color}};
+            fill: {{btn_hover_color}};
+          {% endif %}
+          {% if btn_hover_border_color %}
+            border-color: {{rgb(btn_hover_border_color, btn_hover_border_opacity, -20)}};
+          {% endif %}
+          {% if btn_hover_background_color %}
+            background-color: {{rgb(btn_hover_background_color, btn_hover_background_opacity, -20)}};
+          {% endif %}
+        }
+
+        {% if btn_hover_background_color %}
+          .{{btn_style_selector}}.btn:active:focus,
+          .{{btn_style_selector}}.btn.active:focus {
+            box-shadow: 0 0 0 0.25rem {{rgb(btn_hover_background_color, btn_hover_shadow_opacity)}};
+          }
+        {% endif %}
+
+        {% if stretched_link %}
+          .{{btn_style_selector}}.g-module-macros-btn.stretched-link {
+            position: static;
+          }
+        {% endif %}
+
+        {% if data.icon.icon.name %}
+          .{{btn_style_selector}}.g-module-macros-btn__icon .icon svg {
+            vertical-align: -0.125em;
+          }
+          .{{btn_style_selector}}.g-module-macros-icon {
+            padding-left: 4px;
+            padding-right: 4px;
+          }
+        {% endif %}
+
+      {%- end_scope_css -%}
+    </style>
+    {%- set button_style = style.presets.style -%}
+    {%- set button_size = style.presets.size -%}
+
+    {%- unless button_size -%}
+      {%- set button_size = 'btn-regular' -%}
+    {%- endunless -%}
+
+    {%- unless button_style -%}
+      {%- set button_style = 'btn-primary' -%}
+    {%- endunless -%}
+
+    {%- if style.alignment.full_width -%}
+      {%- set full_width = 'btn-w100'  -%}
+    {%- endif -%}
+
+    {%- if data.link.url.href -%}
+      {%- set href = data.link.url.href -%}
+    {%- endif -%}
+
+    {%- if data.link.url.type is equalto 'EMAIL_ADDRESS' -%}
+      {%- set href = 'mailto:' + href -%}
+    {%- endif -%}
+
+    {%- if data.link.rel -%}
+      {%- set rel = 'rel="{{data.link.rel}}"' -%}
+    {%- endif -%}
+
+    {%- if stretched_link -%}
+      {%- set stretched_link_class = 'stretched-link' -%}
+    {%- endif -%}
+
+    {%- if data.link.open_in_new_tab -%}
+      {%- set open_in_new_tab_class = 'target-blank-link' -%}
+    {%- endif -%}
+
+    {%- if data.additional_settings.disable_button -%}
+      {%- set disable_button_class = ' disabled' -%}
+      {%- set disable_button_attr = 'tabindex="-1" role="button" aria-disabled="true"' -%}
+    {%- endif -%}
+
+    {# g-module-macros... = global module macros #}
+    {% if options.wrapper == null || options.wrapper == 0 %}<span class="g-module-macros-btn-wrp {{btn_class}}">{% endif %}<{{btn_tag}}
+      {% if options.is_btn == null || options.is_btn == 0 %} href="{{href}}" {% endif %}
+      {{'aria-label="{{data.accessible_link_label}}"' if data.accessible_link_label}}
+      class="g-module-macros-btn btn {{button_style}} {{button_size}} {{full_width}} {{open_in_new_tab_class}} {{disable_button_class}} {{stretched_link_class}} {{class}}
+      {% if options.wrapper == 1 %} {{btn_class}} {% endif %}"
+      {% if data.link.open_in_new_tab %} target="_blank" {% endif %}
+      {% if data_attrs %} {{data_attrs}} {% endif %}
+      {{rel}} {{link_aria_attr}} {{disable_button_attr}}>
+
+        {%- if data.icon.icon.name -%}
+          {%- if data.icon.icon_position == 'left' -%}
+            <span class="g-module-macros-btn__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data, 'button')}}</span>
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- text
+          'text'
+          extra_classes='g-module-macros-btn__text'
+          label='Text',
+          value='{{data.text}}'
+        %}
+
+        {%- if data.icon.icon.name -%}
+          {%- if data.icon.icon_position == 'right' -%}
+            <span class="g-module-macros-btn__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data, 'button')}}</span>
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- if data.link.open_in_new_tab -%}
+          {%- if data.accessible_link -%}
+            {{target_blank_macros.render_target_blank_tmpl("1em")}}
+          {%- endif -%}
+        {%- endif -%}
+      </{{btn_tag}}>{% if options.wrapper == null || options.wrapper == 0 %}</span>{% endif %}
+  {%- endif -%}
+{%- endmacro -%}

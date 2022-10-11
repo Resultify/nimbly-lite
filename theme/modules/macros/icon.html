@@ -1,0 +1,120 @@
+<!--
+  templateType: none
+  isAvailableForNewContent: false
+-->
+
+{# macro attributes scheme #}
+{# render_icon_tmpl(data, style, global_data, class_id) #}
+
+{# 1 #}
+{# data - [object: module.icon] #}
+{# 'macro main data' #}
+{# {% set icon_data = {
+  "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
+  "accessibility_options":{"purpose":"decorative"}
+}%} #}
+
+{# 2 #}
+{# style [object: module.style.icon] #}
+{# macro main style #}
+
+{# 3 #}
+{# global_data [object: module] #}
+{# global data [module], usualy for general style setting [style tab -> general panel] #}
+
+{# 4 #}
+{# class_id [string: 0|'class_id'] #}
+{# macro class_id to add a unique class if we have two or more same macros in one module as a components #}
+
+{# example #}
+{# {{render_icon_tmpl(module.icon, module.style.icon, module, 'unique')}} #}
+{# ========================= #}
+
+
+{%- macro render_icon_tmpl(data, style, global_data, class_id) -%}
+  {%- if data.icon.name -%}
+
+    {%- if class_id -%}
+      {%- set icon_class = 'icon-style--' ~ class_id -%}
+    {%- else -%}
+      {%- set icon_class = 'icon-style' -%}
+    {%- endif -%}
+
+    {# module global css #}
+    {%- require_css -%}
+      <style>
+      </style>
+    {%- end_require_css -%}
+
+    {# module scope css #}
+    <style>
+      {%- scope_css -%}
+
+        {% set icon_spacing = style.custom_styling.spacing.css %}
+        {% set icon_background = style.custom_styling.background.css %}
+        {% set icon_fill_color = style.custom_styling.color.css %}
+        {% set icon_size = style.custom_styling.size %}
+
+        {% if global_data.style.general.custom_styling.color.css %}
+          .g-module-macros-heading__icon svg {
+            fill: {{global_data.style.general.custom_styling.color.css}};
+          }
+        {% endif %}
+
+        .{{icon_class}} .g-module-macros-icon {
+          {% if icon_background %}
+            background-color: {{icon_background}};
+          {% endif %}
+          {% if style.custom_styling.radius != null %}
+            border-radius: {{style.custom_styling.radius ~ '%'}};
+          {% endif %}
+          {{style.custom_styling.border.css}}
+          {{icon_spacing}}
+        }
+
+        .{{icon_class}} .g-module-macros-icon svg {
+          {% if icon_fill_color %}
+            fill: {{icon_fill_color}};
+          {% endif %}
+          {% if icon_size %}
+            height: {{icon_size ~ 'px'}};
+            width: {{icon_size ~ 'px'}};
+          {% endif %}
+        }
+
+      {%- end_scope_css -%}
+    </style>
+
+    {%- if style.presets.icon_size == 'small' -%}
+      {%- set icon_size = 'icon--small' -%}
+    {%- elif style.presets.icon_size == 'large' -%}
+      {%- set icon_size = 'icon--large' -%}
+    {%- elif style.presets.icon_size == 'regular' -%}
+      {%- set icon_size = 'icon--regular' -%}
+    {%- endif -%}
+
+    {%- if style.presets.icon_color == 'primary' -%}
+      {%- set icon_color = 'icon--primary' -%}
+    {%- elif style.presets.icon_color == 'secondary' -%}
+      {%- set icon_color = 'icon--secondary' -%}
+    {%- endif -%}
+
+    {%- if style.presets.icon_shape == 'square' -%}
+      {%- set icon_shape = 'icon--square' -%}
+    {%- elif style.presets.icon_shape == 'circle' -%}
+      {%- set icon_shape = 'icon--circle' -%}
+    {%- endif -%}
+
+    {# g-module-macros... = global module macros #}
+    <span class="g-module-macros-icon-wrp {{icon_class}} {{icon_size}} {{icon_color}} {{icon_shape}}">
+      {%- icon
+        extra_classes='g-module-macros-icon icon'
+        name='{{data.icon.name}}'
+        purpose='{{data.accessibility_options.purpose}}'
+        style='{{data.icon.type}}'
+        title='{{data.accessibility_options.title}}'
+        unicode='{{data.icon.unicode}}',
+        icon_set='{{data.icon.icon_set}}'
+      %}</span>
+  {%- endif -%}
+{%- endmacro -%}

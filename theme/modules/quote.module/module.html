@@ -1,0 +1,36 @@
+<style>
+  {% scope_css %}
+
+    .quote-module {
+      {% if module.style.custom_styling.text_color.css %}
+        color: {{module.style.custom_styling.text_color.css}};
+      {% endif %}
+      {% if module.style.custom_styling.border_radius >= 0 %}
+        border-radius: {{module.style.custom_styling.border_radius ~ 'px'}};
+      {% endif %}
+      {% if module.style.custom_styling.background.css %}
+        background-color: {{module.style.custom_styling.background.css}};
+      {% endif %}
+      {{module.style.custom_styling.border.css}}
+      {{module.style.spacing.spacing.css}}
+    }
+
+  {% end_scope_css %}
+</style>
+
+{% if module.quote_text %}
+  <div class="quote-module-wrp">
+    <blockquote class="quote-module quote-module--{{module_id}}">
+
+    <div class="quote-module__text">
+      {{ module.quote_text }}
+    </div>
+    {% if module.footer_text %}
+      <footer class="quote-module__footer">
+        {{ module.footer_text }}
+      </footer>
+    {% endif %}
+
+  </blockquote>
+</div>
+{% endif %}

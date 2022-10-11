@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "fontawesome-5.14.0:Question:SOLID",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 49235810755,
+  "label" : "F.A.Q.",
+  "is_available_for_new_content" : true
+}

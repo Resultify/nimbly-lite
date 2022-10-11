@@ -1,0 +1,13 @@
+{
+  "global" : false,
+  "placeholder" : {
+    "show_module_icon" : true,
+    "title" : "Divider",
+    "description" : "SVG divider"
+  },
+  "icon" : "fontawesome-5.14.0:Grip%20Lines:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 47905039064,
+  "label" : "Svg divider",
+  "is_available_for_new_content" : true
+}

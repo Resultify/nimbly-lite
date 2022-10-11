@@ -1,0 +1,139 @@
+[ {
+  "id" : "a802ae50-bedf-ca26-f90f-307c822850c3",
+  "name" : "quote_text",
+  "display_width" : null,
+  "label" : "Quote text",
+  "required" : false,
+  "locked" : false,
+  "enabled_features" : [ "code_format", "bulleted_list", "subscript", "emoji", "underline", "indent", "superscript", "font_size", "link", "visual_blocks", "hr", "bold", "italic", "personalize", "cta", "numbered_list", "outdent", "nonbreaking_space", "block", "font_family", "text_color", "strikethrough", "alignment", "source_code" ],
+  "type" : "richtext"
+}, {
+  "id" : "2ac45cda-0c42-34f2-eea8-a2e0b1b44ded",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "33383c0a-b0e8-519a-0c08-9c651fb7a0e5",
+    "name" : "spacing",
+    "display_width" : null,
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "c21b9b5e-6fb0-5421-dbea-5caa9fb0a64a",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { }
+    }
+  }, {
+    "id" : "66c7bc1b-c473-54ad-6d76-f7b2e7740098",
+    "name" : "custom_styling",
+    "display_width" : null,
+    "label" : "Custom theme overrides",
+    "help_text" : "Override global theme settings for the current component",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "08b7f88a-aef6-d69a-0207-2790e7a99fa2",
+      "name" : "background",
+      "display_width" : null,
+      "label" : "Background",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "b720e818-2192-117d-6aa6-b549cb159974",
+      "name" : "text_color",
+      "display_width" : null,
+      "label" : "Text color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "fe6830a7-7033-b5d0-4495-ef05028ae45d",
+      "name" : "border",
+      "display_width" : null,
+      "label" : "Border",
+      "required" : false,
+      "locked" : false,
+      "allow_custom_border_sides" : false,
+      "type" : "border",
+      "default" : { }
+    }, {
+      "id" : "63555ffc-bcc7-8a57-632b-accddffb2e8d",
+      "name" : "border_radius",
+      "display_width" : null,
+      "label" : "Border radius",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "max" : 100,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "background" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "text_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "border" : { }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "spacing" : {
+      "spacing" : { }
+    },
+    "custom_styling" : {
+      "background" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "text_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "border" : { }
+    }
+  }
+}, {
+  "id" : "8c4a7035-7d3a-0f5d-2355-aeddc995272a",
+  "name" : "footer_text",
+  "display_width" : null,
+  "label" : "Footer text",
+  "inline_help_text" : "author name/job title/link",
+  "required" : false,
+  "locked" : false,
+  "enabled_features" : [ "code_format", "bulleted_list", "subscript", "emoji", "underline", "indent", "superscript", "font_size", "link", "visual_blocks", "hr", "bold", "italic", "personalize", "cta", "numbered_list", "outdent", "nonbreaking_space", "block", "font_family", "text_color", "strikethrough", "alignment", "source_code" ],
+  "type" : "richtext"
+} ]

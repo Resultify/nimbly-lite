@@ -1,0 +1,120 @@
+[ {
+  "id" : "ea5d7916-ee8c-e68a-2bb7-368f18852e6f",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "style.presets",
+    "name" : "presets",
+    "display_width" : null,
+    "label" : "Presets",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.presets.custom_preset",
+      "name" : "custom_preset",
+      "display_width" : null,
+      "label" : "Custom preset",
+      "help_text" : "Custom presets to globally restyle module",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
+      "type" : "choice"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : { }
+  }, {
+    "id" : "08f2c22b-5a5c-6aee-4df1-811c5e6dee45",
+    "name" : "spacing",
+    "display_width" : null,
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "b59b8305-1248-6bd5-d98e-8a6f105f9b6c",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { }
+    }
+  }, {
+    "id" : "87d6e135-7f2c-9d5a-4710-4b38a983489b",
+    "name" : "background",
+    "display_width" : null,
+    "label" : "Background",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "a30618b7-0b1d-dcf8-e771-61e78e9f4ff0",
+      "name" : "color",
+      "display_width" : null,
+      "label" : "Color",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "color" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "presets" : { },
+    "spacing" : {
+      "spacing" : { }
+    },
+    "background" : {
+      "color" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }
+  }
+}, {
+  "id" : "fc05ac1d-2a5a-27a5-8609-72606b0e92d4",
+  "name" : "rich_text",
+  "display_width" : null,
+  "label" : "Rich text",
+  "required" : false,
+  "locked" : false,
+  "enabled_features" : [ "bulleted_list", "emoji", "underline", "indent", "superscript", "font_size", "lineheight", "link", "hr", "video", "charmap", "italic", "cta", "outdent", "nonbreaking_space", "block", "strikethrough", "embed", "table", "image", "code_format", "subscript", "visual_blocks", "bold", "personalize", "numbered_list", "background_color", "anchor", "font_family", "text_color", "alignment", "source_code" ],
+  "type" : "richtext"
+}, {
+  "id" : "ef254a2b-b69e-fa9d-5ed5-5f49aa483756",
+  "name" : "truncate",
+  "display_width" : null,
+  "label" : "Truncate",
+  "help_text" : "Number of characters to truncate the text",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "type" : "number"
+} ]

@@ -1,0 +1,97 @@
+<!--
+  templateType: section
+  label: Page banner
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/1colgrid--card--banner.png
+  description: '1 column grid with card module and full width background'
+-->
+
+{% dnd_section
+  background_color='rgba(0, 0, 0, 1)'
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path='../modules/card',
+        offset=0,
+        width=12,
+        heading={
+          'display' : 'h4',
+          'text' : 'PREBUILT SITE FRAMEWORK'
+        },
+        subheading={
+          'display' : 'display-6',
+          'text' : 'WEB DEVELOPMENT ECO-SYSTEM'
+        },
+        button={
+          'text' : 'DOCUMENTATION'
+        },
+        icon={
+          'icon' : {
+            'name' : ''
+          }
+        },
+        style={
+          'button' : {
+            'alignment' : {
+              'alignment' : {
+                'horizontal_align' : 'CENTER'
+              }
+            },
+            'presets' : {
+              'style' : 'btn-secondary2'
+            }
+          },
+          'general' : {
+            'custom_styling' : {
+              'color' : {
+                'color' : '#FFFFFF',
+                'opacity' : 100
+              }
+            },
+            'spacing' : {
+              'spacing' : {
+                'padding' : {
+                  'bottom' : {
+                    'units' : 'px',
+                    'value' : 60
+                  },
+                  'left' : { },
+                  'right' : { },
+                  'top' : {
+                    'units' : 'px',
+                    'value' : 60
+                  }
+                }
+              }
+            }
+          },
+          'heading' : {
+            'alignment' : {
+              'alignment' : {
+                'horizontal_align' : 'CENTER'
+              }
+            }
+          },
+          'subheading' : {
+            'alignment' : {
+              'alignment' : {
+                'horizontal_align' : 'CENTER'
+              }
+            },
+            'custom_styling' : {
+              'color' : {
+                'color' : '#59dbeb',
+                'opacity' : 100
+              }
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

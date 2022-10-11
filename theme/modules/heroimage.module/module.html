@@ -1,0 +1,400 @@
+{% import '../macros/image.html' as image_macros %}
+{% import '../macros/figure.html' as figure_macros %}
+{% import '../macros/icon.html' as icon_macros %}
+{% import '../macros/heading.html' as heading_macros %}
+{% import '../macros/text.html' as text_macros %}
+{% import '../macros/richtext.html' as richtext_macros %}
+{% import '../macros/link.html' as link_macros %}
+{% import '../macros/button.html' as button_macros %}
+
+{% macro vertical_align_flexbox3(data) %}
+  {% if data == 'TOP' %}
+    start
+  {% elif data == 'MIDDLE' %}
+    center
+  {% elif data == 'BOTTOM' %}
+    end
+  {% endif %}
+{% endmacro %}
+
+{% if module.image.image.src %}
+  {% set loadingAttr = module.image.image.loading != 'disabled' ? '{{data.image.loading}}' : '' %}
+  {% set styleAttr = module.image.image.size_type != 'exact' ? 'width: 100%; height: auto;' : 'width: 100%; object-fit: cover;' %}
+  {% set widthAttr = module.image.image.width %}
+  {% set heightAttr = module.image.image.height %}
+
+  {% if module.image.image.size_type == 'auto_custom_max' %}
+    {% set widthAttr = module.image.image.max_width %}
+    {% set heightAttr = module.image.image.max_height %}
+  {% endif %}
+  {% set banner_height = module.image.image.height ~ 'px' %}
+{% endif %}
+
+{% if module.style.text_body.caption_width %}
+  {% set caption_text_width = module.style.text_body.caption_width %}
+  {% set caption_image_width = 100 - caption_text_width %}
+{% endif %}
+
+{# module global css #}
+{% require_css %}
+  <style>
+  </style>
+{% end_require_css %}
+
+{# module scope css #}
+<style>
+  {% scope_css %}
+
+    {% if module.icon.icon.name %}
+      .heroimage-module__icon {
+        padding-bottom: 1rem;
+      }
+    {% endif %}
+
+    {% if module.secondary_link.text %}
+      .heroimage-module__secondary-link {
+        padding-top: 1rem;
+      }
+    {% endif %}
+
+    {% if module.button.text %}
+      .heroimage-module__button {
+        padding-top: 1rem;
+      }
+    {% endif %}
+
+    {% if module.secondary_button.text %}
+      .heroimage-module__secondary-button {
+        padding-top: 1rem;
+      }
+    {% endif %}
+
+    {% if module.style.secondary_button.alignment.inline %}
+      .heroimage-module__buttons-wrp {
+        display: flex;
+        {% if module.style.secondary_button.alignment.inline_alignment %}
+          justify-content: {{module.style.secondary_button.alignment.inline_alignment}};
+        {% endif %}
+      }
+      .heroimage-module__button {
+        padding-right: 0.5rem;
+      }
+      .heroimage-module__secondary-button {
+        padding-left: 0.5rem;
+      }
+    {% endif %}
+
+    {% if module.style.secondary_link.alignment.inline %}
+      .heroimage-module__links-wrp {
+        display: flex;
+        {% if module.style.secondary_link.alignment.inline_alignment %}
+          justify-content: {{module.style.secondary_link.alignment.inline_alignment}};
+        {% endif %}
+      }
+      .heroimage-module__link {
+        padding-right: 0.5rem;
+      }
+      .heroimage-module__secondary-link {
+        padding-top: 0;
+        padding-left: 0.5rem;
+      }
+    {% endif %}
+
+    {# heroimage options (strict height - auto height - no bg image) #}
+    {% if module.image.image.src %}
+      {% if module.image.image.size_type == 'exact' %}
+        .heroimage-module__image-wrp {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .heroimage-module__image > img {
+          height: {{banner_height}}
+        }
+        .heroimage-module__caption-position {
+          position: relative;
+          height: {{banner_height}};
+        }
+        @media (max-width: 991.98px) {
+          .heroimage-module__image > img {
+            min-height: 100%;
+            height: auto;
+          }
+          .heroimage-module__caption-position {
+            height: auto;
+          }
+          {% if module.style.additional_settings.caption_om_mobile != 'cover' %}
+            .heroimage-module {
+              display: flex;
+            }
+            .heroimage-module__image-wrp {
+              position: relative;
+            }
+          {% endif %}
+          {% if module.style.additional_settings.caption_om_mobile == 'before' %}
+            .heroimage-module {
+              flex-direction: column;
+            }
+          {% endif %}
+          {% if module.style.additional_settings.caption_om_mobile == 'after' %}
+            .heroimage-module {
+              flex-direction: column-reverse;
+            }
+          {% endif %}
+        }
+
+      {% else %}
+
+        .heroimage-module {
+          overflow: hidden;
+        }
+        .heroimage-module__image-wrp {
+          position: relative;
+        }
+        .heroimage-module__caption-position {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+      {% endif %}
+
+    {% else %}
+
+      .heroimage-module__caption-section {
+        position: relative;
+      }
+    {% endif %}
+
+    .heroimage-module__caption-position {
+      {% if module.style.image.overlay.color.css %}
+        background-color: {{module.style.image.overlay.color.css}};
+      {% endif %}
+    }
+
+    .heroimage-module__caption-section {
+      justify-content: {{module.style.text_body.alignment.alignment.horizontal_align}};
+      {% if module.style.general.background.color.css %}
+        background-color: {{module.style.general.background.color.css}};
+      {% endif %}
+      {{module.style.general.spacing.spacing.css}}
+    }
+
+    .heroimage-module__caption {
+      align-self: {{vertical_align_flexbox3(module.style.text_body.alignment.alignment.vertical_align)}};
+      {% if module.style.text_body.background.color.css %}
+        background-color: {{module.style.text_body.background.color.css}};
+      {% endif %}
+      {% if caption_text_width %}
+        flex-basis: {{caption_text_width ~ '%'}};
+      {% endif %}
+      {{module.style.text_body.spacing.spacing.css}}
+    }
+
+    @media (max-width: 991.98px) {
+      .heroimage-module__caption {
+        {% if caption_text_width %}
+          flex-basis: 100%;
+        {% endif %}
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    {% if module.figure.image.src %}
+      .heroimage-module__caption-image {
+        text-align: {{module.style.figure.alignment.alignment.horizontal_align}};
+        align-self: {{vertical_align_flexbox3(module.style.figure.alignment.alignment.vertical_align)}};
+        {% if module.style.figure.background.color.css %}
+          background-color: {{module.style.figure.background.color.css}};
+        {% endif %}
+        {% if caption_image_width %}
+          flex-basis: {{caption_image_width ~ '%'}};
+        {% endif %}
+        {{module.style.figure.spacing.spacing.css}}
+      }
+      @media (max-width: 991.98px) {
+        .heroimage-module__caption-image {
+          {% if caption_image_width %}
+            flex-basis: 100%;
+          {% endif %}
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        .heroimage-module__caption-section {
+          flex-wrap: wrap;
+          gap: 30px;
+        }
+        .heroimage-module__caption .heroimage-module__icon,
+        .heroimage-module__caption .heroimage-module__heading,
+        .heroimage-module__caption .heroimage-module__subheading,
+        .heroimage-module__caption .heroimage-module__text,
+        .heroimage-module__caption .heroimage-module__richtext,
+        .heroimage-module__caption .heroimage-module__links-wrp,
+        .heroimage-module__link,
+        .heroimage-module__secondary-link,
+        .heroimage-module__caption .heroimage-module__buttons-wrp,
+        .heroimage-module__button,
+        .heroimage-module__secondary-button {
+          justify-content: center;
+        }
+      }
+    {% endif %}
+
+    .heroimage-module__icon {
+      text-align: {{module.style.icon.alignment.alignment.horizontal_align}};
+      {% if module.style.icon.background.color.css %}
+        background-color: {{module.style.icon.background.color.css}};
+      {% endif %}
+      {{module.style.icon.spacing.spacing.css}}
+    }
+
+    .heroimage-module__heading {
+      {% if module.style.heading.background.color.css %}
+        background-color: {{module.style.heading.background.color.css}};
+      {% endif %}
+      text-align: {{module.style.heading.alignment.alignment.horizontal_align}};
+      {{module.style.heading.spacing.spacing.css}}
+    }
+
+    .heroimage-module__subheading {
+      {% if module.style.subheading.background.color.css %}
+        background-color: {{module.style.subheading.background.color.css}};
+      {% endif %}
+      text-align: {{module.style.subheading.alignment.alignment.horizontal_align}};
+      {{module.style.subheading.spacing.spacing.css}}
+    }
+
+    .heroimage-module__text {
+      {% if module.style.text.background.color.css %}
+        background-color: {{module.style.text.background.color.css}};
+      {% endif %}
+      text-align: {{module.style.text.alignment.alignment.horizontal_align}};
+      {{module.style.text.spacing.spacing.css}}
+    }
+
+    .heroimage-module__richtext {
+      {% if module.style.richtext.background.color.css %}
+        background-color: {{module.style.richtext.background.color.css}};
+      {% endif %}
+      {{module.style.richtext.spacing.spacing.css}}
+    }
+
+    .heroimage-module__link {
+      text-align: {{module.style.link.alignment.alignment.horizontal_align}};
+      {% if module.style.link.background.color.css %}
+        background-color: {{module.style.link.background.color.css}};
+      {% endif %}
+      {{module.style.link.spacing.spacing.css}}
+    }
+
+    .heroimage-module__secondary-link {
+      text-align: {{module.style.secondary_link.alignment.alignment.horizontal_align}};
+      {% if module.style.secondary_link.background.color.css %}
+        background-color: {{module.style.secondary_link.background.color.css}};
+      {% endif %}
+      {{module.style.secondary_link.spacing.spacing.css}}
+    }
+
+    .heroimage-module__button {
+      text-align: {{module.style.button.alignment.alignment.horizontal_align}};
+      {% if module.style.button.background.color.css %}
+        background-color: {{module.style.button.background.color.css}};
+      {% endif %}
+      {{module.style.button.spacing.spacing.css}}
+    }
+
+    .heroimage-module__secondary-button {
+      text-align: {{module.style.secondary_button.alignment.alignment.horizontal_align}};
+      {% if module.style.secondary_button.background.color.css %}
+        background-color: {{module.style.secondary_button.background.color.css}};
+      {% endif %}
+      {{module.style.secondary_button.spacing.spacing.css}}
+    }
+
+  {% end_scope_css %}
+</style>
+
+
+<div class="heroimage-module-wrp">
+  <div class="heroimage-module heroimage-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
+
+    <div class="heroimage-module__caption-position">
+      <div class="heroimage-module__caption-wrp">
+        <div class="heroimage-module__caption-section custom-section">
+
+          <div class="heroimage-module__caption">
+
+            <div class="heroimage-module__icon">
+              {{icon_macros.render_icon_tmpl(module.icon, module.style.icon, module)}}
+            </div>
+
+            {% if module.text.additional_settings.text_above_heading %}
+              <div class="heroimage-module__text">
+                {{text_macros.render_text_tmpl(module.text, module.style.text, module)}}
+              </div>
+            {% endif %}
+
+            <div class="heroimage-module__heading">
+              {{heading_macros.render_heading_tmpl(module.heading, module.style.heading, module)}}
+            </div>
+
+            <div class="heroimage-module__subheading">
+              {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module, 'subheading')}}
+            </div>
+
+            {% if module.text.additional_settings.text_above_heading == false %}
+              <div class="heroimage-module__text">
+                {{text_macros.render_text_tmpl(module.text, module.style.text, module)}}
+              </div>
+            {% endif %}
+
+            <div class="heroimage-module__richtext">
+              {{richtext_macros.render_richtext_tmpl(module.richtext, module.style.richtext, module)}}
+            </div>
+
+            <div class="heroimage-module__links-wrp">
+              <div class="heroimage-module__link">
+                {{link_macros.render_link_tmpl(module.link, module.style.link, module)}}
+              </div>
+              <div class="heroimage-module__secondary-link">
+                {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module, 'secondary' )}}
+              </div>
+            </div>
+
+            <div class="heroimage-module__buttons-wrp">
+              <div class="heroimage-module__button">
+                {{button_macros.render_btn_tmpl(module.button, module.style.button, module)}}
+              </div>
+              <div class="heroimage-module__secondary-button">
+                {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module, 'secondary')}}
+              </div>
+            </div>
+
+          </div>
+          <div class="heroimage-module__caption-image">
+            {{figure_macros.render_figure_tmpl(module.figure, module.style.figure, module)}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="heroimage-module__image-wrp">
+      {% image
+        'image'
+        extra_classes='heroimage-module__image'
+        label='Image',
+        alt='{{module.image.image.alt}}',
+        src='{{module.image.image.src}}',
+        width='{{widthAttr}}',
+        height='{{heightAttr}}',
+        loading='{{loadingAttr}}',
+        style='{{styleAttr}}'
+      %}
+    </div>
+
+  </div>
+</div>

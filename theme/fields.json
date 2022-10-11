@@ -1,0 +1,2102 @@
+[
+  {
+    "label": "Global colors",
+    "name": "global_colors",
+    "type": "group",
+    "children": [
+      {
+        "label": "Primary color",
+        "name": "primary",
+        "type": "color",
+        "help_text": "Link text color, Primary button bg color, Heading link text color, Primary icon color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "display_width": null,
+        "locked": false,
+        "required": false,
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brandSettings.primaryColor"
+          }
+        },
+        "default": {
+          "color": "#624d82"
+        }
+      },
+      {
+        "label": "Secondary color 1",
+        "name": "secondary1",
+        "type": "color",
+        "help_text": "Secondary 1 button bg color, Secondary icon color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "display_width": null,
+        "locked": false,
+        "required": false,
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brandSettings.colors[1]"
+          }
+        },
+        "default": {
+          "color": "#1d557a"
+        }
+      },
+      {
+        "label": "Secondary color 2",
+        "name": "secondary2",
+        "type": "color",
+        "help_text": "Secondary 2 button bg color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "display_width": null,
+        "locked": false,
+        "required": false,
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brandSettings.colors[2]"
+          }
+        },
+        "default": {
+          "color": "#48267A"
+        }
+      },
+      {
+        "label": "Secondary color 3",
+        "name": "secondary3",
+        "type": "color",
+        "help_text": "Secondary 3 button bg color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "display_width": null,
+        "locked": false,
+        "required": false,
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brandSettings.colors[3]"
+          }
+        },
+        "default": {
+          "color": "#5D5B23"
+        }
+      },
+      {
+        "label": "Main background color",
+        "name": "main_background",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "display_width": null,
+        "locked": false,
+        "required": false,
+        "default": {
+          "color": "#ffffff"
+        }
+      }
+    ],
+    "display_width": null,
+    "locked": false,
+    "tab": "CONTENT",
+    "expanded": false,
+    "required": false
+  },
+  {
+    "label": "Typography",
+    "name": "typography",
+    "type": "group",
+    "children": [
+      {
+        "label": "Text",
+        "name": "text",
+        "type": "group",
+        "children": [
+          {
+            "label": "Font",
+            "name": "font",
+            "type": "font",
+            "inline_help_text": "If no font is selected, the system font will be used",
+            "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+            "display_width": null,
+            "load_external_fonts": true,
+            "locked": false,
+            "required": false,
+            "default": {
+              "size": 16,
+              "size_unit": "px",
+              "color": "#1d1d1d"
+            }
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Headings global",
+        "name": "headings",
+        "type": "group",
+        "children": [
+          {
+            "label": "Font",
+            "name": "font",
+            "type": "font",
+            "inline_help_text": "If no font is selected, the system font will be used",
+            "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+            "visibility": {
+              "hidden_subfields": {
+                "size": true
+              }
+            },
+            "display_width": null,
+            "load_external_fonts": true,
+            "locked": false,
+            "required": false,
+            "default": {
+              "color": "#2D243B"
+            }
+          },
+          {
+            "label": "Headings link",
+            "name": "headings_link",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              },
+              {
+                "label": "Underline",
+                "name": "underline",
+                "type": "choice",
+                "display": "radio",
+                "display_width": null,
+                "locked": false,
+                "choices": [
+                  [
+                    "underline",
+                    "Underline"
+                  ],
+                  [
+                    "none",
+                    "None"
+                  ]
+                ],
+                "required": true,
+                "default": "none"
+              },
+              {
+                "label": "Hover settings",
+                "name": "hover",
+                "type": "group",
+                "children": [
+                  {
+                    "label": "Color",
+                    "name": "color",
+                    "type": "color",
+                    "display_width": null,
+                    "locked": false,
+                    "required": false,
+                    "default": {}
+                  },
+                  {
+                    "label": "Underline",
+                    "name": "underline",
+                    "type": "choice",
+                    "display": "radio",
+                    "display_width": null,
+                    "locked": false,
+                    "choices": [
+                      [
+                        "underline",
+                        "Underline"
+                      ],
+                      [
+                        "none",
+                        "None"
+                      ]
+                    ],
+                    "required": true,
+                    "default": "none"
+                  }
+                ],
+                "display_width": null,
+                "locked": false,
+                "tab": "CONTENT",
+                "expanded": false,
+                "required": false
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Headings separately",
+        "name": "heading",
+        "type": "group",
+        "children": [
+          {
+            "label": "Heading one [h1]",
+            "name": "h1",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.typography.headings.font.color",
+                    "fallback": "theme.typography.headings.font.fallback",
+                    "font": "theme.typography.headings.font.font",
+                    "font_set": "theme.typography.headings.font.font_set",
+                    "styles": "theme.typography.headings.font.styles",
+                    "variant": "theme.typography.headings.font.variant"
+                  }
+                },
+                "default": {
+                  "size": 40,
+                  "size_unit": "px"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Heading two [h2]",
+            "name": "h2",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.typography.headings.font.color",
+                    "fallback": "theme.typography.headings.font.fallback",
+                    "font": "theme.typography.headings.font.font",
+                    "font_set": "theme.typography.headings.font.font_set",
+                    "styles": "theme.typography.headings.font.styles",
+                    "variant": "theme.typography.headings.font.variant"
+                  }
+                },
+                "default": {
+                  "size": 32,
+                  "size_unit": "px"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Heading three [h3]",
+            "name": "h3",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.typography.headings.font.color",
+                    "fallback": "theme.typography.headings.font.fallback",
+                    "font": "theme.typography.headings.font.font",
+                    "font_set": "theme.typography.headings.font.font_set",
+                    "styles": "theme.typography.headings.font.styles",
+                    "variant": "theme.typography.headings.font.variant"
+                  }
+                },
+                "default": {
+                  "size": 28,
+                  "size_unit": "px"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Heading four [h4]",
+            "name": "h4",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.typography.headings.font.color",
+                    "fallback": "theme.typography.headings.font.fallback",
+                    "font": "theme.typography.headings.font.font",
+                    "font_set": "theme.typography.headings.font.font_set",
+                    "styles": "theme.typography.headings.font.styles",
+                    "variant": "theme.typography.headings.font.variant"
+                  }
+                },
+                "default": {
+                  "size": 24,
+                  "size_unit": "px"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Heading five [h5]",
+            "name": "h5",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.typography.headings.font.color",
+                    "fallback": "theme.typography.headings.font.fallback",
+                    "font": "theme.typography.headings.font.font",
+                    "font_set": "theme.typography.headings.font.font_set",
+                    "styles": "theme.typography.headings.font.styles",
+                    "variant": "theme.typography.headings.font.variant"
+                  }
+                },
+                "default": {
+                  "size": 20,
+                  "size_unit": "px"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Heading six [h6]",
+            "name": "h6",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.typography.headings.font.color",
+                    "fallback": "theme.typography.headings.font.fallback",
+                    "font": "theme.typography.headings.font.font",
+                    "font_set": "theme.typography.headings.font.font_set",
+                    "styles": "theme.typography.headings.font.styles",
+                    "variant": "theme.typography.headings.font.variant"
+                  }
+                },
+                "default": {
+                  "size": 18,
+                  "size_unit": "px"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Display heading 1",
+            "name": "d1",
+            "type": "group",
+            "inline_help_text": "Larger and slightly more opinionated heading style",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.typography.headings.font.color",
+                    "fallback": "theme.typography.headings.font.fallback",
+                    "font": "theme.typography.headings.font.font",
+                    "font_set": "theme.typography.headings.font.font_set",
+                    "styles": "theme.typography.headings.font.styles",
+                    "variant": "theme.typography.headings.font.variant"
+                  }
+                },
+                "default": {
+                  "size": 80,
+                  "size_unit": "px"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Display heading 2",
+            "name": "d2",
+            "type": "group",
+            "inline_help_text": "Larger and slightly more opinionated heading style",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.typography.headings.font.color",
+                    "fallback": "theme.typography.headings.font.fallback",
+                    "font": "theme.typography.headings.font.font",
+                    "font_set": "theme.typography.headings.font.font_set",
+                    "styles": "theme.typography.headings.font.styles",
+                    "variant": "theme.typography.headings.font.variant"
+                  }
+                },
+                "default": {
+                  "size": 70,
+                  "size_unit": "px"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Display heading 3",
+            "name": "d3",
+            "type": "group",
+            "inline_help_text": "Larger and slightly more opinionated heading style",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.typography.headings.font.color",
+                    "fallback": "theme.typography.headings.font.fallback",
+                    "font": "theme.typography.headings.font.font",
+                    "font_set": "theme.typography.headings.font.font_set",
+                    "styles": "theme.typography.headings.font.styles",
+                    "variant": "theme.typography.headings.font.variant"
+                  }
+                },
+                "default": {
+                  "size": 65,
+                  "size_unit": "px"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Display heading 4",
+            "name": "d4",
+            "type": "group",
+            "inline_help_text": "Larger and slightly more opinionated heading style",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.typography.headings.font.color",
+                    "fallback": "theme.typography.headings.font.fallback",
+                    "font": "theme.typography.headings.font.font",
+                    "font_set": "theme.typography.headings.font.font_set",
+                    "styles": "theme.typography.headings.font.styles",
+                    "variant": "theme.typography.headings.font.variant"
+                  }
+                },
+                "default": {
+                  "size": 60,
+                  "size_unit": "px"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Display heading 5",
+            "name": "d5",
+            "type": "group",
+            "inline_help_text": "Larger and slightly more opinionated heading style",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.typography.headings.font.color",
+                    "fallback": "theme.typography.headings.font.fallback",
+                    "font": "theme.typography.headings.font.font",
+                    "font_set": "theme.typography.headings.font.font_set",
+                    "styles": "theme.typography.headings.font.styles",
+                    "variant": "theme.typography.headings.font.variant"
+                  }
+                },
+                "default": {
+                  "size": 55,
+                  "size_unit": "px"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Display heading 6",
+            "name": "d6",
+            "type": "group",
+            "inline_help_text": "Larger and slightly more opinionated heading style",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.typography.headings.font.color",
+                    "fallback": "theme.typography.headings.font.fallback",
+                    "font": "theme.typography.headings.font.font",
+                    "font_set": "theme.typography.headings.font.font_set",
+                    "styles": "theme.typography.headings.font.styles",
+                    "variant": "theme.typography.headings.font.variant"
+                  }
+                },
+                "default": {
+                  "size": 50,
+                  "size_unit": "px"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Link",
+        "name": "link",
+        "type": "group",
+        "children": [
+          {
+            "label": "Font",
+            "name": "font",
+            "type": "font",
+            "inline_help_text": "If no font is selected, the system font will be used",
+            "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+            "visibility": {
+              "hidden_subfields": {}
+            },
+            "display_width": null,
+            "load_external_fonts": true,
+            "locked": false,
+            "required": false,
+            "inherited_value": {
+              "property_value_paths": {
+                "color": "theme.global_colors.primary.color",
+                "fallback": "theme.typography.text.font.fallback",
+                "font": "theme.typography.text.font.font",
+                "font_set": "theme.typography.text.font.font_set"
+              }
+            },
+            "default": {
+              "size": 16,
+              "size_unit": "px",
+              "styles": {
+                "text-decoration": "underline"
+              }
+            }
+          },
+          {
+            "label": "Hover settings",
+            "name": "hover",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              },
+              {
+                "label": "Underline",
+                "name": "underline",
+                "type": "choice",
+                "display": "radio",
+                "display_width": null,
+                "locked": false,
+                "choices": [
+                  [
+                    "underline",
+                    "Underline"
+                  ],
+                  [
+                    "none",
+                    "None"
+                  ]
+                ],
+                "required": true,
+                "default": "underline"
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Blockquotes",
+        "name": "blockquote",
+        "type": "group",
+        "children": [
+          {
+            "label": "Font",
+            "name": "font",
+            "type": "font",
+            "inline_help_text": "If no font is selected, the system font will be used",
+            "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+            "display_width": null,
+            "load_external_fonts": true,
+            "locked": false,
+            "required": false,
+            "inherited_value": {
+              "property_value_paths": {
+                "color": "theme.typography.text.font.color",
+                "fallback": "theme.typography.text.font.fallback",
+                "font": "theme.typography.text.font.font",
+                "font_set": "theme.typography.text.font.font_set",
+                "styles": "theme.typography.text.font.styles",
+                "variant": "theme.typography.text.font.variant"
+              }
+            },
+            "default": {
+              "size": 18,
+              "size_unit": "px"
+            }
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      }
+    ],
+    "display_width": null,
+    "locked": false,
+    "tab": "CONTENT",
+    "expanded": false,
+    "required": false
+  },
+  {
+    "label": "Buttons",
+    "name": "buttons",
+    "type": "group",
+    "children": [
+      {
+        "label": "Size",
+        "name": "size",
+        "type": "group",
+        "children": [
+          {
+            "label": "Small",
+            "name": "small",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font size",
+                "name": "font_size",
+                "type": "number",
+                "display": "text",
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false,
+                "default": 16
+              },
+              {
+                "label": "Spacing",
+                "name": "spacing",
+                "type": "spacing",
+                "visibility": {
+                  "hidden_subfields": {
+                    "margin": true
+                  }
+                },
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {
+                  "padding": {
+                    "top": {
+                      "value": 10,
+                      "units": "px"
+                    },
+                    "right": {
+                      "value": 20,
+                      "units": "px"
+                    },
+                    "bottom": {
+                      "value": 10,
+                      "units": "px"
+                    },
+                    "left": {
+                      "value": 20,
+                      "units": "px"
+                    }
+                  }
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Regular",
+            "name": "regular",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font size",
+                "name": "font_size",
+                "type": "number",
+                "display": "text",
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false,
+                "default": 18
+              },
+              {
+                "label": "Spacing",
+                "name": "spacing",
+                "type": "spacing",
+                "visibility": {
+                  "hidden_subfields": {
+                    "margin": true
+                  }
+                },
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {
+                  "padding": {
+                    "top": {
+                      "value": 12,
+                      "units": "px"
+                    },
+                    "right": {
+                      "value": 28,
+                      "units": "px"
+                    },
+                    "bottom": {
+                      "value": 12,
+                      "units": "px"
+                    },
+                    "left": {
+                      "value": 28,
+                      "units": "px"
+                    }
+                  }
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Large",
+            "name": "large",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font size",
+                "name": "font_size",
+                "type": "number",
+                "display": "text",
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false,
+                "default": 20
+              },
+              {
+                "label": "Spacing",
+                "name": "spacing",
+                "type": "spacing",
+                "visibility": {
+                  "hidden_subfields": {
+                    "margin": true
+                  }
+                },
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {
+                  "padding": {
+                    "top": {
+                      "value": 16,
+                      "units": "px"
+                    },
+                    "right": {
+                      "value": 36,
+                      "units": "px"
+                    },
+                    "bottom": {
+                      "value": 16,
+                      "units": "px"
+                    },
+                    "left": {
+                      "value": 36,
+                      "units": "px"
+                    }
+                  }
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Primary",
+        "name": "primary",
+        "type": "group",
+        "children": [
+          {
+            "label": "Text",
+            "name": "text",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "visibility": {
+                  "hidden_subfields": {
+                    "size": true
+                  }
+                },
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "default": {
+                  "color": "#fff"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Background",
+            "name": "background",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.global_colors.primary.color"
+                  }
+                },
+                "default": {
+                  "opacity": 100
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Border",
+            "name": "border",
+            "type": "group",
+            "children": [
+              {
+                "label": "",
+                "name": "border",
+                "type": "border",
+                "allow_custom_border_sides": false,
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Radius",
+            "name": "radius",
+            "type": "group",
+            "children": [
+              {
+                "label": "",
+                "name": "radius",
+                "type": "number",
+                "display": "text",
+                "max": 500,
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Hover settings",
+            "name": "hover",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              },
+              {
+                "label": "Background",
+                "name": "background",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              },
+              {
+                "label": "Border color",
+                "name": "border",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Secondary 1",
+        "name": "secondary1",
+        "type": "group",
+        "children": [
+          {
+            "label": "Text",
+            "name": "text",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "visibility": {
+                  "hidden_subfields": {
+                    "size": true
+                  }
+                },
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "default": {
+                  "color": "#fff"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Background",
+            "name": "background",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.global_colors.secondary1.color"
+                  }
+                },
+                "default": {
+                  "opacity": 100
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Border",
+            "name": "border",
+            "type": "group",
+            "children": [
+              {
+                "label": "",
+                "name": "border",
+                "type": "border",
+                "allow_custom_border_sides": false,
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Radius",
+            "name": "radius",
+            "type": "group",
+            "children": [
+              {
+                "label": "",
+                "name": "radius",
+                "type": "number",
+                "display": "text",
+                "max": 500,
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Hover settings",
+            "name": "hover",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              },
+              {
+                "label": "Background",
+                "name": "background",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              },
+              {
+                "label": "Border color",
+                "name": "border",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Secondary 2",
+        "name": "secondary2",
+        "type": "group",
+        "children": [
+          {
+            "label": "Text",
+            "name": "text",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "visibility": {
+                  "hidden_subfields": {
+                    "size": true
+                  }
+                },
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "default": {
+                  "color": "#fff"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Background",
+            "name": "background",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.global_colors.secondary2.color"
+                  }
+                },
+                "default": {
+                  "opacity": 100
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Border",
+            "name": "border",
+            "type": "group",
+            "children": [
+              {
+                "label": "",
+                "name": "border",
+                "type": "border",
+                "allow_custom_border_sides": false,
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Radius",
+            "name": "radius",
+            "type": "group",
+            "children": [
+              {
+                "label": "",
+                "name": "radius",
+                "type": "number",
+                "display": "text",
+                "max": 500,
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Hover settings",
+            "name": "hover",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              },
+              {
+                "label": "Background",
+                "name": "background",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              },
+              {
+                "label": "Border color",
+                "name": "border",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {
+                  "color": null,
+                  "opacity": null
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Secondary 3",
+        "name": "secondary3",
+        "type": "group",
+        "children": [
+          {
+            "label": "Text",
+            "name": "text",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font",
+                "name": "font",
+                "type": "font",
+                "inline_help_text": "If no font is selected, the system font will be used",
+                "help_text": "Instead of (slowly) downloading external fonts that sometimes don’t take advantage of newer, high DPI screens or dynamic font rendering, just skip this option and we will serve the best system font possible based on your operating system or device.",
+                "visibility": {
+                  "hidden_subfields": {
+                    "size": true
+                  }
+                },
+                "display_width": null,
+                "load_external_fonts": true,
+                "locked": false,
+                "required": false,
+                "default": {
+                  "color": "#fff"
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Background",
+            "name": "background",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.global_colors.secondary3.color"
+                  }
+                },
+                "default": {
+                  "opacity": 100
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Border",
+            "name": "border",
+            "type": "group",
+            "children": [
+              {
+                "label": "",
+                "name": "border",
+                "type": "border",
+                "allow_custom_border_sides": false,
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Radius",
+            "name": "radius",
+            "type": "group",
+            "children": [
+              {
+                "label": "",
+                "name": "radius",
+                "type": "number",
+                "display": "text",
+                "max": 500,
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Hover settings",
+            "name": "hover",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              },
+              {
+                "label": "Background",
+                "name": "background",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              },
+              {
+                "label": "Border color",
+                "name": "border",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {
+                  "color": null,
+                  "opacity": null
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      }
+    ],
+    "display_width": null,
+    "locked": false,
+    "tab": "CONTENT",
+    "expanded": false,
+    "required": false
+  },
+  {
+    "label": "Icons",
+    "name": "icons",
+    "type": "group",
+    "children": [
+      {
+        "label": "Size",
+        "name": "size",
+        "type": "group",
+        "children": [
+          {
+            "label": "Small",
+            "name": "small",
+            "type": "group",
+            "children": [
+              {
+                "label": "Size",
+                "name": "size",
+                "type": "number",
+                "display": "text",
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false,
+                "default": 25
+              },
+              {
+                "label": "Spacing",
+                "name": "spacing",
+                "type": "spacing",
+                "visibility": {
+                  "hidden_subfields": {
+                    "margin": true
+                  }
+                },
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {
+                  "padding": {
+                    "top": {
+                      "value": 15,
+                      "units": "px"
+                    },
+                    "right": {
+                      "value": 15,
+                      "units": "px"
+                    },
+                    "bottom": {
+                      "value": 15,
+                      "units": "px"
+                    },
+                    "left": {
+                      "value": 15,
+                      "units": "px"
+                    }
+                  }
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Regular",
+            "name": "regular",
+            "type": "group",
+            "children": [
+              {
+                "label": "Size",
+                "name": "size",
+                "type": "number",
+                "display": "text",
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false,
+                "default": 35
+              },
+              {
+                "label": "Spacing",
+                "name": "spacing",
+                "type": "spacing",
+                "visibility": {
+                  "hidden_subfields": {
+                    "margin": true
+                  }
+                },
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {
+                  "padding": {
+                    "top": {
+                      "value": 25,
+                      "units": "px"
+                    },
+                    "right": {
+                      "value": 25,
+                      "units": "px"
+                    },
+                    "bottom": {
+                      "value": 25,
+                      "units": "px"
+                    },
+                    "left": {
+                      "value": 25,
+                      "units": "px"
+                    }
+                  }
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Large",
+            "name": "large",
+            "type": "group",
+            "children": [
+              {
+                "label": "Size",
+                "name": "size",
+                "type": "number",
+                "display": "text",
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false,
+                "default": 55
+              },
+              {
+                "label": "Spacing",
+                "name": "spacing",
+                "type": "spacing",
+                "visibility": {
+                  "hidden_subfields": {
+                    "margin": true
+                  }
+                },
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {
+                  "padding": {
+                    "top": {
+                      "value": 35,
+                      "units": "px"
+                    },
+                    "right": {
+                      "value": 35,
+                      "units": "px"
+                    },
+                    "bottom": {
+                      "value": 35,
+                      "units": "px"
+                    },
+                    "left": {
+                      "value": 35,
+                      "units": "px"
+                    }
+                  }
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Primary",
+        "name": "primary",
+        "type": "group",
+        "children": [
+          {
+            "label": "Fill",
+            "name": "fill",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "visibility": {
+                  "hidden_subfields": {
+                    "opacity": true
+                  }
+                },
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.global_colors.primary.color"
+                  }
+                },
+                "default": {
+                  "color": null,
+                  "opacity": null
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Background",
+            "name": "background",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Secondary",
+        "name": "secondary",
+        "type": "group",
+        "children": [
+          {
+            "label": "Fill",
+            "name": "fill",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "visibility": {
+                  "hidden_subfields": {
+                    "opacity": true
+                  }
+                },
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.global_colors.secondary1.color"
+                  }
+                },
+                "default": {
+                  "color": null,
+                  "opacity": null
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Background",
+            "name": "background",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      }
+    ],
+    "display_width": null,
+    "locked": false,
+    "tab": "CONTENT",
+    "expanded": false,
+    "required": false
+  },
+  {
+    "label": "Site header",
+    "name": "site_header",
+    "type": "group",
+    "children": [
+      {
+        "label": "Sticky header",
+        "name": "sticky_header",
+        "type": "boolean",
+        "inline_help_text": "",
+        "help_text": "",
+        "display": "toggle",
+        "display_width": null,
+        "locked": false,
+        "required": false,
+        "default": false
+      }
+    ],
+    "display_width": null,
+    "locked": false,
+    "tab": "CONTENT",
+    "expanded": false,
+    "required": false
+  },
+  {
+    "label": "Layout",
+    "name": "layout",
+    "type": "group",
+    "children": [
+      {
+        "label": "Maximum content width",
+        "name": "maximum_content_width",
+        "id": "maximum_content_width",
+        "type": "choice",
+        "display": "select",
+        "display_width": null,
+        "locked": false,
+        "choices": [
+          [
+            "900",
+            "900px"
+          ],
+          [
+            "1000",
+            "1000px"
+          ],
+          [
+            "1200",
+            "1200px"
+          ],
+          [
+            "1400",
+            "1400px"
+          ],
+          [
+            "1600",
+            "1600px"
+          ],
+          [
+            "1900",
+            "1900px"
+          ],
+          [
+            "custom",
+            "Custom"
+          ]
+        ],
+        "required": false,
+        "default": "1400"
+      },
+      {
+        "label": "Custom maximum content width",
+        "name": "custom_maximum_content_width",
+        "type": "number",
+        "visibility": {
+          "controlling_field": "maximum_content_width",
+          "controlling_value_regex": "custom",
+          "operator": "EQUAL"
+        },
+        "display": "slider",
+        "max": 1900,
+        "display_width": null,
+        "locked": false,
+        "step": 10,
+        "suffix": "px",
+        "min": 600,
+        "required": false,
+        "default": 1300
+      }
+    ],
+    "display_width": null,
+    "locked": false,
+    "tab": "CONTENT",
+    "expanded": false,
+    "required": false
+  }
+]

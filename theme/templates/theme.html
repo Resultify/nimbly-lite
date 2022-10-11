@@ -1,0 +1,21 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  enableDomainStylesheets: false
+  label: Theme global settings
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+  {% block body %}
+
+  {% dnd_area 'dnd_area'
+    label='Main section',
+    class='empty-container'
+  %}
+
+    {% include_dnd_partial path='../sections/theme-global-settings.html' context={} %}
+
+  {% end_dnd_area %}
+
+{% endblock body %}

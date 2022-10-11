@@ -1,0 +1,17 @@
+/* module css / no hubl variables */
+
+.image-card-module {
+  position: relative;
+  display: flex;
+}
+
+.image-card-module__text-column {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image-card-module__image {
+  padding: 1.5rem 0;
+}

@@ -1,0 +1,13 @@
+{
+  "global" : false,
+  "placeholder" : {
+    "show_module_icon" : true,
+    "title" : "Button",
+    "description" : "Add button element"
+  },
+  "icon" : "fontawesome-5.14.0:Check%20Square:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 47906086335,
+  "label" : "Button",
+  "is_available_for_new_content" : true
+}

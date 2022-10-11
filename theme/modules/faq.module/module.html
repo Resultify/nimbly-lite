@@ -1,0 +1,63 @@
+{% import '../macros/text.html' as text_macros %}
+{% import '../macros/richtext.html' as richtext_macros %}
+
+{# module global css #}
+{% require_css %}
+  <style>
+  </style>
+{% end_require_css %}
+
+{# module scope css #}
+<style>
+  {% scope_css %}
+
+    .faq-module {
+      {% if module.style.general.background.color.css %}
+        background-color: {{module.style.general.background.color.css}};
+      {% endif %}
+    }
+
+    .faq-module__text {
+      {% if module.style.text.background.color.css %}
+        background-color: {{module.style.text.background.color.css}};
+      {% endif %}
+      text-align: {{module.style.text.alignment.alignment.horizontal_align}};
+      {{module.style.text.spacing.spacing.css}}
+    }
+
+    .faq-module__richtext {
+      {% if module.style.richtext.background.color.css %}
+        background-color: {{module.style.richtext.background.color.css}};
+      {% endif %}
+      {{module.style.richtext.spacing.spacing.css}}
+    }
+
+    .faq-module__arrow:before {
+      {% if module.style.text.arrow.color.color %}
+        border-left-color: {{ module.style.text.arrow.color.color }};
+      {% endif %}
+      {% if module.style.text.arrow.color.opacity %}
+        opacity: {{ module.style.text.arrow.color.opacity }}%;
+      {% endif %}
+    }
+
+  {% end_scope_css %}
+</style>
+
+<div class="faq-module-wrp">
+  <div class="faq-module faq-module--{{module_id}} {{module.style.general.presets.custom_preset}} {% if module.enable_animation %}faq-module-animate{% endif %}">
+    {% for item in module.questions %}
+      <details class="faq-module__details">
+        <summary class="faq-module__text">
+          <span class="faq-module__arrow">&nbsp;</span>
+          {{ text_macros.render_text_tmpl(item.text, module.style.text, module) }}
+        </summary>
+        <div class="faq-module__richtext">
+          {{ richtext_macros.render_richtext_tmpl(item.richtext, module.style.richtext, module) }}
+        </div>
+      </details>
+
+    {% endfor %}
+
+  </div>
+</div>

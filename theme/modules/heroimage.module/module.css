@@ -1,0 +1,27 @@
+/* module css / no hubl variables */
+
+.heroimage-module {
+  position: relative;
+}
+
+.heroimage-module__caption-position {
+  z-index: 2;
+}
+
+.heroimage-module__image-wrp {
+  z-index: 1;
+}
+
+.heroimage-module__image {
+  display: inline;
+}
+
+.heroimage-module__caption-wrp {
+  height: 100%;
+}
+
+.heroimage-module__caption-section {
+  width: 100%;
+  display: flex;
+  min-height: 100%;
+}

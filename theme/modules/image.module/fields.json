@@ -1,0 +1,300 @@
+[ {
+  "id" : "ea5d7916-ee8c-e68a-2bb7-368f18852e6f",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "style.presets",
+    "name" : "presets",
+    "display_width" : null,
+    "label" : "Presets",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.presets.custom_preset",
+      "name" : "custom_preset",
+      "display_width" : null,
+      "label" : "Custom preset",
+      "help_text" : "Custom presets to globally restyle module",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
+      "type" : "choice"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : { }
+  }, {
+    "id" : "cfd66b72-34dc-2d93-ca30-6a287c65fc0f",
+    "name" : "alignment",
+    "display_width" : null,
+    "label" : "Alignment",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "6e836959-91df-c1b9-33de-65ddbc71e638",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : false,
+      "locked" : false,
+      "alignment_direction" : "HORIZONTAL",
+      "type" : "alignment",
+      "default" : {
+        "horizontal_align" : "LEFT"
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "alignment" : {
+        "horizontal_align" : "LEFT"
+      }
+    }
+  }, {
+    "id" : "9abcfc3b-1909-111b-b8e2-c9cf2ef3277d",
+    "name" : "spacing",
+    "display_width" : null,
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "df13887e-06ff-ffee-f83e-2aea5495b46f",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { }
+    }
+  }, {
+    "id" : "055ae8f3-1e32-a05d-152c-2a8ded0efdd8",
+    "name" : "background",
+    "display_width" : null,
+    "label" : "Background",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "e9c23975-2222-05b6-4ae2-e3317c1c904d",
+      "name" : "color",
+      "display_width" : null,
+      "label" : "Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "color" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }
+  }, {
+    "id" : "style.border",
+    "name" : "border",
+    "display_width" : null,
+    "label" : "Border",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.border.border_radius",
+      "name" : "border_radius",
+      "display_width" : null,
+      "label" : "Border radius",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : { }
+  }, {
+    "id" : "style.custom_image_fit",
+    "name" : "custom_image_fit",
+    "display_width" : null,
+    "label" : "Custom image fit",
+    "inline_help_text" : "If it is not possible to manually crop all images to the same size and aspect ratio, then you can adjust the image fit settings, but this may result in incorrect image cropping. Be careful with these settings.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.custom_image_fit.image_aspect_ratio",
+      "name" : "image_aspect_ratio",
+      "display_width" : null,
+      "label" : "Image aspect ratio",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "1/1", "1/1" ], [ "1.91/1", "1.91/1" ], [ "2/1", "2/1" ], [ "3/2", "3/2" ], [ "4/3", "4/3" ], [ "4/5", "4/5" ], [ "5/4", "5/4" ], [ "9/16", "9/16" ], [ "16/9", "16/9" ] ],
+      "type" : "choice"
+    }, {
+      "id" : "style.custom_image_fit.image_fit",
+      "name" : "image_fit",
+      "display_width" : null,
+      "label" : "Image fit",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "contain", "Contain" ], [ "cover", "Cover" ] ],
+      "type" : "choice"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : { }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "presets" : { },
+    "alignment" : {
+      "alignment" : {
+        "horizontal_align" : "LEFT"
+      }
+    },
+    "spacing" : {
+      "spacing" : { }
+    },
+    "background" : {
+      "color" : {
+        "color" : null,
+        "opacity" : null
+      }
+    },
+    "border" : { }
+  }
+}, {
+  "id" : "8018f437-7972-df0a-c3ae-a617ca5205a7",
+  "name" : "image",
+  "display_width" : null,
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : true,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "344b2f9c-0442-5380-4dd7-243bc4f1aebe",
+  "name" : "caption",
+  "display_width" : null,
+  "label" : "Caption",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "7a530d5b-8a7b-28d7-29f0-eda9c8292803",
+    "name" : "rich_text",
+    "display_width" : null,
+    "label" : "Rich text",
+    "required" : false,
+    "locked" : false,
+    "enabled_features" : [ "code_format", "subscript", "emoji", "underline", "superscript", "font_size", "link", "visual_blocks", "hr", "bold", "charmap", "italic", "personalize", "cta", "background_color", "anchor", "nonbreaking_space", "font_family", "text_color", "strikethrough", "alignment", "source_code" ],
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+}, {
+  "id" : "66e5b60d-a328-6ab3-93d9-868daa31f69b",
+  "name" : "link",
+  "display_width" : null,
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "5a081f2e-dbad-a70f-7548-d8e50cd8b6c8",
+    "controlling_value_regex" : "false",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "children" : [ {
+    "id" : "efb01309-56fa-c643-18ca-b13ecd5a955c",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+}, {
+  "id" : "f174c61f-2b7d-7917-aae0-50a076dacdbf",
+  "name" : "additional_settings",
+  "display_width" : null,
+  "label" : "Additional settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "5a081f2e-dbad-a70f-7548-d8e50cd8b6c8",
+    "name" : "image_zoom",
+    "display_width" : null,
+    "label" : "Image zoom",
+    "inline_help_text" : "Enlarge on Click or Tap",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "image_zoom" : false
+  }
+} ]

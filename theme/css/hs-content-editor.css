@@ -1,0 +1,16 @@
+.hs-inline-edit .hs_cos_wrapper:not(.icon) {
+  display: inline;
+}
+
+.hs-inline-edit .filter-content .filter-content__item,
+.hs-inline-edit .filter-content .filter-content__sizer {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  width: auto !important;
+}
+
+.hs-inline-edit .filter-content > .row-fluid > .dnd-column > .dnd-row > .row-fluid > .dnd-column {
+  height: auto !important;
+  padding-right: 3px !important;
+}

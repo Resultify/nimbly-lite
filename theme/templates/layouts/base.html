@@ -1,0 +1,64 @@
+<!--
+  templateType: none
+-->
+<!doctype html>
+<html lang="{{html_lang}}" {{html_lang_dir}}>
+  <head>
+    <meta charset="utf-8">
+    {% if page_meta.html_title %}
+      <title>{{page_meta.html_title}}</title>
+    {% endif %}
+    {% if site_settings.favicon_src %}
+      <link rel="shortcut icon" href="{{site_settings.favicon_src}}"/>
+    {% endif %}
+    <meta name="description" content="{{page_meta.meta_description}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {{require_css(get_asset_url("../../assets/css/base.css"))}}
+    {{require_css(get_asset_url("../../css/theme-overrides.css"))}}
+    {{require_css(get_asset_url("../../css/sections.css"))}}
+    {{require_css(get_asset_url("../../css/print.css"))}}
+
+    <script>
+      var nimbly = {
+        plugins: {}
+      }
+    </script>
+
+    {{require_js(get_asset_url('../../assets/js/bootstrap.js'), {position: 'head', async: true})}}
+
+    {% if template_css %}
+      {{require_css(get_asset_url(template_css))}}
+    {% endif %}
+    {{standard_header_includes}}
+    {% include '../partials/child-includes.html' %}
+  </head>
+  <body>
+    <div class="body-internal-wrp {{builtin_body_classes}} id{{content_id}}">
+
+      <div id="top"></div>
+
+      <header class="header-content {{'sticky-header' if theme.site_header.sticky_header}}">
+        {% block header %}
+          {% global_partial path='../partials/global-header.html' %}
+        {% endblock header %}
+      </header>
+
+      <main id="main-content" class="main-content">
+        {% block body %}
+        {% endblock body %}
+      </main>
+
+      <footer class="footer-content">
+        {% block footer %}
+          {% global_partial path='../partials/global-footer.html' %}
+        {% endblock footer %}
+      </footer>
+
+    </div>
+    {% if template_js %}
+      {{require_js(get_asset_url(template_js))}}
+    {% endif %}
+    {{standard_footer_includes}}
+  </body>
+</html>

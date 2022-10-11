@@ -1,0 +1,324 @@
+<!--
+  templateType: section
+  label: Heading with icon and text
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/3x3colgrid--card--with-odd-background.png
+  description: '3x3 column grid with cards and mosaic background'
+-->
+
+{% dnd_section %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_column
+        offset=0,
+        width=4
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path='../modules/card',
+            offset=0,
+            width=12,
+            button={
+              'text' : ''
+            },
+            heading={
+              'icon' : {
+                'icon' : {
+                  'name' : 'heading',
+                  'type' : 'SOLID',
+                  'unicode' : 'f1dc'
+                }
+              },
+              'text' : 'Header element'
+            },
+            icon={
+              'icon' : {
+                'name' : ''
+              }
+            },
+            link={
+              'link' : {
+                'no_follow' : false,
+                'open_in_new_tab' : false,
+                'url' : {
+                  'href' : '#',
+                  'type' : 'EXTERNAL'
+                }
+              },
+              'text' : 'Read more'
+            },
+            richtext={
+              'rich_text' : '<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id eleifend nisl, tempor congue erat. Aenean ut aliquam justo. In hac habitasse platea dictumst. Cras elementum ante rutrum nisl euismod congue.</span></p>'
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column
+        offset=4,
+        width=4,
+        background_color='rgba(0, 98, 111, 1)'
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path='../modules/card',
+            offset=0,
+            width=12,
+            button={
+              'text' : ''
+            },
+            heading={
+              'icon' : {
+                'icon' : {
+                  'name' : 'Alternate Arrows',
+                  'type' : 'SOLID',
+                  'unicode' : 'f0b2'
+                }
+              },
+              'text' : 'Rich text element'
+            },
+            icon={
+              'icon' : {
+                'name' : ''
+              }
+            },
+            link={
+              'link' : {
+                'no_follow' : false,
+                'open_in_new_tab' : false,
+                'url' : {
+                  'href' : '#',
+                  'type' : 'EXTERNAL'
+                }
+              },
+              'text' : 'Read more'
+            },
+            richtext={
+              'rich_text' : '<p><span>Consectetur adipiscing elit. Suspendisse id eleifend nisl, tempor congue erat. Aenean ut aliquam justo. In hac habitasse platea dictumst. Cras elementum ante rutrum nisl euismod congue.</span></p>'
+            },
+            style={
+              'general' : {
+                'custom_styling' : {
+                  'color' : {
+                    'color' : '#FFFFFF',
+                    'opacity' : 100
+                  }
+                }
+              }
+            },
+            type='module'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column
+        offset=8,
+        width=4
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path='../modules/card',
+            offset=0,
+            width=12,
+            button={
+              'text' : ''
+            },
+            heading={
+              'icon' : {
+                'icon' : {
+                  'name' : 'Alternate List',
+                  'type' : 'REGULAR',
+                  'unicode' : 'f022'
+                }
+              },
+              'text' : 'Text element'
+            },
+            icon={
+              'icon' : {
+                'name' : ''
+              }
+            },
+            link={
+              'link' : {
+                'no_follow' : false,
+                'open_in_new_tab' : false,
+                'url' : {
+                  'href' : '#',
+                  'type' : 'EXTERNAL'
+                }
+              },
+              'text' : 'Read more'
+            },
+            richtext={
+              'rich_text' : '<p><span>Suspendisse id eleifend nisl, tempor congue erat. Aenean ut aliquam justo. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>'
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_column
+        offset=0,
+        width=4,
+        background_color='rgba(0, 98, 111, 1)'
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path='../modules/card',
+            offset=0,
+            width=12,
+            button={
+              'text' : ''
+            },
+            heading={
+              'icon' : {
+                'icon' : {
+                  'name' : 'Image',
+                  'type' : 'REGULAR',
+                  'unicode' : 'f03e'
+                }
+              },
+              'text' : 'Image element'
+            },
+            icon={
+              'icon' : {
+                'name' : ''
+              }
+            },
+            link={
+              'link' : {
+                'no_follow' : false,
+                'open_in_new_tab' : false,
+                'url' : {
+                  'href' : '#',
+                  'type' : 'EXTERNAL'
+                }
+              },
+              'text' : 'Read more'
+            },
+            richtext={
+              'rich_text' : '<p><span>Suspendisse id eleifend nisl, tempor congue erat. Aenean ut aliquam justo. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>'
+            },
+            style={
+              'general' : {
+                'custom_styling' : {
+                  'color' : {
+                    'color' : '#FFFFFF',
+                    'opacity' : 100
+                  }
+                }
+              }
+            },
+            type='module'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column
+        offset=4,
+        width=4
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path='../modules/card',
+            offset=0,
+            width=12,
+            button={
+              'text' : ''
+            },
+            heading={
+              'icon' : {
+                'icon' : {
+                  'name' : 'Link',
+                  'type' : 'SOLID',
+                  'unicode' : 'f0c1'
+                }
+              },
+              'text' : 'Link element'
+            },
+            icon={
+              'icon' : {
+                'name' : ''
+              }
+            },
+            link={
+              'link' : {
+                'no_follow' : false,
+                'open_in_new_tab' : false,
+                'url' : {
+                  'href' : '#',
+                  'type' : 'EXTERNAL'
+                }
+              },
+              'text' : 'Read more'
+            },
+            richtext={
+              'rich_text' : '<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id eleifend nisl, tempor congue erat. Aenean ut aliquam justo. In hac habitasse platea dictumst. Cras elementum ante rutrum nisl euismod congue.</span></p>'
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column
+        offset=8,
+        width=4,
+        background_color='rgba(0, 98, 111, 1)'
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path='../modules/card',
+            offset=0,
+            width=12,
+            button={
+              'text' : ''
+            },
+            heading={
+              'icon' : {
+                'icon' : {
+                  'name' : 'Alternate Arrows',
+                  'type' : 'SOLID',
+                  'unicode' : 'f0b2'
+                }
+              },
+              'text' : 'Button element'
+            },
+            icon={
+              'icon' : {
+                'name' : ''
+              }
+            },
+            link={
+              'link' : {
+                'no_follow' : false,
+                'open_in_new_tab' : false,
+                'url' : {
+                  'href' : '#',
+                  'type' : 'EXTERNAL'
+                }
+              },
+              'text' : 'Read more'
+            },
+            richtext={
+              'rich_text' : '<p><span>Consectetur adipiscing elit. Suspendisse id eleifend nisl, tempor congue erat. Aenean ut aliquam justo. In hac habitasse platea dictumst. Cras elementum ante rutrum nisl euismod congue.</span></p>'
+            },
+            style={
+              'general' : {
+                'custom_styling' : {
+                  'color' : {
+                    'color' : '#FFFFFF',
+                    'opacity' : 100
+                  }
+                }
+              }
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

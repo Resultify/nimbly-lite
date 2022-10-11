@@ -1,0 +1,34 @@
+{% import '../macros/heading.html' as heading_macros %}
+
+{# module global css #}
+{% require_css %}
+  <style>
+  </style>
+{% end_require_css %}
+
+{# module scope css #}
+<style>
+  {% scope_css %}
+
+    .heading-module {
+      {% if module.style.background.color.css %}
+        background-color: {{module.style.background.color.css}};
+      {% endif %}
+      text-align: {{module.style.alignment.alignment.horizontal_align}};
+      {{module.style.spacing.spacing.css}}
+    }
+
+  {% end_scope_css %}
+</style>
+
+{% if module.text %}
+  <div class="heading-module-wrp">
+    <div class="heading-module heading-module--{{module_id}} {{module.style.presets.custom_preset}}">
+
+      {{heading_macros.render_heading_tmpl(module, module.style)}}
+
+    </div>
+  </div>
+{% else %}
+  {% editor_placeholder %}
+{% endif %}

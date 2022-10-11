@@ -1,0 +1,19 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  enableDomainStylesheets: false
+  label: Empty
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+  {% dnd_area 'dnd_area'
+    label='Main section',
+    class='empty-template'
+  %}
+
+  {% end_dnd_area %}
+
+{% endblock body %}
