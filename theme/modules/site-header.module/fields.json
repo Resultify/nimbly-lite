@@ -31,6 +31,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice"
       } ],
       "tab" : "STYLE",
@@ -147,6 +149,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "768", "768px" ], [ "992", "992px" ], [ "1200", "1200px" ], [ "1400", "1400px" ], [ "custom", "Custom" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "992"
       }, {
@@ -158,7 +162,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : "de89d738-2b5e-cea9-b565-3d913e36d5c4",
+          "controlling_field_path" : null,
           "controlling_value_regex" : "custom",
+          "property" : null,
           "operator" : "EQUAL",
           "access" : null,
           "hidden_subfields" : null
@@ -458,6 +464,8 @@
         "locked" : false,
         "display" : "radio",
         "choices" : [ [ "flex-end", "Right" ], [ "flex-start", "Left" ], [ "center", "Center" ], [ "space-around", "Space around" ], [ "space-between", "Space between" ], [ "space-evenly", "Space evenly" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "flex-end"
       } ],
@@ -534,7 +542,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : null,
+          "controlling_field_path" : null,
           "controlling_value_regex" : null,
+          "property" : null,
           "operator" : null,
           "access" : null,
           "hidden_subfields" : {
@@ -842,7 +852,9 @@
           "locked" : false,
           "visibility" : {
             "controlling_field" : null,
+            "controlling_field_path" : null,
             "controlling_value_regex" : null,
+            "property" : null,
             "operator" : null,
             "access" : null,
             "hidden_subfields" : {
@@ -1396,7 +1408,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : null,
+          "controlling_field_path" : null,
           "controlling_value_regex" : null,
+          "property" : null,
           "operator" : null,
           "access" : null,
           "hidden_subfields" : {
@@ -1698,7 +1712,9 @@
           "locked" : false,
           "visibility" : {
             "controlling_field" : null,
+            "controlling_field_path" : null,
             "controlling_value_regex" : null,
+            "property" : null,
             "operator" : null,
             "access" : null,
             "hidden_subfields" : {
@@ -2133,7 +2149,9 @@
           "locked" : false,
           "visibility" : {
             "controlling_field" : null,
+            "controlling_field_path" : null,
             "controlling_value_regex" : null,
+            "property" : null,
             "operator" : null,
             "access" : null,
             "hidden_subfields" : {
@@ -2204,7 +2222,9 @@
           "locked" : false,
           "visibility" : {
             "controlling_field" : null,
+            "controlling_field_path" : null,
             "controlling_value_regex" : null,
+            "property" : null,
             "operator" : null,
             "access" : null,
             "hidden_subfields" : {
@@ -2359,6 +2379,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "wide", "Wide" ], [ "narrow", "Narrow" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "wide"
       } ],
@@ -2695,7 +2717,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : null,
+          "controlling_field_path" : null,
           "controlling_value_regex" : null,
+          "property" : null,
           "operator" : null,
           "access" : null,
           "hidden_subfields" : {
@@ -2714,6 +2738,8 @@
         "locked" : false,
         "display" : "radio",
         "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : ""
       }, {
@@ -2746,6 +2772,8 @@
           "locked" : false,
           "display" : "radio",
           "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
+          "multiple" : false,
+          "reordering_enabled" : true,
           "type" : "choice",
           "default" : ""
         } ],
@@ -2962,6 +2990,8 @@
         "display" : "select",
         "placeholder" : "Button style",
         "choices" : [ [ "btn-primary", "Primary" ], [ "btn-secondary1", "Secondary 1" ], [ "btn-secondary2", "Secondary 2" ], [ "btn-secondary3", "Secondary 3" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "btn-primary"
       }, {
@@ -2975,6 +3005,8 @@
         "display" : "select",
         "placeholder" : "",
         "choices" : [ [ "btn-small", "Small" ], [ "btn-regular", "Medium" ], [ "btn-large", "Large" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "btn-regular"
       } ],
@@ -3363,6 +3395,8 @@
         "display" : "select",
         "placeholder" : "Button style",
         "choices" : [ [ "btn-primary", "Primary" ], [ "btn-secondary1", "Secondary 1" ], [ "btn-secondary2", "Secondary 2" ], [ "btn-secondary3", "Secondary 3" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "btn-primary"
       }, {
@@ -3376,6 +3410,8 @@
         "display" : "select",
         "placeholder" : "",
         "choices" : [ [ "btn-small", "Small" ], [ "btn-regular", "Medium" ], [ "btn-large", "Large" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "btn-regular"
       } ],
@@ -3762,6 +3798,8 @@
         "locked" : false,
         "display" : "radio",
         "choices" : [ [ "left", "Top left corner" ], [ "right", "Top right corner" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "left"
       } ],
@@ -4679,7 +4717,9 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : "06130314-edb8-4c14-8663-6e984da22f00",
+      "controlling_field_path" : null,
       "controlling_value_regex" : "^.*http.*$",
+      "property" : null,
       "operator" : "MATCHES_REGEX",
       "access" : null,
       "hidden_subfields" : null
@@ -4784,7 +4824,9 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : "97422223-f67e-08ae-5017-94d11f88272f",
+      "controlling_field_path" : null,
       "controlling_value_regex" : "true",
+      "property" : null,
       "operator" : "EQUAL",
       "access" : null,
       "hidden_subfields" : null
@@ -4811,7 +4853,9 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : "b7f8991e-a66e-5f12-4c04-c5c7827cff44",
+      "controlling_field_path" : null,
       "controlling_value_regex" : "true",
+      "property" : null,
       "operator" : "EQUAL",
       "access" : null,
       "hidden_subfields" : null
@@ -4863,13 +4907,17 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : "7dcf62d7-6dc9-a1b5-fb23-c66b94c6965d",
+        "controlling_field_path" : null,
         "controlling_value_regex" : "false",
+        "property" : null,
         "operator" : "EQUAL",
         "access" : null,
         "hidden_subfields" : null
       },
       "display" : "select",
       "choices" : [ [ "localized", "Localized" ], [ "pageLang", "PageLang" ], [ "hybrid", "Hybrid" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "localized"
     } ],
@@ -4929,6 +4977,7 @@
     "display" : "checkbox",
     "choices" : [ [ "website", "Website pages" ], [ "landing", "Landing pages" ], [ "blog", "Blog posts" ], [ "knowledge", "Knowledge base" ] ],
     "multiple" : true,
+    "reordering_enabled" : true,
     "type" : "choice",
     "default" : [ "blog", "website" ]
   } ],
@@ -5028,6 +5077,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "left"
       } ],
@@ -5184,6 +5235,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "left"
       } ],
@@ -5340,6 +5393,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "left"
       } ],

@@ -21,6 +21,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "primary"
     }, {
@@ -32,6 +34,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "small", "Small" ], [ "regular", "Regular" ], [ "large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "regular"
     }, {
@@ -43,6 +47,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "circle", "Circle" ], [ "square", "Square" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "circle"
     }, {
@@ -55,6 +61,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice"
     } ],
     "tab" : "STYLE",
@@ -304,6 +312,8 @@
     "locked" : false,
     "display" : "select",
     "choices" : [ [ "decorative", "Ignored by screen reader (Decorative images)" ], [ "semantic", "Read by screen reader (Informative images)" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
     "type" : "choice",
     "default" : "decorative"
   }, {
@@ -317,7 +327,9 @@
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : "3cc537ee-fec5-c746-2b42-c47533729cf1",
+      "controlling_field_path" : null,
       "controlling_value_regex" : "semantic",
+      "property" : null,
       "operator" : "EQUAL",
       "access" : null,
       "hidden_subfields" : null

@@ -131,6 +131,7 @@ h6,
 .display-4,
 .display-5,
 .display-6 {
+  line-height: 1.2;
   {% if headings_font.color %}
     color: {{headings_font.color}};
   {% endif %}

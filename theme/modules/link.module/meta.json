@@ -7,7 +7,7 @@
   },
   "icon" : "fontawesome-5.14.0:Link:SOLID",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "module_id" : 47905039062,
+  "module_id" : 53809647821,
   "label" : "Link",
   "is_available_for_new_content" : true
 }

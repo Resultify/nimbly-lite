@@ -14,9 +14,8 @@
     <meta name="description" content="{{page_meta.meta_description}}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    {{require_css(get_asset_url("../../assets/css/base.css"))}}
-    {{require_css(get_asset_url("../../css/theme-overrides.css"))}}
-    {{require_css(get_asset_url("../../css/sections.css"))}}
+    {{require_css(get_asset_url("../../css/base.css"))}}
+    {{require_css(get_asset_url("../../css/global-theme-settings.css"))}}
     {{require_css(get_asset_url("../../css/print.css"))}}
 
     <script>
@@ -38,24 +37,26 @@
 
       <div id="top"></div>
 
-      <header class="header-content {{'sticky-header' if theme.site_header.sticky_header}}">
-        {% block header %}
+      {% block header %}
+        {% global_partial path='../partials/global-header-settings.html' %}
+        <header class="global-header-wrp hs-search-hidden {{'sticky-header' if widget_data.sticky_header.value}}">
           {% global_partial path='../partials/global-header.html' %}
-        {% endblock header %}
-      </header>
+        </header>
+
+      {% endblock header %}
+
 
       <main id="main-content" class="main-content">
         {% block body %}
         {% endblock body %}
       </main>
 
-      <footer class="footer-content">
-        {% block footer %}
-          {% global_partial path='../partials/global-footer.html' %}
-        {% endblock footer %}
-      </footer>
+      {% block footer %}
+        {% global_partial path='../partials/global-footer.html' %}
+      {% endblock footer %}
 
     </div>
+
     {% if template_js %}
       {{require_js(get_asset_url(template_js))}}
     {% endif %}

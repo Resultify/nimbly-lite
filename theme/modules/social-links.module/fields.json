@@ -31,6 +31,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice"
       } ],
       "tab" : "STYLE",
@@ -174,6 +176,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "primary"
       }, {
@@ -185,6 +189,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "small", "Small" ], [ "regular", "Regular" ], [ "large", "Large" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "regular"
       }, {
@@ -196,6 +202,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "circle", "Circle" ], [ "square", "Square" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "circle"
       } ],

@@ -1,7 +1,7 @@
 {
   "global" : false,
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "module_id" : 49010727364,
+  "module_id" : 53809587148,
   "label" : "Blog recent posts",
   "is_available_for_new_content" : true
 }

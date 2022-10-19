@@ -7,7 +7,7 @@
   },
   "icon" : "fontawesome-5.14.0:Dot%20Circle",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "module_id" : 47905041368,
+  "module_id" : 53809649601,
   "label" : "Icon",
   "is_available_for_new_content" : true
 }

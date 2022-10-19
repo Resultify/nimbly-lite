@@ -31,6 +31,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice"
       } ],
       "tab" : "STYLE",
@@ -311,6 +313,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "1/1", "1/1" ], [ "1.91/1", "1.91/1" ], [ "2/1", "2/1" ], [ "3/2", "3/2" ], [ "4/3", "4/3" ], [ "4/5", "4/5" ], [ "5/4", "5/4" ], [ "9/16", "9/16" ], [ "16/9", "16/9" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice"
       }, {
         "id" : "style.image.custom_image_fit.image_fit",
@@ -321,6 +325,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "contain", "Contain" ], [ "cover", "Cover" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice"
       } ],
       "tab" : "STYLE",
@@ -372,6 +378,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "primary"
       }, {
@@ -383,6 +391,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "small", "Small" ], [ "regular", "Regular" ], [ "large", "Large" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "regular"
       }, {
@@ -394,6 +404,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "circle", "Circle" ], [ "square", "Square" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "circle"
       } ],
@@ -1540,7 +1552,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : "cbacac17-7591-aec0-d076-0cc132a3408b",
+          "controlling_field_path" : null,
           "controlling_value_regex" : "false",
+          "property" : null,
           "operator" : "EQUAL",
           "access" : null,
           "hidden_subfields" : null
@@ -1629,7 +1643,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : null,
+          "controlling_field_path" : null,
           "controlling_value_regex" : null,
+          "property" : null,
           "operator" : null,
           "access" : null,
           "hidden_subfields" : {
@@ -1648,6 +1664,8 @@
         "locked" : false,
         "display" : "radio",
         "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : ""
       }, {
@@ -1680,6 +1698,8 @@
           "locked" : false,
           "display" : "radio",
           "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
+          "multiple" : false,
+          "reordering_enabled" : true,
           "type" : "choice",
           "default" : ""
         } ],
@@ -1898,7 +1918,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : "cbacac17-7591-aec0-d076-0cc132a3408b",
+          "controlling_field_path" : null,
           "controlling_value_regex" : "false",
+          "property" : null,
           "operator" : "EQUAL",
           "access" : null,
           "hidden_subfields" : null
@@ -1928,13 +1950,17 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : "cbacac17-7591-aec0-d076-0cc132a3408b",
+          "controlling_field_path" : null,
           "controlling_value_regex" : "true",
+          "property" : null,
           "operator" : "EQUAL",
           "access" : null,
           "hidden_subfields" : null
         },
         "display" : "select",
         "choices" : [ [ "flex-start", "Start" ], [ "center", "Center" ], [ "flex-end", "End" ], [ "space-around", "Space-around" ], [ "space-evenly", "Space-evenly" ], [ "space-between", "Space-between" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "flex-start"
       } ],
@@ -2018,7 +2044,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : null,
+          "controlling_field_path" : null,
           "controlling_value_regex" : null,
+          "property" : null,
           "operator" : null,
           "access" : null,
           "hidden_subfields" : {
@@ -2037,6 +2065,8 @@
         "locked" : false,
         "display" : "radio",
         "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : ""
       }, {
@@ -2069,6 +2099,8 @@
           "locked" : false,
           "display" : "radio",
           "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
+          "multiple" : false,
+          "reordering_enabled" : true,
           "type" : "choice",
           "default" : ""
         } ],
@@ -2292,6 +2324,8 @@
         "display" : "select",
         "placeholder" : "Button style",
         "choices" : [ [ "btn-primary", "Primary" ], [ "btn-secondary1", "Secondary 1" ], [ "btn-secondary2", "Secondary 2" ], [ "btn-secondary3", "Secondary 3" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "btn-primary"
       }, {
@@ -2305,6 +2339,8 @@
         "display" : "select",
         "placeholder" : "",
         "choices" : [ [ "btn-small", "Small" ], [ "btn-regular", "Medium" ], [ "btn-large", "Large" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "btn-regular"
       } ],
@@ -2331,7 +2367,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : "ac2fa2d5-7c7e-15ec-caee-1f0e7a36792f",
+          "controlling_field_path" : null,
           "controlling_value_regex" : "false",
+          "property" : null,
           "operator" : "EQUAL",
           "access" : null,
           "hidden_subfields" : null
@@ -2352,7 +2390,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : "ac2fa2d5-7c7e-15ec-caee-1f0e7a36792f",
+          "controlling_field_path" : null,
           "controlling_value_regex" : "false",
+          "property" : null,
           "operator" : "EQUAL",
           "access" : null,
           "hidden_subfields" : null
@@ -2754,6 +2794,8 @@
         "display" : "select",
         "placeholder" : "Button style",
         "choices" : [ [ "btn-primary", "Primary" ], [ "btn-secondary1", "Secondary 1" ], [ "btn-secondary2", "Secondary 2" ], [ "btn-secondary3", "Secondary 3" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "btn-primary"
       }, {
@@ -2767,6 +2809,8 @@
         "display" : "select",
         "placeholder" : "",
         "choices" : [ [ "btn-small", "Small" ], [ "btn-regular", "Medium" ], [ "btn-large", "Large" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "btn-regular"
       } ],
@@ -2793,7 +2837,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : "ac2fa2d5-7c7e-15ec-caee-1f0e7a36792f",
+          "controlling_field_path" : null,
           "controlling_value_regex" : "false",
+          "property" : null,
           "operator" : "EQUAL",
           "access" : null,
           "hidden_subfields" : null
@@ -2814,7 +2860,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : "ac2fa2d5-7c7e-15ec-caee-1f0e7a36792f",
+          "controlling_field_path" : null,
           "controlling_value_regex" : "false",
+          "property" : null,
           "operator" : "EQUAL",
           "access" : null,
           "hidden_subfields" : null
@@ -2842,13 +2890,17 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : "ac2fa2d5-7c7e-15ec-caee-1f0e7a36792f",
+          "controlling_field_path" : null,
           "controlling_value_regex" : "true",
+          "property" : null,
           "operator" : "EQUAL",
           "access" : null,
           "hidden_subfields" : null
         },
         "display" : "select",
         "choices" : [ [ "flex-start", "Start" ], [ "center", "Center" ], [ "flex-end", "End" ], [ "space-around", "Space-around" ], [ "space-evenly", "Space-evenly" ], [ "space-between", "Space-between" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "flex-start"
       } ],
@@ -3846,6 +3898,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "decorative", "Ignored by screen reader (Decorative images)" ], [ "semantic", "Read by screen reader (Informative images)" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "decorative"
     }, {
@@ -3859,7 +3913,9 @@
       "validation_regex" : "",
       "visibility" : {
         "controlling_field" : "3cc537ee-fec5-c746-2b42-c47533729cf1",
+        "controlling_field_path" : null,
         "controlling_value_regex" : "semantic",
+        "property" : null,
         "operator" : "EQUAL",
         "access" : null,
         "hidden_subfields" : null
@@ -3923,6 +3979,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "default", "Default" ], [ "text_on_top", "Text on top" ], [ "text_under_heading", "Text under heading" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "default"
     } ],
@@ -3972,6 +4030,8 @@
     "locked" : false,
     "display" : "select",
     "choices" : [ [ "h1", "Heading 1 (H1)" ], [ "h2", "Heading 2 (H2)" ], [ "h3", "Heading 3 (H3)" ], [ "h4", "Heading 4 (H4)" ], [ "h5", "Heading 5 (H5)" ], [ "h6", "Heading 6 (H6)" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
     "type" : "choice",
     "default" : "h2"
   }, {
@@ -3985,6 +4045,8 @@
     "locked" : false,
     "display" : "select",
     "choices" : [ [ "h1", "Heading 1" ], [ "h2", "Heading 2" ], [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ], [ "display-1", "Heading display 1" ], [ "display-2", "Heading display 2" ], [ "display-3", "Heading display 3" ], [ "display-4", "Heading display 4" ], [ "display-5", "Heading display 5" ], [ "display-6", "Heading display 6" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
     "type" : "choice",
     "default" : ""
   }, {
@@ -4068,6 +4130,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "left"
     }, {
@@ -4087,6 +4151,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "decorative", "Ignored by screen reader (Decorative images)" ], [ "semantic", "Read by screen reader (Informative images)" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "decorative"
       }, {
@@ -4100,7 +4166,9 @@
         "validation_regex" : "",
         "visibility" : {
           "controlling_field" : "a24fecb5-2679-af1b-2580-2f0252b7dcfa",
+          "controlling_field_path" : null,
           "controlling_value_regex" : "semantic",
+          "property" : null,
           "operator" : "EQUAL",
           "access" : null,
           "hidden_subfields" : null
@@ -4211,6 +4279,8 @@
     "locked" : false,
     "display" : "select",
     "choices" : [ [ "h1", "Heading 1 (H1)" ], [ "h2", "Heading 2 (H2)" ], [ "h3", "Heading 3 (H3)" ], [ "h4", "Heading 4 (H4)" ], [ "h5", "Heading 5 (H5)" ], [ "h6", "Heading 6 (H6)" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
     "type" : "choice",
     "default" : "h3"
   }, {
@@ -4224,6 +4294,8 @@
     "locked" : false,
     "display" : "select",
     "choices" : [ [ "h1", "Heading 1" ], [ "h2", "Heading 2" ], [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ], [ "display-1", "Heading display 1" ], [ "display-2", "Heading display 2" ], [ "display-3", "Heading display 3" ], [ "display-4", "Heading display 4" ], [ "display-5", "Heading display 5" ], [ "display-6", "Heading display 6" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
     "type" : "choice",
     "default" : ""
   }, {
@@ -4307,6 +4379,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "left"
     }, {
@@ -4326,6 +4400,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "decorative", "Ignored by screen reader (Decorative images)" ], [ "semantic", "Read by screen reader (Informative images)" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : "decorative"
       }, {
@@ -4339,7 +4415,9 @@
         "validation_regex" : "",
         "visibility" : {
           "controlling_field" : "d6e4f69f-9aaa-d4d9-10f2-ff7cf2d565d2",
+          "controlling_field_path" : null,
           "controlling_value_regex" : "semantic",
+          "property" : null,
           "operator" : "EQUAL",
           "access" : null,
           "hidden_subfields" : null
@@ -4500,6 +4578,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "left"
     } ],
@@ -4606,6 +4686,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "left"
     } ],
@@ -4727,6 +4809,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "left"
     } ],
@@ -4877,6 +4961,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "left"
     } ],

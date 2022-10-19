@@ -24,27 +24,28 @@
       text-align: center;
       width: 120px;
     }
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+    }
   </style>
 {% end_require_css %}
 
-<div class="global-header-wrp hs-search-hidden">
-
-  <div class="skip-link__wrp">
-    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
-  </div>
-
-  {% dnd_area 'global-header'
-    label='Global header'
-    class='global-header'
-  %}
-
-    {% dnd_section %}
-
-      {% dnd_module path='../../modules/site-header' %}
-      {% end_dnd_module %}
-
-    {% end_dnd_section %}
-
-  {% end_dnd_area %}
-
+<div class="skip-link__wrp">
+  <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
 </div>
+
+{% dnd_area 'global-header'
+  label='Global header'
+  class='global-header'
+%}
+
+  {% dnd_section %}
+
+    {% dnd_module path='../../modules/site-header' %}
+    {% end_dnd_module %}
+
+  {% end_dnd_section %}
+
+{% end_dnd_area %}

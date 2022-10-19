@@ -22,6 +22,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice"
     } ],
     "tab" : "STYLE",
@@ -126,7 +128,9 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
+        "controlling_field_path" : null,
         "controlling_value_regex" : null,
+        "property" : null,
         "operator" : null,
         "access" : null,
         "hidden_subfields" : {
@@ -145,6 +149,8 @@
       "locked" : false,
       "display" : "radio",
       "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : ""
     }, {
@@ -177,6 +183,8 @@
         "locked" : false,
         "display" : "radio",
         "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : ""
       } ],
@@ -442,6 +450,8 @@
     "locked" : false,
     "display" : "select",
     "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
     "type" : "choice",
     "default" : "left"
   } ],

@@ -3,18 +3,18 @@
   isAvailableForNewContent: true
   enableDomainStylesheets: false
   label: Theme global settings
-  screenshotPath: ../images/template-previews/home.png
+  screenshotPath: ../images/template-previews/theme-settings.png
 -->
 {% extends "./layouts/base.html" %}
 
   {% block body %}
 
   {% dnd_area 'dnd_area'
-    label='Main section',
-    class='empty-container'
+    label='Theme settings template',
+    class='theme-settings-template'
   %}
 
-    {% include_dnd_partial path='../sections/theme-global-settings.html' context={} %}
+    {% include_dnd_partial path='../sections/theme-settings.html' context={} %}
 
   {% end_dnd_area %}
 

@@ -7,7 +7,7 @@
   },
   "icon" : "fontawesome-5.14.0:align-justify:SOLID",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "module_id" : 47905041373,
+  "module_id" : 53809587164,
   "label" : "Rich text",
   "is_available_for_new_content" : true
 }

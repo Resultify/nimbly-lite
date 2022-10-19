@@ -24,6 +24,8 @@
       "display" : "select",
       "placeholder" : "Button style",
       "choices" : [ [ "btn-primary", "Primary" ], [ "btn-secondary1", "Secondary 1" ], [ "btn-secondary2", "Secondary 2" ], [ "btn-secondary3", "Secondary 3" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "btn-primary"
     }, {
@@ -37,6 +39,8 @@
       "display" : "select",
       "placeholder" : "",
       "choices" : [ [ "btn-small", "Small" ], [ "btn-regular", "Medium" ], [ "btn-large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice",
       "default" : "btn-regular"
     }, {
@@ -49,6 +53,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice"
     } ],
     "tab" : "STYLE",
@@ -541,6 +547,8 @@
     "locked" : false,
     "display" : "select",
     "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
     "type" : "choice",
     "default" : "left"
   } ],

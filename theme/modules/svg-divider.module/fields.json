@@ -22,6 +22,8 @@
       "locked" : false,
       "display" : "select",
       "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
       "type" : "choice"
     } ],
     "tab" : "STYLE",
@@ -92,6 +94,8 @@
   "locked" : false,
   "display" : "select",
   "choices" : [ [ "top", "Cover top element" ], [ "bottom", "Cover bottom element" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
   "type" : "choice",
   "default" : "top"
 } ]

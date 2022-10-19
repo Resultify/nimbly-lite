@@ -7,7 +7,7 @@
   },
   "icon" : "fontawesome-5.14.0:microphone:SOLID",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "module_id" : 47905066703,
+  "module_id" : 53809688266,
   "label" : "Audio",
   "is_available_for_new_content" : true
 }

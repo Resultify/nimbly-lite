@@ -3,15 +3,15 @@
   isAvailableForNewContent: true
   enableDomainStylesheets: false
   label: Home
-  screenshotPath: ../images/template-previews/home.png
+  screenshotPath: ../images/template-previews/startpage.png
 -->
 {% extends "./layouts/base.html" %}
 
 {% block body %}
 
   {% dnd_area 'dnd_area'
-    label='Main section',
-    class='home-container'
+    label='Startpage template',
+    class='startpage_template'
   %}
 
     {% include_dnd_partial path='../sections/3x3colgrid--card--imagetext.html' context={} %}

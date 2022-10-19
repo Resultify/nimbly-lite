@@ -31,6 +31,8 @@
         "locked" : false,
         "display" : "select",
         "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice"
       } ],
       "tab" : "STYLE",
@@ -276,7 +278,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : null,
+          "controlling_field_path" : null,
           "controlling_value_regex" : null,
+          "property" : null,
           "operator" : null,
           "access" : null,
           "hidden_subfields" : {
@@ -295,6 +299,8 @@
         "locked" : false,
         "display" : "radio",
         "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : ""
       }, {
@@ -327,6 +333,8 @@
           "locked" : false,
           "display" : "radio",
           "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
+          "multiple" : false,
+          "reordering_enabled" : true,
           "type" : "choice",
           "default" : ""
         } ],
@@ -613,7 +621,9 @@
         "locked" : false,
         "visibility" : {
           "controlling_field" : null,
+          "controlling_field_path" : null,
           "controlling_value_regex" : null,
+          "property" : null,
           "operator" : null,
           "access" : null,
           "hidden_subfields" : {
@@ -632,6 +642,8 @@
         "locked" : false,
         "display" : "radio",
         "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
         "type" : "choice",
         "default" : ""
       }, {
@@ -664,6 +676,8 @@
           "locked" : false,
           "display" : "radio",
           "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
+          "multiple" : false,
+          "reordering_enabled" : true,
           "type" : "choice",
           "default" : ""
         } ],
@@ -916,7 +930,9 @@
   "validation_regex" : "",
   "visibility" : {
     "controlling_field" : "fa5ef0e1-bec5-4f94-03a4-4bbd0dad62f6",
+    "controlling_field_path" : null,
     "controlling_value_regex" : "true",
+    "property" : null,
     "operator" : "EQUAL",
     "access" : null,
     "hidden_subfields" : null
@@ -936,7 +952,9 @@
   "validation_regex" : "",
   "visibility" : {
     "controlling_field" : "fa5ef0e1-bec5-4f94-03a4-4bbd0dad62f6",
+    "controlling_field_path" : null,
     "controlling_value_regex" : "true",
+    "property" : null,
     "operator" : "EQUAL",
     "access" : null,
     "hidden_subfields" : null
@@ -966,7 +984,9 @@
   "validation_regex" : "",
   "visibility" : {
     "controlling_field" : "71b42f51-b4b1-cd2f-1138-2cecfbbdb948",
+    "controlling_field_path" : null,
     "controlling_value_regex" : "true",
+    "property" : null,
     "operator" : "EQUAL",
     "access" : null,
     "hidden_subfields" : null
@@ -986,7 +1006,9 @@
   "validation_regex" : "",
   "visibility" : {
     "controlling_field" : "71b42f51-b4b1-cd2f-1138-2cecfbbdb948",
+    "controlling_field_path" : null,
     "controlling_value_regex" : "true",
+    "property" : null,
     "operator" : "EQUAL",
     "access" : null,
     "hidden_subfields" : null

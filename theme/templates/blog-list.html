@@ -1,17 +1,17 @@
 <!--
   templateType: blog_listing
   isAvailableForNewContent: true
-  label: Blog listing
-  screenshotPath: ../images/template-previews/blog-index.png
+  label: Blog list
+  screenshotPath: ../images/template-previews/blog-list.png
 -->
-{% set template_css = '../../css/templates/blog-index.css' %}
+{% set template_css = '../../css/templates/blog-list.css' %}
 {% extends './layouts/base.html' %}
 
 {% block body %}
 
   {% dnd_area 'dnd_area'
-    label='Main section',
-    class='blog-index-template'
+    label='Blog list template',
+    class='blog-list-template'
   %}
 
     {% dnd_section
