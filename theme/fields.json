@@ -91,22 +91,6 @@
         "default": {
           "color": "#5D5B23"
         }
-      },
-      {
-        "label": "Main background color",
-        "name": "main_background",
-        "type": "color",
-        "visibility": {
-          "hidden_subfields": {
-            "opacity": true
-          }
-        },
-        "display_width": null,
-        "locked": false,
-        "required": false,
-        "default": {
-          "color": "#ffffff"
-        }
       }
     ],
     "display_width": null,
@@ -121,7 +105,7 @@
     "type": "group",
     "children": [
       {
-        "label": "Text",
+        "label": "Page global",
         "name": "text",
         "type": "group",
         "children": [
@@ -139,6 +123,22 @@
               "size": 16,
               "size_unit": "px",
               "color": "#1d1d1d"
+            }
+          },
+          {
+            "label": "Main background color",
+            "name": "main_background",
+            "type": "color",
+            "visibility": {
+              "hidden_subfields": {
+                "opacity": true
+              }
+            },
+            "display_width": null,
+            "locked": false,
+            "required": false,
+            "default": {
+              "color": "#ffffff"
             }
           }
         ],
@@ -191,8 +191,10 @@
                 "name": "underline",
                 "type": "choice",
                 "display": "radio",
+                "reordering_enabled": true,
                 "display_width": null,
                 "locked": false,
+                "multiple": false,
                 "choices": [
                   [
                     "underline",
@@ -225,8 +227,10 @@
                     "name": "underline",
                     "type": "choice",
                     "display": "radio",
+                    "reordering_enabled": true,
                     "display_width": null,
                     "locked": false,
+                    "multiple": false,
                     "choices": [
                       [
                         "underline",
@@ -776,8 +780,10 @@
                 "name": "underline",
                 "type": "choice",
                 "display": "radio",
+                "reordering_enabled": true,
                 "display_width": null,
                 "locked": false,
+                "multiple": false,
                 "choices": [
                   [
                     "underline",
@@ -2004,30 +2010,6 @@
     "required": false
   },
   {
-    "label": "Site header",
-    "name": "site_header",
-    "type": "group",
-    "children": [
-      {
-        "label": "Sticky header",
-        "name": "sticky_header",
-        "type": "boolean",
-        "inline_help_text": "",
-        "help_text": "",
-        "display": "toggle",
-        "display_width": null,
-        "locked": false,
-        "required": false,
-        "default": false
-      }
-    ],
-    "display_width": null,
-    "locked": false,
-    "tab": "CONTENT",
-    "expanded": false,
-    "required": false
-  },
-  {
     "label": "Layout",
     "name": "layout",
     "type": "group",
@@ -2038,8 +2020,10 @@
         "id": "maximum_content_width",
         "type": "choice",
         "display": "select",
+        "reordering_enabled": true,
         "display_width": null,
         "locked": false,
+        "multiple": false,
         "choices": [
           [
             "900",
@@ -2091,6 +2075,20 @@
         "min": 600,
         "required": false,
         "default": 1300
+      },
+      {
+        "label": "Vertical spacing",
+        "name": "vertical_spacing",
+        "type": "number",
+        "display": "slider",
+        "max": 500,
+        "display_width": null,
+        "locked": false,
+        "step": 1,
+        "suffix": "px",
+        "min": 0,
+        "required": false,
+        "default": 20
       }
     ],
     "display_width": null,

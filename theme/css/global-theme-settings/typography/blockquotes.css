@@ -1,4 +1,4 @@
-{% import '../macros/macros.css' %}
+{% import '../../macros/macros.css' %}
 
 {% set blockquote_font = theme.typography.blockquote.font %}
 

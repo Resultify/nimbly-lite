@@ -1,4 +1,4 @@
-{% import '../macros/macros.css' %}
+{% import '../../macros/macros.css' %}
 
 {% set headings_font = theme.typography.headings.font %}
 /* headings */
@@ -132,6 +132,7 @@ h6,
 .display-5,
 .display-6 {
   line-height: 1.2;
+  margin-top: 0;
   {% if headings_font.color %}
     color: {{headings_font.color}};
   {% endif %}

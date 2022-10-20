@@ -1,4 +1,4 @@
-{% import '../macros/macros.css' %}
+{% import '../../macros/macros.css' %}
 
 {% set link_font = theme.typography.link.font %}
 {% if theme.typography.link.hover.color.color %}

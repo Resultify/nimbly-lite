@@ -9,7 +9,7 @@
 body {
   overflow-wrap: break-word;
   color: {{main_text_font.color}};
-  background-color: {{theme.global_colors.main_background.color}};
+  background-color: {{theme.typography.text.main_background.color}};
   line-height: 1.5;
   font-size: {{main_text_font.size ~ main_text_font.size_unit}};
 

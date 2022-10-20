@@ -4,6 +4,7 @@
 {% else %}
   {% set container_width = theme.layout.maximum_content_width ~ 'px' %}
 {% endif %}
+{% set vertical_spacing = theme.layout.vertical_spacing ~ 'px' %}
 
 .dnd-section > .row-fluid {
   max-width: {{container_width}};
@@ -12,6 +13,8 @@
 .dnd-section {
   margin-right: auto;
   margin-left: auto;
+  padding-top: {{vertical_spacing}};
+  padding-bottom: {{vertical_spacing}};
 }
 
 .dnd-section > .row-fluid,
