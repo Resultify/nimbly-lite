@@ -111,7 +111,12 @@
               {% set page_link_aria = 'aria-label="Go to Page {{this_page}}"' ~ 'aria-current="true"' if this_page == current_page_num %}
               {% set page_link_url = "{% if this_page == 1 %}{{group.absolute_url}}{% else %}{{blog_page_link(this_page)}}#{% endif %}" %}
               {% set page_link = pagination_link(page_link_url, this_page)|fromjson %}
-              {{link_macros.render_link_tmpl(page_link, module.style.secondary_link, module, 'secondary', 0, page_link_aria )}}
+              {{link_macros.render_link_tmpl(page_link, module.style.secondary_link, module,
+                {
+                  id: 'secondary',
+                  data_attrs: page_link_aria
+                }
+              )}}
             </span>
           {% endif %}
         {% endfor %}

@@ -827,7 +827,11 @@
 
     {% for item in module.buttons.secondary_button %}
       <div class="siteheader-module__secondary-button">
-        {{button_macros.render_btn_tmpl(item, module.style.secondary_button, module, 'secondary')}}
+        {{button_macros.render_btn_tmpl(item, module.style.secondary_button, module,
+        {
+          id: 'secondary'
+        }
+        )}}
       </div>
     {% endfor %}
   </div>

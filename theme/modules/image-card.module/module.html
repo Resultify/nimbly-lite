@@ -249,11 +249,19 @@
     {% endif %}
 
     <div class="image-card-module__heading">
-      {{heading_macros.render_heading_tmpl(module.heading, module.style.heading, module, 0, heading_stretched_link)}}
+      {{heading_macros.render_heading_tmpl(module.heading, module.style.heading, module,
+        {
+          stretched_link: heading_stretched_link
+        }
+      )}}
     </div>
 
     <div class="image-card-module__subheading">
-      {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module, 'subheading')}}
+      {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module,
+        {
+          id: 'subheading'
+        }
+      )}}
     </div>
 
     {% if module.text.additional_settings.text_position == 'text_under_heading' %}
@@ -268,19 +276,35 @@
 
     <div class="image-card-module__links-wrp">
       <div class="image-card-module__link">
-        {{link_macros.render_link_tmpl(module.link, module.style.link, module, 0, link_stretched_link)}}
+        {{link_macros.render_link_tmpl(module.link, module.style.link, module,
+          {
+            stretched_link: link_stretched_link
+          }
+        )}}
       </div>
       <div class="image-card-module__secondary-link">
-        {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module, 'secondary' )}}
+        {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module,
+          {
+            id: 'secondary'
+          }
+        )}}
       </div>
     </div>
 
     <div class="image-card-module__buttons-wrp">
       <div class="image-card-module__button">
-        {{button_macros.render_btn_tmpl(module.button, module.style.button, module, 0, btn_stretched_link)}}
+        {{button_macros.render_btn_tmpl(module.button, module.style.button, module,
+          {
+            stretched_link: btn_stretched_link
+          }
+        )}}
       </div>
       <div class="image-card-module__secondary-button">
-        {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module, 'secondary')}}
+        {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module,
+          {
+            id: 'secondary'
+          }
+        )}}
       </div>
     </div>
 
@@ -289,7 +313,11 @@
 
 {%- macro image_column() -%}
   <div class="image-card-module__image">
-    {{image_macros.render_image_tmpl(module.image, module.style.image, module, 0, image_stretched_link)}}
+    {{image_macros.render_image_tmpl(module.image, module.style.image, module,
+      {
+        stretched_link: image_stretched_link
+      }
+    )}}
 </div>
 {%- endmacro -%}
 

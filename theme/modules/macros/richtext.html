@@ -4,7 +4,7 @@
 -->
 
 {# macro attributes scheme #}
-{# render_richtext_tmpl(data, style, global_data, class_id) #}
+{# render_richtext_tmpl(data, style, global_data, options) #}
 
 {# 1 #}
 {# data - [object: module.richtext] #}
@@ -20,23 +20,37 @@
 {# global data [module], usualy for general style setting [style tab -> general panel] #}
 
 {# 4 #}
-{# class_id [string: 0|'class_id'] #}
-{# macro class_id to add a unique class if we have two or more same macros in one module as a components #}
+{# options [object: {key: value}] #}
+{# add additional options for the rechtext #}
+{# Supported features #}
+{# {% set options = {
+  id:'secondary-rechtext',
+  data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
+  class:['additional-class-1','additional-class-2']
+}%} #}
+{# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
+
 
 {# example #}
-{# {{render_richtext_tmpl(module.richtext, module.style.richtext, module, 'unique')}} #}
+{# {{render_richtext_tmpl(module.richtext, module.style.richtext, module, options)}} #}
 {# ========================= #}
 
 
 {% import '../../css/macros/macros.css' %}
 
-{%- macro render_richtext_tmpl(data, style, global_data, class_id) -%}
+{%- macro render_richtext_tmpl(data, style, global_data, options) -%}
   {%- if data.rich_text -%}
 
-    {%- if class_id -%}
-      {%- set richtext_class = 'richtext-style--' ~ class_id -%}
+    {%- if options.id -%}
+      {%- set richtext_class = 'richtext-style--' ~ options.id -%}
     {%- else -%}
       {%- set richtext_class = 'richtext-style' -%}
+    {%- endif -%}
+    {%- if options.data_attrs -%}
+      {% set data_attrs = options.data_attrs|join(' ') %}
+    {%- endif -%}
+    {%- if options.class -%}
+      {% set class = options.class|join(' ') %}
     {%- endif -%}
 
     {# module global css #}
@@ -64,11 +78,16 @@
           }
         {% endif %}
       {%- end_scope_css -%}
-    </style><span class="g-module-macros-richtext-wrp {{richtext_class}}">
+    </style><span {% if data_attrs %} {{data_attrs}} {% endif %}
+    class="g-module-macros-richtext-wrp {{richtext_class}} {{class}}">
       {%- if data.truncate -%}
-        {%- rich_text 'richtext' extra_classes='g-module-macros-richtext' html='{{data.rich_text|truncatehtml(data.truncate, "..." , false)}}' -%}
+        {%- rich_text 'richtext'
+          extra_classes='g-module-macros-richtext'
+          html='{{data.rich_text|truncatehtml(data.truncate, "..." , false)}}' -%}
       {%- else -%}
-        {%- rich_text 'richtext' extra_classes='g-module-macros-richtext' html='{{data.rich_text}}' -%}
+        {%- rich_text 'richtext'
+          extra_classes='g-module-macros-richtext'
+          html='{{data.rich_text}}' -%}
       {%- endif -%}</span>
 
   {%- endif -%}

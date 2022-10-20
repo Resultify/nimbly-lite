@@ -4,7 +4,7 @@
 -->
 
 {# macro attributes scheme #}
-{# render_btn_tmpl(data, style, global_data, id, stretched_link, link_aria_attrs, options) #}
+{# render_btn_tmpl(data, style, global_data, options) #}
 
 {# 1 #}
 {# data - [object: module.button] #}
@@ -23,35 +23,29 @@
 {# macro main style #}
 
 {# 3 #}
-{# global_data [object: 0|module] #}
+{# global_data [object: module] #}
 {# global data [module], usualy for general style setting [style tab -> general panel] #}
 
 {# 4 #}
-{# id [string: 0|'id'] #}
-{# macro id to add a unique class if we have two or more same macros in one module as a components #}
-
-{# 5 #}
-{# stretched_link [boolean: 0|1] #}
-{# enable/disable stretched_link option #}
-
-{# 6 #}
-{# link_aria_attrs [string: 0|'ARIA attributes'] #}
-{# add additional aria attributes for the link #}
-
-
-{# 7 #}
 {# options [object: {key: value}] #}
 {# add additional options for the button #}
 {# Supported features #}
-{# {% set btn_options = {
-  "is_btn":0|1,
-  "data_attrs":['data-filter="test"', 'data-bs-toggle="super-dropdown"'],
-  "class":['additional-class-1','additional-class-2'],
-  "wrapper":0|1
+{# {% set options = {
+  id:'secondary-button',
+  stretched_link:true|false,
+  is_btn:true|false,
+  data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
+  class:['additional-class-1','additional-class-2'],
+  no_wrapper:true|false
 }%} #}
+{# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
+{# stretched_link - enable/disable stretched_link option #}
+{# is_btn - button tag or link with 'a' tag #}
+{# no_wrapper - use or not <span> no_wrapper #}
+
 
 {# example #}
-{# {{render_btn_tmpl(module.button, module.style.button, module, 'unique', 0, 'role="ROLE_NAME"', btn_options)}} #}
+{# {{render_btn_tmpl(module.button, module.style.button, module, options)}} #}
 {# ========================= #}
 
 
@@ -59,11 +53,12 @@
 {% import './icon.html' as icon_macros %}
 {% import '../../css/macros/macros.css' %}
 
-{%- macro render_btn_tmpl(data, style, global_data, id, stretched_link, link_aria_attrs, options) -%}
+{%- macro render_btn_tmpl(data, style, global_data, options) -%}
+{{options}}
   {%- if data.text -%}
 
-    {%- if id -%}
-      {% set btn_class = 'btn-style--' ~ id -%}
+    {%- if options.id -%}
+      {% set btn_class = 'btn-style--' ~ options.id -%}
     {%- else -%}
       {%- set btn_class = 'btn-style' -%}
     {%- endif -%}
@@ -72,16 +67,13 @@
     {%- else -%}
       {%- set btn_tag = 'a' -%}
     {%- endif -%}
-    {%- if link_aria_attrs -%}
-      {% set link_aria_attr = link_aria_attrs -%}
-    {%- endif -%}
     {%- if options.data_attrs -%}
       {% set data_attrs = options.data_attrs|join(' ') %}
     {%- endif -%}
     {%- if options.class -%}
       {% set class = options.class|join(' ') %}
     {%- endif -%}
-    {%- if options.wrapper == null || options.wrapper == 0 -%}
+    {%- if options.no_wrapper == null || options.no_wrapper == false -%}
       {%- set btn_style_selector = '{{btn_class}} ' %}
     {%- else -%}
       {%- set btn_style_selector = '{{btn_class}}' %}
@@ -208,7 +200,7 @@
           }
         {% endif %}
 
-        {% if stretched_link %}
+        {% if options.stretched_link %}
           .{{btn_style_selector}}.g-module-macros-btn.stretched-link {
             position: static;
           }
@@ -253,7 +245,7 @@
       {%- set rel = 'rel="{{data.link.rel}}"' -%}
     {%- endif -%}
 
-    {%- if stretched_link -%}
+    {%- if options.stretched_link -%}
       {%- set stretched_link_class = 'stretched-link' -%}
     {%- endif -%}
 
@@ -267,18 +259,22 @@
     {%- endif -%}
 
     {# g-module-macros... = global module macros #}
-    {% if options.wrapper == null || options.wrapper == 0 %}<span class="g-module-macros-btn-wrp {{btn_class}}">{% endif %}<{{btn_tag}}
-      {% if options.is_btn == null || options.is_btn == 0 %} href="{{href}}" {% endif %}
+    {% if options.no_wrapper == null || options.no_wrapper == false %}<span class="g-module-macros-btn-wrp {{btn_class}} {{class}}">{% endif %}<{{btn_tag}}
+      {% if options.is_btn == null || options.is_btn == false %} href="{{href}}" {% endif %}
       {{'aria-label="{{data.accessible_link_label}}"' if data.accessible_link_label}}
-      class="g-module-macros-btn btn {{button_style}} {{button_size}} {{full_width}} {{open_in_new_tab_class}} {{disable_button_class}} {{stretched_link_class}} {{class}}
-      {% if options.wrapper == 1 %} {{btn_class}} {% endif %}"
+      class="g-module-macros-btn btn {{button_style}} {{button_size}} {{full_width}} {{open_in_new_tab_class}} {{disable_button_class}} {{stretched_link_class}}
+      {% if options.no_wrapper == true %} {{btn_class}} {{class}} {% endif %}"
       {% if data.link.open_in_new_tab %} target="_blank" {% endif %}
       {% if data_attrs %} {{data_attrs}} {% endif %}
-      {{rel}} {{link_aria_attr}} {{disable_button_attr}}>
+      {{rel}} {{disable_button_attr}}>
 
         {%- if data.icon.icon.name -%}
           {%- if data.icon.icon_position == 'left' -%}
-            <span class="g-module-macros-btn__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data, 'button')}}</span>
+            <span class="g-module-macros-btn__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
+              {
+                id: 'button'
+              }
+            )}}</span>
           {%- endif -%}
         {%- endif -%}
 
@@ -291,7 +287,11 @@
 
         {%- if data.icon.icon.name -%}
           {%- if data.icon.icon_position == 'right' -%}
-            <span class="g-module-macros-btn__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data, 'button')}}</span>
+            <span class="g-module-macros-btn__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
+              {
+                id: 'button'
+              }
+             )}}</span>
           {%- endif -%}
         {%- endif -%}
 
@@ -300,6 +300,6 @@
             {{target_blank_macros.render_target_blank_tmpl("1em")}}
           {%- endif -%}
         {%- endif -%}
-      </{{btn_tag}}>{% if options.wrapper == null || options.wrapper == 0 %}</span>{% endif %}
+      </{{btn_tag}}>{% if options.no_wrapper == null || options.no_wrapper == false %}</span>{% endif %}
   {%- endif -%}
 {%- endmacro -%}

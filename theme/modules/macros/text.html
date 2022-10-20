@@ -4,7 +4,7 @@
 -->
 
 {# macro attributes scheme #}
-{# render_text_tmpl(data, style, global_data, class_id) #}
+{# render_text_tmpl(data, style, global_data, options) #}
 
 {# 1 #}
 {# data - [object: module.text] #}
@@ -20,21 +20,35 @@
 {# global data [module], usualy for general style setting [style tab -> general panel] #}
 
 {# 4 #}
-{# class_id [string: 0|'class_id'] #}
-{# macro class_id to add a unique class if we have two or more same macros in one module as a components #}
+{# options [object: {key: value}] #}
+{# add additional options for the text #}
+{# Supported features #}
+{# {% set options = {
+  id:'secondary-text',
+  data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
+  class:['additional-class-1','additional-class-2']
+}%} #}
+{# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
+
 
 {# example #}
-{# {{render_text_tmpl(module.text, module.style.text, module, 'unique')}} #}
+{# {{render_text_tmpl(module.text, module.style.text, module, options)}} #}
 {# ========================= #}
 
 
-{%- macro render_text_tmpl(data, style, global_data, class_id) -%}
+{%- macro render_text_tmpl(data, style, global_data, options) -%}
   {%- if data.text -%}
 
-    {%- if class_id -%}
-      {%- set text_class = 'text-style--' ~ class_id -%}
+    {%- if options.id -%}
+      {%- set text_class = 'text-style--' ~ options.id -%}
     {%- else -%}
       {%- set text_class = 'text-style' -%}
+    {%- endif -%}
+    {%- if options.data_attrs -%}
+      {% set data_attrs = options.data_attrs|join(' ') %}
+    {%- endif -%}
+    {%- if options.class -%}
+      {% set class = options.class|join(' ') %}
     {%- endif -%}
 
     {# module global css #}
@@ -70,9 +84,9 @@
         }
 
       {%- end_scope_css -%}
-    </style><span class="g-module-macros-text-wrp {{text_class}}">
-      {%- text
-        'text'
+    </style><span {% if data_attrs %} {{data_attrs}} {% endif %}
+      class="g-module-macros-text-wrp {{text_class}} {{class}}">
+      {%- text 'text'
         extra_classes='g-module-macros-text'
         label='Text',
         value='{{data.text}}'

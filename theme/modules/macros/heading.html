@@ -4,7 +4,7 @@
 -->
 
 {# macro attributes scheme #}
-{# render_heading_tmpl(data, style, global_data, class_id, stretched_link, link_aria_attrs) #}
+{# render_heading_tmpl(data, style, global_data, options) #}
 
 {# 1 #}
 {# data - [object: module.heading] #}
@@ -27,19 +27,22 @@
 {# global data [module], usualy for general style setting [style tab -> general panel] #}
 
 {# 4 #}
-{# class_id [string: 0|'class_id'] #}
-{# macro class_id to add a unique class if we have two or more same macros in one module as a components #}
+{# options [object: {key: value}] #}
+{# add additional options for the heading #}
+{# Supported features #}
+{# {% set options = {
+  id:'secondary-heading',
+  stretched_link:true|false,
+  data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
+  link_data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
+  class:['additional-class-1','additional-class-2']
+}%} #}
+{# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
+{# stretched_link - enable/disable stretched_link option #}
 
-{# 5 #}
-{# stretched_link [boolean: 0|1] #}
-{# enable/disable stretched_link option #}
-
-{# 6 #}
-{# link_aria_attrs [string: 'ARIA attributes'] #}
-{# add additional aria attributes for the link #}
 
 {# example #}
-{# {{render_heading_tmpl(module.heading, module.style.heading, module, 'unique', 0, 'role="ROLE_NAME"')}} #}
+{# {{render_heading_tmpl(module.heading, module.style.heading, module, options)}} #}
 {# ========================= #}
 
 
@@ -47,13 +50,22 @@
 {% import './icon.html' as icon_macros %}
 {% import '../../css/macros/macros.css' %}
 
-{%- macro render_heading_tmpl(data, style, global_data, class_id, stretched_link, link_aria_attrs) -%}
+{%- macro render_heading_tmpl(data, style, global_data, options) -%}
   {%- if data.text -%}
 
-    {%- if class_id -%}
-      {%- set heading_class = 'heading-style--' ~ class_id -%}
+    {%- if options.id -%}
+      {%- set heading_class = 'heading-style--' ~ options.id -%}
     {%- else -%}
       {%- set heading_class = 'heading-style' -%}
+    {%- endif -%}
+    {%- if options.data_attrs -%}
+      {% set data_attrs = options.data_attrs|join(' ') %}
+    {%- endif -%}
+    {%- if options.link_data_attrs -%}
+      {% set link_data_attrs = options.link_data_attrs|join(' ') %}
+    {%- endif -%}
+    {%- if options.class -%}
+      {% set class = options.class|join(' ') %}
     {%- endif -%}
 
     {# module global css #}
@@ -117,7 +129,7 @@
           }
         {% endif %}
 
-        {% if stretched_link %}
+        {% if options.stretched_link %}
           .{{heading_class}} .g-module-macros-heading__link.stretched-link {
             position: static;
           }
@@ -147,7 +159,7 @@
       {%- set open_in_new_tab_class = 'target-blank-link'  -%}
     {%- endif -%}
 
-    {%- if stretched_link -%}
+    {%- if options.stretched_link -%}
       {%- set stretched_link_class = 'stretched-link' -%}
     {%- endif -%}
 
@@ -161,20 +173,25 @@
     {%- endmacro -%}
 
     {# g-module-macros... = global module macros #}
-    <span class="g-module-macros-heading-wrp {{heading_class}}">
+    <span class="g-module-macros-heading-wrp {{heading_class}} {{class}}">
 
       {%- if data.icon.icon.name -%}
         {%- if data.icon.icon_position == 'left' -%}
-          <span class="g-module-macros-heading__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data, 'heading')}}</span>
+          <span class="g-module-macros-heading__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
+            {
+              id: 'heading'
+            }
+          )}}</span>
         {%- endif -%}
       {%- endif -%}
 
-      <{{data.heading_tag}} class="{{heading_style}} g-module-macros-heading">
+      <{{data.heading_tag}} {% if data_attrs %} {{data_attrs}} {% endif %} class="{{heading_style}} g-module-macros-heading">
 
         {%- if href -%}
           <a href="{{href}}" class="{{open_in_new_tab_class}} {{stretched_link_class}} heading-link g-module-macros-heading__link"
           {% if data.link.link.open_in_new_tab %} target="_blank" {% endif %}
-          {{rel}} {{link_aria_attrs}}>{{render_text()}}
+          {% if link_data_attrs %} {{link_data_attrs}} {% endif %}
+          {{rel}}>{{render_text()}}
             {%- if data.link.link.open_in_new_tab -%}
               {%- if data.link.accessible_link -%}
                 {{target_blank_macros.render_target_blank_tmpl('0.7em')}}
@@ -188,7 +205,11 @@
 
       {%- if data.icon.icon.name -%}
         {%- if data.icon.icon_position == 'right' -%}
-          <span class="g-module-macros-heading__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data, 'heading')}}</span>
+          <span class="g-module-macros-heading__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
+            {
+              id: 'heading'
+            }
+          )}}</span>
         {%- endif -%}
       {%- endif -%}
 

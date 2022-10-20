@@ -157,7 +157,11 @@
         },
         "link":{"link":{"url":{"href":content.absolute_url,"type":"EXTERNAL"},"open_in_new_tab":false,"rel":""} },
         "caption":{"rich_text":""}
-      }%}{{image_macros.render_image_tmpl(image_data, module.style.image, module, 0, 0, image_link_aria)}}
+      }%}{{image_macros.render_image_tmpl(image_data, module.style.image, module,
+        {
+          link_data_attrs: image_link_aria
+        }
+      )}}
     </div>
 
   {% endif %}
@@ -216,7 +220,11 @@
             },
             "link":{"link":{"url":{"href":"","type":"EXTERNAL"},"open_in_new_tab":false,"rel":""} },
             "caption":{"rich_text":""}
-          }%}{{image_macros.render_image_tmpl(author_image_data, module.style.author_avatar, module, 'avatar')}}
+          }%}{{image_macros.render_image_tmpl(author_image_data, module.style.author_avatar, module,
+            {
+              id: 'avatar'
+            }
+          )}}
         </div>
       {% endif %}
       <div class="blog-recent-module__article-author-link">
@@ -227,7 +235,11 @@
             "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
             "icon_position":"left"
           }
-        }%}{{link_macros.render_link_tmpl(author_link_data, module.style.secondary_link, module, 'author')}}
+        }%}{{link_macros.render_link_tmpl(author_link_data, module.style.secondary_link, module,
+          {
+            id: 'author'
+          }
+        )}}
       </div>
     </div>
 
@@ -253,7 +265,11 @@
             },
             "link":{"link":{"url":{"href":"","type":"EXTERNAL"},"open_in_new_tab":false,"rel":""} },
             "caption":{"rich_text":""}
-          }%}{{image_macros.render_image_tmpl(author_image_data, module.style.author_avatar, module, 'avatar')}}
+          }%}{{image_macros.render_image_tmpl(author_image_data, module.style.author_avatar, module,
+            {
+              id: 'avatar'
+            }
+          )}}
         </div>
       {% endif %}
       <div class="blog-recent-module__article-authordate-info">
@@ -265,7 +281,11 @@
               "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
               "icon_position":"left"
             }
-          }%}{{link_macros.render_link_tmpl(author_link_data, module.style.secondary_link, module, 'author2')}}
+          }%}{{link_macros.render_link_tmpl(author_link_data, module.style.secondary_link, module,
+            {
+              id: 'author2'
+            }
+          )}}
         </div>
         <div class="blog-recent-module__article-authordate-date">
           <time class="blog-recent-module__article-authordate-date-time" datetime="{{content.publish_date}}">
@@ -311,7 +331,11 @@
               "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
               "icon_position":"left","accessibility_options":{"purpose":"decorative"}
             }
-          }%}{{heading_macros.render_heading_tmpl(heading_data, module.style.general_heading, module, 'general')}}
+          }%}{{heading_macros.render_heading_tmpl(heading_data, module.style.general_heading, module,
+            {
+              id: 'general'
+            }
+          )}}
         </div>
       </div>
     {% endif %}
@@ -327,7 +351,11 @@
               "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
               "icon_position":"left","accessibility_options":{"purpose":"decorative"}
             }
-          }%}{{heading_macros.render_heading_tmpl(heading_data, module.style.general_heading, module, 'general')}}
+          }%}{{heading_macros.render_heading_tmpl(heading_data, module.style.general_heading, module,
+            {
+              id: 'general'
+            }
+          )}}
         </div>
       </div>
     {% endif %}

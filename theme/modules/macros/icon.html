@@ -4,7 +4,7 @@
 -->
 
 {# macro attributes scheme #}
-{# render_icon_tmpl(data, style, global_data, class_id) #}
+{# render_icon_tmpl(data, style, global_data, options) #}
 
 {# 1 #}
 {# data - [object: module.icon] #}
@@ -26,18 +26,36 @@
 {# class_id [string: 0|'class_id'] #}
 {# macro class_id to add a unique class if we have two or more same macros in one module as a components #}
 
+{# 4 #}
+{# options [object: {key: value}] #}
+{# add additional options for the icon #}
+{# Supported features #}
+{# {% set options = {
+  id:'secondary-icon',
+  data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
+  class:['additional-class-1','additional-class-2']
+}%} #}
+{# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
+
+
 {# example #}
-{# {{render_icon_tmpl(module.icon, module.style.icon, module, 'unique')}} #}
+{# {{render_icon_tmpl(module.icon, module.style.icon, module, options)}} #}
 {# ========================= #}
 
 
-{%- macro render_icon_tmpl(data, style, global_data, class_id) -%}
+{%- macro render_icon_tmpl(data, style, global_data, options) -%}
   {%- if data.icon.name -%}
 
-    {%- if class_id -%}
-      {%- set icon_class = 'icon-style--' ~ class_id -%}
+    {%- if options.id -%}
+      {%- set icon_class = 'icon-style--' ~ options.id -%}
     {%- else -%}
       {%- set icon_class = 'icon-style' -%}
+    {%- endif -%}
+    {%- if options.data_attrs -%}
+      {% set data_attrs = options.data_attrs|join(' ') %}
+    {%- endif -%}
+    {%- if options.class -%}
+      {% set class = options.class|join(' ') %}
     {%- endif -%}
 
     {# module global css #}
@@ -106,7 +124,8 @@
     {%- endif -%}
 
     {# g-module-macros... = global module macros #}
-    <span class="g-module-macros-icon-wrp {{icon_class}} {{icon_size}} {{icon_color}} {{icon_shape}}">
+    <span {% if data_attrs %} {{data_attrs}} {% endif %}
+    class="g-module-macros-icon-wrp {{icon_class}} {{icon_size}} {{icon_color}} {{icon_shape}} {{class}}">
       {%- icon
         extra_classes='g-module-macros-icon icon'
         name='{{data.icon.name}}'

@@ -4,7 +4,7 @@
 -->
 
 {# macro attributes scheme #}
-{# render_link_tmpl(data, style, global_data, class_id, stretched_link, link_aria_attrs) #}
+{# render_link_tmpl(data, style, global_data, options) #}
 
 {# 1 #}
 {# data - [object: module.link] #}
@@ -27,19 +27,23 @@
 {# global data [module], usualy for general style setting [style tab -> general panel] #}
 
 {# 4 #}
-{# class_id [string: 0|'class_id'] #}
-{# macro class_id to add a unique class if we have two or more same macros in one module as a components #}
+{# options [object: {key: value}] #}
+{# add additional options for the link #}
+{# Supported features #}
+{# {% set options = {
+  id:'secondary-link',
+  stretched_link:true|false,
+  data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
+  class:['additional-class-1','additional-class-2'],
+  no_wrapper:true|false
+}%} #}
+{# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
+{# stretched_link - enable/disable stretched_link option #}
+{# no_wrapper - use or not <span> no_wrapper #}
 
-{# 5 #}
-{# stretched_link [boolean: 0|1] #}
-{# enable/disable stretched_link option #}
-
-{# 6 #}
-{# link_aria_attrs [string: 'ARIA attributes'] #}
-{# add additional aria attributes for the link #}
 
 {# example #}
-{# {{render_link_tmpl(module.link, module.style.link, module, 'unique', 0, 'role="ROLE_NAME"')}} #}
+{# {{render_link_tmpl(module.link, module.style.link, module, options)}} #}
 {# ========================= #}
 
 
@@ -47,14 +51,26 @@
 {% import './icon.html' as icon_macros %}
 {% import '../../css/macros/macros.css' %}
 
-{%- macro render_link_tmpl(data, style, global_data, class_id, stretched_link, link_aria_attrs) -%}
+{%- macro render_link_tmpl(data, style, global_data, options) -%}
   {%- if data.text -%}
 
-    {%- if class_id -%}
-      {%- set link_class = 'link-style--' ~ class_id -%}
+    {%- if options.id -%}
+      {%- set link_class = 'link-style--' ~ options.id -%}
     {%- else -%}
       {%- set link_class = 'link-style' -%}
     {%- endif -%}
+    {%- if options.data_attrs -%}
+      {% set data_attrs = options.data_attrs|join(' ') %}
+    {%- endif -%}
+    {%- if options.class -%}
+      {% set class = options.class|join(' ') %}
+    {%- endif -%}
+    {%- if options.no_wrapper == null || options.no_wrapper == false -%}
+      {%- set link_style_selector = '{{link_class}} ' %}
+    {%- else -%}
+      {%- set link_style_selector = '{{link_class}}' %}
+    {%- endif -%}
+
 
     {# module global css #}
     {%- require_css -%}
@@ -74,15 +90,15 @@
         {% endif %}
 
         {% if global_data.style.general.custom_styling.color.css %}
-          .{{link_class}} .g-module-macros-link {
+          .{{link_style_selector}}.g-module-macros-link {
             color: {{global_data.style.general.custom_styling.color.css}};
           }
-          .{{link_class}} .g-module-macros-link:hover {
+          .{{link_style_selector}}.g-module-macros-link:hover {
             color: {{rgb(global_data.style.general.custom_styling.color.color, global_data.style.general.custom_styling.color.opacity, +30, -20)}};
           }
         {% endif %}
 
-        .{{link_class}} .g-module-macros-link {
+        .{{link_style_selector}}.g-module-macros-link {
           {% if link_font.style %}
             {{link_font.style}};
           {% endif %}
@@ -97,7 +113,7 @@
           {% endif %}
         }
 
-        .{{link_class}} .g-module-macros-link:hover {
+        .{{link_style_selector}}.g-module-macros-link:hover {
           {% if link_hover_color %}
             color: {{rgb(link_hover_color, link_hover_opacity)}};
           {% endif %}
@@ -107,18 +123,18 @@
         }
 
         {% if data.icon.icon.name %}
-          .{{link_class}} .g-module-macros-icon {
+          .{{link_style_selector}}.g-module-macros-icon {
             line-height: 0;
             padding-left: 4px;
             padding-right: 4px;
           }
-          .{{link_class}} .g-module-macros-link__icon .icon svg {
+          .{{link_style_selector}}.g-module-macros-link__icon .icon svg {
             vertical-align: -0.125em;
           }
         {% endif %}
 
-        {% if stretched_link %}
-          .{{link_class}} .g-module-macros-link.stretched-link {
+        {% if options.stretched_link %}
+          .{{link_style_selector}}.g-module-macros-link.stretched-link {
             position: static;
           }
         {% endif %}
@@ -138,17 +154,23 @@
     {%- if data.link.open_in_new_tab -%}
       {% set open_in_new_tab_class = "target-blank-link" %}
     {%- endif- %}
-    {%- if stretched_link -%}
+    {%- if options.stretched_link -%}
       {% set stretched_link_class = 'stretched-link' %}
-    {%- endif -%}<span class="g-module-macros-link-wrp {{link_class}}">
+    {%- endif -%}{% if options.no_wrapper == null || options.no_wrapper == false %}<span class="g-module-macros-link-wrp {{link_class}} {{class}}">{% endif %}
         {%- if href -%}
-          <a href="{{href}}" class="{{open_in_new_tab_class}} {{stretched_link_class}} g-module-macros-link"
+          <a href="{{href}}" class="{{open_in_new_tab_class}} {{stretched_link_class}} g-module-macros-link
+          {% if options.no_wrapper == true %} {{btn_class}} {{class}} {% endif %}"
           {% if data.link.open_in_new_tab %} target="_blank" {% endif %}
-          {{link_aria_attrs}} {{rel}}>
+          {% if data_attrs %} {{data_attrs}} {% endif %}
+          {{rel}}>
 
             {%- if data.icon.icon.name -%}
               {%- if data.icon.icon_position == 'left' -%}
-                <span class="g-module-macros-link__icon">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data, 'link')}}</span>
+                <span class="g-module-macros-link__icon">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
+                  {
+                    id: 'link'
+                  }
+                )}}</span>
               {%- endif -%}
             {%- endif -%}
 
@@ -161,7 +183,11 @@
 
             {%- if data.icon.icon.name %}
               {%- if data.icon.icon_position == 'right' -%}
-                <span class="g-module-macros-link__icon">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data, 'link')}}</span>
+                <span class="g-module-macros-link__icon">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
+                  {
+                    id: 'link'
+                  }
+                )}}</span>
               {%- endif -%}
             {%- endif -%}
 
@@ -173,6 +199,6 @@
           </a>
         {%- else -%}
           {{data.text}}
-        {%- endif -%}</span>
+        {%- endif -%}{% if options.no_wrapper == null || options.no_wrapper == false %}</span>{% endif %}
   {%- endif -%}
 {%- endmacro -%}

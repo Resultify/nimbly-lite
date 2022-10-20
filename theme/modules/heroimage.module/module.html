@@ -343,7 +343,11 @@
             </div>
 
             <div class="heroimage-module__subheading">
-              {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module, 'subheading')}}
+              {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module,
+                {
+                  id: 'subheading'
+                }
+              )}}
             </div>
 
             {% if module.text.additional_settings.text_above_heading == false %}
@@ -361,7 +365,11 @@
                 {{link_macros.render_link_tmpl(module.link, module.style.link, module)}}
               </div>
               <div class="heroimage-module__secondary-link">
-                {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module, 'secondary' )}}
+                {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module,
+                  {
+                    id: 'secondary'
+                  }
+                )}}
               </div>
             </div>
 
@@ -370,7 +378,11 @@
                 {{button_macros.render_btn_tmpl(module.button, module.style.button, module)}}
               </div>
               <div class="heroimage-module__secondary-button">
-                {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module, 'secondary')}}
+                {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module,
+                  {
+                    id: 'secondary'
+                  }
+                )}}
               </div>
             </div>
 

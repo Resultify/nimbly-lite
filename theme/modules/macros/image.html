@@ -4,7 +4,7 @@
 -->
 
 {# macro attributes scheme #}
-{# render_image_tmpl(data, style, global_data, class_id, stretched_link, link_aria_attrs) #}
+{# render_image_tmpl(data, style, global_data, options) #}
 
 {# 1 #}
 {# data - [object: module.image] #}
@@ -27,29 +27,41 @@
 {# global data [module], usualy for general style setting [style tab -> general panel] #}
 
 {# 4 #}
-{# class_id [string: 0|'class_id'] #}
-{# macro class_id to add a unique class if we have two or more same macros in one module as a components #}
+{# options [object: {key: value}] #}
+{# add additional options for the image #}
+{# Supported features #}
+{# {% set options = {
+  id:'secondary-image',
+  stretched_link:true|false,
+  data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
+  link_data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
+  class:['additional-class-1','additional-class-2']
+}%} #}
+{# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
+{# stretched_link - enable/disable stretched_link option #}
 
-{# 5 #}
-{# stretched_link [boolean: 0|1] #}
-{# enable/disable stretched_link option #}
-
-{# 6 #}
-{# link_aria_attrs [string: 'ARIA attributes'] #}
-{# add additional aria attributes for the link #}
 
 {# example #}
-{# {{render_image_tmpl(module.image, module.style.image, module, 'unique', 0, 'role="ROLE_NAME"')}} #}
+{# {{render_image_tmpl(module.image, module.style.image, module, options)}} #}
 {# ========================= #}
 
 
-{%- macro render_image_tmpl(data, style, global_data, class_id, stretched_link, link_aria_attrs) -%}
+{%- macro render_image_tmpl(data, style, global_data, options) -%}
   {%- if data.image.src -%}
 
-    {%- if class_id -%}
-      {%- set image_class = 'image-style--' ~ class_id -%}
+    {%- if options.id -%}
+      {%- set image_class = 'image-style--' ~ options.id -%}
     {%- else -%}
       {%- set image_class = 'image-style' -%}
+    {%- endif -%}
+    {%- if options.data_attrs -%}
+      {% set data_attrs = options.data_attrs|join(' ') %}
+    {%- endif -%}
+    {%- if options.link_data_attrs -%}
+      {% set link_data_attrs = options.link_data_attrs|join(' ') %}
+    {%- endif -%}
+    {%- if options.class -%}
+      {% set class = options.class|join(' ') %}
     {%- endif -%}
 
     {# module global css #}
@@ -79,7 +91,7 @@
           {% endif %}
         }
       {%- end_scope_css -%}
-    </style><span class="g-module-macros-image {{image_class}}">
+    </style><span class="g-module-macros-image {{image_class}} {{class}}">
       {%- set loadingAttr = data.image.loading != 'disabled' ? 'loading="{{data.image.loading}}"' : '' -%}
       {%- set styleAttr = data.image.size_type != 'exact' ? 'style="max-width: 100%; height: auto;"' : '' -%}
       {%- set widthAttr = data.image.width -%}
@@ -102,12 +114,12 @@
         {%- set rel = 'rel="{{data.link.link.rel}}"' -%}
       {%- endif -%}
 
-      {%- if stretched_link -%}
+      {%- if options.stretched_link -%}
         {%- set stretched_link_class = 'stretched-link' -%}
       {%- endif -%}
 
       {%- macro render_image() -%}
-        <span id="{{name}}_image" class="g-module-macros-image--img-wrp"><img class="g-module-macros-image--img"
+        <span id="{{name}}_image" class="g-module-macros-image--img-wrp"><img {% if data_attrs %} {{data_attrs}} {% endif %} class="g-module-macros-image--img"
           alt="{{data.image.alt}}"
           src="{{data.image.src}}"
           width="{{widthAttr}}"
@@ -119,7 +131,8 @@
       {%- if href -%}
         <a href="{{href}}" class=" g-module-macros-image__link {{stretched_link_class}}"
         {% if data.link.link.open_in_new_tab %} target="_blank" {% endif %}
-        {{rel}} {{link_aria_attrs}}>{{render_image()}}</a>
+        {% if link_data_attrs %} {{link_data_attrs}} {% endif %}
+        {{rel}}>{{render_image()}}</a>
       {%- else -%}{{render_image()}}
       {%- endif -%}
 
