@@ -9,7 +9,6 @@
 
 // // Bootstrap reboot
 @import "~bootstrap/scss/_root.scss";
-@import "~bootstrap/scss/_reboot.scss";
 
 // // Bootstrap Grid
 // @import "~bootstrap/scss/_containers.scss";
@@ -19,8 +18,6 @@
 // @import "~bootstrap/scss/helpers/_clearfix.scss";
 // @import "~bootstrap/scss/helpers/_ratio.scss";
 // @import "~bootstrap/scss/helpers/_position.scss";
-@import "~bootstrap/scss/helpers/_visually-hidden.scss";
-@import "~bootstrap/scss/helpers/_stretched-link.scss";
 // @import "~bootstrap/scss/helpers/_text-truncation.scss";
 
 // Bootstrap Utilities
@@ -135,4 +132,3 @@ $utilities: map-get-multiple(
 // @import "~bootstrap/scss/_toasts.scss";
 // @import "~bootstrap/scss/_tooltip.scss";
 // @import "~bootstrap/scss/_accordion.scss";
-@import "~bootstrap/scss/_transitions.scss";

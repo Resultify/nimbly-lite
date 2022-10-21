@@ -3281,7 +3281,7 @@
     "display_width" : null,
     "label" : "Filter content",
     "required" : false,
-    "locked" : false,
+    "locked" : true,
     "children" : [ {
       "id" : "9ffc8ce1-e0e6-36cd-58e9-5601299e8336",
       "name" : "spacing",
@@ -5053,32 +5053,10 @@
   "display_width" : null,
   "label" : "Filter content",
   "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "cc974dcb-97ca-6e78-33fe-6893ebb1c926",
-    "name" : "filter",
-    "display_width" : null,
-    "label" : "Filter category",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "min" : null,
-      "max" : null,
-      "sorting_label_field" : null,
-      "default" : null
-    },
-    "table_name_or_id" : "filter_content",
-    "type" : "hubdbrow",
-    "default" : {
-      "id" : null
-    }
-  } ],
+  "locked" : true,
+  "children" : [ ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
-  "default" : {
-    "filter" : {
-      "id" : null
-    }
-  }
+  "default" : { }
 } ]

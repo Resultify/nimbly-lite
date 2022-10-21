@@ -1,9 +1,19 @@
 {
   "label": "nimbly-lite",
-  "preview_path": "./templates/home.html",
-  "screenshot_path": "./images/template-previews/home.png",
+  "name": "nimbly-lite",
+  "preview_path": "./templates/startpage.html",
+  "screenshot_path": "./images/template-previews/startpage.png",
   "enable_domain_stylesheets": false,
-  "license": "./license.txt",
+  "license": "MIT",
+  "version":"1.0.0",
+  "author":{
+      "name":"Resultify",
+      "email":"info@resultify.se",
+      "url":"https://www.resultify.se/"
+  },
+  "is_available_for_new_content":true,
+  "documentation_url":"",
+  "example_url":"",
   "responsive_breakpoints": [
     {
       "name": "mobile",
