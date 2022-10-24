@@ -1,7 +1,8 @@
 {
   "global" : false,
+  "icon" : "../../images/module-icons/blog-related.svg",
   "host_template_types" : [ "BLOG_POST", "BLOG_LISTING" ],
   "module_id" : 53809587152,
-  "label" : "Blog related posts",
+  "label" : "Blog related",
   "is_available_for_new_content" : true
 }

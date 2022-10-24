@@ -5,7 +5,7 @@
     "title" : "Audio",
     "description" : "Add audio element"
   },
-  "icon" : "fontawesome-5.14.0:microphone:SOLID",
+  "icon" : "../../images/module-icons/audio.svg",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "module_id" : 53809688266,
   "label" : "Audio",

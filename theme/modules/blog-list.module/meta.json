@@ -1,7 +1,8 @@
 {
   "global" : false,
+  "icon" : "../../images/module-icons/blog-list.svg",
   "host_template_types" : [ "BLOG_LISTING" ],
-  "module_id" : 53809587146,
-  "label" : "Blog listing",
+  "module_id" : 55073580236,
+  "label" : "Blog list",
   "is_available_for_new_content" : true
 }

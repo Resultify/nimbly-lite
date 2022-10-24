@@ -5,7 +5,7 @@
     "title" : "Text",
     "description" : "Add text element"
   },
-  "icon" : "fontawesome-5.14.0:font:SOLID",
+  "icon" : "../../images/module-icons/text.svg",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "module_id" : 53809649616,
   "label" : "Text",
