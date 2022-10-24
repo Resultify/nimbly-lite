@@ -60,7 +60,7 @@ const hsSearch = function (_instance) {
     searchForm.classList.remove('header-search--open')
   }
   const ariaExpanded = function (val) {
-    searchForm.querySelector('.header-search__form-internal-wrp').ariaExpanded = val
+    searchForm.querySelector('.header-search__form_internal-wrp').ariaExpanded = val
   }
   const fillSearchResults = function (response) {
     const items = []
@@ -229,8 +229,8 @@ function headerSearch () {
   function showSearchForm (event, elem, isPreventDefault) {
     if (!elem.classList.contains('header-search--show')) {
       elem.classList.add('header-search--show')
-      if (!document.body.classList.contains('open-search-wrp')) {
-        document.body.classList.add('open-search-wrp')
+      if (!document.body.classList.contains('open-search_wrp')) {
+        document.body.classList.add('open-search_wrp')
       }
       if (searchForm.tabIndex === 0) {
         searchForm.tabIndex = -1
@@ -251,8 +251,8 @@ function headerSearch () {
   function hideSearchForm (event, elem, isPreventDefault) {
     if (elem.classList.contains('header-search--show')) {
       elem.classList.remove('header-search--show')
-      if (document.body.classList.contains('open-search-wrp')) {
-        document.body.classList.remove('open-search-wrp')
+      if (document.body.classList.contains('open-search_wrp')) {
+        document.body.classList.remove('open-search_wrp')
       }
       if (elem.classList.contains('header-search--open')) {
         elem.classList.remove('header-search--open')
@@ -300,7 +300,7 @@ function headerSearch () {
   document.addEventListener('keyup', hideSearchFormByKeyEscape, { once: false, passive: true })
 
   function hideSearchFormByBlur (event) {
-    if (event.relatedTarget && !event.relatedTarget.closest('.header-search__form-wrp')) {
+    if (event.relatedTarget && !event.relatedTarget.closest('.header-search__form_wrp')) {
       hideSearchForm(event, headerSearch, false)
     }
   }
@@ -308,7 +308,7 @@ function headerSearch () {
   searchFormBtn.addEventListener('blur', hideSearchFormByBlur, { once: false, passive: true })
 
   function hideSearchFormByClick (event) {
-    if (!event.target.closest('.header-search__form-wrp')) {
+    if (!event.target.closest('.header-search__form_wrp')) {
       hideSearchForm(event, headerSearch, false)
     }
   }

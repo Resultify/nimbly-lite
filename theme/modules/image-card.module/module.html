@@ -41,7 +41,7 @@
     {% endif %}
 
     {% if module.style.secondary_button.alignment.inline %}
-      .image-card-module__buttons-wrp {
+      .image-card-module__buttons_wrp {
         display: flex;
         {% if module.style.secondary_button.alignment.inline_alignment %}
           justify-content: {{module.style.secondary_button.alignment.inline_alignment}};
@@ -56,7 +56,7 @@
     {% endif %}
 
     {% if module.style.secondary_link.alignment.inline %}
-      .image-card-module__links-wrp {
+      .image-card-module__links_wrp {
         display: flex;
         {% if module.style.secondary_link.alignment.inline_alignment %}
           justify-content: {{module.style.secondary_link.alignment.inline_alignment}};
@@ -274,7 +274,7 @@
       {{richtext_macros.render_richtext_tmpl(module.richtext, module.style.richtext, module)}}
     </div>
 
-    <div class="image-card-module__links-wrp">
+    <div class="image-card-module__links_wrp">
       <div class="image-card-module__link">
         {{link_macros.render_link_tmpl(module.link, module.style.link, module,
           {
@@ -291,7 +291,7 @@
       </div>
     </div>
 
-    <div class="image-card-module__buttons-wrp">
+    <div class="image-card-module__buttons_wrp">
       <div class="image-card-module__button">
         {{button_macros.render_btn_tmpl(module.button, module.style.button, module,
           {
@@ -321,7 +321,7 @@
 </div>
 {%- endmacro -%}
 
-<div class="image-card-module-wrp">
+<div class="image-card-module_wrp">
   <div class="image-card-module image-card-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
 
     {% if module.style.image.alignment.position == 'left' %}

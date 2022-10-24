@@ -70,7 +70,7 @@
     {% endif %}
 
     {% if module.style.secondary_button.alignment.inline %}
-      .heroimage-module__buttons-wrp {
+      .heroimage-module__buttons_wrp {
         display: flex;
         {% if module.style.secondary_button.alignment.inline_alignment %}
           justify-content: {{module.style.secondary_button.alignment.inline_alignment}};
@@ -85,7 +85,7 @@
     {% endif %}
 
     {% if module.style.secondary_link.alignment.inline %}
-      .heroimage-module__links-wrp {
+      .heroimage-module__links_wrp {
         display: flex;
         {% if module.style.secondary_link.alignment.inline_alignment %}
           justify-content: {{module.style.secondary_link.alignment.inline_alignment}};
@@ -103,7 +103,7 @@
     {# heroimage options (strict height - auto height - no bg image) #}
     {% if module.image.image.src %}
       {% if module.image.image.size_type == 'exact' %}
-        .heroimage-module__image-wrp {
+        .heroimage-module__image_wrp {
           position: absolute;
           left: 0;
           top: 0;
@@ -129,7 +129,7 @@
             .heroimage-module {
               display: flex;
             }
-            .heroimage-module__image-wrp {
+            .heroimage-module__image_wrp {
               position: relative;
             }
           {% endif %}
@@ -150,7 +150,7 @@
         .heroimage-module {
           overflow: hidden;
         }
-        .heroimage-module__image-wrp {
+        .heroimage-module__image_wrp {
           position: relative;
         }
         .heroimage-module__caption-position {
@@ -233,10 +233,10 @@
         .heroimage-module__caption .heroimage-module__subheading,
         .heroimage-module__caption .heroimage-module__text,
         .heroimage-module__caption .heroimage-module__richtext,
-        .heroimage-module__caption .heroimage-module__links-wrp,
+        .heroimage-module__caption .heroimage-module__links_wrp,
         .heroimage-module__link,
         .heroimage-module__secondary-link,
-        .heroimage-module__caption .heroimage-module__buttons-wrp,
+        .heroimage-module__caption .heroimage-module__buttons_wrp,
         .heroimage-module__button,
         .heroimage-module__secondary-button {
           justify-content: center;
@@ -319,11 +319,11 @@
 </style>
 
 
-<div class="heroimage-module-wrp">
+<div class="heroimage-module_wrp">
   <div class="heroimage-module heroimage-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
 
     <div class="heroimage-module__caption-position">
-      <div class="heroimage-module__caption-wrp">
+      <div class="heroimage-module__caption_wrp">
         <div class="heroimage-module__caption-section custom-section">
 
           <div class="heroimage-module__caption">
@@ -360,7 +360,7 @@
               {{richtext_macros.render_richtext_tmpl(module.richtext, module.style.richtext, module)}}
             </div>
 
-            <div class="heroimage-module__links-wrp">
+            <div class="heroimage-module__links_wrp">
               <div class="heroimage-module__link">
                 {{link_macros.render_link_tmpl(module.link, module.style.link, module)}}
               </div>
@@ -373,7 +373,7 @@
               </div>
             </div>
 
-            <div class="heroimage-module__buttons-wrp">
+            <div class="heroimage-module__buttons_wrp">
               <div class="heroimage-module__button">
                 {{button_macros.render_btn_tmpl(module.button, module.style.button, module)}}
               </div>
@@ -394,7 +394,7 @@
       </div>
     </div>
 
-    <div class="heroimage-module__image-wrp">
+    <div class="heroimage-module__image_wrp">
       {% image
         'image'
         extra_classes='heroimage-module__image'

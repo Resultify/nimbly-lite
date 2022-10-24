@@ -259,7 +259,7 @@
     {%- endif -%}
 
     {# g-module-macros... = global module macros #}
-    {% if options.no_wrapper == null || options.no_wrapper == false %}<span class="g-module-macros-btn-wrp {{btn_class}} {{class}}">{% endif %}<{{btn_tag}}
+    {% if options.no_wrapper == null || options.no_wrapper == false %}<span class="g-module-macros-btn_wrp {{btn_class}} {{class}}">{% endif %}<{{btn_tag}}
       {% if options.is_btn == null || options.is_btn == false %} href="{{href}}" {% endif %}
       {{'aria-label="{{data.accessible_link_label}}"' if data.accessible_link_label}}
       class="g-module-macros-btn btn {{button_style}} {{button_size}} {{full_width}} {{open_in_new_tab_class}} {{disable_button_class}} {{stretched_link_class}}

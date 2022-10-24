@@ -20,8 +20,8 @@
   {% for filter in module.filter_content.filter %}
       {% do data_filter.update({class: data_filter.class ~ ' ' ~ filter.columns.filter|lower|trim|replace(" ","")}) %}
   {% endfor %}
-  {% set filter_content_classes = 'filter-content__item js__filter-content__item {{data_filter.class}}' %}
-  <div class="filter-content__item--sizer js__filter-content__item--sizer"></div>
+  {% set filter_content_classes = 'filter-content__item {{data_filter.class}}' %}
+  <div class="filter-content__item--sizer"></div>
 {% endif %}
 {# ================================= #}
 
@@ -60,7 +60,7 @@
     {% endif %}
 
     {% if module.style.secondary_button.alignment.inline %}
-      .template-module__buttons-wrp {
+      .template-module__buttons_wrp {
         display: flex;
         {% if module.style.secondary_button.alignment.inline_alignment %}
           justify-content: {{module.style.secondary_button.alignment.inline_alignment}};
@@ -75,7 +75,7 @@
     {% endif %}
 
     {% if module.style.secondary_link.alignment.inline %}
-      .template-module__links-wrp {
+      .template-module__links_wrp {
         display: flex;
         {% if module.style.secondary_link.alignment.inline_alignment %}
           justify-content: {{module.style.secondary_link.alignment.inline_alignment}};
@@ -219,7 +219,7 @@
 </style>
 
 
-<div class="template-module-wrp {{filter_content_classes}}">
+<div class="template-module_wrp {{filter_content_classes}}">
   <div class="template-module template-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
 
     {% if module.heading.additional_settings.header_above_image %}
@@ -263,7 +263,7 @@
         {{richtext_macros.render_richtext_tmpl(module.richtext, module.style.richtext, module)}}
       </div>
 
-      <div class="template-module__links-wrp">
+      <div class="template-module__links_wrp">
         <div class="template-module__link">
           {{link_macros.render_link_tmpl(module.link, module.style.link, module)}}
         </div>
@@ -276,7 +276,7 @@
         </div>
       </div>
 
-      <div class="template-module__buttons-wrp">
+      <div class="template-module__buttons_wrp">
         <div class="template-module__button">
           {{button_macros.render_btn_tmpl(module.button, module.style.button, module)}}
         </div>

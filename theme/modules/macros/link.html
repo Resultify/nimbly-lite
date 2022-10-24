@@ -156,7 +156,7 @@
     {%- endif- %}
     {%- if options.stretched_link -%}
       {% set stretched_link_class = 'stretched-link' %}
-    {%- endif -%}{% if options.no_wrapper == null || options.no_wrapper == false %}<span class="g-module-macros-link-wrp {{link_class}} {{class}}">{% endif %}
+    {%- endif -%}{% if options.no_wrapper == null || options.no_wrapper == false %}<span class="g-module-macros-link_wrp {{link_class}} {{class}}">{% endif %}
         {%- if href -%}
           <a href="{{href}}" class="{{open_in_new_tab_class}} {{stretched_link_class}} g-module-macros-link
           {% if options.no_wrapper == true %} {{btn_class}} {{class}} {% endif %}"

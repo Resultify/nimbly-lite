@@ -9,7 +9,7 @@
 
 {% block body %}
   <div class="blog-post-template">
-    <div class="blog-post-wrp blog-post-section">
+    <div class="blog-post_wrp blog-post-section">
       <article class="blog-post">
 
         {% if content.tag_list %}
@@ -26,7 +26,7 @@
 
         <div class="blog-post__meta">
           {% if content.blog_author.avatar %}
-            <div class="blog-post__meta-author-avatar-wrp">
+            <div class="blog-post__meta-author-avatar_wrp">
               <img class="blog-post__meta-author-avatar" src="{{content.blog_author.avatar}}" width="50" loading="eager" alt="Picture of {{content.blog_author.display_name}}">
             </div>
           {% endif %}
@@ -35,7 +35,7 @@
               {{content.blog_post_author.display_name}}
             </a>
 
-            <div class="blog-post__meta-info-date-wrp">
+            <div class="blog-post__meta-info-date_wrp">
               <time datetime="{{content.publish_date}}" class="blog-post__meta-info-date">
                 {{content.publish_date_localized}}
               </time>
@@ -52,7 +52,7 @@
   </div>
 
   {# Related posts #}
-  <div class="blog-related-posts-wrp">
+  <div class="blog-related-posts_wrp">
     <div class="blog-related-posts blog-post-section">
       {% module 'related_posts'
         path='../modules/blog-related-posts'

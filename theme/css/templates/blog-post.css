@@ -1,7 +1,7 @@
 .blog-post-section {
   padding: 0 12px;
 }
-.blog-post-wrp {
+.blog-post_wrp {
   margin: 50px auto;
   /* margin: 20px 0; */
 }
@@ -21,7 +21,7 @@
   flex-direction: column;
 }
 
-.blog-post__meta-author-avatar-wrp {
+.blog-post__meta-author-avatar_wrp {
   padding-right: 10px;
 }
 
@@ -29,7 +29,7 @@
   border-radius: 50%;
 }
 
-.blog-related-posts-wrp {
+.blog-related-posts_wrp {
   background: #eee;
   padding: 60px 0;
 }

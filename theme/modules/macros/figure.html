@@ -92,7 +92,7 @@
           flex-direction: column;
           margin: 0;
         }
-        .{{figure_class}} .g-module-macros-figure__caption-wrp {
+        .{{figure_class}} .g-module-macros-figure__caption_wrp {
           padding-top: 0.5rem;
         }
       </style>
@@ -136,7 +136,7 @@
       {%- endif -%}
 
       {%- macro render_image() -%}
-        <span id="{{name}}_image" class="g-module-macros-figure--image-wrp"><img {% if data_attrs %} {{data_attrs}} {% endif %} class="g-module-macros-figure--image"
+        <span id="{{name}}_image" class="g-module-macros-figure--image_wrp"><img {% if data_attrs %} {{data_attrs}} {% endif %} class="g-module-macros-figure--image"
           alt="{{data.image.alt}}"
           src="{{data.image.src}}"
           width="{{widthAttr}}"
@@ -157,7 +157,7 @@
       {%- endif -%}
 
       {%- if data.caption.rich_text -%}
-        <figcaption class="g-module-macros-figure__caption-wrp" style="max-width:{{widthAttr ~ 'px'}};">
+        <figcaption class="g-module-macros-figure__caption_wrp" style="max-width:{{widthAttr ~ 'px'}};">
           {%- rich_text
             'image-caption'
             extra_classes='g-module-macros-figure__caption'

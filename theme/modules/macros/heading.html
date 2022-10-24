@@ -118,7 +118,7 @@
           .{{heading_class}} .g-module-macros-heading__icon .icon svg {
             vertical-align: -0.125em;
           }
-          .{{heading_class}} .g-module-macros-heading-wrp {
+          .{{heading_class}} .g-module-macros-heading_wrp {
             display: inline-flex;
             align-items: baseline;
             gap: 10px;
@@ -173,7 +173,7 @@
     {%- endmacro -%}
 
     {# g-module-macros... = global module macros #}
-    <span class="g-module-macros-heading-wrp {{heading_class}} {{class}}">
+    <span class="g-module-macros-heading_wrp {{heading_class}} {{class}}">
 
       {%- if data.icon.icon.name -%}
         {%- if data.icon.icon_position == 'left' -%}

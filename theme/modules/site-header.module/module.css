@@ -158,7 +158,7 @@
   padding-left: 6px;
 }
 
-.header-language-btn .g-module-macros-icon-wrp {
+.header-language-btn .g-module-macros-icon_wrp {
   display: flex;
 }
 
@@ -208,7 +208,7 @@
 /* ============================ */
 /* Search */
 /* ============================ */
-.header-search-wrp {
+.header-search_wrp {
   margin-top: 20px;
   padding: 0 14px;
 }
@@ -218,7 +218,7 @@
   margin: 0;
 }
 
-.header-search__form-internal-wrp {
+.header-search__form_internal-wrp {
   flex-grow: 1;
 }
 

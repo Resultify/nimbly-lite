@@ -20,7 +20,7 @@
       {{module.style.general.spacing.spacing.css}}
     }
 
-    .blog-related-module__article-wrp {
+    .blog-related-module__article_wrp {
       {{module.style.article.spacing.spacing.css}}
     }
 
@@ -29,16 +29,16 @@
       margin-left: -{{module.style.article.spacing.spacing.padding.left.value ~ 'px'}};
       margin-right: -{{module.style.article.spacing.spacing.padding.right.value ~ 'px'}};
     }
-    .basic-grid .blog-related-module__article-wrp {
+    .basic-grid .blog-related-module__article_wrp {
       width: calc(100% / {{module.layout.number_of_posts}});
     }
     @media (max-width: 991.98px) {
-      .basic-grid .blog-related-module__article-wrp {
+      .basic-grid .blog-related-module__article_wrp {
         width: 50%;
       }
     }
     @media (max-width: 700px) {
-      .basic-grid .blog-related-module__article-wrp {
+      .basic-grid .blog-related-module__article_wrp {
         width: 100%;
       }
     }
@@ -307,7 +307,7 @@
 
 {%- macro related_posts(post, count, total) -%}
   {% if count == 1 %}
-    <div class="blog-related-module-wrp">
+    <div class="blog-related-module_wrp">
       <div class="blog-related-module blog-related-module--{{module_id}} {{module.layout.layout}} {{module.style.general.presets.custom_preset}}">
         <div class="blog-related-module__heading">
           {{heading_macros.render_heading_tmpl(module.general_heading, module.style.general_heading, module,
@@ -319,7 +319,7 @@
         <div class="blog-related-module__article-container">
   {% endif %}
 
-  <div class="blog-related-module__article-wrp">
+  <div class="blog-related-module__article_wrp">
     <article class="blog-related-module__article" aria-label="Blog post summary: {{post.name}}">
       {% for blog_component in module.blog_components %}
         {% if blog_component.component|lower == 'image' %}

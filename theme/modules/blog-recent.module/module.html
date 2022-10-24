@@ -28,24 +28,24 @@
       {{module.style.general_heading.spacing.spacing.css}}
     }
 
-    .blog-recent-module__article-wrp,
-    .blog-recent-module__author-heading-wrp,
-    .blog-recent-module__tag-heading-wrp {
+    .blog-recent-module__article_wrp,
+    .blog-recent-module__author-heading_wrp,
+    .blog-recent-module__tag-heading_wrp {
       {{module.style.article.spacing.spacing.css}}
     }
 
     {# basic-grid #}
     {% if module.layout.layout == 'basic-grid' %}
-      .basic-grid .blog-recent-module__article-wrp {
+      .basic-grid .blog-recent-module__article_wrp {
         width: calc(100% / {{module.layout.columns}});
       }
       @media (max-width: 991.98px) {
-        .basic-grid .blog-recent-module__article-wrp {
+        .basic-grid .blog-recent-module__article_wrp {
           width: 50%;
         }
       }
       @media (max-width: 700px) {
-        .basic-grid .blog-recent-module__article-wrp {
+        .basic-grid .blog-recent-module__article_wrp {
           width: 100%;
         }
       }
@@ -317,12 +317,12 @@
   </div>
 {%- endmacro -%}
 
-<div class="blog-recent-module-wrp">
+<div class="blog-recent-module_wrp">
   <div class="blog-recent-module blog-recent-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
 
     {# Blog author listing header #}
     {% if blog_author %}
-      <div class="blog-recent-module__author-heading-wrp">
+      <div class="blog-recent-module__author-heading_wrp">
         <div class="blog-recent-module__author-heading">
           {%- set heading_data = {
             "display":module.author_listing_header.display,"heading_tag":module.author_listing_header.heading_tag,"text":module.author_listing_header.text ~ " " ~ blog_author.display_name,
@@ -342,7 +342,7 @@
 
     {# Blog tag listing header #}
     {% if tag %}
-      <div class="blog-recent-module__tag-heading-wrp">
+      <div class="blog-recent-module__tag-heading_wrp">
         <div class="blog-recent-module__tag-heading">
           {%- set heading_data = {
             "display":module.tag_listing_header.display,"heading_tag":module.tag_listing_header.heading_tag,"text":module.tag_listing_header.text ~ " " ~ page_meta.html_title|split(" | ")|last,
@@ -383,7 +383,7 @@
         {% endif %}
         {# endif mosaic-grid #}
 
-        <div class="blog-recent-module__article-wrp">
+        <div class="blog-recent-module__article_wrp">
           <article class="blog-recent-module__article" aria-label="Blog post summary: {{recent_post.name}}">
             {% for blog_component in module.blog_components %}
               {% if blog_component.component|lower == 'image' %}

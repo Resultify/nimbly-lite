@@ -13,7 +13,7 @@
     .pagination-module {
       {{module.style.general.spacing.spacing.css}}
     }
-    .pagination-module-internal-wrp {
+    .pagination-module_internal-wrp {
       justify-content: {{module.style.general.alignment.alignment.horizontal_align}};
     }
 
@@ -51,11 +51,11 @@
   }
 {%- endmacro -%}
 
-<div class="pagination-module-wrp">
+<div class="pagination-module_wrp">
   <div class="pagination-module pagination-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
 
     {% if contents.total_page_count > 1 %}
-      <nav aria-label="Pagination navigation" class="pagination-module-internal-wrp">
+      <nav aria-label="Pagination navigation" class="pagination-module_internal-wrp">
         {% set page_list = [-2, -1, 0, 1, 2] %}
         {% if contents.total_page_count - current_page_num == 1 %}
             {% set offset = -1 %}

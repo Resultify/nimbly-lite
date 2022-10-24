@@ -8,7 +8,7 @@
   z-index: 2;
 }
 
-.heroimage-module__image-wrp {
+.heroimage-module__image_wrp {
   z-index: 1;
 }
 
@@ -16,7 +16,7 @@
   display: inline;
 }
 
-.heroimage-module__caption-wrp {
+.heroimage-module__caption_wrp {
   height: 100%;
 }
 

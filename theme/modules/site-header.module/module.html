@@ -45,7 +45,7 @@
   {% if content.translated_content.values()|selectattr('published')|length || is_listing_view && group.translations %}
     <div class="siteheader-module__language">
 
-      <div class="header-language-wrp">
+      <div class="header-language_wrp">
         <div class="header-language">
 
           <button class="header-language-btn"
@@ -127,15 +127,15 @@
 
 {%- macro render_search_input() -%}
   <div class="siteheader-module__search">
-    <div class="header-search-wrp">
+    <div class="header-search_wrp">
       <div id="headerSearch" class="header-search header-search--{{module.style.search.search_field.style}}">
 
-        <div class="header-search__form-wrp">
+        <div class="header-search__form_wrp">
           <form class="header-search__form"
           tabindex="0"
           action="/{{site_settings.content_search_results_page_path}}">
 
-            <div class="header-search__form-internal-wrp"
+            <div class="header-search__form_internal-wrp"
             role="combobox"
             aria-expanded="false" aria-owns="headerSearchSuggestions" aria-haspopup="listbox">
               <input id="term" class="header-search__form-input" type="text" name="term" autocomplete="off"
@@ -650,7 +650,7 @@
       /* ============================ */
       /* Search */
       /* ============================ */
-      .header-search-wrp {
+      .header-search_wrp {
         margin: 0;
         padding: 0;
         {% if module.style.search.background.color.css %}
@@ -684,7 +684,7 @@
         overflow: hidden;
       }
 
-      .header-search__form-wrp {
+      .header-search__form_wrp {
         position: absolute;
         top: 0;
         right: 0;
@@ -702,12 +702,12 @@
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .header-search__form-wrp {
+        .header-search__form_wrp {
           transition: none;
         }
       }
 
-      .header-search--show .header-search__form-wrp {
+      .header-search--show .header-search__form_wrp {
         width: 400px;
       }
 
@@ -808,7 +808,7 @@
         padding-bottom: 5px;
       }
 
-      .open-search-wrp {
+      .open-search_wrp {
         overflow: hidden;
       }
 
@@ -847,7 +847,7 @@
   </div>
 {%- endmacro -%}
 
-<div class="siteheader-module-wrp">
+<div class="siteheader-module_wrp">
   <nav class="siteheader-module navbar siteheader-module--{{module_id}} {{module.style.general.presets.custom_preset}}" id="main-navigation" aria-label="Primary">
 
     <button class="siteheader-module__mobile-toggler"
