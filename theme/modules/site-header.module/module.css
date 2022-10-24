@@ -148,6 +148,12 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .header-language-btn {
+    transition: none;
+  }
+}
+
 .header-language-btn-text {
   padding-left: 6px;
 }
@@ -187,6 +193,12 @@
   flex-direction: row;
   text-decoration: none;
   transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-language__list-item-link {
+    transition: none;
+  }
 }
 
 .header-language__list-item-link:hover {

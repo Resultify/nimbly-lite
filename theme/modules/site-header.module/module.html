@@ -65,7 +65,9 @@
 
           <ul class="dropdown-menu header-language__list">
             <li class="header-language__list-item header-language__list-item--current">
-              <a class="header-language__list-item-link header-language__list-item-link--current hs-skip-lang-url-rewrite" href="{{content.absolute_url}}">
+              <a class="header-language__list-item-link header-language__list-item-link--current hs-skip-lang-url-rewrite"
+              lang="{{content.language.languageTag}}" hreflang="{{content.language.languageTag}}"
+              href="{{content.absolute_url}}">
                 {% if module.language_switcher.dropdown.show_current_language %}
                   {% if module.language_switcher.dropdown.show_language_code %}
                     {{content.language.languageTag|upper}}
@@ -79,26 +81,34 @@
             {% for item in content.translated_content.values()|selectattr('published') %}
               {% if module.language_switcher.dropdown.show_language_code %}
                 <li class="header-language__list-item">
-                  <a class="header-language__list-item-link hs-skip-lang-url-rewrite" href="{{item.absolute_url}}">
+                  <a class="header-language__list-item-link hs-skip-lang-url-rewrite"
+                  lang="{{item.language}}" hreflang="{{item.language}}"
+                  href="{{item.absolute_url}}">
                     {{item.language|upper}}
                   </a>
                 </li>
               {% else %}
                 {% if module.language_switcher.dropdown.display_mode == 'localized' %}
                   <li class="header-language__list-item">
-                    <a class="header-language__list-item-link hs-skip-lang-url-rewrite" data-language="{{item.language}}" lang="{{item.language}}" href="{{item.absolute_url}}">
+                    <a class="header-language__list-item-link hs-skip-lang-url-rewrite"
+                    lang="{{item.language}}" hreflang="{{item.language}}"
+                    data-language="{{item.language}}" href="{{item.absolute_url}}">
                       {{locale_name(item.language)}}
                     </a>
                   </li>
                 {% elif module.language_switcher.dropdown.display_mode == 'pageLang' %}
                   <li class="header-language__list-item">
-                    <a class="header-language__list-item-link hs-skip-lang-url-rewrite" href="{{item.absolute_url}}">
+                    <a class="header-language__list-item-link hs-skip-lang-url-rewrite"
+                    lang="{{item.language}}" hreflang="{{item.language}}"
+                    href="{{item.absolute_url}}">
                       {{locale_name(item.language, content.language)}}
                     </a>
                   </li>
                 {% elif module.language_switcher.dropdown.display_mode == 'hybrid' %}
                   <li class="header-language__list-item">
-                    <a class="header-language__list-item-link hs-skip-lang-url-rewrite" href="{{item.absolute_url}}">
+                    <a class="header-language__list-item-link hs-skip-lang-url-rewrite"
+                    lang="{{item.language}}" hreflang="{{item.language}}"
+                    href="{{item.absolute_url}}">
                       {{locale_name(item.language, content.language)}} ({{locale_name(item.language)}})
                     </a>
                   </li>

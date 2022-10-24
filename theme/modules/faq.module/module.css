@@ -41,6 +41,13 @@
   transition: transform 0.2s linear;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .faq-module__details.opening .faq-module__arrow:before,
+  .faq-module__details.closing .faq-module__arrow:before {
+    transition: none;
+  }
+}
+
 .faq-module__details[open]:not(.closing) .faq-module__arrow:before {
   transform: rotate(90deg);
 }
