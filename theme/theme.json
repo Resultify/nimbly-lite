@@ -12,8 +12,8 @@
       "url":"https://www.resultify.se/"
   },
   "is_available_for_new_content":true,
-  "documentation_url":"",
-  "example_url":"",
+  "documentation_url":"https://www.nimbly.tech/",
+  "example_url":"https://www.nimbly.tech/",
   "responsive_breakpoints": [
     {
       "name": "mobile",
