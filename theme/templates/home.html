@@ -2,16 +2,16 @@
   templateType: page
   isAvailableForNewContent: true
   enableDomainStylesheets: false
-  label: Home
-  screenshotPath: ../images/template-previews/startpage.png
+  label: Home page
+  screenshotPath: ../images/template-previews/home.png
 -->
 {% extends "./layouts/base.html" %}
 
 {% block body %}
 
   {% dnd_area 'dnd_area'
-    label='Startpage template',
-    class='startpage-template'
+    label='Home template',
+    class='home-template'
   %}
 
     {% include_dnd_partial path='../sections/3x3colgrid--card--imagetext.html' context={} %}

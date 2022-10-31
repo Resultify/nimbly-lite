@@ -1,8 +1,8 @@
 {
   "label": "nimbly-lite",
   "name": "nimbly-lite",
-  "preview_path": "./templates/startpage.html",
-  "screenshot_path": "./images/template-previews/startpage.png",
+  "preview_path": "./templates/home.html",
+  "screenshot_path": "./images/template-previews/home.png",
   "enable_domain_stylesheets": false,
   "license": "MIT",
   "version":"1.0.0",
