@@ -63,7 +63,7 @@
             {% endif %}
           </button>
 
-          <ul class="dropdown-menu header-language__list">
+          <ul role="list" class="dropdown-menu header-language__list">
             <li class="header-language__list-item header-language__list-item--current">
               <a class="header-language__list-item-link header-language__list-item-link--current hs-skip-lang-url-rewrite"
               lang="{{content.language.languageTag}}" hreflang="{{content.language.languageTag}}"
@@ -132,6 +132,7 @@
 
         <div class="header-search__form_wrp">
           <form class="header-search__form"
+          role="search"
           tabindex="0"
           action="/{{site_settings.content_search_results_page_path}}">
 
@@ -216,7 +217,7 @@
     {{'active' if link.activeNode}}">
       {{nav_link(link, link.level)}}
       {% if link.children && link.level < module.menu.max_level %}
-        <ul class="main-nav__list main-nav__list--sublevel
+        <ul role="list" class="main-nav__list main-nav__list--sublevel
         {{'main-nav__list--dropdown dropdown-menu' if link.children && link.level < module.menu.max_level && link.level < 2}}
         main-nav__list--lvl{{link.level + 1}} lvl{{link.level + 1}}">
           {% for sublink in link.children %}
@@ -227,7 +228,7 @@
     </li>
   {%- endmacro -%}
 
-  <ul class="main-nav__list main-nav__list--toplevel">
+  <ul role="list" class="main-nav__list main-nav__list--toplevel">
     {% for link in menu %}
       {{render_link_item(link, 1)}}
     {% endfor %}
