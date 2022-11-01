@@ -7,7 +7,7 @@
   },
   "icon" : "../../images/module.icons/icon.svg",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "module_id" : 53809649601,
+  "module_id" : 55479168961,
   "label" : "Icon2",
   "is_available_for_new_content" : true
 }
