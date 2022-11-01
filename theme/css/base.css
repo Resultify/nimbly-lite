@@ -1,4 +1,6 @@
 {% include './base/browser-defaults-overrides.css' %}
+{% include './base/button-defaults.css' %}
+{% include './base/link-defaults.css' %}
 {% include './base/hs-content-editor.css' %}
 {% include './base/stretched-link.css' %}
 {% include './base/transitions.css' %}

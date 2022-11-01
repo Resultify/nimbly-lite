@@ -1,0 +1,587 @@
+[ {
+  "id" : "ea5d7916-ee8c-e68a-2bb7-368f18852e6f",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a4b21e19-d8c2-f923-a007-e6a978d68bee",
+    "name" : "presets",
+    "display_width" : null,
+    "label" : "Presets",
+    "help_text" : "Button presets",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.button.button_style",
+      "name" : "style",
+      "display_width" : null,
+      "label" : "Style",
+      "help_text" : "Button style",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "Button style",
+      "choices" : [ [ "btn-primary", "Primary" ], [ "btn-secondary1", "Secondary 1" ], [ "btn-secondary2", "Secondary 2" ], [ "btn-secondary3", "Secondary 3" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "type" : "choice",
+      "default" : "btn-primary"
+    }, {
+      "id" : "style.button.button_size",
+      "name" : "size",
+      "display_width" : null,
+      "label" : "Size",
+      "help_text" : "Button size",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "",
+      "choices" : [ [ "btn-small", "Small" ], [ "btn-regular", "Medium" ], [ "btn-large", "Large" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "type" : "choice",
+      "default" : "btn-regular"
+    }, {
+      "id" : "style.presets.custom_preset",
+      "name" : "custom_preset",
+      "display_width" : null,
+      "label" : "Custom preset",
+      "help_text" : "Custom presets to globally restyle module",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "type" : "choice"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "style" : "btn-primary",
+      "size" : "btn-regular"
+    }
+  }, {
+    "id" : "dc102bb9-d1ae-af2b-21ae-52ba508a45ac",
+    "name" : "alignment",
+    "display_width" : null,
+    "label" : "Alignment",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "8b8ec898-7225-2535-8bec-71b30ac07401",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : false,
+      "locked" : false,
+      "alignment_direction" : "HORIZONTAL",
+      "type" : "alignment",
+      "default" : {
+        "horizontal_align" : "LEFT"
+      }
+    }, {
+      "id" : "style.button.button_full_width",
+      "name" : "full_width",
+      "display_width" : null,
+      "label" : "Full width",
+      "help_text" : "Button full width",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : false
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "alignment" : {
+        "horizontal_align" : "LEFT"
+      },
+      "full_width" : false
+    }
+  }, {
+    "id" : "76c3f921-9a96-c15b-30f4-ee3165c13b13",
+    "name" : "spacing",
+    "display_width" : null,
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "27209a02-82f9-d04a-daa4-92a9b122c5fe",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { }
+    }
+  }, {
+    "id" : "dad53a80-c7a0-c921-31d7-4469a6e06eb5",
+    "name" : "background",
+    "display_width" : null,
+    "label" : "Background",
+    "help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "6a67c18b-909c-8aee-756d-115acfd3ce15",
+      "name" : "color",
+      "display_width" : null,
+      "label" : "Color",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "color" : { }
+    }
+  }, {
+    "id" : "ae8520cb-f9ae-3990-a633-57671f202af8",
+    "name" : "custom_styling",
+    "display_width" : null,
+    "label" : "Custom theme overrides",
+    "help_text" : "Override global theme settings for the current component",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "8252893f-989e-4154-c2d6-977d335be1e2",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    }, {
+      "id" : "style.button.background.color",
+      "name" : "background",
+      "display_width" : null,
+      "label" : "Background",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "default" : { }
+    }, {
+      "id" : "style.button.text.font",
+      "name" : "font",
+      "display_width" : null,
+      "label" : "Font",
+      "required" : false,
+      "locked" : false,
+      "load_external_fonts" : true,
+      "type" : "font",
+      "default" : {
+        "font_set" : "DEFAULT"
+      }
+    }, {
+      "id" : "2e16ec3e-4db5-2310-4f6c-8c97d5cb1689",
+      "name" : "border",
+      "display_width" : null,
+      "label" : "Border",
+      "required" : false,
+      "locked" : false,
+      "allow_custom_border_sides" : false,
+      "type" : "border",
+      "default" : { }
+    }, {
+      "id" : "style.button.radius.radius",
+      "name" : "radius",
+      "display_width" : null,
+      "label" : "Border radius",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 100,
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number"
+    }, {
+      "id" : "style.button.hover",
+      "name" : "hover",
+      "display_width" : null,
+      "label" : "Hover",
+      "help_text" : "Hover settings",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "0aa6c3cd-2347-455a-ff9b-ec2210c4a1c2",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "help_text" : "Text color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }, {
+        "id" : "style.button.hover.background",
+        "name" : "background",
+        "display_width" : null,
+        "label" : "Background",
+        "help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : { }
+      }, {
+        "id" : "style.button.hover.border",
+        "name" : "border_color",
+        "display_width" : null,
+        "label" : "Border color",
+        "help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : { }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "background" : { },
+        "border_color" : { }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { },
+      "background" : { },
+      "font" : {
+        "font_set" : "DEFAULT"
+      },
+      "border" : { },
+      "hover" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "background" : { },
+        "border_color" : { }
+      }
+    }
+  }, {
+    "id" : "f91ccb36-ec61-0719-e0d7-f16524f74699",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "help_text" : "Button icon styling",
+    "inline_help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "2e81c040-85eb-fbf7-36cf-3b63fb16a4bb",
+      "name" : "custom_styling",
+      "display_width" : null,
+      "label" : "Custom theme overrides",
+      "help_text" : "Override global theme settings for the current component",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "3a7dfc3a-8ad4-4e07-eb5c-5e933348ad13",
+        "name" : "spacing",
+        "display_width" : null,
+        "label" : "Spacing",
+        "required" : false,
+        "locked" : false,
+        "type" : "spacing",
+        "default" : { }
+      }, {
+        "id" : "a8446d65-8749-1ff6-21d8-ee982a25cb03",
+        "name" : "background",
+        "display_width" : null,
+        "label" : "Background",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }, {
+        "id" : "0813ffba-d776-8e89-314a-f8ccee784cc5",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      }, {
+        "id" : "d5d743c9-b6b1-85b6-5345-9443c316ee63",
+        "name" : "border",
+        "display_width" : null,
+        "label" : "Border",
+        "required" : false,
+        "locked" : false,
+        "allow_custom_border_sides" : false,
+        "type" : "border",
+        "default" : { }
+      }, {
+        "id" : "d753fe12-e508-6e52-bdc0-7f6912ae304a",
+        "name" : "radius",
+        "display_width" : null,
+        "label" : "Border radius",
+        "help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "min" : 0,
+        "max" : 100,
+        "step" : 1,
+        "suffix" : "%",
+        "type" : "number"
+      }, {
+        "id" : "c38b4df9-bfbd-cfa3-f58a-4962490d9b5e",
+        "name" : "size",
+        "display_width" : null,
+        "label" : "Size",
+        "help_text" : "Icon size",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "min" : 0,
+        "max" : 400,
+        "step" : 1,
+        "suffix" : "px",
+        "type" : "number"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "spacing" : { },
+        "background" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "border" : { }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "custom_styling" : {
+        "spacing" : { },
+        "background" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "border" : { }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "presets" : {
+      "style" : "btn-primary",
+      "size" : "btn-regular"
+    },
+    "alignment" : {
+      "alignment" : {
+        "horizontal_align" : "LEFT"
+      },
+      "full_width" : false
+    },
+    "spacing" : {
+      "spacing" : { }
+    },
+    "background" : {
+      "color" : { }
+    },
+    "custom_styling" : {
+      "spacing" : { },
+      "background" : { },
+      "font" : {
+        "font_set" : "DEFAULT"
+      },
+      "border" : { },
+      "hover" : {
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "background" : { },
+        "border_color" : { }
+      }
+    },
+    "icon" : {
+      "custom_styling" : {
+        "spacing" : { },
+        "background" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "color" : {
+          "color" : null,
+          "opacity" : null
+        },
+        "border" : { }
+      }
+    }
+  }
+}, {
+  "id" : "f405d893-38fb-ebb6-a9ed-b822456ce94c",
+  "name" : "text",
+  "display_width" : null,
+  "label" : "Text",
+  "help_text" : "Button text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : ""
+}, {
+  "id" : "cd263e47-58e5-3133-bf3b-3bfa9046cdd4",
+  "name" : "link",
+  "display_width" : null,
+  "label" : "Link",
+  "help_text" : "Button link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "f179ad0b-9b99-e1cc-9b6d-612b541a0d2b",
+  "name" : "accessible_link_label",
+  "display_width" : null,
+  "label" : "Accessible link label",
+  "help_text" : "If the link title is added at the end of repeated blocks of text, for example “Read more” links at the end of short teasers for blog posts, then you can provide more descriptive link text specifically for screen reader users using Accessible link label. It will be visually hidden for a normal view.",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "Accessible link label",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "e82dd24a-6d77-e5f4-ac7c-33969c339768",
+  "name" : "accessible_link",
+  "display_width" : null,
+  "label" : "Accessible link",
+  "help_text" : "Accessible link. Inform when a link opens a new window.",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "95324286-bd4d-6ab0-0750-924f046c45dc",
+  "name" : "icon",
+  "display_width" : null,
+  "label" : "Icon",
+  "help_text" : "Button icon",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ccc73184-b435-7c9a-5753-a11588ed3052",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.14.0",
+    "type" : "icon",
+    "default" : { }
+  }, {
+    "id" : "a95fbe71-d85d-bd2d-f216-6a990d35f625",
+    "name" : "icon_position",
+    "display_width" : null,
+    "label" : "Icon position",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "type" : "choice",
+    "default" : "left"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "icon" : { },
+    "icon_position" : "left"
+  }
+}, {
+  "id" : "d337f1ff-0911-c637-ea15-3ec7e33a3d03",
+  "name" : "additional_settings",
+  "display_width" : null,
+  "label" : "Additional_settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "179c15b4-32b0-f286-c1c2-a68bc6a3d338",
+    "name" : "disable_button",
+    "display_width" : null,
+    "label" : "Disable button",
+    "help_text" : "Make buttons look inactive",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "disable_button" : false
+  }
+} ]

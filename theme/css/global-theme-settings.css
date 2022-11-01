@@ -4,6 +4,6 @@
 {% include './global-theme-settings/typography/links.css' %}
 {% include './global-theme-settings/typography/blockquotes.css' %}
 {% include './global-theme-settings/typography/tables.css' %}
-{% include './global-theme-settings/buttons.css' %}
+{% include './global-theme-settings/buttons2.css' %}
 {% include './global-theme-settings/icons.css' %}
 {% include './global-theme-settings/forms.css' %}

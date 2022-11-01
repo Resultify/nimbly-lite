@@ -1,0 +1,26 @@
+{% import '../macros/button2.html' as button_macros %}
+
+{# module scope css #}
+<style>
+  {% scope_css %}
+
+    .button-module {
+      text-align: {{module.style.alignment.alignment.horizontal_align}};
+      {% if module.style.background.color.css %}
+        background-color: {{module.style.background.color.css}};
+      {% endif %}
+      {{module.style.spacing.spacing.css}}
+    }
+
+  {% end_scope_css %}
+</style>
+
+{% if module.text %}
+  <div class="button-module_wrp">
+    <div class="button-module button-module--{{module_id}} {{module.style.presets.custom_preset}}">
+      {{button_macros.render_btn_tmpl(module, module.style)}}
+    </div>
+  </div>
+{% else %}
+  {% editor_placeholder %}
+{% endif %}

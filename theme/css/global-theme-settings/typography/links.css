@@ -6,11 +6,10 @@
   {% set link_hover_opacity = theme.typography.link.hover.color.opacity %}
 {% else %}
   {% set link_hover_color = color_variant(theme.typography.link.font.color, +30) %}
-  {% set link_hover_opacity = 80 %}
+  {% set link_hover_opacity = 90 %}
 {% endif %}
 
-/* link */
-a {
+:where(a:not(.btn-link)) {
   {% if link_font.font == null %}
     font-family: var(--system-fonts);
   {% endif %}
@@ -18,10 +17,10 @@ a {
     {{link_font.style}};
   {% endif %}
   font-size: {{link_font.size ~ 'px'}};
-  color: {{link_font.color}};
+  --color: {{link_font.color}};
 }
 
-a:hover {
-  color: {{rgb(link_hover_color, link_hover_opacity)}};
+:where(a:not(.btn-link):hover) {
+  --hover-color: {{rgb(link_hover_color, link_hover_opacity)}};
   text-decoration: {{theme.typography.link.hover.underline}};
 }

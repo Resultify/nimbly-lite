@@ -1,0 +1,27 @@
+:where(a:not(.btn-link)) {
+  --_color: var(--color, blue);
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5ch;
+  vertical-align: middle;
+  color: var(--_color);
+}
+
+:where(a:not(.btn-link):hover) {
+  color: var(--hover-color, var(--_color));
+}
+
+:where(a:not(.btn-link)) :where(.icon) {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:where(a:not(.btn-link)) :where(svg, .icon > svg) {
+  height: 2ch;
+  width: 2ch;
+  flex-shrink: 0;
+  fill: currentColor;
+}

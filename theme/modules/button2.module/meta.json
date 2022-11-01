@@ -1,0 +1,13 @@
+{
+  "global" : false,
+  "placeholder" : {
+    "show_module_icon" : true,
+    "title" : "Button2",
+    "description" : "Add button element"
+  },
+  "icon" : "../../images/module-icons/button.svg",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 53809587151,
+  "label" : "Button2",
+  "is_available_for_new_content" : true
+}
