@@ -34,13 +34,10 @@
   id:'secondary-link',
   stretched_link:true|false,
   data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
-  class:['additional-class-1','additional-class-2'],
-  no_wrapper:true|false
+  class:['additional-class-1','additional-class-2']
 }%} #}
 {# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
 {# stretched_link - enable/disable stretched_link option #}
-{# no_wrapper - use or not <span> no_wrapper #}
-
 
 {# example #}
 {# {{render_link_tmpl(module.link, module.style.link, module, options)}} #}
@@ -65,19 +62,8 @@
     {%- if options.class -%}
       {% set class = options.class|join(' ') %}
     {%- endif -%}
-    {%- if options.no_wrapper == null || options.no_wrapper == false -%}
-      {%- set link_style_selector = '{{link_class}} ' %}
-    {%- else -%}
-      {%- set link_style_selector = '{{link_class}}' %}
-    {%- endif -%}
 
-
-    {# module global css #}
-    {%- require_css -%}
-      <style>
-      </style>
-    {%- end_require_css -%}
-    {# module scope css #}<style>
+    <style>
       {%- scope_css -%}
 
         {% set link_font = style.custom_styling.font %}
@@ -86,55 +72,48 @@
           {% set link_hover_opacity = style.custom_styling.hover.color.opacity %}
         {% else %}
           {% set link_hover_color = color_variant(link_font.color, +30) %}
-          {% set link_hover_opacity = 80 %}
+          {% set link_hover_opacity = 90 %}
         {% endif %}
 
         {% if global_data.style.general.custom_styling.color.css %}
-          .{{link_style_selector}}.g-module-macros-link {
-            color: {{global_data.style.general.custom_styling.color.css}};
+          .{{link_class}} {
+            --color: {{global_data.style.general.custom_styling.color.css}};
           }
-          .{{link_style_selector}}.g-module-macros-link:hover {
-            color: {{rgb(global_data.style.general.custom_styling.color.color, global_data.style.general.custom_styling.color.opacity, +30, -20)}};
+          .{{link_class}}:hover {
+            --hover-color: {{rgb(global_data.style.general.custom_styling.color.color, global_data.style.general.custom_styling.color.opacity, +30, -20)}};
           }
         {% endif %}
 
-        .{{link_style_selector}}.g-module-macros-link {
-          {% if link_font.style %}
-            {{link_font.style}};
-          {% endif %}
-          {% if link_font.size %}
-            font-size: {{link_font.size ~ 'px'}};
-          {% endif %}
-          {% if link_font.color %}
-            color: {{link_font.color}};
-          {% endif %}
-          {% if style.custom_styling.underline %}
-            text-decoration: {{style.custom_styling.underline}};
-          {% endif %}
-        }
-
-        .{{link_style_selector}}.g-module-macros-link:hover {
-          {% if link_hover_color %}
-            color: {{rgb(link_hover_color, link_hover_opacity)}};
-          {% endif %}
-          {% if style.custom_styling.hover.underline %}
-            text-decoration: {{style.custom_styling.hover.underline}};
-          {% endif %}
-        }
-
-        {% if data.icon.icon.name %}
-          .{{link_style_selector}}.g-module-macros-icon {
-            line-height: 0;
-            padding-left: 4px;
-            padding-right: 4px;
+        {% if link_font.style or link_font.size or link_font.color or style.custom_styling.underline %}
+          .{{link_class}} {
+            {% if link_font.style %}
+              {{link_font.style}};
+            {% endif %}
+            {% if link_font.size %}
+              font-size: {{link_font.size ~ 'px'}};
+            {% endif %}
+            {% if link_font.color %}
+              --color: {{link_font.color}};
+            {% endif %}
+            {% if style.custom_styling.underline %}
+              text-decoration: {{style.custom_styling.underline}};
+            {% endif %}
           }
-          .{{link_style_selector}}.g-module-macros-link__icon .icon svg {
-            vertical-align: -0.125em;
+        {% endif %}
+
+        {% if link_hover_color or style.custom_styling.hover.underline %}
+          .{{link_class}}:hover {
+            {% if link_hover_color %}
+              --hover-color: {{rgb(link_hover_color, link_hover_opacity)}};
+            {% endif %}
+            {% if style.custom_styling.hover.underline %}
+              text-decoration: {{style.custom_styling.hover.underline}};
+            {% endif %}
           }
         {% endif %}
 
         {% if options.stretched_link %}
-          .{{link_style_selector}}.g-module-macros-link.stretched-link {
+          .{{link_class}}.stretched-link {
             position: static;
           }
         {% endif %}
@@ -143,7 +122,7 @@
     </style>
 
     {%- if data.link.url.href -%}
-      {% set href =data.link.url.href %}
+      {% set href = data.link.url.href %}
     {%- endif -%}
     {%- if data.link.url.type is equalto 'EMAIL_ADDRESS' -%}
       {% set href = 'mailto:' + href %}
@@ -156,49 +135,44 @@
     {%- endif- %}
     {%- if options.stretched_link -%}
       {% set stretched_link_class = 'stretched-link' %}
-    {%- endif -%}{% if options.no_wrapper == null || options.no_wrapper == false %}<span class="g-module-macros-link_wrp {{link_class}} {{class}}">{% endif %}
-        {%- if href -%}
-          <a href="{{href}}" class="{{open_in_new_tab_class}} {{stretched_link_class}} g-module-macros-link
-          {% if options.no_wrapper == true %} {{btn_class}} {{class}} {% endif %}"
-          {% if data.link.open_in_new_tab %} target="_blank" {% endif %}
-          {% if data_attrs %} {{data_attrs}} {% endif %}
-          {{rel}}>
+    {%- endif -%}
 
-            {%- if data.icon.icon.name -%}
-              {%- if data.icon.icon_position == 'left' -%}
-                <span class="g-module-macros-link__icon">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
-                  {
-                    id: 'link'
-                  }
-                )}}</span>
-              {%- endif -%}
-            {%- endif -%}
+    {%- if data.text -%}
+      <a href="{{href}}"
+      class="g-module-macros-link {{link_class}}
+      {{open_in_new_tab_class}}
+      {{stretched_link_class}}
+      {{class}}"
+      {% if data.link.open_in_new_tab %} target="_blank" {% endif %}
+      {% if data_attrs %} {{data_attrs}} {% endif %}
+      {{rel}}>
 
-            {%- text
-              'text'
-              extra_classes='g-module-macros-link__text'
-              label='Text',
-              value='{{data.text}}'
-            %}
+        {%- if data.icon.icon.name -%}
+          {%- if data.icon.icon_position == 'left' -%}
+            {{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
+              {
+                id: 'link'
+              }
+            )}}
+          {%- endif -%}
+        {%- endif -%}
+        {{data.text}}
+        {%- if data.icon.icon.name %}
+          {%- if data.icon.icon_position == 'right' -%}
+            {{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
+              {
+                id: 'link'
+              }
+            )}}
+          {%- endif -%}
+        {%- endif -%}
 
-            {%- if data.icon.icon.name %}
-              {%- if data.icon.icon_position == 'right' -%}
-                <span class="g-module-macros-link__icon">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
-                  {
-                    id: 'link'
-                  }
-                )}}</span>
-              {%- endif -%}
-            {%- endif -%}
-
-            {%- if data.link.open_in_new_tab -%}
-              {%- if data.accessible_link -%}
-                {{target_blank_macros.render_target_blank_tmpl('1em')}}
-              {%- endif -%}
-            {%- endif -%}
-          </a>
-        {%- else -%}
-          {{data.text}}
-        {%- endif -%}{% if options.no_wrapper == null || options.no_wrapper == false %}</span>{% endif %}
+        {%- if data.link.open_in_new_tab -%}
+          {%- if data.accessible_link -%}
+            {{target_blank_macros.render_target_blank_tmpl()}}
+          {%- endif -%}
+        {%- endif -%}
+      </a>
+    {%- endif -%}
   {%- endif -%}
 {%- endmacro -%}

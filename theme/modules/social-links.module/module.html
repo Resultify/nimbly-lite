@@ -2,12 +2,6 @@
 {% import '../macros/target-blank.html' as target_blank_macros %}
 {% import '../../css/macros/macros.css' %}
 
-{# module global css #}
-{% require_css %}
-  <style>
-  </style>
-{% end_require_css %}
-
 {# module scope css #}
 <style>
   {% scope_css %}
@@ -16,11 +10,11 @@
       {% if module.style.general.alignment.vertical == 'true' %}
         flex-direction: column;
       {% endif %}
-      
+
       {% if module.style.general.alignment.horizontal_alignment.horizontal_align && module.style.general.alignment.vertical == 'false' %}
         justify-content: {{module.style.general.alignment.horizontal_alignment.horizontal_align}};
       {% endif %}
-      
+
       {% if module.style.general.alignment.horizontal_alignment.horizontal_align && module.style.general.alignment.vertical == 'true' %}
         {% if module.style.general.alignment.horizontal_alignment.horizontal_align == 'LEFT' %}
           {% set align = 'start'%}
@@ -29,10 +23,10 @@
         {% else %}
           {% set align = 'center'%}
         {% endif %}
-      
+
         align-items: {{align}};
       {% endif %}
-      
+
       {% if module.style.general.border.border_radius != null %}
         border-radius: {{module.style.general.border.border_radius ~ 'px'}};
       {% endif %}
@@ -64,7 +58,7 @@
         {% set icon_hover_color = color_variant(theme.icons.secondary.fill.color.color, +30) %}
         {% set icon_hover_opacity = 80 %}
       {% endif %}
-      
+
       fill: {{rgb(icon_hover_color, icon_hover_opacity)}};
     }
 
@@ -110,11 +104,11 @@
          {% if item.link.link.open_in_new_tab %}target="_blank"{% endif %}
          {% if rel %}rel="{{ rel|join(' ') }}"{% endif %}
          >
-        
+
           <div class="social-links-module__icon">
             {{icon_macros.render_icon_tmpl(icon_data()|fromjson, module.style.icon, item)}}
             <span class="visually-hidden">{{item.link_label.link_label}}</span>
-          
+
             {% if item.link.link.open_in_new_tab %}
               {% if item.link.accessible_link %}
                 {{target_blank_macros.render_target_blank_tmpl('1em')}}

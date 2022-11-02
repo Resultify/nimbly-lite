@@ -1,10 +1,10 @@
 {% import '../macros/image.html' as image_macros %}
-{% import '../macros/icon2.html' as icon_macros %}
-{% import '../macros/heading2.html' as heading_macros %}
-{% import '../macros/text2.html' as text_macros %}
-{% import '../macros/richtext2.html' as richtext_macros %}
-{% import '../macros/link2.html' as link_macros %}
-{% import '../macros/button2.html' as button_macros %}
+{% import '../macros/icon.html' as icon_macros %}
+{% import '../macros/heading.html' as heading_macros %}
+{% import '../macros/text.html' as text_macros %}
+{% import '../macros/richtext.html' as richtext_macros %}
+{% import '../macros/link.html' as link_macros %}
+{% import '../macros/button.html' as button_macros %}
 
 {# #1 part filter content #}
 {# only if using filter content option #}
@@ -184,10 +184,6 @@
 
   {% end_scope_css %}
 </style>
-
-{{module.style.link.alignment.alignment.horizontal_align}}
-
-
 
 {# stretched_link #}
 {% if module.additional_settings.enable_whole_area_link %}

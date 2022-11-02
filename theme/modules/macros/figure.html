@@ -98,21 +98,26 @@
       </style>
     {%- end_require_css -%}
 
-    {# module scope css #}<style>
+    {# module scope css #}
+    <style>
       {%- scope_css -%}
-        .{{figure_class}} .g-module-macros-figure--image {
-          {% if style.border.border_radius %}
-            border-radius: {{style.border.border_radius ~ 'px'}};
-          {% endif %}
-          {% if style.custom_image_fit.image_aspect_ratio %}
-            aspect-ratio: {{style.custom_image_fit.image_aspect_ratio}};
-          {% endif %}
-          {% if style.custom_image_fit.image_fit %}
-            object-fit: {{style.custom_image_fit.image_fit}};
-          {% endif %}
-        }
+        {% if style.border.border_radius or style.custom_image_fit.image_aspect_ratio or style.custom_image_fit.image_fit %}
+          .{{figure_class}} .g-module-macros-figure--image {
+            {% if style.border.border_radius %}
+              border-radius: {{style.border.border_radius ~ 'px'}};
+            {% endif %}
+            {% if style.custom_image_fit.image_aspect_ratio %}
+              aspect-ratio: {{style.custom_image_fit.image_aspect_ratio}};
+            {% endif %}
+            {% if style.custom_image_fit.image_fit %}
+              object-fit: {{style.custom_image_fit.image_fit}};
+            {% endif %}
+          }
+        {% endif %}
       {%- end_scope_css -%}
-    </style><figure class="g-module-macros-figure {{figure_class}} {{class}}">
+    </style>
+
+    <figure class="g-module-macros-figure {{figure_class}} {{class}}">
       {%- set loadingAttr = data.image.loading != 'disabled' ? 'loading="{{data.image.loading}}"' : '' -%}
       {%- set styleAttr = data.image.size_type != 'exact' ? 'style="max-width: 100%; height: auto;"' : '' -%}
       {%- set widthAttr = data.image.width -%}
@@ -136,13 +141,13 @@
       {%- endif -%}
 
       {%- macro render_image() -%}
-        <span id="{{name}}_image" class="g-module-macros-figure--image_wrp"><img {% if data_attrs %} {{data_attrs}} {% endif %} class="g-module-macros-figure--image"
+        <img id="{{name}}_image" {% if data_attrs %} {{data_attrs}} {% endif %} class="g-module-macros-figure--image"
           alt="{{data.image.alt}}"
           src="{{data.image.src}}"
           width="{{widthAttr}}"
           height="{{heightAttr}}"
           {{loadingAttr}}
-          {{styleAttr}}></span>
+          {{styleAttr}}>
       {%- endmacro -%}
 
       {%- if data.additional_settings.image_zoom -%}<a href="{{data.image.src}}"

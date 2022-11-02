@@ -23,17 +23,13 @@
 {# global data [module], usualy for general style setting [style tab -> general panel] #}
 
 {# 4 #}
-{# class_id [string: 0|'class_id'] #}
-{# macro class_id to add a unique class if we have two or more same macros in one module as a components #}
-
-{# 4 #}
 {# options [object: {key: value}] #}
 {# add additional options for the icon #}
 {# Supported features #}
 {# {% set options = {
   id:'secondary-icon',
-  data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
   class:['additional-class-1','additional-class-2']
+  no_wrapper:true|false
 }%} #}
 {# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
 
@@ -51,18 +47,9 @@
     {%- else -%}
       {%- set icon_class = 'icon-style' -%}
     {%- endif -%}
-    {%- if options.data_attrs -%}
-      {% set data_attrs = options.data_attrs|join(' ') %}
-    {%- endif -%}
     {%- if options.class -%}
       {% set class = options.class|join(' ') %}
     {%- endif -%}
-
-    {# module global css #}
-    {%- require_css -%}
-      <style>
-      </style>
-    {%- end_require_css -%}
 
     {# module scope css #}
     <style>
@@ -72,6 +59,8 @@
         {% set icon_background = style.custom_styling.background.css %}
         {% set icon_fill_color = style.custom_styling.color.css %}
         {% set icon_size = style.custom_styling.size %}
+        {% set icon_border_radius = style.custom_styling.radius %}
+        {% set icon_border = style.custom_styling.border.css %}
 
         {% if global_data.style.general.custom_styling.color.css %}
           .g-module-macros-heading__icon svg {
@@ -79,26 +68,30 @@
           }
         {% endif %}
 
-        .{{icon_class}} .g-module-macros-icon {
-          {% if icon_background %}
-            background-color: {{icon_background}};
-          {% endif %}
-          {% if style.custom_styling.radius != null %}
-            border-radius: {{style.custom_styling.radius ~ '%'}};
-          {% endif %}
-          {{style.custom_styling.border.css}}
-          {{icon_spacing}}
-        }
+        {%- if icon_spacing or icon_background or icon_border_radius or icon_border -%}
+          .{{icon_class}} {
+            {% if icon_background %}
+              background-color: {{icon_background}};
+            {% endif %}
+            {% if icon_border_radius != null %}
+              border-radius: {{icon_border_radius ~ '%'}};
+            {% endif %}
+            {{icon_border}}
+            {{icon_spacing}}
+          }
+        {% endif %}
 
-        .{{icon_class}} .g-module-macros-icon svg {
-          {% if icon_fill_color %}
-            fill: {{icon_fill_color}};
-          {% endif %}
-          {% if icon_size %}
-            height: {{icon_size ~ 'px'}};
-            width: {{icon_size ~ 'px'}};
-          {% endif %}
-        }
+        {%- if icon_fill_color or icon_size -%}
+          .{{icon_class}} svg {
+            {% if icon_fill_color %}
+              fill: {{icon_fill_color}};
+            {% endif %}
+            {% if icon_size %}
+              height: {{icon_size ~ 'px'}};
+              width: {{icon_size ~ 'px'}};
+            {% endif %}
+          }
+        {% endif %}
 
       {%- end_scope_css -%}
     </style>
@@ -123,17 +116,22 @@
       {%- set icon_shape = 'icon--circle' -%}
     {%- endif -%}
 
-    {# g-module-macros... = global module macros #}
-    <span {% if data_attrs %} {{data_attrs}} {% endif %}
-    class="g-module-macros-icon_wrp {{icon_class}} {{icon_size}} {{icon_color}} {{icon_shape}} {{class}}">
-      {%- icon
-        extra_classes='g-module-macros-icon icon'
-        name='{{data.icon.name}}'
-        purpose='{{data.accessibility_options.purpose}}'
-        style='{{data.icon.type}}'
-        title='{{data.accessibility_options.title}}'
-        unicode='{{data.icon.unicode}}',
-        icon_set='{{data.icon.icon_set}}'
-      %}</span>
+    {%- set no_wrapper = false -%}
+    {%- if options.no_wrapper == true -%}
+      {%- set no_wrapper = true -%}
+    {%- endif -%}
+
+    {%- set extra_classes = 'g-module-macros-icon icon ' ~ icon_class ~ ' ' ~ icon_size ~ ' ' ~ icon_color ~ ' ' ~ icon_shape ~ ' ' ~ class -%}
+
+    {%- icon
+      extra_classes={{extra_classes}}
+      name={{data.icon.name}}
+      purpose={{data.accessibility_options.purpose}}
+      style={{data.icon.type}}
+      title={{data.accessibility_options.title}}
+      unicode={{data.icon.unicode}}
+      icon_set={{data.icon.icon_set}}
+      no_wrapper={{no_wrapper}}
+    %}
   {%- endif -%}
 {%- endmacro -%}

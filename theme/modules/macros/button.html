@@ -35,13 +35,11 @@
   stretched_link:true|false,
   is_btn:true|false,
   data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
-  class:['additional-class-1','additional-class-2'],
-  no_wrapper:true|false
+  class:['additional-class-1','additional-class-2']
 }%} #}
 {# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
 {# stretched_link - enable/disable stretched_link option #}
 {# is_btn - button tag or link with 'a' tag #}
-{# no_wrapper - use or not <span> no_wrapper #}
 
 
 {# example #}
@@ -73,23 +71,15 @@
     {%- if options.class -%}
       {% set class = options.class|join(' ') %}
     {%- endif -%}
-    {%- if options.no_wrapper == null || options.no_wrapper == false -%}
-      {%- set btn_style_selector = '{{btn_class}} ' %}
-    {%- else -%}
-      {%- set btn_style_selector = '{{btn_class}}' %}
-    {%- endif -%}
+    {% set btn_border = style.custom_styling.border %}
 
-    {# module global css #}
-    {%- require_css -%}
-      <style>
-      </style>
-    {%- end_require_css -%}
 
-    {# module scope css #}<style>
+    <style>
       {%- scope_css -%}
 
-        {% set btn_spacing = style.custom_styling.spacing %}
+        {% set btn_spacing = style.custom_styling.spacing.css %}
         {% set btn_border = style.custom_styling.border %}
+        {% set btn_border_radius = style.custom_styling.radius %}
 
         {% set btn_background = style.custom_styling.background %}
         {% set btn_text_font = style.custom_styling.font %}
@@ -116,103 +106,45 @@
           {% set btn_hover_border_opacity = btn_border.top.opacity %}
         {% endif %}
 
-        {% if btn_hover_background_opacity == 100 %}
-          {% set btn_hover_shadow_opacity = 50 %}
-        {% else %}
-          {% if btn_hover_background_opacity < 45 %}
-            {% set btn_hover_shadow_opacity = btn_hover_background_opacity + 25 %}
-          {% elif btn_hover_background_opacity < 65 %}
-            {% set btn_hover_shadow_opacity = btn_hover_background_opacity - 20 %}
-          {% elif btn_hover_background_opacity < 85 %}
-            {% set btn_hover_shadow_opacity = btn_hover_background_opacity - 30 %}
-          {% elif btn_hover_background_opacity < 100 %}
-            {% set btn_hover_shadow_opacity = btn_hover_background_opacity - 45 %}
-          {% endif %}
+        {%- if btn_border_radius or btn_text_font.color or btn_text_font.size or btn_background.css or btn_text_font.style or btn_border.css or btn_spacing -%}
+          .{{btn_class}} {
+            {% if btn_border_radius != null %}
+              --border-radius: {{btn_border_radius ~ 'px'}};
+            {% endif %}
+            {% if btn_text_font.color %}
+              --color: {{btn_text_font.color}};
+            {% endif %}
+            {% if btn_text_font.size %}
+              font-size: {{btn_text_font.size ~ 'px'}};
+            {% endif %}
+            {% if btn_background.css %}
+              --bg: {{btn_background.css}};
+            {% endif %}
+            {% if btn_text_font.style %}
+              {{btn_text_font.style}};
+            {% endif %}
+            {{btn_border.css}}
+            {{btn_spacing}}
+          }
         {% endif %}
 
-        .{{btn_style_selector}}.btn {
-          {% if style.custom_styling.radius != null %}
-            border-radius: {{style.custom_styling.radius ~ 'px'}};
-          {% endif %}
-          {% if btn_text_font.color %}
-            color: {{btn_text_font.color}};
-            fill: {{btn_text_font.color}};
-          {% endif %}
-          {% if btn_text_font.size %}
-            font-size: {{btn_text_font.size ~ 'px'}};
-          {% endif %}
-          {% if btn_background.css %}
-            background-color: {{btn_background.css}};
-          {% endif %}
-          {% if btn_text_font.style %}
-            {{btn_text_font.style}};
-          {% endif %}
-          {{btn_border.css}}
-          {{btn_spacing.css}}
-        }
-
-        .{{btn_style_selector}}.btn:hover {
-          {% if btn_hover_color %}
-            color: {{btn_hover_color}};
-            fill: {{btn_hover_color}};
-          {% endif %}
-          {% if btn_hover_background_color %}
-            background-color: {{rgb(btn_hover_background_color, btn_hover_background_opacity)}};
-          {% endif %}
-          {% if btn_hover_border_color %}
-            border-color: {{rgb(btn_hover_border_color, btn_hover_border_opacity)}};
-          {% endif %}
-        }
-
-        .{{btn_style_selector}}.btn:focus,
-        .{{btn_style_selector}}.btn.focus {
-          {% if btn_hover_color %}
-            color: {{btn_hover_color}};
-            fill: {{btn_hover_color}};
-          {% endif %}
-          {% if btn_hover_background_color %}
-              background-color: {{rgb(btn_hover_background_color, btn_hover_background_opacity)}};
-              box-shadow: 0 0 0 0.25rem {{rgb(btn_hover_background_color, btn_hover_shadow_opacity)}};
-          {% endif %}
-          {% if btn_hover_border_color %}
-            border-color: {{rgb(btn_hover_border_color, btn_hover_border_opacity)}};
-          {% endif %}
-        }
-
-        .{{btn_style_selector}}.btn:active,
-        .{{btn_style_selector}}.btn.active {
-          {% if btn_hover_color %}
-            color: {{btn_hover_color}};
-            fill: {{btn_hover_color}};
-          {% endif %}
-          {% if btn_hover_border_color %}
-            border-color: {{rgb(btn_hover_border_color, btn_hover_border_opacity, -20)}};
-          {% endif %}
-          {% if btn_hover_background_color %}
-            background-color: {{rgb(btn_hover_background_color, btn_hover_background_opacity, -20)}};
-          {% endif %}
-        }
-
-        {% if btn_hover_background_color %}
-          .{{btn_style_selector}}.btn:active:focus,
-          .{{btn_style_selector}}.btn.active:focus {
-            box-shadow: 0 0 0 0.25rem {{rgb(btn_hover_background_color, btn_hover_shadow_opacity)}};
+        {%- if btn_hover_color or btn_hover_background_color or btn_hover_border_color -%}
+          .{{btn_class}}:hover {
+            {% if btn_hover_color %}
+              --hover-color: {{btn_hover_color}};
+            {% endif %}
+            {% if btn_hover_background_color %}
+              --hover-bg: {{rgb(btn_hover_background_color, btn_hover_background_opacity)}};
+            {% endif %}
+            {% if btn_hover_border_color %}
+              --hover-border: {{rgb(btn_hover_border_color, btn_hover_border_opacity)}};
+            {% endif %}
           }
         {% endif %}
 
         {% if options.stretched_link %}
-          .{{btn_style_selector}}.g-module-macros-btn.stretched-link {
+          .{{btn_class}}.stretched-link {
             position: static;
-          }
-        {% endif %}
-
-        {% if data.icon.icon.name %}
-          .{{btn_style_selector}}.g-module-macros-btn__icon .icon svg {
-            vertical-align: -0.125em;
-          }
-          .{{btn_style_selector}}.g-module-macros-icon {
-            padding-left: 4px;
-            padding-right: 4px;
           }
         {% endif %}
 
@@ -230,7 +162,7 @@
     {%- endunless -%}
 
     {%- if style.alignment.full_width -%}
-      {%- set full_width = 'btn-w100'  -%}
+      {%- set full_width = 'btn-w100' -%}
     {%- endif -%}
 
     {%- if data.link.url.href -%}
@@ -253,53 +185,47 @@
       {%- set open_in_new_tab_class = 'target-blank-link' -%}
     {%- endif -%}
 
-    {%- if data.additional_settings.disable_button -%}
-      {%- set disable_button_class = ' disabled' -%}
-      {%- set disable_button_attr = 'tabindex="-1" role="button" aria-disabled="true"' -%}
-    {%- endif -%}
 
-    {# g-module-macros... = global module macros #}
-    {% if options.no_wrapper == null || options.no_wrapper == false %}<span class="g-module-macros-btn_wrp {{btn_class}} {{class}}">{% endif %}<{{btn_tag}}
+    <{{btn_tag}}
       {% if options.is_btn == null || options.is_btn == false %} href="{{href}}" {% endif %}
       {{'aria-label="{{data.accessible_link_label}}"' if data.accessible_link_label}}
-      class="g-module-macros-btn btn {{button_style}} {{button_size}} {{full_width}} {{open_in_new_tab_class}} {{disable_button_class}} {{stretched_link_class}}
-      {% if options.no_wrapper == true %} {{btn_class}} {{class}} {% endif %}"
+      class="g-module-macros-btn {{btn_class}}
+        {{' btn-link ' if options.is_btn == null || options.is_btn == false}}
+        {{button_style}}
+        {{button_size}}
+        {{full_width}}
+        {{open_in_new_tab_class}}
+        {{stretched_link_class}}
+        {{class}}"
       {% if data.link.open_in_new_tab %} target="_blank" {% endif %}
       {% if data_attrs %} {{data_attrs}} {% endif %}
-      {{rel}} {{disable_button_attr}}>
+      {{rel}}>
 
         {%- if data.icon.icon.name -%}
           {%- if data.icon.icon_position == 'left' -%}
-            <span class="g-module-macros-btn__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
+            {{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
               {
                 id: 'button'
               }
-            )}}</span>
+            )}}
           {%- endif -%}
         {%- endif -%}
-
-        {%- text
-          'text'
-          extra_classes='g-module-macros-btn__text'
-          label='Text',
-          value='{{data.text}}'
-        %}
-
+        {{data.text}}
         {%- if data.icon.icon.name -%}
           {%- if data.icon.icon_position == 'right' -%}
-            <span class="g-module-macros-btn__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
+            {{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
               {
                 id: 'button'
               }
-             )}}</span>
+             )}}
           {%- endif -%}
         {%- endif -%}
 
         {%- if data.link.open_in_new_tab -%}
           {%- if data.accessible_link -%}
-            {{target_blank_macros.render_target_blank_tmpl("1em")}}
+            {{target_blank_macros.render_target_blank_tmpl()}}
           {%- endif -%}
         {%- endif -%}
-      </{{btn_tag}}>{% if options.no_wrapper == null || options.no_wrapper == false %}</span>{% endif %}
+      </{{btn_tag}}>
   {%- endif -%}
 {%- endmacro -%}

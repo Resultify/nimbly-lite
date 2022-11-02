@@ -3676,7 +3676,7 @@
     "locked" : false,
     "children" : [ {
       "id" : "fa7871c9-06a6-2f77-7e8f-7a8a3137e1dc",
-      "name" : "text",
+      "name" : "rich_text",
       "display_width" : null,
       "label" : "Text",
       "required" : false,

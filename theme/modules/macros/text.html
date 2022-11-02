@@ -25,8 +25,8 @@
 {# Supported features #}
 {# {% set options = {
   id:'secondary-text',
-  data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
-  class:['additional-class-1','additional-class-2']
+  class:['additional-class-1','additional-class-2'],
+  no_wrapper:true|false
 }%} #}
 {# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
 
@@ -44,9 +44,6 @@
     {%- else -%}
       {%- set text_class = 'text-style' -%}
     {%- endif -%}
-    {%- if options.data_attrs -%}
-      {% set data_attrs = options.data_attrs|join(' ') %}
-    {%- endif -%}
     {%- if options.class -%}
       {% set class = options.class|join(' ') %}
     {%- endif -%}
@@ -54,6 +51,9 @@
     {# module global css #}
     {%- require_css -%}
       <style>
+        .g-module-macros-text {
+          display: inline-block;
+        }
       </style>
     {%- end_require_css -%}
 
@@ -61,36 +61,45 @@
       {%- scope_css -%}
 
         {% if global_data.style.general.custom_styling.color.css %}
-          .{{text_class}} .g-module-macros-text {
+          .{{text_class}} {
             color: {{global_data.style.general.custom_styling.color.css}};
           }
         {% endif %}
 
-        .{{text_class}} .g-module-macros-text {
-          display: inline-block;
-          {% if style.custom_styling.font.color %}
-            color: {{style.custom_styling.font.color}};
-          {% endif %}
-          {% if style.custom_styling.background.color %}
-            background-color: {{style.custom_styling.background.color}};
-          {% endif %}
-          {% if style.custom_styling.font.size %}
-            font-size: {{style.custom_styling.font.size ~ 'px'}};
-          {% endif %}
-          {% if style.custom_styling.font.style %}
-            {{style.custom_styling.font.style}};
-          {% endif %}
-          {{style.custom_styling.spacing.css}}
-        }
+        {% if style.custom_styling.font.color or style.custom_styling.background.color or style.custom_styling.font.size or style.custom_styling.font.style or style.custom_styling.spacing.css %}
+          .{{text_class}} {
+            {% if style.custom_styling.font.color %}
+              color: {{style.custom_styling.font.color}};
+            {% endif %}
+            {% if style.custom_styling.background.color %}
+              background-color: {{style.custom_styling.background.color}};
+            {% endif %}
+            {% if style.custom_styling.font.size %}
+              font-size: {{style.custom_styling.font.size ~ 'px'}};
+            {% endif %}
+            {% if style.custom_styling.font.style %}
+              {{style.custom_styling.font.style}};
+            {% endif %}
+            {{style.custom_styling.spacing.css}}
+          }
+        {% endif %}
 
       {%- end_scope_css -%}
-    </style><span {% if data_attrs %} {{data_attrs}} {% endif %}
-      class="g-module-macros-text_wrp {{text_class}} {{class}}">
-      {%- text 'text'
-        extra_classes='g-module-macros-text'
-        label='Text',
-        value='{{data.text}}'
-      %}</span>
+    </style>
+
+    {%- set no_wrapper = false -%}
+    {%- if options.no_wrapper == true -%}
+      {%- set no_wrapper = true -%}
+    {%- endif -%}
+
+    {%- set extra_classes = 'g-module-macros-text ' ~ text_class ~ ' ' ~ class -%}
+
+    {%- text 'text'
+      extra_classes={{extra_classes}}
+      label='Text'
+      value={{data.text}}
+      no_wrapper={{no_wrapper}}
+    %}
 
   {%- endif -%}
 {%- endmacro -%}

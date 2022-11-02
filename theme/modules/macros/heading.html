@@ -71,61 +71,58 @@
     {# module global css #}
     {%- require_css -%}
       <style>
+        {% if data.icon.icon.name %}
+          .{{heading_class}} {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.3ch;
+            vertical-align: middle;
+          }
+          .{{heading_class}} .icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .{{heading_class}} svg {
+            height: 1.5ch;
+            width: 1.5ch;
+            flex-shrink: 0;
+            fill: currentColor;
+          }
+        {% endif %}
       </style>
     {%- end_require_css -%}
 
     {# module scope css #}<style>
       {%- scope_css -%}
         {% if style.custom_styling.spacing.css %}
-          .{{heading_class}} .g-module-macros-heading {
+          .{{heading_class}} {
             {{style.custom_styling.spacing.css}}
           }
         {% endif %}
 
         {% if global_data.style.general.custom_styling.color.css %}
-          .{{heading_class}} .g-module-macros-heading,
-          .{{heading_class}} .g-module-macros-heading__link {
+          .{{heading_class}} {
             color: {{global_data.style.general.custom_styling.color.css}};
           }
-          .{{heading_class}} .g-module-macros-heading__link:hover {
-            color: {{rgb(global_data.style.general.custom_styling.color.color, global_data.style.general.custom_styling.color.opacity, +20, -15)}};
+          .{{heading_class}} .g-module-macros-heading__link {
+            --color: {{global_data.style.general.custom_styling.color.css}};
           }
-          .{{heading_class}} .g-module-macros-heading__icon svg {
-            fill: {{global_data.style.general.custom_styling.color.css}};
+          .{{heading_class}} .g-module-macros-heading__link:hover {
+            --hover-color: {{rgb(global_data.style.general.custom_styling.color.color, global_data.style.general.custom_styling.color.opacity, +20, -15)}};
           }
         {% endif %}
 
         {% if style.custom_styling.color.css %}
-          .{{heading_class}} .g-module-macros-heading,
-          .{{heading_class}} .g-module-macros-heading__link {
+          .{{heading_class}} {
             color: {{style.custom_styling.color.css}};
           }
+          .{{heading_class}} .g-module-macros-heading__link {
+            --color: {{style.custom_styling.color.css}};
+          }
           .{{heading_class}} .g-module-macros-heading__link:hover {
-            color: {{rgb(style.custom_styling.color.color, style.custom_styling.color.opacity, +20, -15)}};
-          }
-          .{{heading_class}} .g-module-macros-heading__icon svg {
-            fill: {{style.custom_styling.color.css}};
-          }
-        {% endif %}
-
-        {% if data.icon.icon.name %}
-          .{{heading_class}} .g-module-macros-heading {
-            display: inline-block;
-          }
-          .{{heading_class}} .g-module-macros-heading__icon {
-            line-height: 0;
-          }
-          .{{heading_class}} .g-module-macros-heading__icon .icon svg {
-            vertical-align: -0.125em;
-          }
-          .{{heading_class}} .g-module-macros-heading_wrp {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 10px;
-          }
-          .{{heading_class}} .g-module-macros-icon {
-            padding-left: 4px;
-            padding-right: 4px;
+            --hover-color: {{rgb(style.custom_styling.color.color, style.custom_styling.color.opacity, +20, -15)}};
           }
         {% endif %}
 
@@ -163,57 +160,47 @@
       {%- set stretched_link_class = 'stretched-link' -%}
     {%- endif -%}
 
-    {%- macro render_text() -%}
-      {%- text
-        'text'
-        extra_classes='g-module-macros-heading__text'
-        label='Text',
-        value='{{data.text}}'
-      %}
-    {%- endmacro -%}
 
-    {# g-module-macros... = global module macros #}
-    <span class="g-module-macros-heading_wrp {{heading_class}} {{class}}">
-
+    {%- macro render_heading() -%}
       {%- if data.icon.icon.name -%}
         {%- if data.icon.icon_position == 'left' -%}
-          <span class="g-module-macros-heading__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
+          {{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
             {
               id: 'heading'
             }
-          )}}</span>
+          )}}
         {%- endif -%}
       {%- endif -%}
+      {{data.text}}
+      {%- if data.icon.icon.name -%}
+        {%- if data.icon.icon_position == 'right' -%}
+          {{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
+            {
+              id: 'heading'
+            }
+          )}}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endmacro -%}
 
-      <{{data.heading_tag}} {% if data_attrs %} {{data_attrs}} {% endif %} class="{{heading_style}} g-module-macros-heading">
 
+      <{{data.heading_tag}} {% if data_attrs %} {{data_attrs}} {% endif %}
+        class="{{heading_style}} g-module-macros-heading {{heading_class}} {{class}}">
         {%- if href -%}
           <a href="{{href}}" class="{{open_in_new_tab_class}} {{stretched_link_class}} heading-link g-module-macros-heading__link"
           {% if data.link.link.open_in_new_tab %} target="_blank" {% endif %}
           {% if link_data_attrs %} {{link_data_attrs}} {% endif %}
-          {{rel}}>{{render_text()}}
+          {{rel}}>{{render_heading()}}
             {%- if data.link.link.open_in_new_tab -%}
               {%- if data.link.accessible_link -%}
-                {{target_blank_macros.render_target_blank_tmpl('0.7em')}}
+                {{target_blank_macros.render_target_blank_tmpl()}}
               {%- endif -%}
             {%- endif -%}
           </a>
-        {%- else -%}{{render_text()}}
+        {%- else -%}
+          {{render_heading()}}
         {%- endif -%}
-
       </{{data.heading_tag}}>
-
-      {%- if data.icon.icon.name -%}
-        {%- if data.icon.icon_position == 'right' -%}
-          <span class="g-module-macros-heading__icon {{heading_style}}">{{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
-            {
-              id: 'heading'
-            }
-          )}}</span>
-        {%- endif -%}
-      {%- endif -%}
-
-    </span>
 
   {%- endif -%}
 {%- endmacro -%}

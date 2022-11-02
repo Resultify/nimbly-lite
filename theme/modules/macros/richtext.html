@@ -25,8 +25,8 @@
 {# Supported features #}
 {# {% set options = {
   id:'secondary-rechtext',
-  data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
-  class:['additional-class-1','additional-class-2']
+  class:['additional-class-1','additional-class-2'],
+  no_wrapper:true|false
 }%} #}
 {# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
 
@@ -46,49 +46,48 @@
     {%- else -%}
       {%- set richtext_class = 'richtext-style' -%}
     {%- endif -%}
-    {%- if options.data_attrs -%}
-      {% set data_attrs = options.data_attrs|join(' ') %}
-    {%- endif -%}
     {%- if options.class -%}
       {% set class = options.class|join(' ') %}
     {%- endif -%}
 
-    {# module global css #}
-    {%- require_css -%}
-    <style>
-    </style>
-    {%- end_require_css -%}
-
     {# module scope css #}<style>
       {%- scope_css -%}
         {% if global_data.style.general.custom_styling.color.css %}
-          .{{richtext_class}} .g-module-macros-richtext,
-          .{{richtext_class}} .g-module-macros-richtext a,
-          .{{richtext_class}} .g-module-macros-richtext blockquote,
-          .{{richtext_class}} .g-module-macros-richtext h1,
-          .{{richtext_class}} .g-module-macros-richtext h2,
-          .{{richtext_class}} .g-module-macros-richtext h3,
-          .{{richtext_class}} .g-module-macros-richtext h4,
-          .{{richtext_class}} .g-module-macros-richtext h5,
-          .{{richtext_class}} .g-module-macros-richtext h6 {
+          .{{richtext_class}},
+          .{{richtext_class}} a,
+          .{{richtext_class}} blockquote,
+          .{{richtext_class}} h1,
+          .{{richtext_class}} h2,
+          .{{richtext_class}} h3,
+          .{{richtext_class}} h4,
+          .{{richtext_class}} h5,
+          .{{richtext_class}} h6 {
             color: {{global_data.style.general.custom_styling.color.css}};
           }
-          .{{richtext_class}} .g-module-macros-richtext a:hover {
+          .{{richtext_class}} a:hover {
             color: {{rgb(global_data.style.general.custom_styling.color.color, global_data.style.general.custom_styling.color.opacity, +30, -20)}};
           }
         {% endif %}
       {%- end_scope_css -%}
-    </style><span {% if data_attrs %} {{data_attrs}} {% endif %}
-    class="g-module-macros-richtext_wrp {{richtext_class}} {{class}}">
-      {%- if data.truncate -%}
-        {%- rich_text 'richtext'
-          extra_classes='g-module-macros-richtext'
-          html='{{data.rich_text|truncatehtml(data.truncate, "..." , false)}}' -%}
-      {%- else -%}
-        {%- rich_text 'richtext'
-          extra_classes='g-module-macros-richtext'
-          html='{{data.rich_text}}' -%}
-      {%- endif -%}</span>
+    </style>
+
+    {%- set no_wrapper = false -%}
+    {%- if options.no_wrapper == true -%}
+      {%- set no_wrapper = true -%}
+    {%- endif -%}
+
+    {%- set extra_classes = 'g-module-macros-richtext ' ~ richtext_class ~ ' ' ~ class -%}
+
+    {%- if data.truncate -%}
+      {%- rich_text 'richtext'
+        extra_classes={{extra_classes}}
+        html={{data.rich_text|truncatehtml(data.truncate, "..." , false)}} -%}
+    {%- else -%}
+      {%- rich_text 'richtext'
+        extra_classes={{extra_classes}}
+        html={{data.rich_text}}
+        no_wrapper={{no_wrapper}} -%}
+    {%- endif -%}
 
   {%- endif -%}
 {%- endmacro -%}
