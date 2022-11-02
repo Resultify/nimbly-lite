@@ -128,7 +128,9 @@
       "tab" : "STYLE",
       "expanded" : false,
       "type" : "group",
-      "default" : { }
+      "default" : {
+        "spacing" : { }
+      }
     }, {
       "id" : "a89cf237-654d-04c9-01bd-899c45378c3b",
       "name" : "background",
@@ -209,6 +211,9 @@
         "alignment" : {
           "horizontal_align" : "LEFT"
         }
+      },
+      "spacing" : {
+        "spacing" : { }
       },
       "background" : {
         "color" : {
@@ -312,7 +317,9 @@
       "tab" : "STYLE",
       "expanded" : false,
       "type" : "group",
-      "default" : { }
+      "default" : {
+        "spacing" : { }
+      }
     }, {
       "id" : "11537880-cf44-9cd9-179b-daf313d50b44",
       "name" : "background",
@@ -401,7 +408,9 @@
           }
         }
       },
-      "internal_spacing" : { },
+      "internal_spacing" : {
+        "spacing" : { }
+      },
       "background" : {
         "color" : { }
       },
@@ -580,7 +589,8 @@
       },
       "border" : {
         "border_radius" : 0
-      }
+      },
+      "custom_image_fit" : { }
     }
   }, {
     "id" : "46e0bb55-0ffe-91b4-0632-0436ee7379d4",
@@ -2067,7 +2077,8 @@
       },
       "border" : {
         "border_radius" : 0
-      }
+      },
+      "custom_image_fit" : { }
     },
     "link" : {
       "alignment" : {
@@ -2330,68 +2341,6 @@
     "display" : ""
   }
 }, {
-  "id" : "edda9167-14cd-611b-b450-57be5e63e12f",
-  "name" : "blog_components",
-  "display_width" : null,
-  "label" : "Blog components",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : 7,
-    "max" : 7,
-    "sorting_label_field" : null,
-    "default" : 7
-  },
-  "children" : [ {
-    "id" : "329947e6-f3e8-b9e0-407d-3ede4c548d61",
-    "name" : "component",
-    "display_width" : null,
-    "label" : "Component",
-    "required" : false,
-    "locked" : true,
-    "validation_regex" : "",
-    "placeholder" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Image"
-  }, {
-    "id" : "9b332b03-7df1-092c-54ea-64c566e11c06",
-    "name" : "show",
-    "display_width" : null,
-    "label" : "Show component",
-    "required" : false,
-    "locked" : false,
-    "display" : "toggle",
-    "type" : "boolean",
-    "default" : true
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : [ {
-    "component" : "Image",
-    "show" : true
-  }, {
-    "component" : "Tags",
-    "show" : true
-  }, {
-    "component" : "Heading",
-    "show" : true
-  }, {
-    "component" : "Author",
-    "show" : true
-  }, {
-    "component" : "Date",
-    "show" : true
-  }, {
-    "component" : "Author and Date",
-    "show" : true
-  }, {
-    "component" : "Description",
-    "show" : true
-  } ]
-}, {
   "id" : "6621404e-0ac0-02ea-4f3e-9a339a4fc0f0",
   "name" : "heading",
   "display_width" : null,
@@ -2540,4 +2489,66 @@
     "layout" : "basic-grid",
     "number_of_posts" : 4
   }
+}, {
+  "id" : "edda9167-14cd-611b-b450-57be5e63e12f",
+  "name" : "blog_components",
+  "display_width" : null,
+  "label" : "Blog components",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 7,
+    "max" : 7,
+    "sorting_label_field" : null,
+    "default" : 7
+  },
+  "children" : [ {
+    "id" : "329947e6-f3e8-b9e0-407d-3ede4c548d61",
+    "name" : "component",
+    "display_width" : null,
+    "label" : "Component",
+    "required" : false,
+    "locked" : true,
+    "validation_regex" : "",
+    "placeholder" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Image"
+  }, {
+    "id" : "9b332b03-7df1-092c-54ea-64c566e11c06",
+    "name" : "show",
+    "display_width" : null,
+    "label" : "Show component",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "component" : "Image",
+    "show" : true
+  }, {
+    "component" : "Tags",
+    "show" : true
+  }, {
+    "component" : "Heading",
+    "show" : true
+  }, {
+    "component" : "Author",
+    "show" : true
+  }, {
+    "component" : "Date",
+    "show" : true
+  }, {
+    "component" : "Author and Date",
+    "show" : true
+  }, {
+    "component" : "Description",
+    "show" : true
+  } ]
 } ]

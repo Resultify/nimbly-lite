@@ -4842,7 +4842,7 @@
   "id" : "card_components",
   "name" : "card_components",
   "display_width" : null,
-  "label" : "Cerd components",
+  "label" : "Card components",
   "required" : false,
   "locked" : false,
   "occurrence" : {
