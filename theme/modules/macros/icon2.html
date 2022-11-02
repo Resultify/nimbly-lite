@@ -124,13 +124,13 @@
     {%- set extra_classes = 'g-module-macros-icon icon ' ~ icon_class ~ ' ' ~ icon_size ~ ' ' ~ icon_color ~ ' ' ~ icon_shape ~ ' ' ~ class -%}
 
     {%- icon
-      extra_classes='{{extra_classes}}'
-      name='{{data.icon.name}}'
-      purpose='{{data.accessibility_options.purpose}}'
-      style='{{data.icon.type}}'
-      title='{{data.accessibility_options.title}}'
-      unicode='{{data.icon.unicode}}'
-      icon_set='{{data.icon.icon_set}}'
+      extra_classes={{extra_classes}}
+      name={{data.icon.name}}
+      purpose={{data.accessibility_options.purpose}}
+      style={{data.icon.type}}
+      title={{data.accessibility_options.title}}
+      unicode={{data.icon.unicode}}
+      icon_set={{data.icon.icon_set}}
       no_wrapper={{no_wrapper}}
     %}
   {%- endif -%}

@@ -1,4 +1,5 @@
-.hs-inline-edit .hs_cos_wrapper:not(.icon) {
+.hs-inline-edit .hs_cos_wrapper:not(.icon),
+.hs-inline-edit .hs_cos_wrapper:not(.g-module-macros-text), {
   display: inline;
 }
 

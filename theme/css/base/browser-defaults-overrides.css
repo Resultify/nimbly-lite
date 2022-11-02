@@ -54,7 +54,6 @@ samp {
 }
 
 input,
-button,
 select,
 optgroup,
 textarea {
@@ -64,20 +63,12 @@ textarea {
   line-height: inherit;
 }
 
-button,
 select {
   text-transform: none;
 }
 
 [role=button] {
   cursor: pointer;
-}
-
-button,
-[type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button;
 }
 
 ::-moz-focus-inner {

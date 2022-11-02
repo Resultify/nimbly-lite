@@ -20,8 +20,8 @@
 }
 
 :where(a:not(.btn-link)) :where(svg, .icon > svg) {
-  height: 2ch;
-  width: 2ch;
+  height: 1.5ch;
+  width: 1.5ch;
   flex-shrink: 0;
   fill: currentColor;
 }

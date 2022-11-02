@@ -1,10 +1,16 @@
-{% import '../macros/text2.html' as text_macros %}
+{% import '../macros/heading2.html' as heading_macros %}
+
+{# module global css #}
+{% require_css %}
+  <style>
+  </style>
+{% end_require_css %}
 
 {# module scope css #}
 <style>
   {% scope_css %}
 
-    .text-module {
+    .heading-module {
       {% if module.style.background.color.css %}
         background-color: {{module.style.background.color.css}};
       {% endif %}
@@ -15,12 +21,11 @@
   {% end_scope_css %}
 </style>
 
-
 {% if module.text %}
-  <div class="text-module_wrp">
-    <div class="text-module text-module--{{module_id}} {{module.style.presets.custom_preset}}">
+  <div class="heading-module_wrp">
+    <div class="heading-module heading-module--{{module_id}} {{module.style.presets.custom_preset}}">
 
-        {{text_macros.render_text_tmpl(module, module.style)}}
+      {{heading_macros.render_heading_tmpl(module, module.style)}}
 
     </div>
   </div>

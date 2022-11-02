@@ -1,0 +1,13 @@
+{
+  "global" : false,
+  "placeholder" : {
+    "show_module_icon" : true,
+    "title" : "Card2",
+    "description" : "Add card element"
+  },
+  "icon" : "../../images/module-icons/card.svg",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 55506938836,
+  "label" : "Card2",
+  "is_available_for_new_content" : true
+}
