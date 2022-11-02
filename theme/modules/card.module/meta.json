@@ -2,12 +2,12 @@
   "global" : false,
   "placeholder" : {
     "show_module_icon" : true,
-    "title" : "Link2",
-    "description" : "Add link element"
+    "title" : "Card",
+    "description" : "Add card element"
   },
-  "icon" : "../../images/module-icons/link.svg",
+  "icon" : "../../images/module-icons/card.svg",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "module_id" : 55488987584,
-  "label" : "Link2",
+  "module_id" : 55506938836,
+  "label" : "Card",
   "is_available_for_new_content" : true
 }
