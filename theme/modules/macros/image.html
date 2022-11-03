@@ -36,7 +36,8 @@
   data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
   link_data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
   class:['additional-class-1','additional-class-2'],
-  no_wrapper:true|false
+  no_wrapper:true|false,
+  tooltip: 'Secondary image'
 }%} #}
 {# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
 {# stretched_link - enable/disable stretched_link option #}
@@ -124,8 +125,8 @@
     {%- endif -%}
 
     {%- macro render_image() -%}
-      <img id="{{name}}_image" {% if data_attrs %} {{data_attrs}} {% endif %}
-        class="{{image_class}} g-module-macros-image {%- if options.no_wrapper == true -%} {{' ' ~ class}} {%- endif -%}"
+      <img id="{{name}}_image" {% if data_attrs %} {{data_attrs}} {% endif %} data-field-name={{options.tooltip || 'Image'}}
+        class="{{image_class}} g-module-macros-image {%- if options.no_wrapper == true -%} {{' ' ~ class ~ ' '}} {%- endif -%} editor-tooltip editor-nimbly-tooltip"
         alt="{{data.image.alt}}"
         src="{{data.image.src}}"
         width="{{widthAttr}}"

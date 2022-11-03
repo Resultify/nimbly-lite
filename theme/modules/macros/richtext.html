@@ -76,7 +76,7 @@
       {%- set no_wrapper = true -%}
     {%- endif -%}
 
-    {%- set extra_classes = 'g-module-macros-richtext ' ~ richtext_class ~ ' ' ~ class -%}
+    {%- set extra_classes = 'g-module-macros-richtext ' ~ richtext_class ~ ' ' ~ class ~ ' editor-tooltip editor-hs-tooltip' -%}
 
     {%- if data.truncate -%}
       {%- rich_text 'richtext'

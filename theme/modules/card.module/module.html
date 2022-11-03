@@ -211,7 +211,8 @@
     <div class="card-module__subheading card-module--item">
       {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module,
         {
-          id: 'subheading'
+          id: 'subheading',
+          tooltip: 'Subheading'
         }
       )}}
     </div>
@@ -253,7 +254,8 @@
     {{' card-module--item-inline' if module.style.secondary_link.alignment.inline}}">
       {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module,
         {
-          id: 'secondary'
+          id: 'secondary',
+          tooltip: 'Secondary-link'
         }
       )}}
     </div>
@@ -279,7 +281,8 @@
       {{' card-module--item-inline' if module.style.secondary_button.alignment.inline}}">
       {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module,
         {
-          id: 'secondary'
+          id: 'secondary',
+          tooltip: 'Secondary-button'
         }
       )}}
     </div>

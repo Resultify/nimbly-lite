@@ -34,7 +34,8 @@
   id:'secondary-link',
   stretched_link:true|false,
   data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
-  class:['additional-class-1','additional-class-2']
+  class:['additional-class-1','additional-class-2'],
+  tooltip: 'Secondary link'
 }%} #}
 {# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
 {# stretched_link - enable/disable stretched_link option #}
@@ -139,10 +140,11 @@
 
     {%- if data.text -%}
       <a href="{{href}}"
-      class="g-module-macros-link {{link_class}}
+      class="g-module-macros-link {{link_class}} editor-tooltip editor-nimbly-tooltip
       {{open_in_new_tab_class}}
       {{stretched_link_class}}
       {{class}}"
+      data-field-name={{options.tooltip || 'Link'}}
       {% if data.link.open_in_new_tab %} target="_blank" {% endif %}
       {% if data_attrs %} {{data_attrs}} {% endif %}
       {{rel}}>

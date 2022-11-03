@@ -35,7 +35,8 @@
   stretched_link:true|false,
   data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
   link_data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
-  class:['additional-class-1','additional-class-2']
+  class:['additional-class-1','additional-class-2'],
+  tooltip: 'Subheading'
 }%} #}
 {# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
 {# stretched_link - enable/disable stretched_link option #}
@@ -184,8 +185,8 @@
     {%- endmacro -%}
 
 
-      <{{data.heading_tag}} {% if data_attrs %} {{data_attrs}} {% endif %}
-        class="{{heading_style}} g-module-macros-heading {{heading_class}} {{class}}">
+      <{{data.heading_tag}} {% if data_attrs %} {{data_attrs}} {% endif %} data-field-name={{options.tooltip || 'Heading'}}
+        class="{{heading_style}} g-module-macros-heading {{heading_class}} {{class}} editor-tooltip editor-nimbly-tooltip">
         {%- if href -%}
           <a href="{{href}}" class="{{open_in_new_tab_class}} {{stretched_link_class}} heading-link g-module-macros-heading__link"
           {% if data.link.link.open_in_new_tab %} target="_blank" {% endif %}

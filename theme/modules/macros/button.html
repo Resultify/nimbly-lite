@@ -35,7 +35,8 @@
   stretched_link:true|false,
   is_btn:true|false,
   data_attrs:['data-filter="test"', 'data-bs-toggle="super-dropdown"', 'role="ROLE_NAME"'],
-  class:['additional-class-1','additional-class-2']
+  class:['additional-class-1','additional-class-2'],
+  tooltip: 'Secondary button'
 }%} #}
 {# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
 {# stretched_link - enable/disable stretched_link option #}
@@ -188,8 +189,9 @@
 
     <{{btn_tag}}
       {% if options.is_btn == null || options.is_btn == false %} href="{{href}}" {% endif %}
+      data-field-name={{options.tooltip || 'Button'}}
       {{'aria-label="{{data.accessible_link_label}}"' if data.accessible_link_label}}
-      class="g-module-macros-btn {{btn_class}}
+      class="g-module-macros-btn {{btn_class}} editor-tooltip editor-nimbly-tooltip
         {{' btn-link ' if options.is_btn == null || options.is_btn == false}}
         {{button_style}}
         {{button_size}}
