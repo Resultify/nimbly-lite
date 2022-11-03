@@ -74,6 +74,19 @@
     }
   }
 }, {
+  "id" : "89df90fb-b82b-dee8-8cd9-039621166247",
+  "name" : "divider",
+  "display_width" : null,
+  "label" : "Divider",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "slanted_line_cover_top", "Slanted line - cover top elem" ], [ "slanted_line_cover_bottom", "Slanted line - cover bottom elem" ], [ "wave_cover_bottom", "Wave - cover bottom elem" ], [ "triple_wave_cover_top", "Triple wave - cover top elem" ], [ "custom", "Custom" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "type" : "choice",
+  "default" : "slanted_line_cover_top"
+}, {
   "id" : "c65b2ef2-41ba-fb8b-4fa8-3d6ec7ec94a1",
   "name" : "svg",
   "display_width" : null,
@@ -82,6 +95,15 @@
   "required" : false,
   "locked" : false,
   "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "89df90fb-b82b-dee8-8cd9-039621166247",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "custom",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
   "allow_new_line" : true,
   "show_emoji_picker" : false,
   "type" : "text"
@@ -90,8 +112,17 @@
   "name" : "cover",
   "display_width" : null,
   "label" : "Cover",
-  "required" : true,
+  "required" : false,
   "locked" : false,
+  "visibility" : {
+    "controlling_field" : "89df90fb-b82b-dee8-8cd9-039621166247",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "custom",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
   "display" : "select",
   "choices" : [ [ "top", "Cover top element" ], [ "bottom", "Cover bottom element" ] ],
   "multiple" : false,

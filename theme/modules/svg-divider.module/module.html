@@ -1,7 +1,13 @@
 {# module scope css #}
 <style>
   {% scope_css %}
-    {% if module.cover == 'bottom' %}
+    {% if module.cover == 'bottom' and module.divider == 'custom' %}
+      .svg-divider-module {
+        top: 30px;
+      }
+    {% endif %}
+
+    {% if module.divider == 'slanted_line_cover_bottom' or module.divider == 'wave_cover_bottom' %}
       .svg-divider-module {
         top: 30px;
       }
@@ -16,15 +22,47 @@
   {% end_scope_css %}
 </style>
 
+{%- macro render_slanted_line_cover_top() -%}
+<svg viewBox="0 0 2000 200" xmlns="http://www.w3.org/2000/svg"><path d="M0 0L2000 170V200H0V0Z" fill="currentcolor"></path></svg>
+{%- endmacro -%}
+{%- macro render_slanted_line_cover_bottom() -%}
+<svg viewBox="0 0 2000 200" xmlns="http://www.w3.org/2000/svg"><path d="M2000 200L0.00012207 30V0L2000 0L2000 200Z" fill="currentcolor"></path></svg>
+{%- endmacro -%}
+{%- macro render_wave_cover_bottom() -%}
+<svg class="svg" version="1.1" viewBox="0 0 1600 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><g class="wave" transform="translate(1)" fill-rule="evenodd"><path d="m-1 0h1609v94.703c-163.38 37.315-317.79 55.544-463.23 54.688-245.3-1.4453-467.86-97.32-689.29-106.34-144.96-5.9074-297.12 15.41-456.48 63.953z"></path></g></svg>
+{%- endmacro -%}
+{%- macro render_triple_wave_cover_top() -%}
+<svg viewBox="0 0 1000 500" width="100%" height="150px" preserveAspectRatio="none">
+  <svg width="10003.51538941704" x="-913.7203650788427">
+    <svg width="9687.756758134308" x="-4623.391039753928">
+      <path d="M 0 480 C 242.2 480 242.2 51.8 484.4 51.8 C 726.6 51.8 726.6 291.5 968.8 291.5 C 1211 291.5 1211 56 1453.2 56 C 1695.4 56 1695.4 424.4 1937.6 424.4 C 2179.7 424.4 2179.7 169.2 2421.9 169.2 C 2664.1 169.2 2664.1 394.5 2906.3 394.5 C 3148.5 394.5 3148.5 126.4 3390.7 126.4 C 3632.9 126.4 3632.9 405.6 3875.1 405.6 C 4117.3 405.6 4117.3 62.4 4359.5 62.4 C 4601.7 62.4 4601.7 480 4843.9 480 C 5086.1 480 5086.1 51.8 5328.3 51.8 C 5570.5 51.8 5570.5 291.5 5812.7 291.5 C 6054.8 291.5 6054.8 56 6297 56 C 6539.2 56 6539.2 424.4 6781.4 424.4 C 7023.6 424.4 7023.6 169.2 7265.8 169.2 C 7508 169.2 7508 394.5 7750.2 394.5 C 7992.4 394.5 7992.4 126.4 8234.6 126.4 C 8476.8 126.4 8476.8 405.6 8719 405.6 C 8961.2 405.6 8961.2 62.4 9203.4 62.4 C 9445.6 62.4 9445.6 480 9687.8 480 V  500 H  0 Z  V  500 H  0 Z " shape-rendering="geometricPrecision"></path>
+    </svg>
+    <svg width="9559.97128768219" x="-3308.062620402317">
+      <path d="M 0 480 C 239 480 239 135.7 478 135.7 C 717 135.7 717 438.4 956 438.4 C 1195 438.4 1195 180.2 1434 180.2 C 1673 180.2 1673 461.8 1912 461.8 C 2151 461.8 2151 156.9 2390 156.9 C 2629 156.9 2629 311.9 2868 311.9 C 3107 311.9 3107 46.2 3346 46.2 C 3585 46.2 3585 384.7 3824 384.7 C 4063 384.7 4063 38.2 4302 38.2 C 4541 38.2 4541 480 4780 480 C 5019 480 5019 135.7 5258 135.7 C 5497 135.7 5497 438.4 5736 438.4 C 5975 438.4 5975 180.2 6214 180.2 C 6453 180.2 6453 461.8 6692 461.8 C 6931 461.8 6931 156.9 7170 156.9 C 7409 156.9 7409 311.9 7648 311.9 C 7887 311.9 7887 46.2 8126 46.2 C 8365 46.2 8365 384.7 8604 384.7 C 8843 384.7 8843 38.2 9082 38.2 C 9321 38.2 9321 480 9560 480 V  500 H  0 Z  V  500 H  0 Z " fill="rgba(255, 255, 255, 100 )" shape-rendering="geometricPrecision"></path>
+    </svg>
+  </svg>
+</svg>
+{%- endmacro -%}
 
-{% if module.svg %}
-  <div class="svg-divider-module-container">
-    <div class="svg-divider-module_wrp">
-      <div class="svg-divider-module svg-divider-module--{{module_id}} {{module.style.presets.custom_preset}}">
-        {{module.svg}}
-      </div>
+{%- macro render_divider() -%}
+  {% if module.divider == 'custom' %}
+    {{module.svg}}
+  {% elif module.divider == 'slanted_line_cover_top' %}
+    {{render_slanted_line_cover_top()}}
+  {% elif module.divider == 'slanted_line_cover_bottom' %}
+    {{render_slanted_line_cover_bottom()}}
+  {% elif module.divider == 'wave_cover_bottom' %}
+    {{render_wave_cover_bottom()}}
+  {% elif module.divider == 'triple_wave_cover_top' %}
+    {{render_triple_wave_cover_top()}}
+  {% endif %}
+{%- endmacro -%}
+
+
+<div class="svg-divider-module-container">
+  <div class="svg-divider-module_wrp">
+    <div class="svg-divider-module svg-divider-module--{{module_id}} {{module.style.presets.custom_preset}}">
+      {{render_divider()}}
     </div>
   </div>
-{% else %}
-  {% editor_placeholder %}
-{% endif %}
+</div>
