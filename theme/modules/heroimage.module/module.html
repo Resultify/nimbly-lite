@@ -7,7 +7,7 @@
 {% import '../macros/link.html' as link_macros %}
 {% import '../macros/button.html' as button_macros %}
 
-{% macro vertical_align_flexbox3(data) %}
+{% macro vertical_align_flexbox(data) %}
   {% if data == 'TOP' %}
     start
   {% elif data == 'MIDDLE' %}
@@ -35,65 +35,27 @@
   {% set caption_image_width = 100 - caption_text_width %}
 {% endif %}
 
+{# module global css #}
+{% require_css %}
+  <style>
+    .heroimage-module__caption {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 10px;
+    }
+    .heroimage-module__caption--item {
+      flex-basis: 100%;
+    }
+    .heroimage-module__caption--item-inline {
+      flex-basis: auto;
+      align-self: center;
+    }
+  </style>
+{% end_require_css %}
+
 {# module scope css #}
 <style>
   {% scope_css %}
-
-    {% if module.icon.icon.name %}
-      .heroimage-module__icon {
-        padding-bottom: 1rem;
-      }
-    {% endif %}
-
-    {% if module.secondary_link.text %}
-      .heroimage-module__secondary-link {
-        padding-top: 1rem;
-      }
-    {% endif %}
-
-    {% if module.button.text %}
-      .heroimage-module__button {
-        padding-top: 1rem;
-      }
-    {% endif %}
-
-    {% if module.secondary_button.text %}
-      .heroimage-module__secondary-button {
-        padding-top: 1rem;
-      }
-    {% endif %}
-
-    {% if module.style.secondary_button.alignment.inline %}
-      .heroimage-module__buttons_wrp {
-        display: flex;
-        {% if module.style.secondary_button.alignment.inline_alignment %}
-          justify-content: {{module.style.secondary_button.alignment.inline_alignment}};
-        {% endif %}
-      }
-      .heroimage-module__button {
-        padding-right: 0.5rem;
-      }
-      .heroimage-module__secondary-button {
-        padding-left: 0.5rem;
-      }
-    {% endif %}
-
-    {% if module.style.secondary_link.alignment.inline %}
-      .heroimage-module__links_wrp {
-        display: flex;
-        {% if module.style.secondary_link.alignment.inline_alignment %}
-          justify-content: {{module.style.secondary_link.alignment.inline_alignment}};
-        {% endif %}
-      }
-      .heroimage-module__link {
-        padding-right: 0.5rem;
-      }
-      .heroimage-module__secondary-link {
-        padding-top: 0;
-        padding-left: 0.5rem;
-      }
-    {% endif %}
-
     {# heroimage options (strict height - auto height - no bg image) #}
     {% if module.image.image.src %}
       {% if module.image.image.size_type == 'exact' %}
@@ -103,6 +65,7 @@
           top: 0;
           width: 100%;
           height: 100%;
+          overflow: hidden;
         }
         .heroimage-module__image > img {
           height: {{banner_height}}
@@ -131,10 +94,28 @@
             .heroimage-module {
               flex-direction: column;
             }
+            .heroimage-module__image_wrp:after {
+              content: '';
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              background-color: {{module.style.image.overlay.color.css}};
+            }
           {% endif %}
           {% if module.style.additional_settings.caption_om_mobile == 'after' %}
             .heroimage-module {
               flex-direction: column-reverse;
+            }
+            .heroimage-module__image_wrp:after {
+              content: '';
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              background-color: {{module.style.image.overlay.color.css}};
             }
           {% endif %}
         }
@@ -178,7 +159,8 @@
     }
 
     .heroimage-module__caption {
-      align-self: {{vertical_align_flexbox3(module.style.text_body.alignment.alignment.vertical_align)}};
+      align-self: {{vertical_align_flexbox(module.style.text_body.alignment.alignment.vertical_align)}};
+      justify-content: {{module.style.text_body.alignment.inline_alignment}};
       {% if module.style.text_body.background.color.css %}
         background-color: {{module.style.text_body.background.color.css}};
       {% endif %}
@@ -195,13 +177,18 @@
         {% endif %}
         margin-top: 0;
         margin-bottom: 0;
+        justify-content: {{module.style.text_body.alignment.mobile_alignment.horizontal_align}};
+      }
+      .heroimage-module__caption > div,
+      .heroimage-module__caption .g-module-macros-richtext p {
+        text-align: {{module.style.text_body.alignment.mobile_alignment.horizontal_align}}!important;
       }
     }
 
     {% if module.figure.image.src %}
       .heroimage-module__caption-image {
         text-align: {{module.style.figure.alignment.alignment.horizontal_align}};
-        align-self: {{vertical_align_flexbox3(module.style.figure.alignment.alignment.vertical_align)}};
+        align-self: {{vertical_align_flexbox(module.style.figure.alignment.alignment.vertical_align)}};
         {% if module.style.figure.background.color.css %}
           background-color: {{module.style.figure.background.color.css}};
         {% endif %}
@@ -217,6 +204,7 @@
           {% endif %}
           margin-top: 0;
           margin-bottom: 0;
+          text-align: center;
         }
         .heroimage-module__caption-section {
           flex-wrap: wrap;
@@ -227,10 +215,8 @@
         .heroimage-module__caption .heroimage-module__subheading,
         .heroimage-module__caption .heroimage-module__text,
         .heroimage-module__caption .heroimage-module__richtext,
-        .heroimage-module__caption .heroimage-module__links_wrp,
         .heroimage-module__link,
         .heroimage-module__secondary-link,
-        .heroimage-module__caption .heroimage-module__buttons_wrp,
         .heroimage-module__button,
         .heroimage-module__secondary-button {
           justify-content: center;
@@ -312,6 +298,93 @@
   {% end_scope_css %}
 </style>
 
+{%- macro render_icon() -%}
+  {% if module.icon.icon.name %}
+    <div class="heroimage-module__icon heroimage-module__caption--item">
+      {{icon_macros.render_icon_tmpl(module.icon, module.style.icon, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_heading() -%}
+  {% if module.heading.text %}
+    <div class="heroimage-module__heading heroimage-module__caption--item">
+      {{heading_macros.render_heading_tmpl(module.heading, module.style.heading, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_subheading() -%}
+  {% if module.subheading.text %}
+    <div class="heroimage-module__subheading heroimage-module__caption--item">
+      {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module,
+        {
+          id: 'subheading'
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_text() -%}
+  {% if module.text.text %}
+    <div class="heroimage-module__text heroimage-module__caption--item">
+      {{text_macros.render_text_tmpl(module.text, module.style.text, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_richtext() -%}
+  {% if module.richtext.rich_text %}
+    <div class="heroimage-module__richtext heroimage-module__caption--item">
+      {{richtext_macros.render_richtext_tmpl(module.richtext, module.style.richtext, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_link() -%}
+  {% if module.link.text %}
+    <div class="heroimage-module__link heroimage-module__caption--item
+      {{' heroimage-module__caption--item-inline' if module.style.link.alignment.inline}}">
+      {{link_macros.render_link_tmpl(module.link, module.style.link, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_secondarylink() -%}
+  {% if module.secondary_link.text %}
+    <div class="heroimage-module__secondary-link heroimage-module__caption--item
+      {{' heroimage-module__caption--item-inline' if module.style.secondary_link.alignment.inline}}">
+      {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module,
+        {
+          id: 'secondary'
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_button() -%}
+  {% if module.button.text %}
+    <div class="heroimage-module__button heroimage-module__caption--item
+      {{' heroimage-module__caption--item-inline' if module.style.button.alignment.inline}}">
+      {{button_macros.render_btn_tmpl(module.button, module.style.button, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_secondarybutton() -%}
+  {% if module.secondary_button.text %}
+    <div class="heroimage-module__secondary-button heroimage-module__caption--item
+      {{' heroimage-module__caption--item-inline' if module.style.secondary_button.alignment.inline}}">
+      {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module,
+        {
+          id: 'secondary'
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
 
 <div class="heroimage-module_wrp">
   <div class="heroimage-module heroimage-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
@@ -322,63 +395,27 @@
 
           <div class="heroimage-module__caption">
 
-            <div class="heroimage-module__icon">
-              {{icon_macros.render_icon_tmpl(module.icon, module.style.icon, module)}}
-            </div>
-
-            {% if module.text.additional_settings.text_above_heading %}
-              <div class="heroimage-module__text">
-                {{text_macros.render_text_tmpl(module.text, module.style.text, module)}}
-              </div>
-            {% endif %}
-
-            <div class="heroimage-module__heading">
-              {{heading_macros.render_heading_tmpl(module.heading, module.style.heading, module)}}
-            </div>
-
-            <div class="heroimage-module__subheading">
-              {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module,
-                {
-                  id: 'subheading'
-                }
-              )}}
-            </div>
-
-            {% if module.text.additional_settings.text_above_heading == false %}
-              <div class="heroimage-module__text">
-                {{text_macros.render_text_tmpl(module.text, module.style.text, module)}}
-              </div>
-            {% endif %}
-
-            <div class="heroimage-module__richtext">
-              {{richtext_macros.render_richtext_tmpl(module.richtext, module.style.richtext, module)}}
-            </div>
-
-            <div class="heroimage-module__links_wrp">
-              <div class="heroimage-module__link">
-                {{link_macros.render_link_tmpl(module.link, module.style.link, module)}}
-              </div>
-              <div class="heroimage-module__secondary-link">
-                {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module,
-                  {
-                    id: 'secondary'
-                  }
-                )}}
-              </div>
-            </div>
-
-            <div class="heroimage-module__buttons_wrp">
-              <div class="heroimage-module__button">
-                {{button_macros.render_btn_tmpl(module.button, module.style.button, module)}}
-              </div>
-              <div class="heroimage-module__secondary-button">
-                {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module,
-                  {
-                    id: 'secondary'
-                  }
-                )}}
-              </div>
-            </div>
+            {% for hero_component in module.hero_components %}
+              {% if hero_component.component|lower == 'icon' %}
+                {{render_icon() if hero_component.show}}
+              {% elif hero_component.component|lower == 'text' %}
+                {{render_text() if hero_component.show}}
+              {% elif hero_component.component|lower == 'heading' %}
+                {{render_heading() if hero_component.show}}
+              {% elif hero_component.component|lower == 'subheading' %}
+                {{render_subheading() if hero_component.show}}
+              {% elif hero_component.component|cut(" ")|lower == 'richtext' %}
+                {{render_richtext() if hero_component.show}}
+              {% elif hero_component.component|lower == 'link' %}
+                {{render_link() if hero_component.show}}
+              {% elif hero_component.component|cut(" ")|lower == 'secondarylink' %}
+                {{render_secondarylink() if hero_component.show}}
+              {% elif hero_component.component|lower == 'button' %}
+                {{render_button() if hero_component.show}}
+              {% elif hero_component.component|cut(" ")|lower == 'secondarybutton' %}
+                {{render_secondarybutton() if hero_component.show}}
+              {% endif %}
+            {% endfor %}
 
           </div>
           <div class="heroimage-module__caption-image">

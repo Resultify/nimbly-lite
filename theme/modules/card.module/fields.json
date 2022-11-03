@@ -40,6 +40,34 @@
       "type" : "group",
       "default" : { }
     }, {
+      "id" : "3166604f-31bc-419b-d5ed-f474b1f1815f",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "2612272b-ace5-03a1-d5e4-60c481d94e9b",
+        "name" : "inline_alignment",
+        "display_width" : null,
+        "label" : "Inline alignment",
+        "help_text" : "Align inline elements if 'inline' is enabled. For links and buttons.",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "flex-start", "Start" ], [ "center", "Center" ], [ "flex-end", "End" ], [ "space-around", "Space around" ], [ "space-evenly", "Space evenly" ], [ "space-between", "Space between" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "type" : "choice",
+        "default" : "flex-start"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "inline_alignment" : "flex-start"
+      }
+    }, {
       "id" : "9e39ffcf-4b1f-e212-2373-2c298ad6db6f",
       "name" : "spacing",
       "display_width" : null,
@@ -167,6 +195,9 @@
     "type" : "group",
     "default" : {
       "presets" : { },
+      "alignment" : {
+        "inline_alignment" : "flex-start"
+      },
       "spacing" : {
         "spacing" : { }
       },
@@ -1476,6 +1507,15 @@
         "label" : "Alignment",
         "required" : false,
         "locked" : false,
+        "visibility" : {
+          "controlling_field" : "e2b3520f-c697-9f8a-c994-5143466e7af7",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "false",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
@@ -1846,6 +1886,15 @@
         "label" : "Alignment",
         "required" : false,
         "locked" : false,
+        "visibility" : {
+          "controlling_field" : "cbacac17-7591-aec0-d076-0cc132a3408b",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "false",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
@@ -2263,7 +2312,7 @@
         "required" : false,
         "locked" : false,
         "visibility" : {
-          "controlling_field" : "style.button.button_full_width",
+          "controlling_field" : "f12c5075-da3a-4a58-c7b6-559d8ea17da8",
           "controlling_field_path" : null,
           "controlling_value_regex" : "false",
           "property" : null,
@@ -2755,7 +2804,7 @@
         "required" : false,
         "locked" : false,
         "visibility" : {
-          "controlling_field" : "67bcef02-231a-ca6a-e1e7-a3226a6ba568",
+          "controlling_field" : "ac2fa2d5-7c7e-15ec-caee-1f0e7a36792f",
           "controlling_field_path" : null,
           "controlling_value_regex" : "false",
           "property" : null,
@@ -3259,6 +3308,9 @@
   "default" : {
     "general" : {
       "presets" : { },
+      "alignment" : {
+        "inline_alignment" : "flex-start"
+      },
       "spacing" : {
         "spacing" : { }
       },
@@ -4846,10 +4898,10 @@
   "required" : false,
   "locked" : false,
   "occurrence" : {
-    "min" : 7,
-    "max" : 7,
+    "min" : 10,
+    "max" : 10,
     "sorting_label_field" : null,
-    "default" : 7
+    "default" : 10
   },
   "children" : [ {
     "id" : "card_components.component",
@@ -4898,6 +4950,15 @@
     "show" : true
   }, {
     "component" : "Link",
+    "show" : true
+  }, {
+    "component" : "Secondary link",
+    "show" : true
+  }, {
+    "component" : "Button",
+    "show" : true
+  }, {
+    "component" : "Secondary button",
     "show" : true
   } ]
 } ]

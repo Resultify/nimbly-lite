@@ -28,68 +28,27 @@
 {# module global css #}
 {% require_css %}
   <style>
+    .template-module {
+      position: relative;
+    }
+    .template-module--container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 10px;
+    }
+    .template-module--item {
+      flex-basis: 100%;
+    }
+    .template-module--item-inline {
+      flex-basis: auto;
+      align-self: center;
+    }
   </style>
 {% end_require_css %}
 
 {# module scope css #}
 <style>
   {% scope_css %}
-
-    {% if module.icon.icon.name %}
-      .template-module__icon {
-        padding-bottom: 1rem;
-      }
-    {% endif %}
-
-    {% if module.secondary_link.text %}
-      .template-module__secondary-link {
-        padding-top: 1rem;
-      }
-    {% endif %}
-
-    {% if module.button.text %}
-      .template-module__button {
-        padding-top: 1rem;
-      }
-    {% endif %}
-
-    {% if module.secondary_button.text %}
-      .template-module__secondary-button {
-        padding-top: 1rem;
-      }
-    {% endif %}
-
-    {% if module.style.secondary_button.alignment.inline %}
-      .template-module__buttons_wrp {
-        display: flex;
-        {% if module.style.secondary_button.alignment.inline_alignment %}
-          justify-content: {{module.style.secondary_button.alignment.inline_alignment}};
-        {% endif %}
-      }
-      .template-module__button {
-        padding-right: 0.5rem;
-      }
-      .template-module__secondary-button {
-        padding-left: 0.5rem;
-      }
-    {% endif %}
-
-    {% if module.style.secondary_link.alignment.inline %}
-      .template-module__links_wrp {
-        display: flex;
-        {% if module.style.secondary_link.alignment.inline_alignment %}
-          justify-content: {{module.style.secondary_link.alignment.inline_alignment}};
-        {% endif %}
-      }
-      .template-module__link {
-        padding-right: 0.5rem;
-      }
-      .template-module__secondary-link {
-        padding-top: 0;
-        padding-left: 0.5rem;
-      }
-    {% endif %}
-
     .template-module {
       {% if module.style.general.alignment.alignment.horizontal_align %}
         text-align: {{module.style.general.alignment.alignment.horizontal_align}};
@@ -102,6 +61,10 @@
       {% endif %}
       {{module.style.general.border.border.css}}
       {{module.style.general.spacing.spacing.css}}
+    }
+
+    .template-module--container {
+      justify-content: {{module.style.general.alignment.inline_alignment}};
     }
 
     .template-module__image {
@@ -118,13 +81,6 @@
         background-color: {{module.style.figure.background.color.css}};
       {% endif %}
       {{module.style.figure.spacing.spacing.css}}
-    }
-
-    .template-module__text-body {
-      {% if module.style.text_body.background.color.css %}
-        background-color: {{module.style.text_body.background.color.css}};
-      {% endif %}
-      {{module.style.text_body.spacing.spacing.css}}
     }
 
     .template-module__icon {
@@ -218,78 +174,158 @@
   {% end_scope_css %}
 </style>
 
+{# stretched_link #}
+{% if module.additional_settings.enable_whole_area_link %}
+  {% if module.button.link.url.href %}
+    {% set btn_stretched_link = true %}
+  {% elif module.link.link.url.href %}
+    {% set link_stretched_link = true %}
+  {% elif module.heading.link.link.url.href %}
+    {% set heading_stretched_link = true %}
+  {% elif module.image.link.link.url.href %}
+    {% set image_stretched_link = true %}
+  {% endif %}
+{% endif %}
+
+{%- macro render_image() -%}
+  {% if module.image.image.src %}
+    <div class="template-module__image template-module--item">
+      {{image_macros.render_image_tmpl(module.image, module.style.image, module,
+        {
+          stretched_link: image_stretched_link
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+{# <div class="template-module__figure template-module--item">
+  {{figure_macros.render_figure_tmpl(module.figure, module.style.figure, module)}}
+</div> #}
+
+{%- macro render_icon() -%}
+  {% if module.icon.icon.name %}
+    <div class="template-module__icon template-module--item">
+      {{icon_macros.render_icon_tmpl(module.icon, module.style.icon, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_heading() -%}
+  {% if module.heading.text %}
+    <div class="template-module__heading template-module--item">
+      {{heading_macros.render_heading_tmpl(module.heading, module.style.heading, module,
+        {
+          stretched_link: heading_stretched_link
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_subheading() -%}
+  {% if module.subheading.text %}
+    <div class="template-module__subheading template-module--item">
+      {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module,
+        {
+          id: 'subheading'
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_text() -%}
+  {% if module.text.text %}
+    <div class="template-module__text template-module--item">
+      {{text_macros.render_text_tmpl(module.text, module.style.text, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_richtext() -%}
+  {% if module.richtext.rich_text %}
+    <div class="template-module__richtext template-module--item">
+      {{richtext_macros.render_richtext_tmpl(module.richtext, module.style.richtext, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_link() -%}
+  {% if module.link.text %}
+    <div class="template-module__link template-module--item
+    {{' template-module--item-inline' if module.style.link.alignment.inline}}">
+      {{link_macros.render_link_tmpl(module.link, module.style.link, module,
+        {
+          stretched_link: link_stretched_link
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_secondarylink() -%}
+  {% if module.secondary_link.text %}
+    <div class="template-module__secondary-link template-module--item
+    {{' template-module--item-inline' if module.style.secondary_link.alignment.inline}}">
+      {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module,
+        {
+          id: 'secondary'
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_button() -%}
+  {% if module.button.text %}
+    <div class="template-module__button template-module--item
+    {{' template-module--item-inline' if module.style.button.alignment.inline}}">
+      {{button_macros.render_btn_tmpl(module.button, module.style.button, module,
+        {
+          stretched_link: btn_stretched_link
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_secondarybutton() -%}
+  {% if module.secondary_button.text %}
+    <div class="template-module__secondary-button template-module--item
+      {{' template-module--item-inline' if module.style.secondary_button.alignment.inline}}">
+      {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module,
+        {
+          id: 'secondary'
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
 
 <div class="template-module_wrp {{filter_content_classes}}">
-  <div class="template-module template-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
-
-    {% if module.heading.additional_settings.header_above_image %}
-      <div class="template-module__heading">
-        {{heading_macros.render_heading_tmpl(module.heading, module.style.heading, module)}}
-      </div>
-    {% endif %}
-
-    <div class="template-module__image">
-      {{image_macros.render_image_tmpl(module.image, module.style.image, module)}}
-    </div>
-
-    <div class="template-module__figure">
-      {{figure_macros.render_figure_tmpl(module.figure, module.style.figure, module)}}
-    </div>
-
-    <div class="template-module__text-body">
-      <div class="template-module__icon">
-        {{icon_macros.render_icon_tmpl(module.icon, module.style.icon, module)}}
-      </div>
-
-      {% if module.heading.additional_settings.header_above_image == false %}
-        <div class="template-module__heading">
-          {{heading_macros.render_heading_tmpl(module.heading, module.style.heading, module)}}
-        </div>
+  <div class="template-module template-module--container template-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
+    {% for template_component in module.template_components %}
+      {% if template_component.component|lower == 'image' %}
+        {{render_image() if template_component.show}}
+      {% elif template_component.component|lower == 'icon' %}
+        {{render_icon() if template_component.show}}
+      {% elif template_component.component|lower == 'text' %}
+        {{render_text() if template_component.show}}
+      {% elif template_component.component|lower == 'heading' %}
+        {{render_heading() if template_component.show}}
+      {% elif template_component.component|lower == 'subheading' %}
+        {{render_subheading() if template_component.show}}
+      {% elif template_component.component|cut(" ")|lower == 'richtext' %}
+        {{render_richtext() if template_component.show}}
+      {% elif template_component.component|lower == 'link' %}
+        {{render_link() if template_component.show}}
+      {% elif template_component.component|cut(" ")|lower == 'secondarylink' %}
+        {{render_secondarylink() if template_component.show}}
+      {% elif template_component.component|lower == 'button' %}
+        {{render_button() if template_component.show}}
+      {% elif template_component.component|cut(" ")|lower == 'secondarybutton' %}
+        {{render_secondarybutton() if template_component.show}}
       {% endif %}
-
-      <div class="template-module__subheading">
-        {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module,
-          {
-            id: 'subheading'
-          }
-        )}}
-      </div>
-
-      <div class="template-module__text">
-        {{text_macros.render_text_tmpl(module.text, module.style.text, module)}}
-      </div>
-
-      <div class="template-module__richtext">
-        {{richtext_macros.render_richtext_tmpl(module.richtext, module.style.richtext, module)}}
-      </div>
-
-      <div class="template-module__links_wrp">
-        <div class="template-module__link">
-          {{link_macros.render_link_tmpl(module.link, module.style.link, module)}}
-        </div>
-        <div class="template-module__secondary-link">
-          {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module,
-            {
-              id: 'secondary'
-            }
-          )}}
-        </div>
-      </div>
-
-      <div class="template-module__buttons_wrp">
-        <div class="template-module__button">
-          {{button_macros.render_btn_tmpl(module.button, module.style.button, module)}}
-        </div>
-        <div class="template-module__secondary-button">
-          {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module,
-          {
-            id: 'secondary'
-          }
-          )}}
-        </div>
-      </div>
-
-    </div>
-
+    {% endfor %}
   </div>
 </div>

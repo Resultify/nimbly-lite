@@ -28,9 +28,9 @@ body {
   {% endif %}
 }
 
-/* p,
+p,
 .g-module-macros-text {
   {% if main_text_font.style %}
     {{main_text_font.style}};
   {% endif %}
-} */
+}

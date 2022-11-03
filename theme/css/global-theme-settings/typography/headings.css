@@ -133,6 +133,7 @@ h6,
 .display-6 {
   line-height: 1.2;
   margin-top: 0;
+  margin-bottom: 0.5rem;
   {% if headings_font.color %}
     color: {{headings_font.color}};
   {% endif %}

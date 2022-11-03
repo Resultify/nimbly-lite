@@ -222,6 +222,33 @@
           "horizontal_align" : "LEFT",
           "vertical_align" : "MIDDLE"
         }
+      }, {
+        "id" : "style.text_body.alignment.inline_alignment",
+        "name" : "inline_alignment",
+        "display_width" : null,
+        "label" : "Inline alignment",
+        "help_text" : "Align inline elements if 'inline' is enabled. For links and buttons.",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "flex-start", "Start" ], [ "center", "Center" ], [ "flex-end", "End" ], [ "space-around", "Space around" ], [ "space-evenly", "Space evenly" ], [ "space-between", "Space between" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "type" : "choice",
+        "default" : "flex-start"
+      }, {
+        "id" : "31152a09-5764-8a1a-c84b-065bca872649",
+        "name" : "mobile_alignment",
+        "display_width" : null,
+        "label" : "Mobile alignment",
+        "help_text" : "Caption text alignment on mobile",
+        "required" : false,
+        "locked" : false,
+        "alignment_direction" : "HORIZONTAL",
+        "type" : "alignment",
+        "default" : {
+          "horizontal_align" : "LEFT"
+        }
       } ],
       "tab" : "STYLE",
       "expanded" : false,
@@ -230,6 +257,10 @@
         "alignment" : {
           "horizontal_align" : "LEFT",
           "vertical_align" : "MIDDLE"
+        },
+        "inline_alignment" : "flex-start",
+        "mobile_alignment" : {
+          "horizontal_align" : "LEFT"
         }
       }
     }, {
@@ -305,6 +336,10 @@
         "alignment" : {
           "horizontal_align" : "LEFT",
           "vertical_align" : "MIDDLE"
+        },
+        "inline_alignment" : "flex-start",
+        "mobile_alignment" : {
+          "horizontal_align" : "LEFT"
         }
       },
       "spacing" : {
@@ -1620,7 +1655,7 @@
         "required" : false,
         "locked" : false,
         "visibility" : {
-          "controlling_field" : "cbacac17-7591-aec0-d076-0cc132a3408b",
+          "controlling_field" : "8f5067ee-e168-75c1-e59a-c4d989018308",
           "controlling_field_path" : null,
           "controlling_value_regex" : "false",
           "property" : null,
@@ -1633,6 +1668,17 @@
         "default" : {
           "horizontal_align" : "LEFT"
         }
+      }, {
+        "id" : "8f5067ee-e168-75c1-e59a-c4d989018308",
+        "name" : "inline",
+        "display_width" : null,
+        "label" : "Inline",
+        "help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : false
       } ],
       "tab" : "STYLE",
       "expanded" : false,
@@ -1640,7 +1686,8 @@
       "default" : {
         "alignment" : {
           "horizontal_align" : "LEFT"
-        }
+        },
+        "inline" : false
       }
     }, {
       "id" : "323c65b0-d8ed-7099-15fe-b3e6ae09cb70",
@@ -1927,7 +1974,8 @@
       "alignment" : {
         "alignment" : {
           "horizontal_align" : "LEFT"
-        }
+        },
+        "inline" : false
       },
       "spacing" : {
         "spacing" : { }
@@ -2004,34 +2052,12 @@
         "name" : "inline",
         "display_width" : null,
         "label" : "Inline",
-        "help_text" : "Both links in one line",
+        "help_text" : "",
         "required" : false,
         "locked" : false,
         "display" : "toggle",
         "type" : "boolean",
         "default" : false
-      }, {
-        "id" : "587a06ca-dfda-3d56-d061-44567aa3fa37",
-        "name" : "inline_alignment",
-        "display_width" : null,
-        "label" : "Inline alignment",
-        "required" : false,
-        "locked" : false,
-        "visibility" : {
-          "controlling_field" : "cbacac17-7591-aec0-d076-0cc132a3408b",
-          "controlling_field_path" : null,
-          "controlling_value_regex" : "true",
-          "property" : null,
-          "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
-        },
-        "display" : "select",
-        "choices" : [ [ "flex-start", "Start" ], [ "center", "Center" ], [ "flex-end", "End" ], [ "space-around", "Space-around" ], [ "space-evenly", "Space-evenly" ], [ "space-between", "Space-between" ] ],
-        "multiple" : false,
-        "reordering_enabled" : true,
-        "type" : "choice",
-        "default" : "flex-start"
       } ],
       "tab" : "STYLE",
       "expanded" : false,
@@ -2040,8 +2066,7 @@
         "alignment" : {
           "horizontal_align" : "LEFT"
         },
-        "inline" : false,
-        "inline_alignment" : "flex-start"
+        "inline" : false
       }
     }, {
       "id" : "600e64bb-e0b7-2cf4-85c2-cfa95e69a032",
@@ -2329,8 +2354,7 @@
         "alignment" : {
           "horizontal_align" : "LEFT"
         },
-        "inline" : false,
-        "inline_alignment" : "flex-start"
+        "inline" : false
       },
       "spacing" : {
         "spacing" : { }
@@ -2435,7 +2459,7 @@
         "required" : false,
         "locked" : false,
         "visibility" : {
-          "controlling_field" : "ac2fa2d5-7c7e-15ec-caee-1f0e7a36792f",
+          "controlling_field" : "9a781d79-b9dd-100b-d8fe-fae36b8ba67f",
           "controlling_field_path" : null,
           "controlling_value_regex" : "false",
           "property" : null,
@@ -2453,12 +2477,32 @@
         "name" : "full_width",
         "display_width" : null,
         "label" : "Full width",
-        "help_text" : "Button full width",
+        "help_text" : "",
         "inline_help_text" : "",
         "required" : false,
         "locked" : false,
         "visibility" : {
-          "controlling_field" : "ac2fa2d5-7c7e-15ec-caee-1f0e7a36792f",
+          "controlling_field" : "9a781d79-b9dd-100b-d8fe-fae36b8ba67f",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "false",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : false
+      }, {
+        "id" : "9a781d79-b9dd-100b-d8fe-fae36b8ba67f",
+        "name" : "inline",
+        "display_width" : null,
+        "label" : "Inline",
+        "help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "style.button.button_full_width",
           "controlling_field_path" : null,
           "controlling_value_regex" : "false",
           "property" : null,
@@ -2477,7 +2521,8 @@
         "alignment" : {
           "horizontal_align" : "LEFT"
         },
-        "full_width" : false
+        "full_width" : false,
+        "inline" : false
       }
     }, {
       "id" : "76c3f921-9a96-c15b-30f4-ee3165c13b13",
@@ -2798,7 +2843,8 @@
         "alignment" : {
           "horizontal_align" : "LEFT"
         },
-        "full_width" : false
+        "full_width" : false,
+        "inline" : false
       },
       "spacing" : {
         "spacing" : { }
@@ -2944,34 +2990,21 @@
         "name" : "inline",
         "display_width" : null,
         "label" : "Inline",
-        "help_text" : "Both buttons in one line",
-        "required" : false,
-        "locked" : false,
-        "display" : "toggle",
-        "type" : "boolean",
-        "default" : false
-      }, {
-        "id" : "b8181c58-d368-14b1-8fef-5fa77346d540",
-        "name" : "inline_alignment",
-        "display_width" : null,
-        "label" : "Inline alignment",
+        "help_text" : "",
         "required" : false,
         "locked" : false,
         "visibility" : {
-          "controlling_field" : "ac2fa2d5-7c7e-15ec-caee-1f0e7a36792f",
+          "controlling_field" : "67bcef02-231a-ca6a-e1e7-a3226a6ba568",
           "controlling_field_path" : null,
-          "controlling_value_regex" : "true",
+          "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
           "access" : null,
           "hidden_subfields" : null
         },
-        "display" : "select",
-        "choices" : [ [ "flex-start", "Start" ], [ "center", "Center" ], [ "flex-end", "End" ], [ "space-around", "Space-around" ], [ "space-evenly", "Space-evenly" ], [ "space-between", "Space-between" ] ],
-        "multiple" : false,
-        "reordering_enabled" : true,
-        "type" : "choice",
-        "default" : "flex-start"
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : false
       } ],
       "tab" : "STYLE",
       "expanded" : false,
@@ -2981,8 +3014,7 @@
           "horizontal_align" : "LEFT"
         },
         "full_width" : false,
-        "inline" : false,
-        "inline_alignment" : "flex-start"
+        "inline" : false
       }
     }, {
       "id" : "ae76bf5b-2d1b-10c1-7fe4-75129715bf25",
@@ -3304,8 +3336,7 @@
           "horizontal_align" : "LEFT"
         },
         "full_width" : false,
-        "inline" : false,
-        "inline_alignment" : "flex-start"
+        "inline" : false
       },
       "spacing" : {
         "spacing" : { }
@@ -3417,6 +3448,10 @@
         "alignment" : {
           "horizontal_align" : "LEFT",
           "vertical_align" : "MIDDLE"
+        },
+        "inline_alignment" : "flex-start",
+        "mobile_alignment" : {
+          "horizontal_align" : "LEFT"
         }
       },
       "spacing" : {
@@ -3594,7 +3629,8 @@
       "alignment" : {
         "alignment" : {
           "horizontal_align" : "LEFT"
-        }
+        },
+        "inline" : false
       },
       "spacing" : {
         "spacing" : { }
@@ -3636,8 +3672,7 @@
         "alignment" : {
           "horizontal_align" : "LEFT"
         },
-        "inline" : false,
-        "inline_alignment" : "flex-start"
+        "inline" : false
       },
       "spacing" : {
         "spacing" : { }
@@ -3683,7 +3718,8 @@
         "alignment" : {
           "horizontal_align" : "LEFT"
         },
-        "full_width" : false
+        "full_width" : false,
+        "inline" : false
       },
       "spacing" : {
         "spacing" : { }
@@ -3732,8 +3768,7 @@
           "horizontal_align" : "LEFT"
         },
         "full_width" : false,
-        "inline" : false,
-        "inline_alignment" : "flex-start"
+        "inline" : false
       },
       "spacing" : {
         "spacing" : { }
@@ -4472,40 +4507,11 @@
     "allow_new_line" : true,
     "show_emoji_picker" : false,
     "type" : "text"
-  }, {
-    "id" : "4af30797-6ce6-c3ff-1f74-13860084bae6",
-    "name" : "additional_settings",
-    "display_width" : null,
-    "label" : "Additional settings",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "96a425d2-e89b-15e5-d99a-ec7155c27fb2",
-      "name" : "text_above_heading",
-      "display_width" : null,
-      "label" : "Text above heading",
-      "help_text" : "",
-      "required" : false,
-      "locked" : false,
-      "display" : "toggle",
-      "type" : "boolean",
-      "default" : false
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "type" : "group",
-    "default" : {
-      "text_above_heading" : false
-    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
-  "default" : {
-    "additional_settings" : {
-      "text_above_heading" : false
-    }
-  }
+  "default" : { }
 }, {
   "id" : "962d03e6-95f3-80bf-09b7-b22ae465c738",
   "name" : "richtext",
@@ -5002,4 +5008,72 @@
       "icon_position" : "left"
     }
   }
+}, {
+  "id" : "hero_components",
+  "name" : "hero_components",
+  "display_width" : null,
+  "label" : "Hero components",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 9,
+    "max" : 9,
+    "sorting_label_field" : null,
+    "default" : 9
+  },
+  "children" : [ {
+    "id" : "hero_components.component",
+    "name" : "component",
+    "display_width" : null,
+    "label" : "Component",
+    "required" : false,
+    "locked" : true,
+    "validation_regex" : "",
+    "placeholder" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Image"
+  }, {
+    "id" : "hero_components.show",
+    "name" : "show",
+    "display_width" : null,
+    "label" : "Show component",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "component" : "Icon",
+    "show" : true
+  }, {
+    "component" : "Heading",
+    "show" : true
+  }, {
+    "component" : "Subheading",
+    "show" : true
+  }, {
+    "component" : "Text",
+    "show" : true
+  }, {
+    "component" : "Rich text",
+    "show" : true
+  }, {
+    "component" : "Link",
+    "show" : true
+  }, {
+    "component" : "Secondary link",
+    "show" : true
+  }, {
+    "component" : "Button",
+    "show" : true
+  }, {
+    "component" : "Secondary button",
+    "show" : true
+  } ]
 } ]

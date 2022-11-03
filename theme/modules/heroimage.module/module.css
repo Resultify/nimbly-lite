@@ -13,7 +13,8 @@
 }
 
 .heroimage-module__image {
-  display: inline;
+  display: flex;
+  height: 100%;
 }
 
 .heroimage-module__caption_wrp {
