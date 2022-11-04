@@ -11,26 +11,27 @@
 }
 
 /* Question */
-.faq-module__text > .g-module-macros-text_wrp {
+.faq-module__text > .g-module-macros-text {
   position: relative;
-  padding-left: 1.2rem;
+  padding-left: 1.25rem;
   user-select: none;
   display: inline-block;
 }
 
 /* Arrow */
 .faq-module__arrow {
-  position: absolute;
   user-select: none;
+  position: relative;
+  z-index: 1;
 }
 
 .faq-module__arrow:before {
   content: "";
-  border-width: 0.4rem;
+  border-width: 0.5rem;
   border-style: solid;
   border-color: transparent transparent transparent #888;
   position: absolute;
-  top: calc(50% - 0.4rem);
+  top: calc(50% - 0.5rem);
   left: 0.25rem;
   transform-origin: 0.2rem 50%;
   transform: rotate(0);

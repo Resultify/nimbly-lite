@@ -491,12 +491,15 @@
       "validation_regex" : "",
       "allow_new_line" : true,
       "show_emoji_picker" : false,
-      "type" : "text"
+      "type" : "text",
+      "default" : "Question 1"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "type" : "group",
-    "default" : { }
+    "default" : {
+      "text" : "Question 1"
+    }
   }, {
     "id" : "962d03e6-95f3-80bf-09b7-b22ae465c738",
     "name" : "richtext",
@@ -512,19 +515,26 @@
       "required" : false,
       "locked" : false,
       "enabled_features" : [ "bulleted_list", "emoji", "underline", "indent", "superscript", "font_size", "lineheight", "link", "hr", "video", "charmap", "italic", "outdent", "nonbreaking_space", "block", "strikethrough", "embed", "table", "image", "code_format", "subscript", "visual_blocks", "bold", "personalize", "numbered_list", "background_color", "anchor", "font_family", "text_color", "alignment", "source_code" ],
-      "type" : "richtext"
+      "type" : "richtext",
+      "default" : "Answer 1"
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "type" : "group",
-    "default" : { }
+    "default" : {
+      "rich_text" : "Answer 1"
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
   "default" : [ {
-    "text" : { },
-    "richtext" : { }
+    "text" : {
+      "text" : "Question 1"
+    },
+    "richtext" : {
+      "rich_text" : "Answer 1"
+    }
   } ]
 }, {
   "id" : "10e5b048-474f-85fe-2ff7-5569b70b0161",

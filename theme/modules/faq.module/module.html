@@ -39,18 +39,17 @@
 </style>
 
 <div class="faq-module_wrp">
-  <div class="faq-module faq-module--{{module_id}} {{module.style.general.presets.custom_preset}} {% if module.enable_animation %}faq-module-animate{% endif %}">
+  <div class="faq-module faq-module--{{module_id}} {{module.style.general.presets.custom_preset}} {% if module.enable_animation %} faq-module-animate {% endif %}">
     {% for item in module.questions %}
       <details class="faq-module__details">
         <summary class="faq-module__text">
-          <span class="faq-module__arrow">&nbsp;</span>
-          {{ text_macros.render_text_tmpl(item.text, module.style.text, module) }}
+          <span class="faq-module__arrow"></span>
+          {{text_macros.render_text_tmpl(item.text, module.style.text, module)}}
         </summary>
         <div class="faq-module__richtext">
-          {{ richtext_macros.render_richtext_tmpl(item.richtext, module.style.richtext, module) }}
+          {{richtext_macros.render_richtext_tmpl(item.richtext, module.style.richtext, module)}}
         </div>
       </details>
-
     {% endfor %}
 
   </div>

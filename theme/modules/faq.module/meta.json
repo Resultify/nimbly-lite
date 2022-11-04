@@ -4,5 +4,5 @@
   "host_template_types" : [ "PAGE" ],
   "module_id" : 53809587157,
   "label" : "F.A.Q.",
-  "is_available_for_new_content" : false
+  "is_available_for_new_content" : true
 }
