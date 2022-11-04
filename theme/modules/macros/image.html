@@ -125,8 +125,8 @@
     {%- endif -%}
 
     {%- macro render_image() -%}
-      <img id="{{name}}_image" {% if data_attrs %} {{data_attrs}} {% endif %} data-field-name={{options.tooltip || 'Image'}}
-        class="{{image_class}} g-module-macros-image {%- if options.no_wrapper == true -%} {{' ' ~ class ~ ' '}} {%- endif -%} editor-tooltip editor-nimbly-tooltip"
+      <img id="{{name}}_image" {% if data_attrs %} {{data_attrs}} {% endif %}
+        class="{{image_class}} g-module-macros-image {%- if options.no_wrapper == true -%} {{' ' ~ class ~ ' '}} {%- endif -%}"
         alt="{{data.image.alt}}"
         src="{{data.image.src}}"
         width="{{widthAttr}}"
@@ -135,7 +135,7 @@
         {{styleAttr}}>
     {%- endmacro -%}
 
-    {%- if options.no_wrapper == false or options.no_wrapper == null -%}<span class="g-module-macros-image_wrp {{class}}">{% endif %}
+    {%- if options.no_wrapper == false or options.no_wrapper == null -%}<span data-field-name={{options.tooltip || 'Image'}} class="g-module-macros-image_wrp editor-tooltip editor-nimbly-tooltip {{class}}">{% endif %}
       {%- if href -%}
         <a href="{{href}}"
         class=" g-module-macros-image__link {{stretched_link_class}}"

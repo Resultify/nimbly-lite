@@ -6,67 +6,40 @@
 {% import '../macros/link.html' as link_macros %}
 {% import '../macros/button.html' as button_macros %}
 
+{# module global css #}
+{% require_css %}
+  <style>
+    .image-card-module {
+      position: relative;
+      display: flex;
+      gap: 10px 10px;
+    }
+    .image-card-module__image_wrp,
+    .image-card-module__text-column_wrp {
+      display: flex;
+      flex: 1;
+    }
+    .image-card-module__text-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 10px;
+    }
+    .image-card-module--item {
+      flex-basis: 100%;
+    }
+    .image-card-module--item-inline {
+      flex-basis: auto;
+      align-self: center;
+    }
+    .image-card-module__image .g-module-macros-image_wrp {
+      display: flex;
+    }
+  </style>
+{% end_require_css %}
+
 {# module scope css #}
 <style>
   {% scope_css %}
-
-    {% if module.icon.icon.name %}
-      .image-card-module__icon {
-        padding-bottom: 1rem;
-      }
-    {% endif %}
-
-    {% if module.secondary_link.text %}
-      .image-card-module__secondary-link {
-        padding-top: 1rem;
-      }
-    {% endif %}
-
-    {% if module.button.text %}
-      .image-card-module__button {
-        padding-top: 1rem;
-      }
-    {% endif %}
-
-    {% if module.secondary_button.text %}
-      .image-card-module__secondary-button {
-        padding-top: 1rem;
-      }
-    {% endif %}
-
-    {% if module.style.secondary_button.alignment.inline %}
-      .image-card-module__buttons_wrp {
-        display: flex;
-        {% if module.style.secondary_button.alignment.inline_alignment %}
-          justify-content: {{module.style.secondary_button.alignment.inline_alignment}};
-        {% endif %}
-      }
-      .image-card-module__button {
-        padding-right: 0.5rem;
-      }
-      .image-card-module__secondary-button {
-        padding-left: 0.5rem;
-      }
-    {% endif %}
-
-    {% if module.style.secondary_link.alignment.inline %}
-      .image-card-module__links_wrp {
-        display: flex;
-        {% if module.style.secondary_link.alignment.inline_alignment %}
-          justify-content: {{module.style.secondary_link.alignment.inline_alignment}};
-        {% endif %}
-      }
-
-      .image-card-module__link {
-        padding-right: 0.5rem;
-      }
-
-      .image-card-module__secondary-link {
-        padding-top: 0;
-        padding-left: 0.5rem;
-      }
-    {% endif %}
-
     .image-card-module {
       {% if module.style.general.border.border_radius != null %}
         border-radius: {{module.style.general.border.border_radius ~ 'px'}};
@@ -78,8 +51,7 @@
       {{module.style.general.spacing.spacing.css}}
     }
 
-    .image-card-module__image {
-      text-align: {{module.style.image.alignment.alignment.horizontal_align}};
+    .image-card-module__image_wrp {
       {% if module.style.image.alignment.alignment.vertical_align %}
         {% if module.style.image.alignment.alignment.vertical_align == 'TOP' %}
           {% set align = 'start'%}
@@ -88,18 +60,24 @@
         {% else %}
           {% set align = 'center'%}
         {% endif %}
-        align-self: {{align}};
+        align-items: {{align}};
       {% endif %}
+      justify-content: {{module.style.image.alignment.alignment.horizontal_align}};
+      {% if module.style.image.width.column_width %}
+        flex-basis: {{module.style.image.width.column_width ~ '%'}};
+      {% endif %}
+    }
+    .image-card-module__image {
       {% if module.style.image.background.color.css %}
         background-color: {{module.style.image.background.color.css}};
       {% endif %}
-      {% if module.style.image.width %}
-        width: {{module.style.image.width ~ '%'}};
+      {% if module.style.image.width.internal_width %}
+        flex-basis: {{module.style.image.width.internal_width ~ '%'}};
       {% endif %}
       {{module.style.image.spacing.spacing.css}}
     }
 
-    .image-card-module__text-column {
+    .image-card-module__text-column_wrp {
       {% if module.style.text_body.alignment.alignment.vertical_align %}
         {% if module.style.text_body.alignment.alignment.vertical_align == 'TOP' %}
           {% set align = 'start'%}
@@ -108,13 +86,21 @@
         {% else %}
           {% set align = 'center'%}
         {% endif %}
-        justify-content: {{align}};
+        align-items: {{align}};
       {% endif %}
+      justify-content: {{module.style.text_body.alignment.alignment.horizontal_align}};
+      {% if module.style.image.width.column_width %}
+        flex-basis: {{100 - module.style.image.width.column_width ~ '%'}};
+      {% endif %}
+    }
+
+    .image-card-module__text-column {
       {% if module.style.text_body.background.color.css %}
         background-color: {{module.style.text_body.background.color.css}};
       {% endif %}
-      {% if module.style.image.width %}
-         width: {{100 - module.style.image.width ~ '%'}};
+      justify-content: {{module.style.text_body.alignment.inline_alignment}};
+      {% if module.style.text_body.width.internal_width %}
+         flex-basis: {{module.style.text_body.width.internal_width ~ '%'}};
       {% endif %}
       {{module.style.text_body.spacing.spacing.css}}
     }
@@ -123,8 +109,12 @@
       .image-card-module {
         flex-direction: column;
       }
+      .image-card-module__image,
+      .image-card-module__text-column {
+        flex-basis: 100%;
+      }
       .image-card-module__image {
-        width: 100%;
+        flex-basis: 100%;
         {% if module.style.image.alignment.position_on_mobile == 'top' %}
             order: 1;
           {% else %}
@@ -132,8 +122,14 @@
         {% endif %}
       }
       .image-card-module__text-column {
-        width: 100%;
+        flex-basis: 100%;
         order: 2;
+        justify-content: {{module.style.text_body.alignment.mobile_alignment.horizontal_align}};
+      }
+      .image-card-module__text-column > div,
+      .image-card-module__text-column .g-module-macros-richtext > div,
+      .image-card-module__text-column .g-module-macros-richtext p {
+        text-align: {{module.style.text_body.alignment.mobile_alignment.horizontal_align}}!important;
       }
     }
 
@@ -211,108 +207,135 @@
   {% end_scope_css %}
 </style>
 
-{# stretched_link #}
-{% if module.additional_settings.enable_whole_area_link %}
-  {% if module.button.link.url.href %}
-    {% set btn_stretched_link = true %}
-  {% elif module.link.link.url.href %}
-    {% set link_stretched_link = true %}
-  {% elif module.heading.link.link.url.href %}
-    {% set heading_stretched_link = true %}
-  {% elif module.image.link.link.url.href %}
-    {% set image_stretched_link = true %}
-  {% endif %}
-{% endif %}
-
-{%- macro text_column() -%}
-  <div class="image-card-module__text-column">
-    {% if module.text.additional_settings.text_position == 'text_on_top' %}
-      <div class="image-card-module__text">
-        {{text_macros.render_text_tmpl(module.text, module.style.text, module)}}
-      </div>
-    {% endif %}
-
-    <div class="image-card-module__icon">
+{%- macro render_icon() -%}
+  {% if module.icon.icon.name %}
+    <div class="image-card-module__icon image-card-module--item">
       {{icon_macros.render_icon_tmpl(module.icon, module.style.icon, module)}}
     </div>
+  {% endif %}
+{%- endmacro -%}
 
-    {% if module.text.additional_settings.text_position == 'default' %}
-      <div class="image-card-module__text">
-        {{text_macros.render_text_tmpl(module.text, module.style.text, module)}}
-      </div>
-    {% endif %}
-
-    <div class="image-card-module__heading">
-      {{heading_macros.render_heading_tmpl(module.heading, module.style.heading, module,
-        {
-          stretched_link: heading_stretched_link
-        }
-      )}}
+{%- macro render_heading() -%}
+  {% if module.heading.text %}
+    <div class="image-card-module__heading image-card-module--item">
+      {{heading_macros.render_heading_tmpl(module.heading, module.style.heading, module)}}
     </div>
+  {% endif %}
+{%- endmacro -%}
 
-    <div class="image-card-module__subheading">
+{%- macro render_subheading() -%}
+  {% if module.subheading.text %}
+    <div class="image-card-module__subheading image-card-module--item">
       {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module,
         {
-          id: 'subheading'
+          id: 'subheading',
+          tooltip: 'Subheading'
         }
       )}}
     </div>
+  {% endif %}
+{%- endmacro -%}
 
-    {% if module.text.additional_settings.text_position == 'text_under_heading' %}
-      <div class="image-card-module__text">
-        {{text_macros.render_text_tmpl(module.text, module.style.text, module)}}
-      </div>
-    {% endif %}
+{%- macro render_text() -%}
+  {% if module.text.text %}
+    <div class="image-card-module__text image-card-module--item">
+      {{text_macros.render_text_tmpl(module.text, module.style.text, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
 
-    <div class="image-card-module__richtext">
+{%- macro render_richtext() -%}
+  {% if module.richtext.rich_text %}
+    <div class="image-card-module__richtext image-card-module--item">
       {{richtext_macros.render_richtext_tmpl(module.richtext, module.style.richtext, module)}}
     </div>
+  {% endif %}
+{%- endmacro -%}
 
-    <div class="image-card-module__links_wrp">
-      <div class="image-card-module__link">
-        {{link_macros.render_link_tmpl(module.link, module.style.link, module,
-          {
-            stretched_link: link_stretched_link
-          }
-        )}}
-      </div>
-      <div class="image-card-module__secondary-link">
-        {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module,
-          {
-            id: 'secondary'
-          }
-        )}}
-      </div>
+{%- macro render_link() -%}
+  {% if module.link.text %}
+    <div class="image-card-module__link image-card-module--item
+    {{' image-card-module--item-inline' if module.style.link.alignment.inline}}">
+      {{link_macros.render_link_tmpl(module.link, module.style.link, module)}}
     </div>
+  {% endif %}
+{%- endmacro -%}
 
-    <div class="image-card-module__buttons_wrp">
-      <div class="image-card-module__button">
-        {{button_macros.render_btn_tmpl(module.button, module.style.button, module,
-          {
-            stretched_link: btn_stretched_link
-          }
-        )}}
-      </div>
-      <div class="image-card-module__secondary-button">
-        {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module,
-          {
-            id: 'secondary'
-          }
-        )}}
-      </div>
+{%- macro render_secondarylink() -%}
+  {% if module.secondary_link.text %}
+    <div class="image-card-module__secondary-link image-card-module--item
+    {{' image-card-module--item-inline' if module.style.secondary_link.alignment.inline}}">
+      {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module,
+        {
+          id: 'secondary',
+          tooltip: 'Secondary-link'
+        }
+      )}}
     </div>
+  {% endif %}
+{%- endmacro -%}
 
+{%- macro render_button() -%}
+  {% if module.button.text %}
+    <div class="image-card-module__button image-card-module--item
+    {{' image-card-module--item-inline' if module.style.button.alignment.inline}}">
+      {{button_macros.render_btn_tmpl(module.button, module.style.button, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_secondarybutton() -%}
+  {% if module.secondary_button.text %}
+    <div class="image-card-module__secondary-button image-card-module--item
+      {{' image-card-module--item-inline' if module.style.secondary_button.alignment.inline}}">
+      {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module,
+        {
+          id: 'secondary',
+          tooltip: 'Secondary-button'
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro text_column() -%}
+  <div class="image-card-module__text-column_wrp">
+    <div class="image-card-module__text-column">
+      {% for imagecard_component in module.imagecard_components %}
+        {% if imagecard_component.component|lower == 'icon' %}
+          {{render_icon() if imagecard_component.show}}
+        {% elif imagecard_component.component|lower == 'text' %}
+          {{render_text() if imagecard_component.show}}
+        {% elif imagecard_component.component|lower == 'heading' %}
+          {{render_heading() if imagecard_component.show}}
+        {% elif imagecard_component.component|lower == 'subheading' %}
+          {{render_subheading() if imagecard_component.show}}
+        {% elif imagecard_component.component|cut(" ")|lower == 'richtext' %}
+          {{render_richtext() if imagecard_component.show}}
+        {% elif imagecard_component.component|lower == 'link' %}
+          {{render_link() if imagecard_component.show}}
+        {% elif imagecard_component.component|cut(" ")|lower == 'secondarylink' %}
+          {{render_secondarylink() if imagecard_component.show}}
+        {% elif imagecard_component.component|lower == 'button' %}
+          {{render_button() if imagecard_component.show}}
+        {% elif imagecard_component.component|cut(" ")|lower == 'secondarybutton' %}
+          {{render_secondarybutton() if imagecard_component.show}}
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 {%- endmacro -%}
 
 {%- macro image_column() -%}
-  <div class="image-card-module__image">
-    {{image_macros.render_image_tmpl(module.image, module.style.image, module,
-      {
-        stretched_link: image_stretched_link
-      }
-    )}}
-</div>
+  <div class="image-card-module__image_wrp">
+    <div class="image-card-module__image">
+      {{image_macros.render_image_tmpl(module.image, module.style.image, module,
+        {
+          stretched_link: image_stretched_link
+        }
+      )}}
+    </div>
+  </div>
 {%- endmacro -%}
 
 <div class="image-card-module_wrp">

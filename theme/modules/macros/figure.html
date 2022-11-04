@@ -118,7 +118,7 @@
       {%- end_scope_css -%}
     </style>
 
-    <figure class="g-module-macros-figure {{figure_class}} {{class}}">
+    <figure data-field-name={{options.tooltip || 'Image'}} class="editor-tooltip editor-nimbly-tooltip g-module-macros-figure {{figure_class}} {{class}}">
       {%- set loadingAttr = data.image.loading != 'disabled' ? 'loading="{{data.image.loading}}"' : '' -%}
       {%- set styleAttr = data.image.size_type != 'exact' ? 'style="max-width: 100%; height: auto;"' : '' -%}
       {%- set widthAttr = data.image.width -%}
@@ -142,8 +142,7 @@
       {%- endif -%}
 
       {%- macro render_image() -%}
-        <img id="{{name}}_image" {% if data_attrs %} {{data_attrs}} {% endif %} class="g-module-macros-figure--image editor-tooltip editor-nimbly-tooltip"
-          data-field-name={{options.tooltip || 'Image'}}
+        <img id="{{name}}_image" {% if data_attrs %} {{data_attrs}} {% endif %} class="g-module-macros-figure--image"
           alt="{{data.image.alt}}"
           src="{{data.image.src}}"
           width="{{widthAttr}}"
