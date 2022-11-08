@@ -91,6 +91,51 @@
         "default": {
           "color": "#5D5B23"
         }
+      },
+      {
+        "label": "Advanced",
+        "name": "advanced",
+        "type": "group",
+        "children": [
+          {
+            "label": "Focus color",
+            "name": "focus",
+            "type": "color",
+            "help_text": "Focus color for links, buttons, inputs, etc.  It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key.",
+            "visibility": {
+              "hidden_subfields": {
+                "opacity": true
+              }
+            },
+            "display_width": null,
+            "locked": false,
+            "required": false,
+            "inherited_value": {
+              "property_value_paths": {
+                "color": "theme.global_colors.primary.color"
+              }
+            }
+          },
+          {
+            "label": "Accent color",
+            "name": "accent",
+            "type": "color",
+            "help_text": "Specify the accent color for user-interface controls such as bullet points, F.A.Q. arrows, radio, checkboxes. Browser default color if not specified.",
+            "visibility": {
+              "hidden_subfields": {
+                "opacity": true
+              }
+            },
+            "display_width": null,
+            "locked": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
       }
     ],
     "display_width": null,
@@ -110,6 +155,23 @@
         "type": "group",
         "children": [
           {
+            "label": "Background",
+            "name": "background",
+            "inline_help_text": "Main background color",
+            "type": "color",
+            "visibility": {
+              "hidden_subfields": {
+                "opacity": true
+              }
+            },
+            "display_width": null,
+            "locked": false,
+            "required": false,
+            "default": {
+              "color": "#ffffff"
+            }
+          },
+          {
             "label": "Font",
             "name": "font",
             "type": "font",
@@ -123,22 +185,6 @@
               "size": 16,
               "size_unit": "px",
               "color": "#1d1d1d"
-            }
-          },
-          {
-            "label": "Main background color",
-            "name": "main_background",
-            "type": "color",
-            "visibility": {
-              "hidden_subfields": {
-                "opacity": true
-              }
-            },
-            "display_width": null,
-            "locked": false,
-            "required": false,
-            "default": {
-              "color": "#ffffff"
             }
           }
         ],
@@ -209,8 +255,9 @@
                 "default": "none"
               },
               {
-                "label": "Hover settings",
+                "label": "Hover",
                 "name": "hover",
+                "inline_help_text": "Hover settings",
                 "type": "group",
                 "children": [
                   {
@@ -762,8 +809,9 @@
             }
           },
           {
-            "label": "Hover settings",
+            "label": "Hover",
             "name": "hover",
+            "inline_help_text": "Hover settings",
             "type": "group",
             "children": [
               {
@@ -871,18 +919,6 @@
             "type": "group",
             "children": [
               {
-                "label": "Font size",
-                "name": "font_size",
-                "type": "number",
-                "display": "text",
-                "display_width": null,
-                "locked": false,
-                "step": 1,
-                "suffix": "px",
-                "required": false,
-                "default": 16
-              },
-              {
                 "label": "Spacing",
                 "name": "spacing",
                 "type": "spacing",
@@ -914,6 +950,18 @@
                     }
                   }
                 }
+              },
+              {
+                "label": "Font size",
+                "name": "font_size",
+                "type": "number",
+                "display": "text",
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false,
+                "default": 16
               }
             ],
             "display_width": null,
@@ -928,18 +976,6 @@
             "type": "group",
             "children": [
               {
-                "label": "Font size",
-                "name": "font_size",
-                "type": "number",
-                "display": "text",
-                "display_width": null,
-                "locked": false,
-                "step": 1,
-                "suffix": "px",
-                "required": false,
-                "default": 18
-              },
-              {
                 "label": "Spacing",
                 "name": "spacing",
                 "type": "spacing",
@@ -971,6 +1007,18 @@
                     }
                   }
                 }
+              },
+              {
+                "label": "Font size",
+                "name": "font_size",
+                "type": "number",
+                "display": "text",
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false,
+                "default": 18
               }
             ],
             "display_width": null,
@@ -985,18 +1033,6 @@
             "type": "group",
             "children": [
               {
-                "label": "Font size",
-                "name": "font_size",
-                "type": "number",
-                "display": "text",
-                "display_width": null,
-                "locked": false,
-                "step": 1,
-                "suffix": "px",
-                "required": false,
-                "default": 20
-              },
-              {
                 "label": "Spacing",
                 "name": "spacing",
                 "type": "spacing",
@@ -1028,6 +1064,18 @@
                     }
                   }
                 }
+              },
+              {
+                "label": "Font size",
+                "name": "font_size",
+                "type": "number",
+                "display": "text",
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false,
+                "default": 20
               }
             ],
             "display_width": null,
@@ -1048,6 +1096,34 @@
         "name": "primary",
         "type": "group",
         "children": [
+          {
+            "label": "Background",
+            "name": "background",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.global_colors.primary.color"
+                  }
+                },
+                "default": {
+                  "opacity": 100
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
           {
             "label": "Text",
             "name": "text",
@@ -1080,40 +1156,12 @@
             "required": false
           },
           {
-            "label": "Background",
-            "name": "background",
-            "type": "group",
-            "children": [
-              {
-                "label": "Color",
-                "name": "color",
-                "type": "color",
-                "display_width": null,
-                "locked": false,
-                "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.global_colors.primary.color"
-                  }
-                },
-                "default": {
-                  "opacity": 100
-                }
-              }
-            ],
-            "display_width": null,
-            "locked": false,
-            "tab": "CONTENT",
-            "expanded": false,
-            "required": false
-          },
-          {
             "label": "Border",
             "name": "border",
             "type": "group",
             "children": [
               {
-                "label": "",
+                "label": "Border",
                 "name": "border",
                 "type": "border",
                 "allow_custom_border_sides": false,
@@ -1121,22 +1169,10 @@
                 "locked": false,
                 "required": false,
                 "default": {}
-              }
-            ],
-            "display_width": null,
-            "locked": false,
-            "tab": "CONTENT",
-            "expanded": false,
-            "required": false
-          },
-          {
-            "label": "Radius",
-            "name": "radius",
-            "type": "group",
-            "children": [
+              },
               {
-                "label": "",
-                "name": "radius",
+                "label": "Border radius",
+                "name": "border_radius",
                 "type": "number",
                 "display": "text",
                 "max": 500,
@@ -1154,13 +1190,14 @@
             "required": false
           },
           {
-            "label": "Hover settings",
+            "label": "Hover",
             "name": "hover",
+            "inline_help_text": "Hover settings",
             "type": "group",
             "children": [
               {
-                "label": "Color",
-                "name": "color",
+                "label": "Background",
+                "name": "background",
                 "type": "color",
                 "display_width": null,
                 "locked": false,
@@ -1168,8 +1205,8 @@
                 "default": {}
               },
               {
-                "label": "Background",
-                "name": "background",
+                "label": "Color",
+                "name": "color",
                 "type": "color",
                 "display_width": null,
                 "locked": false,
@@ -1205,6 +1242,34 @@
         "type": "group",
         "children": [
           {
+            "label": "Background",
+            "name": "background",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.global_colors.secondary1.color"
+                  }
+                },
+                "default": {
+                  "opacity": 100
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
             "label": "Text",
             "name": "text",
             "type": "group",
@@ -1236,40 +1301,12 @@
             "required": false
           },
           {
-            "label": "Background",
-            "name": "background",
-            "type": "group",
-            "children": [
-              {
-                "label": "Color",
-                "name": "color",
-                "type": "color",
-                "display_width": null,
-                "locked": false,
-                "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.global_colors.secondary1.color"
-                  }
-                },
-                "default": {
-                  "opacity": 100
-                }
-              }
-            ],
-            "display_width": null,
-            "locked": false,
-            "tab": "CONTENT",
-            "expanded": false,
-            "required": false
-          },
-          {
             "label": "Border",
             "name": "border",
             "type": "group",
             "children": [
               {
-                "label": "",
+                "label": "Border",
                 "name": "border",
                 "type": "border",
                 "allow_custom_border_sides": false,
@@ -1277,22 +1314,10 @@
                 "locked": false,
                 "required": false,
                 "default": {}
-              }
-            ],
-            "display_width": null,
-            "locked": false,
-            "tab": "CONTENT",
-            "expanded": false,
-            "required": false
-          },
-          {
-            "label": "Radius",
-            "name": "radius",
-            "type": "group",
-            "children": [
+              },
               {
-                "label": "",
-                "name": "radius",
+                "label": "Border radius",
+                "name": "border_radius",
                 "type": "number",
                 "display": "text",
                 "max": 500,
@@ -1310,13 +1335,14 @@
             "required": false
           },
           {
-            "label": "Hover settings",
+            "label": "Hover",
             "name": "hover",
+            "inline_help_text": "Hover settings",
             "type": "group",
             "children": [
               {
-                "label": "Color",
-                "name": "color",
+                "label": "Background",
+                "name": "background",
                 "type": "color",
                 "display_width": null,
                 "locked": false,
@@ -1324,8 +1350,8 @@
                 "default": {}
               },
               {
-                "label": "Background",
-                "name": "background",
+                "label": "Color",
+                "name": "color",
                 "type": "color",
                 "display_width": null,
                 "locked": false,
@@ -1361,6 +1387,34 @@
         "type": "group",
         "children": [
           {
+            "label": "Background",
+            "name": "background",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.global_colors.secondary2.color"
+                  }
+                },
+                "default": {
+                  "opacity": 100
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
             "label": "Text",
             "name": "text",
             "type": "group",
@@ -1392,40 +1446,12 @@
             "required": false
           },
           {
-            "label": "Background",
-            "name": "background",
-            "type": "group",
-            "children": [
-              {
-                "label": "Color",
-                "name": "color",
-                "type": "color",
-                "display_width": null,
-                "locked": false,
-                "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.global_colors.secondary2.color"
-                  }
-                },
-                "default": {
-                  "opacity": 100
-                }
-              }
-            ],
-            "display_width": null,
-            "locked": false,
-            "tab": "CONTENT",
-            "expanded": false,
-            "required": false
-          },
-          {
             "label": "Border",
             "name": "border",
             "type": "group",
             "children": [
               {
-                "label": "",
+                "label": "Border",
                 "name": "border",
                 "type": "border",
                 "allow_custom_border_sides": false,
@@ -1433,22 +1459,10 @@
                 "locked": false,
                 "required": false,
                 "default": {}
-              }
-            ],
-            "display_width": null,
-            "locked": false,
-            "tab": "CONTENT",
-            "expanded": false,
-            "required": false
-          },
-          {
-            "label": "Radius",
-            "name": "radius",
-            "type": "group",
-            "children": [
+              },
               {
-                "label": "",
-                "name": "radius",
+                "label": "Border radius",
+                "name": "border_radius",
                 "type": "number",
                 "display": "text",
                 "max": 500,
@@ -1466,13 +1480,14 @@
             "required": false
           },
           {
-            "label": "Hover settings",
+            "label": "Hover",
             "name": "hover",
+            "inline_help_text": "Hover settings",
             "type": "group",
             "children": [
               {
-                "label": "Color",
-                "name": "color",
+                "label": "Background",
+                "name": "background",
                 "type": "color",
                 "display_width": null,
                 "locked": false,
@@ -1480,8 +1495,8 @@
                 "default": {}
               },
               {
-                "label": "Background",
-                "name": "background",
+                "label": "Color",
+                "name": "color",
                 "type": "color",
                 "display_width": null,
                 "locked": false,
@@ -1520,6 +1535,34 @@
         "type": "group",
         "children": [
           {
+            "label": "Background",
+            "name": "background",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.global_colors.secondary3.color"
+                  }
+                },
+                "default": {
+                  "opacity": 100
+                }
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
             "label": "Text",
             "name": "text",
             "type": "group",
@@ -1551,40 +1594,12 @@
             "required": false
           },
           {
-            "label": "Background",
-            "name": "background",
-            "type": "group",
-            "children": [
-              {
-                "label": "Color",
-                "name": "color",
-                "type": "color",
-                "display_width": null,
-                "locked": false,
-                "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.global_colors.secondary3.color"
-                  }
-                },
-                "default": {
-                  "opacity": 100
-                }
-              }
-            ],
-            "display_width": null,
-            "locked": false,
-            "tab": "CONTENT",
-            "expanded": false,
-            "required": false
-          },
-          {
             "label": "Border",
             "name": "border",
             "type": "group",
             "children": [
               {
-                "label": "",
+                "label": "Border",
                 "name": "border",
                 "type": "border",
                 "allow_custom_border_sides": false,
@@ -1592,22 +1607,10 @@
                 "locked": false,
                 "required": false,
                 "default": {}
-              }
-            ],
-            "display_width": null,
-            "locked": false,
-            "tab": "CONTENT",
-            "expanded": false,
-            "required": false
-          },
-          {
-            "label": "Radius",
-            "name": "radius",
-            "type": "group",
-            "children": [
+              },
               {
-                "label": "",
-                "name": "radius",
+                "label": "Border radius",
+                "name": "border_radius",
                 "type": "number",
                 "display": "text",
                 "max": 500,
@@ -1625,13 +1628,14 @@
             "required": false
           },
           {
-            "label": "Hover settings",
+            "label": "Hover",
             "name": "hover",
+            "inline_help_text": "Hover settings",
             "type": "group",
             "children": [
               {
-                "label": "Color",
-                "name": "color",
+                "label": "Background",
+                "name": "background",
                 "type": "color",
                 "display_width": null,
                 "locked": false,
@@ -1639,8 +1643,8 @@
                 "default": {}
               },
               {
-                "label": "Background",
-                "name": "background",
+                "label": "Color",
+                "name": "color",
                 "type": "color",
                 "display_width": null,
                 "locked": false,
@@ -1696,18 +1700,6 @@
             "type": "group",
             "children": [
               {
-                "label": "Size",
-                "name": "size",
-                "type": "number",
-                "display": "text",
-                "display_width": null,
-                "locked": false,
-                "step": 1,
-                "suffix": "px",
-                "required": false,
-                "default": 25
-              },
-              {
                 "label": "Spacing",
                 "name": "spacing",
                 "type": "spacing",
@@ -1739,6 +1731,18 @@
                     }
                   }
                 }
+              },
+              {
+                "label": "Size",
+                "name": "size",
+                "type": "number",
+                "display": "text",
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false,
+                "default": 25
               }
             ],
             "display_width": null,
@@ -1753,18 +1757,6 @@
             "type": "group",
             "children": [
               {
-                "label": "Size",
-                "name": "size",
-                "type": "number",
-                "display": "text",
-                "display_width": null,
-                "locked": false,
-                "step": 1,
-                "suffix": "px",
-                "required": false,
-                "default": 35
-              },
-              {
                 "label": "Spacing",
                 "name": "spacing",
                 "type": "spacing",
@@ -1796,6 +1788,18 @@
                     }
                   }
                 }
+              },
+              {
+                "label": "Size",
+                "name": "size",
+                "type": "number",
+                "display": "text",
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false,
+                "default": 35
               }
             ],
             "display_width": null,
@@ -1810,18 +1814,6 @@
             "type": "group",
             "children": [
               {
-                "label": "Size",
-                "name": "size",
-                "type": "number",
-                "display": "text",
-                "display_width": null,
-                "locked": false,
-                "step": 1,
-                "suffix": "px",
-                "required": false,
-                "default": 55
-              },
-              {
                 "label": "Spacing",
                 "name": "spacing",
                 "type": "spacing",
@@ -1853,6 +1845,18 @@
                     }
                   }
                 }
+              },
+              {
+                "label": "Size",
+                "name": "size",
+                "type": "number",
+                "display": "text",
+                "display_width": null,
+                "locked": false,
+                "step": 1,
+                "suffix": "px",
+                "required": false,
+                "default": 55
               }
             ],
             "display_width": null,
@@ -1874,8 +1878,29 @@
         "type": "group",
         "children": [
           {
-            "label": "Fill",
-            "name": "fill",
+            "label": "Background",
+            "name": "background",
+            "type": "group",
+            "children": [
+              {
+                "label": "Color",
+                "name": "color",
+                "type": "color",
+                "display_width": null,
+                "locked": false,
+                "required": false,
+                "default": {}
+              }
+            ],
+            "display_width": null,
+            "locked": false,
+            "tab": "CONTENT",
+            "expanded": false,
+            "required": false
+          },
+          {
+            "label": "Color",
+            "name": "color",
             "type": "group",
             "children": [
               {
@@ -1906,7 +1931,19 @@
             "tab": "CONTENT",
             "expanded": false,
             "required": false
-          },
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Secondary",
+        "name": "secondary",
+        "type": "group",
+        "children": [
           {
             "label": "Background",
             "name": "background",
@@ -1927,22 +1964,10 @@
             "tab": "CONTENT",
             "expanded": false,
             "required": false
-          }
-        ],
-        "display_width": null,
-        "locked": false,
-        "tab": "CONTENT",
-        "expanded": false,
-        "required": false
-      },
-      {
-        "label": "Secondary",
-        "name": "secondary",
-        "type": "group",
-        "children": [
+          },
           {
-            "label": "Fill",
-            "name": "fill",
+            "label": "Color",
+            "name": "color",
             "type": "group",
             "children": [
               {
@@ -1973,26 +1998,368 @@
             "tab": "CONTENT",
             "expanded": false,
             "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      }
+    ],
+    "display_width": null,
+    "locked": false,
+    "tab": "CONTENT",
+    "expanded": false,
+    "required": false
+  },
+  {
+    "label": "Forms",
+    "name": "forms",
+    "type": "group",
+    "children": [
+      {
+        "label": "Spacing",
+        "name": "spacing",
+        "type": "group",
+        "children": [
+          {
+            "label": "Spacing",
+            "name": "spacing",
+            "type": "spacing",
+            "display_width": null,
+            "locked": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Background",
+        "name": "background",
+        "type": "group",
+        "children": [
+          {
+            "label": "Color",
+            "name": "color",
+            "type": "color",
+            "display_width": null,
+            "locked": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Border",
+        "name": "border",
+        "type": "group",
+        "children": [
+          {
+            "label": "Border",
+            "name": "border",
+            "type": "border",
+            "allow_custom_border_sides": false,
+            "display_width": null,
+            "locked": false,
+            "required": false,
+            "default": {}
+          },
+          {
+            "label": "Border radius",
+            "name": "border_radius",
+            "type": "number",
+            "display": "text",
+            "max": 500,
+            "display_width": null,
+            "locked": false,
+            "step": 1,
+            "suffix": "px",
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Input label",
+        "name": "input_label",
+        "type": "group",
+        "children": [
+          {
+            "label": "Spacing",
+            "name": "spacing",
+            "type": "spacing",
+            "display_width": null,
+            "locked": false,
+            "required": false
           },
           {
             "label": "Background",
             "name": "background",
+            "type": "color",
+            "display_width": null,
+            "locked": false,
+            "required": false
+          },
+          {
+            "label": "Font",
+            "name": "font",
+            "type": "font",
+            "display_width": null,
+            "load_external_fonts": true,
+            "locked": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Help text",
+        "name": "help_text",
+        "type": "group",
+        "children": [
+          {
+            "label": "Spacing",
+            "name": "spacing",
+            "type": "spacing",
+            "display_width": null,
+            "locked": false,
+            "required": false
+          },
+          {
+            "label": "Background",
+            "name": "background",
+            "type": "color",
+            "display_width": null,
+            "locked": false,
+            "required": false
+          },
+          {
+            "label": "Font",
+            "name": "font",
+            "type": "font",
+            "display_width": null,
+            "load_external_fonts": true,
+            "locked": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Input field",
+        "name": "input_field",
+        "type": "group",
+        "children": [
+          {
+            "label": "Spacing",
+            "name": "spacing",
+            "type": "spacing",
+            "display_width": null,
+            "locked": false,
+            "required": false
+          },
+          {
+            "label": "Background",
+            "name": "background",
+            "type": "color",
+            "display_width": null,
+            "locked": false,
+            "required": false
+          },
+          {
+            "label": "Border",
+            "name": "border",
+            "type": "border",
+            "allow_custom_border_sides": false,
+            "display_width": null,
+            "locked": false,
+            "required": false,
+            "default": {}
+          },
+          {
+            "label": "Border radius",
+            "name": "border_radius",
+            "type": "number",
+            "display": "text",
+            "max": 500,
+            "display_width": null,
+            "locked": false,
+            "step": 1,
+            "suffix": "px",
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Placeholder",
+        "name": "placeholder",
+        "type": "group",
+        "children": [
+          {
+            "label": "Font",
+            "name": "font",
+            "type": "font",
+            "display_width": null,
+            "load_external_fonts": true,
+            "locked": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Button",
+        "name": "button",
+        "type": "group",
+        "children": [
+          {
+            "label": "Presets",
+            "name": "presets",
             "type": "group",
             "children": [
               {
-                "label": "Color",
-                "name": "color",
-                "type": "color",
+                "name": "style",
                 "display_width": null,
+                "label": "Style",
+                "help_text": "Form button style",
+                "required": true,
                 "locked": false,
-                "required": false,
-                "default": {}
+                "display": "select",
+                "placeholder": "Button style",
+                "choices": [
+                  [
+                    "form--btn-primary",
+                    "Primary"
+                  ],
+                  [
+                    "form--btn-secondary1",
+                    "Secondary 1"
+                  ],
+                  [
+                    "form--btn-secondary2",
+                    "Secondary 2"
+                  ],
+                  [
+                    "form--btn-secondary3",
+                    "Secondary 3"
+                  ]
+                ],
+                "multiple": false,
+                "type": "choice",
+                "default": "form--btn-primary"
+              },
+              {
+                "name": "size",
+                "display_width": null,
+                "label": "Size",
+                "help_text": "Form button size",
+                "required": true,
+                "locked": false,
+                "display": "select",
+                "placeholder": "",
+                "choices": [
+                  [
+                    "form--btn-small",
+                    "Small"
+                  ],
+                  [
+                    "form--btn-regular",
+                    "Medium"
+                  ],
+                  [
+                    "form--btn-large",
+                    "Large"
+                  ]
+                ],
+                "multiple": false,
+                "reordering_enabled": true,
+                "type": "choice",
+                "default": "form--btn-regular"
               }
             ],
             "display_width": null,
             "locked": false,
             "tab": "CONTENT",
             "expanded": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Error",
+        "name": "error",
+        "type": "group",
+        "children": [
+          {
+            "label": "Spacing",
+            "name": "spacing",
+            "type": "spacing",
+            "display_width": null,
+            "locked": false,
+            "required": false
+          },
+          {
+            "label": "Font",
+            "name": "font",
+            "type": "font",
+            "display_width": null,
+            "load_external_fonts": true,
+            "locked": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
+        "label": "Focus",
+        "name": "focus",
+        "type": "group",
+        "children": [
+          {
+            "label": "Color",
+            "name": "color",
+            "type": "color",
+            "display_width": null,
+            "locked": false,
             "required": false
           }
         ],

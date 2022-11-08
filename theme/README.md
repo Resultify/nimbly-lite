@@ -54,26 +54,51 @@ Summing up all the above we have this structure of fields or groups of fields.
     - Spacing `[field_name: spacing]`
 4. Background `[group_name: background]`
     - Color `[field_name: color]`
-4. Color `[group_name: color]`
+5. Color `[group_name: color]`
     - Color `[field_name: color]`
+6. Text [group_name: text]
+    - Font [field_name: font]
+    - Font color [field_name: font_color]
+    - Font size [field_name: font_size]
 7. Border `[group_name: border]`
     1. Border `[field_name: border]`
     2. Border radius `[field_name: border_radius]`
-8. Other needed options `[group/field]`
-9. Hover `[group_name: hover]`
+8. Other needed options `[group_name: group_name]`
+    - Other needed options `[field_name: field_name]`
+9. Hover `[group_name: hover]` **help-text:** *Hover settings*
     1. Background `[field_name: background]`
     2. Color `[field_name: color]`
-    3. Other `[field]`
-10. Custom theme overrides `[group_name: custom_styling]` **help-text:** *Override global theme settings for the whole module | Override global theme settings for the current component*
-    1. Alignment `[field_name: alignment]`
-    2. Spacing `[field_name: spacing]`
-    3. Background `[field_name: background]`
-    4. Color `[field_name: color]` **help-text:** *Text color*
-    5. Font `[field_name: font]`
-    6. Border `[field_name: border]`
-    7. Border radius `[field_name: radius]`
-    8. Other needed options `[field]`
-    9. Hover `[group_name: hover]` **help-text:** *Hover settings*
+    3. Border color `[field_name: border_color]`
+    4. Other `[field_name: field_name]`
+10. Special field group name `[group_name: group_name]`
+    1. Presets `[group_name: presets]`
+        - Unique presets options if existed `[field_name: style|size|etc]`
+    2. Alignment `[field_name: alignment]`
+    3. Spacing `[field_name: spacing]`
+    4. Background `[field_name: background]`
+    5. Color `[field_name: color]` **help-text:** *Text color*
+    6. Font `[field_name: font]`
+    7. Border `[field_name: border]`
+    8. Border radius `[field_name: border_radius]`
+    9. Other needed options `[field_name: field_name]`
+    10. Hover `[group_name: hover]` **help-text:** *Hover settings*
         1. Background `[field_name: background]`
         2. Color `[field_name: color]` **help-text:** *Text color*
-        3. Other `[field]`
+        3. Border color `[field_name: border_color]`
+        4. Other `[field_name: field_name]`
+11. Custom theme overrides `[group_name: custom_theme_overrides]` **help-text:** *Override global theme settings for the whole module | Override global theme settings for the current component*
+    1. Presets `[group_name: presets]`
+        - Unique presets options if existed `[field_name: style|size|etc]`
+    2. Alignment `[field_name: alignment]`
+    3. Spacing `[field_name: spacing]`
+    4. Background `[field_name: background]`
+    5. Color `[field_name: color]` **help-text:** *Text color*
+    6. Font `[field_name: font]`
+    7. Border `[field_name: border]`
+    8. Border radius `[field_name: border_radius]`
+    9. Other needed options `[field_name: field_name]`
+    10. Hover `[group_name: hover]` **help-text:** *Hover settings*
+        1. Background `[field_name: background]`
+        2. Color `[field_name: color]` **help-text:** *Text color*
+        3. Border color `[field_name: border_color]`
+        4. Other `[field_name: field_name]`

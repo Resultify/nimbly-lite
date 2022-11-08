@@ -52,10 +52,10 @@
         {% set icon_hover_color = color_variant(module.style.icon.custom_styling.color.color, +30) %}
         {% set icon_hover_opacity = 80 %}
       {% elif module.style.icon.presets.icon_color == 'primary' %}
-        {% set icon_hover_color = color_variant(theme.icons.primary.fill.color.color, +30) %}
+        {% set icon_hover_color = color_variant(theme.icons.primary.color.color.color, +30) %}
         {% set icon_hover_opacity = 80 %}
       {% else %}
-        {% set icon_hover_color = color_variant(theme.icons.secondary.fill.color.color, +30) %}
+        {% set icon_hover_color = color_variant(theme.icons.secondary.color.color.color, +30) %}
         {% set icon_hover_opacity = 80 %}
       {% endif %}
 

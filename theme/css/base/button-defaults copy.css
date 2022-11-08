@@ -109,8 +109,8 @@
   input[type="submit"],
   input[type="reset"]
 ) :where(svg, .icon > svg) {
-  height: 2ch;
-  width: 2ch;
+  height: 1.8ch;
+  width: 1.8ch;
   flex-shrink: 0;
   fill: currentColor;
 }
