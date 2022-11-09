@@ -1,0 +1,224 @@
+<!--
+  templateType: section
+  label: Theme global settings - Headings
+  isAvailableForNewContent: false
+  screenshotPath: ../images/section-previews/1colgrid--card--barner.png
+  description: 'theme'
+-->
+
+{% dnd_section %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=0,
+        width=2,
+        heading_tag="h1",
+        text="H1 Heading - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=2,
+        width=1,
+        text="H2 Heading - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=3,
+        width=1,
+        heading_tag="h3",
+        text="H3 Heading - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=4,
+        width=1,
+        heading_tag="h4",
+        text="H4 Heading - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=5,
+        width=1,
+        heading_tag="h5",
+        text="H5 Heading - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=6,
+        width=1,
+        heading_tag="h6",
+        text="H6 Heading - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=7,
+        width=1,
+        heading_tag="h3",
+        icon={
+          "icon" : {
+            "name" : "Accessible Icon",
+            "type" : "REGULAR",
+            "unicode" : "f368"
+          }
+        },
+        link={
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "#",
+              "type" : "EXTERNAL"
+            }
+          }
+        },
+        text="H3 Heading Link - with icon"
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=8,
+        width=1,
+        heading_tag="h3",
+        icon={
+          "icon" : {
+            "name" : ""
+          }
+        },
+        link={
+          "link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "#",
+              "type" : "EXTERNAL"
+            }
+          }
+        },
+        text="H3 Heading Link - regular"
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=9,
+        width=1,
+        heading_tag="h3",
+        icon={
+          "icon" : {
+            "name" : ""
+          }
+        },
+        link={
+          "link" : {
+            "no_follow" : true,
+            "open_in_new_tab" : true,
+            "url" : {
+              "href" : "#",
+              "type" : "EXTERNAL"
+            }
+          }
+        },
+        text="H3 Heading Link - open link in a new window"
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=10,
+        width=1,
+        heading_tag="h4",
+        icon={
+          "icon" : {
+            "name" : "Alternate Star Half",
+            "type" : "SOLID",
+            "unicode" : "f5c0"
+          }
+        },
+        text="H4 Heading - with the icon aligned on the left side"
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=11,
+        width=1,
+        heading_tag="h4",
+        icon={
+          "icon" : {
+            "name" : "Alternate Grinning Face",
+            "type" : "REGULAR",
+            "unicode" : "f581"
+          },
+          "icon_position" : "right"
+        },
+        text="H4 Heading - with the icon aligned on the right side"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row
+      padding={
+        "default" : {
+          "top" : "30px"
+        }
+      }
+    %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=0,
+        width=2,
+        display="display-1",
+        heading_tag="h2",
+        text="Custom Heading Display 1"
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=2,
+        width=2,
+        display="display-2",
+        text="Custom Heading Display 2"
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=4,
+        width=2,
+        display="display-3",
+        text="Custom Heading Display 3"
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=6,
+        width=2,
+        display="display-4",
+        text="Custom Heading Display 4"
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=8,
+        width=2,
+        display="display-5",
+        text="Custom Heading Display 5"
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=10,
+        width=2,
+        display="display-6",
+        text="Custom Heading Display 6 - Display different heading styles not related to semantic heading type (tag h1-h6)"
+      %}
+      {% end_dnd_module %}
+
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

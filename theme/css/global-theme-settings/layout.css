@@ -13,8 +13,13 @@
 .dnd-section {
   margin-right: auto;
   margin-left: auto;
-  padding-top: {{vertical_spacing}};
-  padding-bottom: {{vertical_spacing}};
+}
+
+@media (min-width: 992px) {
+  .dnd-section {
+    padding-top: {{vertical_spacing}};
+    padding-bottom: {{vertical_spacing}};
+  }
 }
 
 .dnd-section > .row-fluid,
@@ -32,6 +37,14 @@
   max-width: 100%;
   padding-right: 12px;
   padding-left: 12px;
+}
+
+@media (max-width: 991.98px) {
+  .dnd-section > .row-fluid > *,
+  .dnd-row > .row-fluid > * {
+    padding-top: {{vertical_spacing}};
+    padding-bottom: {{vertical_spacing}};
+  }
 }
 
 .dnd-module.span12 {

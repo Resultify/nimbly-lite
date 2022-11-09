@@ -8,7 +8,7 @@
         "label": "Primary color",
         "name": "primary",
         "type": "color",
-        "help_text": "Link text color, Primary button bg color, Heading link text color, Primary icon color",
+        "help_text": "Link color, Primary button color, Heading link color, Primary icon color",
         "visibility": {
           "hidden_subfields": {
             "opacity": true
@@ -30,7 +30,7 @@
         "label": "Secondary color 1",
         "name": "secondary1",
         "type": "color",
-        "help_text": "Secondary 1 button bg color, Secondary icon color",
+        "help_text": "Secondary 1 button color, Secondary icon color",
         "visibility": {
           "hidden_subfields": {
             "opacity": true
@@ -52,7 +52,7 @@
         "label": "Secondary color 2",
         "name": "secondary2",
         "type": "color",
-        "help_text": "Secondary 2 button bg color",
+        "help_text": "Secondary 2 button color",
         "visibility": {
           "hidden_subfields": {
             "opacity": true
@@ -74,7 +74,7 @@
         "label": "Secondary color 3",
         "name": "secondary3",
         "type": "color",
-        "help_text": "Secondary 3 button bg color",
+        "help_text": "Secondary 3 button color",
         "visibility": {
           "hidden_subfields": {
             "opacity": true
@@ -181,6 +181,13 @@
             "load_external_fonts": true,
             "locked": false,
             "required": false,
+            "visibility": {
+              "hidden_subfields": {
+                "bold": true,
+                "italic": true,
+                "underline": true
+              }
+            },
             "default": {
               "size": 16,
               "size_unit": "px",
@@ -332,16 +339,6 @@
                 "load_external_fonts": true,
                 "locked": false,
                 "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.typography.headings.font.color",
-                    "fallback": "theme.typography.headings.font.fallback",
-                    "font": "theme.typography.headings.font.font",
-                    "font_set": "theme.typography.headings.font.font_set",
-                    "styles": "theme.typography.headings.font.styles",
-                    "variant": "theme.typography.headings.font.variant"
-                  }
-                },
                 "default": {
                   "size": 40,
                   "size_unit": "px"
@@ -369,16 +366,6 @@
                 "load_external_fonts": true,
                 "locked": false,
                 "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.typography.headings.font.color",
-                    "fallback": "theme.typography.headings.font.fallback",
-                    "font": "theme.typography.headings.font.font",
-                    "font_set": "theme.typography.headings.font.font_set",
-                    "styles": "theme.typography.headings.font.styles",
-                    "variant": "theme.typography.headings.font.variant"
-                  }
-                },
                 "default": {
                   "size": 32,
                   "size_unit": "px"
@@ -406,16 +393,6 @@
                 "load_external_fonts": true,
                 "locked": false,
                 "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.typography.headings.font.color",
-                    "fallback": "theme.typography.headings.font.fallback",
-                    "font": "theme.typography.headings.font.font",
-                    "font_set": "theme.typography.headings.font.font_set",
-                    "styles": "theme.typography.headings.font.styles",
-                    "variant": "theme.typography.headings.font.variant"
-                  }
-                },
                 "default": {
                   "size": 28,
                   "size_unit": "px"
@@ -443,16 +420,6 @@
                 "load_external_fonts": true,
                 "locked": false,
                 "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.typography.headings.font.color",
-                    "fallback": "theme.typography.headings.font.fallback",
-                    "font": "theme.typography.headings.font.font",
-                    "font_set": "theme.typography.headings.font.font_set",
-                    "styles": "theme.typography.headings.font.styles",
-                    "variant": "theme.typography.headings.font.variant"
-                  }
-                },
                 "default": {
                   "size": 24,
                   "size_unit": "px"
@@ -480,16 +447,6 @@
                 "load_external_fonts": true,
                 "locked": false,
                 "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.typography.headings.font.color",
-                    "fallback": "theme.typography.headings.font.fallback",
-                    "font": "theme.typography.headings.font.font",
-                    "font_set": "theme.typography.headings.font.font_set",
-                    "styles": "theme.typography.headings.font.styles",
-                    "variant": "theme.typography.headings.font.variant"
-                  }
-                },
                 "default": {
                   "size": 20,
                   "size_unit": "px"
@@ -517,16 +474,6 @@
                 "load_external_fonts": true,
                 "locked": false,
                 "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.typography.headings.font.color",
-                    "fallback": "theme.typography.headings.font.fallback",
-                    "font": "theme.typography.headings.font.font",
-                    "font_set": "theme.typography.headings.font.font_set",
-                    "styles": "theme.typography.headings.font.styles",
-                    "variant": "theme.typography.headings.font.variant"
-                  }
-                },
                 "default": {
                   "size": 18,
                   "size_unit": "px"
@@ -555,16 +502,6 @@
                 "load_external_fonts": true,
                 "locked": false,
                 "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.typography.headings.font.color",
-                    "fallback": "theme.typography.headings.font.fallback",
-                    "font": "theme.typography.headings.font.font",
-                    "font_set": "theme.typography.headings.font.font_set",
-                    "styles": "theme.typography.headings.font.styles",
-                    "variant": "theme.typography.headings.font.variant"
-                  }
-                },
                 "default": {
                   "size": 80,
                   "size_unit": "px"
@@ -593,16 +530,6 @@
                 "load_external_fonts": true,
                 "locked": false,
                 "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.typography.headings.font.color",
-                    "fallback": "theme.typography.headings.font.fallback",
-                    "font": "theme.typography.headings.font.font",
-                    "font_set": "theme.typography.headings.font.font_set",
-                    "styles": "theme.typography.headings.font.styles",
-                    "variant": "theme.typography.headings.font.variant"
-                  }
-                },
                 "default": {
                   "size": 70,
                   "size_unit": "px"
@@ -631,16 +558,6 @@
                 "load_external_fonts": true,
                 "locked": false,
                 "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.typography.headings.font.color",
-                    "fallback": "theme.typography.headings.font.fallback",
-                    "font": "theme.typography.headings.font.font",
-                    "font_set": "theme.typography.headings.font.font_set",
-                    "styles": "theme.typography.headings.font.styles",
-                    "variant": "theme.typography.headings.font.variant"
-                  }
-                },
                 "default": {
                   "size": 65,
                   "size_unit": "px"
@@ -669,16 +586,6 @@
                 "load_external_fonts": true,
                 "locked": false,
                 "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.typography.headings.font.color",
-                    "fallback": "theme.typography.headings.font.fallback",
-                    "font": "theme.typography.headings.font.font",
-                    "font_set": "theme.typography.headings.font.font_set",
-                    "styles": "theme.typography.headings.font.styles",
-                    "variant": "theme.typography.headings.font.variant"
-                  }
-                },
                 "default": {
                   "size": 60,
                   "size_unit": "px"
@@ -707,16 +614,6 @@
                 "load_external_fonts": true,
                 "locked": false,
                 "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.typography.headings.font.color",
-                    "fallback": "theme.typography.headings.font.fallback",
-                    "font": "theme.typography.headings.font.font",
-                    "font_set": "theme.typography.headings.font.font_set",
-                    "styles": "theme.typography.headings.font.styles",
-                    "variant": "theme.typography.headings.font.variant"
-                  }
-                },
                 "default": {
                   "size": 55,
                   "size_unit": "px"
@@ -745,16 +642,6 @@
                 "load_external_fonts": true,
                 "locked": false,
                 "required": false,
-                "inherited_value": {
-                  "property_value_paths": {
-                    "color": "theme.typography.headings.font.color",
-                    "fallback": "theme.typography.headings.font.fallback",
-                    "font": "theme.typography.headings.font.font",
-                    "font_set": "theme.typography.headings.font.font_set",
-                    "styles": "theme.typography.headings.font.styles",
-                    "variant": "theme.typography.headings.font.variant"
-                  }
-                },
                 "default": {
                   "size": 50,
                   "size_unit": "px"
@@ -794,10 +681,7 @@
             "required": false,
             "inherited_value": {
               "property_value_paths": {
-                "color": "theme.global_colors.primary.color",
-                "fallback": "theme.typography.text.font.fallback",
-                "font": "theme.typography.text.font.font",
-                "font_set": "theme.typography.text.font.font_set"
+                "color": "theme.global_colors.primary.color"
               }
             },
             "default": {
@@ -874,16 +758,6 @@
             "load_external_fonts": true,
             "locked": false,
             "required": false,
-            "inherited_value": {
-              "property_value_paths": {
-                "color": "theme.typography.text.font.color",
-                "fallback": "theme.typography.text.font.fallback",
-                "font": "theme.typography.text.font.font",
-                "font_set": "theme.typography.text.font.font_set",
-                "styles": "theme.typography.text.font.styles",
-                "variant": "theme.typography.text.font.variant"
-              }
-            },
             "default": {
               "size": 18,
               "size_unit": "px"
@@ -2047,6 +1921,27 @@
             "label": "Color",
             "name": "color",
             "type": "color",
+            "display_width": null,
+            "locked": false,
+            "required": false
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+            {
+        "label": "Text",
+        "name": "text",
+        "help_text": "Form regular text, Legal consent text, Submitted message.",
+        "type": "group",
+        "children": [
+          {
+            "label": "Font",
+            "name": "font",
+            "type": "font",
             "display_width": null,
             "locked": false,
             "required": false

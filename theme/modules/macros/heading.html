@@ -69,9 +69,8 @@
       {% set class = options.class|join(' ') %}
     {%- endif -%}
 
-    {# module global css #}
-    {%- require_css -%}
-      <style>
+    {# module scope css #}<style>
+      {%- scope_css -%}
         {% if data.icon.icon.name %}
           .{{heading_class}} {
             display: inline-flex;
@@ -92,11 +91,7 @@
             fill: currentColor;
           }
         {% endif %}
-      </style>
-    {%- end_require_css -%}
 
-    {# module scope css #}<style>
-      {%- scope_css -%}
         {% if style.custom_styling.spacing.css %}
           .{{heading_class}} {
             {{style.custom_styling.spacing.css}}

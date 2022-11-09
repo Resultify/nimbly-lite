@@ -5,18 +5,16 @@
 /* blockquote */
 blockquote,
 .blockquote {
-  {% if blockquote_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
-  {% if blockquote_font.style %}
-    {{blockquote_font.style}};
-  {% endif %}
-
-  color: {{blockquote_font.color}};
   border-left: 6px solid #ccc;
   padding-left: 0.8rem;
   margin-left: 3rem;
-  border-color: {{rgb(blockquote_font.color, 30)}};
+  {% if blockquote_font.style %}
+    {{blockquote_font.style}};
+  {% endif %}
+  {% if blockquote_font.color %}
+    color: {{blockquote_font.color}};
+    border-color: {{rgb(blockquote_font.color, 30)}};
+  {% endif %}
   font-size: {{blockquote_font.size ~ 'px'}};
 }
 

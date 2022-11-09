@@ -40,78 +40,6 @@
 {% set heading_d6_font = theme.typography.heading.d6.font %}
 
 
-/* ============================================ */
-/* Fluid Font Sizes */
-/* ============================================ */
-
-/* use it only if font-size bigger then 20px/1.25rem
-
-/* use this pattern:
---font-size: 60; should be the only number with pixels in mind. Will be converted to rem. */
-
-/* h1 {
-  --font-size: 60;
-} */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-.display-1,
-.display-2,
-.display-3,
-.display-4,
-.display-5,
-.display-6,
-.fluid-font-size {
-  --hub-fluid-font-size:
-    calc(
-      ((20 + ((var(--font-size) - 20) / 10)) / 16 * 1rem)
-      +
-      (((var(--font-size) - (20 + ((var(--font-size) - 20) / 10)) ) * 100 / 1200) * 1vw)
-    );
-  --hub-font-size-to-rem: calc(var(--font-size) / 16 * 1rem);
-
-  font-size: var(--hub-fluid-font-size);
-}
-
-h6,
-.h6 {
-  font-size: var(--hub-font-size-to-rem);
-}
-
-@media (min-width: 1200px) {
-  /* for 1200px screen and bigger */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .h1,
-  .h2,
-  .h3,
-  .h4,
-  .h5,
-  .h6,
-  .display-1,
-  .display-2,
-  .display-3,
-  .display-4,
-  .display-5,
-  .display-6,
-  .fluid-font-size {
-    font-size: var(--hub-font-size-to-rem);
-  }
-}
 
 h1,
 h2,
@@ -131,9 +59,6 @@ h6,
 .display-4,
 .display-5,
 .display-6 {
-  line-height: 1.2;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
   {% if headings_font.color %}
     color: {{headings_font.color}};
   {% endif %}
@@ -148,9 +73,6 @@ h6,
 
 h1,
 .h1 {
-  {% if h1_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
   {% if h1_font.style %}
     {{h1_font.style}};
   {% endif %}
@@ -166,9 +88,6 @@ h1,
 
 h2,
 .h2 {
-  {% if h2_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
   {% if h2_font.style %}
     {{h2_font.style}};
   {% endif %}
@@ -184,9 +103,6 @@ h2,
 
 h3,
 .h3 {
-  {% if h3_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
   {% if h3_font.style %}
     {{h3_font.style}};
   {% endif %}
@@ -202,9 +118,6 @@ h3,
 
 h4,
 .h4 {
-  {% if h4_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
   {% if h4_font.style %}
     {{h4_font.style}};
   {% endif %}
@@ -220,9 +133,6 @@ h4,
 
 h5,
 .h5 {
-  {% if h5_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
   {% if h5_font.style %}
     {{h5_font.style}};
   {% endif %}
@@ -238,9 +148,6 @@ h5,
 
 h6,
 .h6 {
-  {% if h6_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
   {% if h6_font.style %}
     {{h6_font.style}};
   {% endif %}
@@ -255,9 +162,6 @@ h6,
 }
 
 .display-1 {
-  {% if heading_d1_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
   {% if heading_d1_font.style %}
     {{heading_d1_font.style}};
   {% endif %}
@@ -272,9 +176,6 @@ h6,
 }
 
 .display-2 {
-  {% if heading_d2_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
   {% if heading_d2_font.style %}
     {{heading_d2_font.style}};
   {% endif %}
@@ -289,9 +190,6 @@ h6,
 }
 
 .display-3 {
-  {% if heading_d3_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
   {% if heading_d3_font.style %}
     {{heading_d3_font.style}};
   {% endif %}
@@ -306,9 +204,6 @@ h6,
 }
 
 .display-4 {
-  {% if heading_d4_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
   {% if heading_d4_font.style %}
     {{heading_d4_font.style}};
   {% endif %}
@@ -323,9 +218,6 @@ h6,
 }
 
 .display-5 {
-  {% if heading_d5_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
   {% if heading_d5_font.style %}
     {{heading_d5_font.style}};
   {% endif %}
@@ -340,9 +232,6 @@ h6,
 }
 
 .display-6 {
-  {% if heading_d6_font.font == null %}
-    font-family: var(--system-fonts);
-  {% endif %}
   {% if heading_d6_font.style %}
     {{heading_d6_font.style}};
   {% endif %}
@@ -368,10 +257,6 @@ h6,
 {% endif %}
 
 .heading-link {
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: inherit;
-  font-style: inherit;
   {% if theme.typography.headings.headings_link.color.css %}
     color: {{theme.typography.headings.headings_link.color.css}};
   {% endif %}
@@ -381,10 +266,6 @@ h6,
 }
 
 .heading-link:hover {
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: inherit;
-  font-style: inherit;
   {% if heading_link_hover_color %}
     color: {{rgb(heading_link_hover_color, heading_link_hover_opacity)}};
   {% endif %}

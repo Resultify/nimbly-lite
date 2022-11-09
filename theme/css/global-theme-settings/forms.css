@@ -30,6 +30,19 @@
   {% endif %}
 }
 
+.form-default .submitted-message,
+.form-default .hs-richtext {
+  {% if theme.forms.text.font.size %}
+    font-size: {{theme.forms.text.font.size ~ 'px'}};
+  {% endif %}
+  {% if theme.forms.text.font.color %}
+    color: {{theme.forms.text.font.color}};
+  {% endif %}
+  {% if theme.forms.text.font.style %}
+    {{theme.forms.text.font.style}};
+  {% endif %}
+}
+
 .form-default .hs-form-field label:not(.hs-error-msg) {
   {% if theme.forms.input_label.background.css %}
     background-color: {{theme.forms.input_label.background.css}};

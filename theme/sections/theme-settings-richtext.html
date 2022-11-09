@@ -1,0 +1,70 @@
+<!--
+  templateType: section
+  label: Theme global settings - Richtext
+  isAvailableForNewContent: false
+  screenshotPath: ../images/section-previews/1colgrid--card--barner.png
+  description: 'theme'
+-->
+{% dnd_section %}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/richtext",
+        offset=0,
+        width=12
+      %}
+        {% module_attribute "rich_text" %}
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
+          <p><strong>Paragraph. </strong>Lorem Ipsum is simply dummy <span style="color: #741b47;"><strong>bold text</strong></span> of the printing and typesetting industry. <span style="color: #7f6001;"><em>Lorem Italic Ipsum</em></span> has been the industry's <span style="color: #37761d;"><span style="text-decoration: underline;">Underline standard</span> </span>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, <span style="background-color: #d0e0e3;">remaining essentially unchanged. It was popularised</span> in the 1960s with the release of Letraset sheets <span style="text-decoration: line-through;">containing</span> Lorem <sup>Ipsum passages</sup>, and <sub>more recently</sub> with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <blockquote>
+          <p><strong>Blockquote.</strong> Praesent vitae massa aliquet augue sagittis accumsan nec eu risus. Aliquam erat volutpat. In pulvinar posuere lorem eu dapibus. Nunc mi est, ultrices et pharetra quis, pellentesque sagittis erat. Sed sagittis, urna vehicula pretium mattis, leo quam vestibulum mi, sollicitudin auctor ipsum leo ut arcu. Mauris tellus metus, luctus sit amet luctus eget, finibus vel metus. Nullam ullamcorper, turpis sit amet pharetra cursus, elit justo malesuada erat, sit amet pharetra leo ipsum at libero. Pellentesque finibus enim nisi. Ut mi lacus, tempor rutrum tellus in, malesuada dignissim velit.</p>
+          </blockquote>
+          <p style="font-size: 20px;"><strong>Paragraph. </strong><span style="text-decoration: underline;"><em>Custom font size.</em></span><strong> </strong>It was <a href="#" rel="noopener">popularised link</a> in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <p style="padding-left: 40px;"><span style="font-family: 'Courier New', Courier, monospace;"><strong>Paragraph with indent</strong>. <span style="text-decoration: underline;"><em>Custom font.</em></span> Nulla in est id metus ornare pulvinar at vitae nunc. Sed felis purus, eleifend sit amet magna nec, sodales pharetra ipsum. Nullam quis porttitor ipsum. Vestibulum id massa vel orci viverra consectetur et sit amet enim. Etiam eget turpis mattis, fermentum metus non, placerat lacus. Aenean varius mollis pulvinar. Sed non faucibus ante, eget ornare elit.</span></p>
+          <p><strong>Left</strong>. Proin ultrices arcu et dui lacinia, nec sollicitudin lectus tristique. Suspendisse convallis felis at elit consequat, accumsan blandit metus luctus. Donec malesuada sem et ornare efficitur. Ut egestas felis nibh, in commodo nulla rutrum ut.</p>
+          <p style="text-align: center;"><strong>Center</strong>. In quam ante, feugiat convallis tincidunt non, euismod eget dui. Sed quis quam et sapien semper ultrices.</p>
+          <p style="text-align: right;"><strong>Right</strong>. Aliquam erat volutpat. Vivamus felis nisi, sollicitudin ac felis eu, vestibulum posuere quam.</p>
+          <hr>
+          <ol>
+          <li>Lorem Ipsum is simply dummy</li>
+          <li>Text of the printing and typesetting</li>
+          <li>Industry. Lorem Ipsum has been the industry's standard</li>
+          <li>Dummy text ever since the 1500s, when an unknown</li>
+          </ol>
+          <ol style="list-style-type: lower-alpha;">
+          <li>Remaining essentially unchanged</li>
+          <li>It was popularised in the 1960s with the release</li>
+          <li>Letraset sheets containing</li>
+          <li>Lorem Ipsum passages</li>
+          </ol>
+          <ul>
+          <li>Printer took a galley of type</li>
+          <li>And scrambled it to make a type specimen book.</li>
+          <li>It has survived not only five centuries, but also the leap into</li>
+          <li>Electronic typesetting</li>
+          </ul>
+          <ul style="list-style-type: square;">
+          <li>Remaining essentially unchanged</li>
+          <li>It was popularised in the 1960s with the release</li>
+          <li>Letraset sheets containing</li>
+          <li>Lorem Ipsum passages</li>
+          </ul>
+          <ul style="list-style-type: circle;">
+          <li>Printer took a galley of type</li>
+          <li>And scrambled it to make a type specimen book.</li>
+          <li>It has survived not only five centuries, but also the leap into</li>
+          <li>Electronic typesetting</li>
+          </ul>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
