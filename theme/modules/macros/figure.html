@@ -85,23 +85,20 @@
       </script>
     {%- end_require_js -%}
 
-    {# module global css #}
-    {%- require_css -%}
-      <style>
-        .{{figure_class}} {
-          display: inline-flex;
-          flex-direction: column;
-          margin: 0;
-        }
-        .{{figure_class}} .g-module-macros-figure__caption_wrp {
-          padding-top: 0.5rem;
-        }
-      </style>
-    {%- end_require_css -%}
-
     {# module scope css #}
     <style>
       {%- scope_css -%}
+        {% if data.caption.rich_text %}
+          .{{figure_class}} {
+            display: inline-flex;
+            flex-direction: column;
+            margin: 0;
+          }
+          .{{figure_class}} + .g-module-macros-figure__caption_wrp {
+            padding-top: 0.5rem;
+          }
+        {% endif %}
+
         {% if style.border.border_radius or style.custom_image_fit.image_aspect_ratio or style.custom_image_fit.image_fit %}
           .{{figure_class}} .g-module-macros-figure--image {
             {% if style.border.border_radius %}
