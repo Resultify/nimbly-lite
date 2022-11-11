@@ -163,7 +163,7 @@
       }
     }, {
       "id" : "08b0d4b4-279d-af3b-d218-55f950e91283",
-      "name" : "custom_styling",
+      "name" : "custom_theme_overrides",
       "display_width" : null,
       "label" : "Custom theme overrides",
       "help_text" : "Override global theme settings for the current component",
@@ -221,7 +221,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "color" : {
           "color" : null,
@@ -743,14 +743,14 @@
       }
     }, {
       "id" : "91d3ebd7-2535-5740-f2af-0fa1b7393af1",
-      "name" : "custom_styling",
+      "name" : "custom_theme_overrides",
       "display_width" : null,
       "label" : "Custom theme overrides",
       "help_text" : "Override global theme settings for the current component",
       "required" : false,
       "locked" : false,
       "children" : [ {
-        "id" : "style.link.custom_styling.font",
+        "id" : "style.link.custom_theme_overrides.font",
         "name" : "font",
         "display_width" : null,
         "label" : "Font",
@@ -771,7 +771,7 @@
         "type" : "font",
         "default" : { }
       }, {
-        "id" : "style.link.custom_styling.underline",
+        "id" : "style.link.custom_theme_overrides.underline",
         "name" : "underline",
         "display_width" : null,
         "label" : "Underline",
@@ -784,7 +784,7 @@
         "type" : "choice",
         "default" : ""
       }, {
-        "id" : "style.link.custom_styling.hover",
+        "id" : "style.link.custom_theme_overrides.hover",
         "name" : "hover",
         "display_width" : null,
         "label" : "Hover",
@@ -792,7 +792,7 @@
         "required" : false,
         "locked" : false,
         "children" : [ {
-          "id" : "style.link.custom_styling.hover.color",
+          "id" : "style.link.custom_theme_overrides.hover.color",
           "name" : "color",
           "display_width" : null,
           "label" : "Color",
@@ -805,7 +805,7 @@
             "opacity" : null
           }
         }, {
-          "id" : "style.link.custom_styling.hover.underline",
+          "id" : "style.link.custom_theme_overrides.hover.underline",
           "name" : "underline",
           "display_width" : null,
           "label" : "Underline",
@@ -862,7 +862,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "font" : { },
         "underline" : "",
         "hover" : {
@@ -964,7 +964,7 @@
       }
     }, {
       "id" : "1b839d80-8bc1-d718-d646-11933d2642cc",
-      "name" : "custom_styling",
+      "name" : "custom_theme_overrides",
       "display_width" : null,
       "label" : "Custom theme overrides",
       "help_text" : "Override global theme settings for the current component",
@@ -1022,7 +1022,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "color" : {
           "color" : null,
@@ -1308,14 +1308,14 @@
       }
     }, {
       "id" : "68984261-4eef-0323-0875-faefadd0714f",
-      "name" : "custom_styling",
+      "name" : "custom_theme_overrides",
       "display_width" : null,
       "label" : "Custom theme overrides",
       "help_text" : "Override global theme settings for the current component",
       "required" : false,
       "locked" : false,
       "children" : [ {
-        "id" : "style.secondary_link.custom_styling.font",
+        "id" : "style.secondary_link.custom_theme_overrides.font",
         "name" : "font",
         "display_width" : null,
         "label" : "Font",
@@ -1336,7 +1336,7 @@
         "type" : "font",
         "default" : { }
       }, {
-        "id" : "style.secondary_link.custom_styling.underline",
+        "id" : "style.secondary_link.custom_theme_overrides.underline",
         "name" : "underline",
         "display_width" : null,
         "label" : "Underline",
@@ -1349,7 +1349,7 @@
         "type" : "choice",
         "default" : ""
       }, {
-        "id" : "style.secondary_link.custom_styling.hover",
+        "id" : "style.secondary_link.custom_theme_overrides.hover",
         "name" : "hover",
         "display_width" : null,
         "label" : "Hover",
@@ -1357,7 +1357,7 @@
         "required" : false,
         "locked" : false,
         "children" : [ {
-          "id" : "style.secondary_link.custom_styling.hover.color",
+          "id" : "style.secondary_link.custom_theme_overrides.hover.color",
           "name" : "color",
           "display_width" : null,
           "label" : "Color",
@@ -1370,7 +1370,7 @@
             "opacity" : null
           }
         }, {
-          "id" : "style.secondary_link.custom_styling.hover.underline",
+          "id" : "style.secondary_link.custom_theme_overrides.hover.underline",
           "name" : "underline",
           "display_width" : null,
           "label" : "Underline",
@@ -1427,7 +1427,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "font" : { },
         "underline" : "",
         "hover" : {
@@ -1529,7 +1529,7 @@
       }
     }, {
       "id" : "81f5dd4c-dca5-8fee-2b8c-a1f43088d966",
-      "name" : "custom_styling",
+      "name" : "custom_theme_overrides",
       "display_width" : null,
       "label" : "Custom theme overrides",
       "help_text" : "Override global theme settings for the current component",
@@ -1597,7 +1597,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "background" : {
           "color" : null,
@@ -1825,7 +1825,7 @@
       }
     }, {
       "id" : "ae8520cb-f9ae-3990-a633-57671f202af8",
-      "name" : "custom_styling",
+      "name" : "custom_theme_overrides",
       "display_width" : null,
       "label" : "Custom theme overrides",
       "help_text" : "Override global theme settings for the current component",
@@ -1873,8 +1873,8 @@
         "type" : "border",
         "default" : { }
       }, {
-        "id" : "style.button.radius.radius",
-        "name" : "radius",
+        "id" : "style.button.custom_theme_overrides.border_radius",
+        "name" : "border_radius",
         "display_width" : null,
         "label" : "Border radius",
         "help_text" : "",
@@ -1980,7 +1980,7 @@
       "background" : {
         "color" : { }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "background" : { },
         "font" : {
@@ -2023,7 +2023,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "color" : {
           "color" : null,
@@ -2119,7 +2119,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "font" : { },
         "underline" : "",
         "hover" : {
@@ -2146,7 +2146,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "color" : {
           "color" : null,
@@ -2205,7 +2205,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "font" : { },
         "underline" : "",
         "hover" : {
@@ -2232,7 +2232,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "background" : {
           "color" : null,
@@ -2269,7 +2269,7 @@
       "background" : {
         "color" : { }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "background" : { },
         "font" : {

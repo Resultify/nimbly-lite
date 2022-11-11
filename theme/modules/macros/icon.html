@@ -55,16 +55,16 @@
     <style>
       {%- scope_css -%}
 
-        {% set icon_spacing = style.custom_styling.spacing.css %}
-        {% set icon_background = style.custom_styling.background.css %}
-        {% set icon_fill_color = style.custom_styling.color.css %}
-        {% set icon_size = style.custom_styling.size %}
-        {% set icon_border_radius = style.custom_styling.radius %}
-        {% set icon_border = style.custom_styling.border.css %}
+        {% set icon_spacing = style.custom_theme_overrides.spacing.css %}
+        {% set icon_background = style.custom_theme_overrides.background.css %}
+        {% set icon_fill_color = style.custom_theme_overrides.color.css %}
+        {% set icon_size = style.custom_theme_overrides.size %}
+        {% set icon_border_radius = style.custom_theme_overrides.border_radius %}
+        {% set icon_border = style.custom_theme_overrides.border.css %}
 
-        {% if global_data.style.general.custom_styling.color.css %}
+        {% if global_data.style.general.custom_theme_overrides.color.css %}
           .g-module-macros-heading__icon svg {
-            fill: {{global_data.style.general.custom_styling.color.css}};
+            fill: {{global_data.style.general.custom_theme_overrides.color.css}};
           }
         {% endif %}
 

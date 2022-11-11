@@ -1244,7 +1244,7 @@
         }
       }, {
         "id" : "e1066b3c-1213-87ac-45a9-2bb6c1af4171",
-        "name" : "custom_styling",
+        "name" : "custom_theme_overrides",
         "display_width" : null,
         "label" : "Icon overrides",
         "help_text" : "",
@@ -1295,7 +1295,7 @@
           "default" : { }
         }, {
           "id" : "f3ebb568-c973-c96e-cc6c-6b445272facf",
-          "name" : "radius",
+          "name" : "border_radius",
           "display_width" : null,
           "label" : "Border radius",
           "help_text" : "",
@@ -1351,7 +1351,7 @@
             "opacity" : null
           }
         },
-        "custom_styling" : {
+        "custom_theme_overrides" : {
           "spacing" : { },
           "background" : {
             "color" : null,
@@ -1897,7 +1897,7 @@
             "opacity" : null
           }
         },
-        "custom_styling" : {
+        "custom_theme_overrides" : {
           "spacing" : { },
           "background" : {
             "color" : null,
@@ -2702,14 +2702,14 @@
       }
     }, {
       "id" : "91d3ebd7-2535-5740-f2af-0fa1b7393af1",
-      "name" : "custom_styling",
+      "name" : "custom_theme_overrides",
       "display_width" : null,
       "label" : "Custom theme overrides",
       "help_text" : "Override global theme settings for the current component",
       "required" : false,
       "locked" : false,
       "children" : [ {
-        "id" : "style.link.custom_styling.font",
+        "id" : "style.link.custom_theme_overrides.font",
         "name" : "font",
         "display_width" : null,
         "label" : "Font",
@@ -2730,7 +2730,7 @@
         "type" : "font",
         "default" : { }
       }, {
-        "id" : "style.link.custom_styling.underline",
+        "id" : "style.link.custom_theme_overrides.underline",
         "name" : "underline",
         "display_width" : null,
         "label" : "Underline",
@@ -2743,7 +2743,7 @@
         "type" : "choice",
         "default" : ""
       }, {
-        "id" : "style.link.custom_styling.hover",
+        "id" : "style.link.custom_theme_overrides.hover",
         "name" : "hover",
         "display_width" : null,
         "label" : "Hover",
@@ -2751,7 +2751,7 @@
         "required" : false,
         "locked" : false,
         "children" : [ {
-          "id" : "style.link.custom_styling.hover.color",
+          "id" : "style.link.custom_theme_overrides.hover.color",
           "name" : "color",
           "display_width" : null,
           "label" : "Color",
@@ -2764,7 +2764,7 @@
             "opacity" : null
           }
         }, {
-          "id" : "style.link.custom_styling.hover.underline",
+          "id" : "style.link.custom_theme_overrides.hover.underline",
           "name" : "underline",
           "display_width" : null,
           "label" : "Underline",
@@ -2813,7 +2813,7 @@
       "locked" : false,
       "children" : [ {
         "id" : "41d1393a-f394-bced-ea3e-01a1f8f711a2",
-        "name" : "custom_styling",
+        "name" : "custom_theme_overrides",
         "display_width" : null,
         "label" : "Custom theme overrides",
         "help_text" : "Override global theme settings for the current component",
@@ -2864,7 +2864,7 @@
           "default" : { }
         }, {
           "id" : "6e2afe79-d7e3-e683-a9f7-02e6d3959406",
-          "name" : "radius",
+          "name" : "border_radius",
           "display_width" : null,
           "label" : "Border radius",
           "help_text" : "",
@@ -2911,7 +2911,7 @@
       "expanded" : false,
       "type" : "group",
       "default" : {
-        "custom_styling" : {
+        "custom_theme_overrides" : {
           "spacing" : { },
           "background" : {
             "color" : null,
@@ -2938,7 +2938,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "font" : { },
         "underline" : "",
         "hover" : {
@@ -2950,7 +2950,7 @@
         }
       },
       "icon" : {
-        "custom_styling" : {
+        "custom_theme_overrides" : {
           "spacing" : { },
           "background" : {
             "color" : null,
@@ -3067,7 +3067,7 @@
       }
     }, {
       "id" : "ae8520cb-f9ae-3990-a633-57671f202af8",
-      "name" : "custom_styling",
+      "name" : "custom_theme_overrides",
       "display_width" : null,
       "label" : "Custom theme overrides",
       "help_text" : "Override global theme settings for the current component",
@@ -3115,8 +3115,8 @@
         "type" : "border",
         "default" : { }
       }, {
-        "id" : "style.button.radius.radius",
-        "name" : "radius",
+        "id" : "style.button.custom_theme_overrides.border_radius",
+        "name" : "border_radius",
         "display_width" : null,
         "label" : "Border radius",
         "help_text" : "",
@@ -3212,7 +3212,7 @@
       "locked" : false,
       "children" : [ {
         "id" : "2e81c040-85eb-fbf7-36cf-3b63fb16a4bb",
-        "name" : "custom_styling",
+        "name" : "custom_theme_overrides",
         "display_width" : null,
         "label" : "Custom theme overrides",
         "help_text" : "Override global theme settings for the current component",
@@ -3263,7 +3263,7 @@
           "default" : { }
         }, {
           "id" : "d753fe12-e508-6e52-bdc0-7f6912ae304a",
-          "name" : "radius",
+          "name" : "border_radius",
           "display_width" : null,
           "label" : "Border radius",
           "help_text" : "",
@@ -3310,7 +3310,7 @@
       "expanded" : false,
       "type" : "group",
       "default" : {
-        "custom_styling" : {
+        "custom_theme_overrides" : {
           "spacing" : { },
           "background" : {
             "color" : null,
@@ -3338,7 +3338,7 @@
       "background" : {
         "color" : { }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "background" : { },
         "font" : {
@@ -3355,7 +3355,7 @@
         }
       },
       "icon" : {
-        "custom_styling" : {
+        "custom_theme_overrides" : {
           "spacing" : { },
           "background" : {
             "color" : null,
@@ -3472,7 +3472,7 @@
       }
     }, {
       "id" : "4c225064-cbc3-8e04-420b-5f0d507f610e",
-      "name" : "custom_styling",
+      "name" : "custom_theme_overrides",
       "display_width" : null,
       "label" : "Custom theme overrides",
       "help_text" : "Override global theme settings for the current component",
@@ -3521,7 +3521,7 @@
         "default" : { }
       }, {
         "id" : "d797b471-a386-9017-96a8-a3e13fb5a3e7",
-        "name" : "radius",
+        "name" : "border_radius",
         "display_width" : null,
         "label" : "Border radius",
         "help_text" : "",
@@ -3617,7 +3617,7 @@
       "locked" : false,
       "children" : [ {
         "id" : "be7a98f0-60ea-e7e5-8145-919620356083",
-        "name" : "custom_styling",
+        "name" : "custom_theme_overrides",
         "display_width" : null,
         "label" : "Custom theme overrides",
         "help_text" : "Override global theme settings for the current component",
@@ -3668,7 +3668,7 @@
           "default" : { }
         }, {
           "id" : "3032cfbf-f7c6-c693-efaa-9f8f4c8a2e5b",
-          "name" : "radius",
+          "name" : "border_radius",
           "display_width" : null,
           "label" : "Border radius",
           "help_text" : "",
@@ -3715,7 +3715,7 @@
       "expanded" : false,
       "type" : "group",
       "default" : {
-        "custom_styling" : {
+        "custom_theme_overrides" : {
           "spacing" : { },
           "background" : {
             "color" : null,
@@ -3743,7 +3743,7 @@
       "background" : {
         "color" : { }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "background" : { },
         "font" : {
@@ -3760,7 +3760,7 @@
         }
       },
       "icon" : {
-        "custom_styling" : {
+        "custom_theme_overrides" : {
           "spacing" : { },
           "background" : {
             "color" : null,
@@ -4273,7 +4273,7 @@
             "opacity" : null
           }
         },
-        "custom_styling" : {
+        "custom_theme_overrides" : {
           "spacing" : { },
           "background" : {
             "color" : null,
@@ -4530,7 +4530,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "font" : { },
         "underline" : "",
         "hover" : {
@@ -4542,7 +4542,7 @@
         }
       },
       "icon" : {
-        "custom_styling" : {
+        "custom_theme_overrides" : {
           "spacing" : { },
           "background" : {
             "color" : null,
@@ -4567,7 +4567,7 @@
       "background" : {
         "color" : { }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "background" : { },
         "font" : {
@@ -4584,7 +4584,7 @@
         }
       },
       "icon" : {
-        "custom_styling" : {
+        "custom_theme_overrides" : {
           "spacing" : { },
           "background" : {
             "color" : null,
@@ -4609,7 +4609,7 @@
       "background" : {
         "color" : { }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "background" : { },
         "font" : {
@@ -4626,7 +4626,7 @@
         }
       },
       "icon" : {
-        "custom_styling" : {
+        "custom_theme_overrides" : {
           "spacing" : { },
           "background" : {
             "color" : null,

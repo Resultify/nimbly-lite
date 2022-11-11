@@ -67,25 +67,25 @@
     <style>
       {%- scope_css -%}
 
-        {% set link_font = style.custom_styling.font %}
-        {% if style.custom_styling.hover.color.color %}
-          {% set link_hover_color = style.custom_styling.hover.color.color %}
-          {% set link_hover_opacity = style.custom_styling.hover.color.opacity %}
+        {% set link_font = style.custom_theme_overrides.font %}
+        {% if style.custom_theme_overrides.hover.color.color %}
+          {% set link_hover_color = style.custom_theme_overrides.hover.color.color %}
+          {% set link_hover_opacity = style.custom_theme_overrides.hover.color.opacity %}
         {% else %}
           {% set link_hover_color = color_variant(link_font.color, +30) %}
           {% set link_hover_opacity = 90 %}
         {% endif %}
 
-        {% if global_data.style.general.custom_styling.color.css %}
+        {% if global_data.style.general.custom_theme_overrides.color.css %}
           .{{link_class}} {
-            --color: {{global_data.style.general.custom_styling.color.css}};
+            --color: {{global_data.style.general.custom_theme_overrides.color.css}};
           }
           .{{link_class}}:hover {
-            --hover-color: {{rgb(global_data.style.general.custom_styling.color.color, global_data.style.general.custom_styling.color.opacity, +30, -20)}};
+            --hover-color: {{rgb(global_data.style.general.custom_theme_overrides.color.color, global_data.style.general.custom_theme_overrides.color.opacity, +30, -20)}};
           }
         {% endif %}
 
-        {% if link_font.style or link_font.size or link_font.color or style.custom_styling.underline %}
+        {% if link_font.style or link_font.size or link_font.color or style.custom_theme_overrides.underline %}
           .{{link_class}} {
             {% if link_font.style %}
               {{link_font.style}};
@@ -96,19 +96,19 @@
             {% if link_font.color %}
               --color: {{link_font.color}};
             {% endif %}
-            {% if style.custom_styling.underline %}
-              text-decoration: {{style.custom_styling.underline}};
+            {% if style.custom_theme_overrides.underline %}
+              text-decoration: {{style.custom_theme_overrides.underline}};
             {% endif %}
           }
         {% endif %}
 
-        {% if link_hover_color or style.custom_styling.hover.underline %}
+        {% if link_hover_color or style.custom_theme_overrides.hover.underline %}
           .{{link_class}}:hover {
             {% if link_hover_color %}
               --hover-color: {{rgb(link_hover_color, link_hover_opacity)}};
             {% endif %}
-            {% if style.custom_styling.hover.underline %}
-              text-decoration: {{style.custom_styling.hover.underline}};
+            {% if style.custom_theme_overrides.hover.underline %}
+              text-decoration: {{style.custom_theme_overrides.hover.underline}};
             {% endif %}
           }
         {% endif %}

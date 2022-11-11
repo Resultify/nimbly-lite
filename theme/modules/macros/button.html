@@ -72,36 +72,36 @@
     {%- if options.class -%}
       {% set class = options.class|join(' ') %}
     {%- endif -%}
-    {% set btn_border = style.custom_styling.border %}
+    {% set btn_border = style.custom_theme_overrides.border %}
 
 
     <style>
       {%- scope_css -%}
 
-        {% set btn_spacing = style.custom_styling.spacing.css %}
-        {% set btn_border = style.custom_styling.border %}
-        {% set btn_border_radius = style.custom_styling.radius %}
+        {% set btn_spacing = style.custom_theme_overrides.spacing.css %}
+        {% set btn_border = style.custom_theme_overrides.border %}
+        {% set btn_border_radius = style.custom_theme_overrides.border_radius %}
 
-        {% set btn_background = style.custom_styling.background %}
-        {% set btn_text_font = style.custom_styling.font %}
+        {% set btn_background = style.custom_theme_overrides.background %}
+        {% set btn_text_font = style.custom_theme_overrides.font %}
 
-        {% if style.custom_styling.hover.color.color %}
-          {% set btn_hover_color = style.custom_styling.hover.color.color %}
+        {% if style.custom_theme_overrides.hover.color.color %}
+          {% set btn_hover_color = style.custom_theme_overrides.hover.color.color %}
         {% else %}
           {% set btn_hover_color = color_variant(btn_text_font.color, -20) %}
         {% endif %}
 
-        {% if style.custom_styling.hover.background.color %}
-          {% set btn_hover_background_color = style.custom_styling.hover.background.color %}
-          {% set btn_hover_background_opacity = style.custom_styling.hover.background.opacity %}
+        {% if style.custom_theme_overrides.hover.background.color %}
+          {% set btn_hover_background_color = style.custom_theme_overrides.hover.background.color %}
+          {% set btn_hover_background_opacity = style.custom_theme_overrides.hover.background.opacity %}
         {% else %}
           {% set btn_hover_background_color = color_variant(btn_background.color, -25) %}
           {% set btn_hover_background_opacity = btn_background.opacity %}
         {% endif %}
 
-        {% if style.custom_styling.hover.border_color.color %}
-          {% set btn_hover_border_color = style.custom_styling.hover.border_color.color %}
-          {% set btn_hover_border_opacity = style.custom_styling.hover.border_color.opacity %}
+        {% if style.custom_theme_overrides.hover.border_color.color %}
+          {% set btn_hover_border_color = style.custom_theme_overrides.hover.border_color.color %}
+          {% set btn_hover_border_opacity = style.custom_theme_overrides.hover.border_color.opacity %}
         {% else %}
           {% set btn_hover_border_color = color_variant(btn_border.top.color, -25) %}
           {% set btn_hover_border_opacity = btn_border.top.opacity %}

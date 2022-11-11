@@ -48,8 +48,8 @@
       {% if module.style.icon.hover.color.color %}
         {% set icon_hover_color = module.style.icon.hover.color.color %}
         {% set icon_hover_opacity = module.style.icon.hover.color.opacity %}
-      {% elif module.style.icon.custom_styling.color.color %}
-        {% set icon_hover_color = color_variant(module.style.icon.custom_styling.color.color, +30) %}
+      {% elif module.style.icon.custom_theme_overrides.color.color %}
+        {% set icon_hover_color = color_variant(module.style.icon.custom_theme_overrides.color.color, +30) %}
         {% set icon_hover_opacity = 80 %}
       {% elif module.style.icon.presets.icon_color == 'primary' %}
         {% set icon_hover_color = color_variant(theme.icons.primary.color.color.color, +30) %}

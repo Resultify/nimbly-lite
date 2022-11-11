@@ -52,7 +52,7 @@
 
     {# module scope css #}<style>
       {%- scope_css -%}
-        {% if global_data.style.general.custom_styling.color.css %}
+        {% if global_data.style.general.custom_theme_overrides.color.css %}
           .{{richtext_class}},
           .{{richtext_class}} a,
           .{{richtext_class}} blockquote,
@@ -62,10 +62,10 @@
           .{{richtext_class}} h4,
           .{{richtext_class}} h5,
           .{{richtext_class}} h6 {
-            color: {{global_data.style.general.custom_styling.color.css}};
+            color: {{global_data.style.general.custom_theme_overrides.color.css}};
           }
           .{{richtext_class}} a:hover {
-            color: {{rgb(global_data.style.general.custom_styling.color.color, global_data.style.general.custom_styling.color.opacity, +30, -20)}};
+            color: {{rgb(global_data.style.general.custom_theme_overrides.color.color, global_data.style.general.custom_theme_overrides.color.opacity, +30, -20)}};
           }
         {% endif %}
       {%- end_scope_css -%}

@@ -314,7 +314,7 @@
       }
     }, {
       "id" : "d9798765-c2a6-cdbb-f5a3-4865d041eb9f",
-      "name" : "custom_styling",
+      "name" : "custom_theme_overrides",
       "display_width" : null,
       "label" : "Custom theme overrides",
       "help_text" : "Override global theme settings for the current component",
@@ -365,7 +365,7 @@
         "default" : { }
       }, {
         "id" : "70d50745-4a98-b1f9-32dc-ab9820e0ada7",
-        "name" : "radius",
+        "name" : "border_radius",
         "display_width" : null,
         "label" : "Border radius",
         "help_text" : "",
@@ -436,7 +436,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "background" : {
           "color" : null,
@@ -497,7 +497,7 @@
           "opacity" : null
         }
       },
-      "custom_styling" : {
+      "custom_theme_overrides" : {
         "spacing" : { },
         "background" : {
           "color" : null,

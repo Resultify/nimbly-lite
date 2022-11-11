@@ -92,33 +92,33 @@
           }
         {% endif %}
 
-        {% if style.custom_styling.spacing.css %}
+        {% if style.custom_theme_overrides.spacing.css %}
           .{{heading_class}} {
-            {{style.custom_styling.spacing.css}}
+            {{style.custom_theme_overrides.spacing.css}}
           }
         {% endif %}
 
-        {% if global_data.style.general.custom_styling.color.css %}
+        {% if global_data.style.general.custom_theme_overrides.color.css %}
           .{{heading_class}} {
-            color: {{global_data.style.general.custom_styling.color.css}};
+            color: {{global_data.style.general.custom_theme_overrides.color.css}};
           }
           .{{heading_class}} .g-module-macros-heading__link {
-            --color: {{global_data.style.general.custom_styling.color.css}};
+            --color: {{global_data.style.general.custom_theme_overrides.color.css}};
           }
           .{{heading_class}} .g-module-macros-heading__link:hover {
-            --hover-color: {{rgb(global_data.style.general.custom_styling.color.color, global_data.style.general.custom_styling.color.opacity, +20, -15)}};
+            --hover-color: {{rgb(global_data.style.general.custom_theme_overrides.color.color, global_data.style.general.custom_theme_overrides.color.opacity, +20, -15)}};
           }
         {% endif %}
 
-        {% if style.custom_styling.color.css %}
+        {% if style.custom_theme_overrides.color.css %}
           .{{heading_class}} {
-            color: {{style.custom_styling.color.css}};
+            color: {{style.custom_theme_overrides.color.css}};
           }
           .{{heading_class}} .g-module-macros-heading__link {
-            --color: {{style.custom_styling.color.css}};
+            --color: {{style.custom_theme_overrides.color.css}};
           }
           .{{heading_class}} .g-module-macros-heading__link:hover {
-            --hover-color: {{rgb(style.custom_styling.color.color, style.custom_styling.color.opacity, +20, -15)}};
+            --hover-color: {{rgb(style.custom_theme_overrides.color.color, style.custom_theme_overrides.color.opacity, +20, -15)}};
           }
         {% endif %}
 

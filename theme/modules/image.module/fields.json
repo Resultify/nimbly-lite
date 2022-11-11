@@ -190,7 +190,8 @@
         "opacity" : null
       }
     },
-    "border" : { }
+    "border" : { },
+    "custom_image_fit" : { }
   }
 }, {
   "id" : "8018f437-7972-df0a-c3ae-a617ca5205a7",

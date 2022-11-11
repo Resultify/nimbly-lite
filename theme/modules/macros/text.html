@@ -60,27 +60,27 @@
     {# module scope css #}<style>
       {%- scope_css -%}
 
-        {% if global_data.style.general.custom_styling.color.css %}
+        {% if global_data.style.general.custom_theme_overrides.color.css %}
           .{{text_class}} {
-            color: {{global_data.style.general.custom_styling.color.css}};
+            color: {{global_data.style.general.custom_theme_overrides.color.css}};
           }
         {% endif %}
 
-        {% if style.custom_styling.font.color or style.custom_styling.background.color or style.custom_styling.font.size or style.custom_styling.font.style or style.custom_styling.spacing.css %}
+        {% if style.custom_theme_overrides.font.color or style.custom_theme_overrides.background.color or style.custom_theme_overrides.font.size or style.custom_theme_overrides.font.style or style.custom_theme_overrides.spacing.css %}
           .{{text_class}} {
-            {% if style.custom_styling.font.color %}
-              color: {{style.custom_styling.font.color}};
+            {% if style.custom_theme_overrides.font.color %}
+              color: {{style.custom_theme_overrides.font.color}};
             {% endif %}
-            {% if style.custom_styling.background.color %}
-              background-color: {{style.custom_styling.background.color}};
+            {% if style.custom_theme_overrides.background.color %}
+              background-color: {{style.custom_theme_overrides.background.color}};
             {% endif %}
-            {% if style.custom_styling.font.size %}
-              font-size: {{style.custom_styling.font.size ~ 'px'}};
+            {% if style.custom_theme_overrides.font.size %}
+              font-size: {{style.custom_theme_overrides.font.size ~ 'px'}};
             {% endif %}
-            {% if style.custom_styling.font.style %}
-              {{style.custom_styling.font.style}};
+            {% if style.custom_theme_overrides.font.style %}
+              {{style.custom_theme_overrides.font.style}};
             {% endif %}
-            {{style.custom_styling.spacing.css}}
+            {{style.custom_theme_overrides.spacing.css}}
           }
         {% endif %}
 
