@@ -57,7 +57,8 @@
   margin-right: 0;
 }
 
-.form-default div.hs-form-field .input .hs-input:where(:not(input[type="checkbox"], input[type="radio"])) {
+.form-default div.hs-form-field .input .hs-input:where(:not(input[type="checkbox"], input[type="radio"])),
+.form-default.password-prompt-module input[type="password"] {
   display: block;
   width: 100%;
   padding: 0.375rem 0.5rem;
@@ -82,7 +83,8 @@
   border-color: var(--_form-error-color);
 }
 
-.form-default div.hs-form-field .input .hs-input:where(:not(input[type="checkbox"], input[type="radio"])):focus {
+.form-default div.hs-form-field .input .hs-input:where(:not(input[type="checkbox"], input[type="radio"])):focus,
+.form-default.password-prompt-module input[type="password"]:focus {
   border-color: {{theme.global_colors.advanced.focus.color}};
   outline: 0;
   box-shadow: 0 0 0 0.25rem {{rgb(theme.global_colors.advanced.focus.color, 30)}};

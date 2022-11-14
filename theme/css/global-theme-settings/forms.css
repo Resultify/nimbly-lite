@@ -65,7 +65,8 @@
   {{theme.forms.help_text.spacing.css}}
 }
 
-.form-default div.hs-form-field .input .hs-input:where(:not(input[type="checkbox"], input[type="radio"])) {
+.form-default div.hs-form-field .input .hs-input:where(:not(input[type="checkbox"], input[type="radio"])),
+.form-default.password-prompt-module input[type="password"] {
   {% if theme.forms.input_field.background.css %}
     background-color: {{theme.forms.input_field.background.css}};
   {% endif %}
@@ -92,7 +93,8 @@
   {% endif %}
 }
 
-.form-default div.hs-form-field .input .hs-input:where(:not(input[type="checkbox"], input[type="radio"])):focus {
+.form-default div.hs-form-field .input .hs-input:where(:not(input[type="checkbox"], input[type="radio"])):focus,
+.form-default.password-prompt-module input[type="password"]:focus {
   {% if theme.forms.focus.color.color %}
     border-color: {{theme.forms.focus.color.css}};
     box-shadow: 0 0 0 0.25rem {{rgb(theme.forms.focus.color.color, 30)}};
