@@ -107,7 +107,7 @@
           {% set btn_hover_border_opacity = btn_border.top.opacity %}
         {% endif %}
 
-        {%- if btn_border_radius or btn_text_font.color or btn_text_font.size or btn_background.css or btn_text_font.style or btn_border.css or btn_spacing -%}
+        {% if btn_border_radius or btn_text_font.color or btn_text_font.size or btn_background.css or btn_text_font.style or btn_border.css or btn_spacing %}
           .{{btn_class}} {
             {% if btn_border_radius != null %}
               --border-radius: {{btn_border_radius ~ 'px'}};
@@ -129,7 +129,7 @@
           }
         {% endif %}
 
-        {%- if btn_hover_color or btn_hover_background_color or btn_hover_border_color -%}
+        {% if btn_hover_color or btn_hover_background_color or btn_hover_border_color %}
           .{{btn_class}}:hover {
             {% if btn_hover_color %}
               --hover-color: {{btn_hover_color}};

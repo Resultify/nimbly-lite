@@ -68,7 +68,7 @@
           }
         {% endif %}
 
-        {%- if icon_spacing or icon_background or icon_border_radius or icon_border -%}
+        {% if icon_spacing or icon_background or icon_border_radius or icon_border %}
           .{{icon_class}} {
             {% if icon_background %}
               background-color: {{icon_background}};
@@ -81,7 +81,7 @@
           }
         {% endif %}
 
-        {%- if icon_fill_color or icon_size -%}
+        {% if icon_fill_color or icon_size %}
           .{{icon_class}} svg {
             {% if icon_fill_color %}
               fill: {{icon_fill_color}};

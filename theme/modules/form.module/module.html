@@ -1,12 +1,220 @@
+{% import '../../css/macros/macros.css' %}
+
+{# module scope css #}
+<style>
+  {% scope_css %}
+    .form-module {
+      {% if module.style.general.border.border_radius != null %}
+        border-radius: {{module.style.general.border.border_radius ~ 'px'}};
+      {% endif %}
+      {% if module.style.general.background.color.css %}
+        background-color: {{module.style.general.background.color.css}};
+      {% endif %}
+      {{module.style.general.border.border.css}}
+      {{module.style.general.spacing.spacing.css}}
+    }
+
+    .form-default {
+      {% if module.style.input_label.font.color %}
+        --form-label-color: {{module.style.input_label.font.color}};
+      {% endif %}
+      {% if module.style.help_text.font.color %}
+        --form-help-text-color: {{module.style.help_text.font.color}};
+      {% endif %}
+      {% if module.style.placeholder.font.color %}
+        --form-placeholder-color: {{module.style.placeholder.font.color}};
+      {% endif %}
+    }
+
+    .form-default .submitted-message,
+    .form-default .hs-richtext {
+      {% if module.style.general.text.font.size %}
+        font-size: {{module.style.general.text.font.size ~ 'px'}};
+      {% endif %}
+      {% if module.style.general.text.font.color %}
+        color: {{module.style.general.text.font.color}};
+      {% endif %}
+      {% if module.style.general.text.font.style %}
+        {{module.style.general.text.font.style}};
+      {% endif %}
+    }
+
+    {# input label #}
+    .form-default .hs-form-field label:not(.hs-error-msg) {
+      {% if module.style.input_label.background.css %}
+        background-color: {{module.style.input_label.background.css}};
+      {% endif %}
+      {% if module.style.input_label.font.style %}
+        {{module.style.input_label.font.style}};
+      {% endif %}
+      {% if module.style.input_label.font.size %}
+        font-size: {{module.style.input_label.font.size ~ 'px'}};
+      {% endif %}
+      {{module.style.input_label.spacing.css}}
+    }
+
+    {# help text #}
+    .form-default .hs-form-field .hs-field-desc {
+      {% if module.style.help_text.background.css %}
+        background-color: {{module.style.help_text.background.css}};
+      {% endif %}
+      {% if module.style.help_text.font.style %}
+        {{module.style.help_text.font.style}};
+      {% endif %}
+      {% if module.style.help_text.font.size %}
+        font-size: {{module.style.help_text.font.size ~ 'px'}};
+      {% endif %}
+      {{module.style.help_text.spacing.css}}
+    }
+
+    {# input field #}
+    .form-default div.hs-form-field .input .hs-input:not([type="radio"]):not([type="checkbox"]) {
+      {% if module.style.input_field.background.css %}
+        background-color: {{module.style.input_field.background.css}};
+      {% endif %}
+      {% if module.style.input_field.border_radius != null %}
+        border-radius: {{module.style.input_field.border_radius ~ 'px'}};
+      {% endif %}
+      {{module.style.input_field.border.css}}
+    }
+    .form-default div.hs-form-field .input .hs-input:not([type="radio"]):not([type="checkbox"]):not(select) {
+    {{module.style.input_field.spacing.css}}
+    }
+    {% if module.style.input_field.spacing.css %}
+      .form-default div.hs-form-field .input select.hs-input {
+        {{module.style.input_field.spacing.css}}
+        {% if module.style.input_field.spacing.padding.top.value %}
+          padding-top:{{module.style.input_field.spacing.padding.top.value + 2 ~ 'px'}};
+        {% endif %}
+        {% if module.style.input_field.spacing.padding.bottom.value %}
+          padding-bottom:{{module.style.input_field.spacing.padding.bottom.value + 2 ~ 'px'}};
+        {% endif %}
+        {% if module.style.input_field.spacing.padding.left.value %}
+          padding-left:{{module.style.input_field.spacing.padding.left.value ~ 'px'}};
+        {% endif %}
+        {% if module.style.input_field.spacing.padding.right.valu %}
+          padding-right:{{module.style.input_field.spacing.padding.right.valu ~ 'px'}};
+        {% endif %}
+      }
+    {% endif %}
+
+    {# placeholder #}
+    .form-default div.hs-form-field input.hs-input::placeholder {
+      {% if module.style.placeholder.font.style %}
+        {{module.style.placeholder.font.style}};
+      {% endif %}
+      {% if module.style.placeholder.font.size %}
+        font-size: {{module.style.placeholder.font.size ~ 'px'}};
+      {% endif %}
+    }
+
+    {# button #}
+    {% set btn_spacing = module.style.button.custom_theme_overrides.spacing.css %}
+    {% set btn_border = module.style.button.custom_theme_overrides.border %}
+    {% set btn_border_radius = module.style.button.custom_theme_overrides.border_radius %}
+
+    {% set btn_background = module.style.button.custom_theme_overrides.background %}
+    {% set btn_text_font = module.style.button.custom_theme_overrides.font %}
+
+    {% if module.style.button.custom_theme_overrides.hover.color.color %}
+      {% set btn_hover_color = module.style.button.custom_theme_overrides.hover.color.color %}
+    {% else %}
+      {% set btn_hover_color = color_variant(btn_text_font.color, -20) %}
+    {% endif %}
+
+    {% if module.style.button.custom_theme_overrides.hover.background.color %}
+      {% set btn_hover_background_color = module.style.button.custom_theme_overrides.hover.background.color %}
+      {% set btn_hover_background_opacity = module.style.button.custom_theme_overrides.hover.background.opacity %}
+    {% else %}
+      {% set btn_hover_background_color = color_variant(btn_background.color, -25) %}
+      {% set btn_hover_background_opacity = btn_background.opacity %}
+    {% endif %}
+
+    {% if module.style.button.custom_theme_overrides.hover.border_color.color %}
+      {% set btn_hover_border_color = module.style.button.custom_theme_overrides.hover.border_color.color %}
+      {% set btn_hover_border_opacity = module.style.button.custom_theme_overrides.hover.border_color.opacity %}
+    {% else %}
+      {% set btn_hover_border_color = color_variant(btn_border.top.color, -25) %}
+      {% set btn_hover_border_opacity = btn_border.top.opacity %}
+    {% endif %}
+
+    .form-default .hs_submit {
+      text-align: {{module.style.button.alignment.alignment.horizontal_align}};
+      {% if module.style.button.background.color.css %}
+        background-color: {{module.style.button.background.color.css}};
+      {% endif %}
+      {{module.style.button.spacing.spacing.css}}
+    }
+
+    {% if btn_border_radius or btn_text_font.color or btn_text_font.size or btn_background.css or btn_text_font.style or btn_border.css or btn_spacing %}
+      .form-default input[type="submit"],
+      .form-default input[type="file"]::file-selector-button {
+        {% if btn_border_radius != null %}
+          --border-radius: {{btn_border_radius ~ 'px'}};
+        {% endif %}
+        {% if btn_text_font.color %}
+          --color: {{btn_text_font.color}};
+        {% endif %}
+        {% if btn_text_font.size %}
+          font-size: {{btn_text_font.size ~ 'px'}};
+        {% endif %}
+        {% if btn_background.css %}
+          --bg: {{btn_background.css}};
+        {% endif %}
+        {% if btn_text_font.style %}
+          {{btn_text_font.style}};
+        {% endif %}
+        {{btn_border.css}}
+        {{btn_spacing}}
+      }
+    {% endif %}
+    {% if module.style.button.alignment.full_width %}
+      .form-default input[type="submit"] {
+        width: 100%;
+      }
+    {% endif %}
+
+    {% if btn_hover_color or btn_hover_background_color or btn_hover_border_color %}
+      .form-default input[type="submit"]:hover {
+        {% if btn_hover_color %}
+          --hover-color: {{btn_hover_color}};
+        {% endif %}
+        {% if btn_hover_background_color %}
+          --hover-bg: {{rgb(btn_hover_background_color, btn_hover_background_opacity)}};
+        {% endif %}
+        {% if btn_hover_border_color %}
+          --hover-border: {{rgb(btn_hover_border_color, btn_hover_border_opacity)}};
+        {% endif %}
+      }
+    {% endif %}
+
+  {% end_scope_css %}
+</style>
+
 {% if module.title is truthy %}
-	{% set no_title = False %}
+  {% set no_title = False %}
 {% else %}
-	{% set no_title = True %}
+  {% set no_title = True %}
 {% endif %}
 
+{% if module.style.button.presets.style %}
+  {% set button_preset_style = 'form--' ~ module.style.button.presets.style %}
+{% else %}
+  {% set button_preset_style = theme.forms.button.presets.style %}
+{% endif %}
 
-<div class="form-module_wrp form-default {{theme.forms.button.presets.style}} {{theme.forms.button.presets.size}}">
-  <div class="form-module form-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
+{% if module.style.button.presets.size %}
+  {% set button_preset_size = 'form--' ~ module.style.button.presets.size %}
+{% else %}
+  {% set button_preset_size = theme.forms.button.presets.size %}
+{% endif %}
+
+<div class="form-module_wrp">
+  <div class="form-module form-module--{{module_id}}
+    form-default
+    {{button_preset_style}}
+    {{button_preset_size}}
+    {{module.style.general.presets.custom_preset}}">
 
     {% if module.form.form_id %}
       {% form
