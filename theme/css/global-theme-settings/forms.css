@@ -39,7 +39,7 @@
   {% endif %}
 }
 
-.form-default .hs-form-field label:not(.hs-error-msg) {
+.form-default label:not(.hs-error-msg):not(.hs-main-font-element) {
   {% if theme.forms.input_label.background.css %}
     background-color: {{theme.forms.input_label.background.css}};
   {% endif %}
@@ -52,7 +52,7 @@
   {{theme.forms.input_label.spacing.css}}
 }
 
-.form-default .hs-form-field .hs-field-desc {
+.form-default .hs-field-desc {
   {% if theme.forms.help_text.background.css %}
     background-color: {{theme.forms.help_text.background.css}};
   {% endif %}
@@ -65,8 +65,15 @@
   {{theme.forms.help_text.spacing.css}}
 }
 
-.form-default div.hs-form-field .input .hs-input:where(:not(input[type="checkbox"], input[type="radio"])),
-.form-default.password-prompt-module input[type="password"] {
+.form-default input:not(
+  [type="checkbox"],
+  [type="radio"],
+  [type="file"],
+  [type="button"],
+  [type="reset"],
+  [type="submit"]),
+.form-default textarea,
+.form-default select {
   {% if theme.forms.input_field.background.css %}
     background-color: {{theme.forms.input_field.background.css}};
   {% endif %}
@@ -77,7 +84,7 @@
   {{theme.forms.input_field.spacing.css}}
 }
 
-.form-default div.hs-form-field .input select.hs-input {
+.form-default select {
   {{theme.forms.input_field.spacing.css}}
   {% if theme.forms.input_field.spacing.padding.top.value %}
     padding-top:{{theme.forms.input_field.spacing.padding.top.value + 2 ~ 'px'}};
@@ -93,15 +100,22 @@
   {% endif %}
 }
 
-.form-default div.hs-form-field .input .hs-input:where(:not(input[type="checkbox"], input[type="radio"])):focus,
-.form-default.password-prompt-module input[type="password"]:focus {
+.form-default input:not(
+  [type="checkbox"],
+  [type="radio"],
+  [type="file"],
+  [type="button"],
+  [type="reset"],
+  [type="submit"]):focus,
+.form-default textarea:focus,
+.form-default select:focus {
   {% if theme.forms.focus.color.color %}
     border-color: {{theme.forms.focus.color.css}};
     box-shadow: 0 0 0 0.25rem {{rgb(theme.forms.focus.color.color, 30)}};
   {% endif %}
 }
 
-.form-default div.hs-form-field input.hs-input::placeholder {
+.form-default input::placeholder {
   {% if theme.forms.placeholder.font.style %}
     {{theme.forms.placeholder.font.style}};
   {% endif %}
@@ -110,7 +124,7 @@
   {% endif %}
 }
 
-.form-default .hs-error-msgs .hs-error-msg {
+.form-default .hs-error-msg {
   {% if theme.forms.error.font.style %}
     {{theme.forms.error.font.style}};
   {% endif %}

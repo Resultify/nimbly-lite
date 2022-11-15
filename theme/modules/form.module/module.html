@@ -3,17 +3,21 @@
 {# module scope css #}
 <style>
   {% scope_css %}
-    .form-module {
-      {% if module.style.general.border.border_radius != null %}
-        border-radius: {{module.style.general.border.border_radius ~ 'px'}};
-      {% endif %}
-      {% if module.style.general.background.color.css %}
-        background-color: {{module.style.general.background.color.css}};
-      {% endif %}
-      {{module.style.general.border.border.css}}
-      {{module.style.general.spacing.spacing.css}}
-    }
 
+    {% if module.style.general.border.border_radius != null or module.style.general.background.color.css or module.style.general.border.border.css or module.style.general.spacing.spacing.css %}
+      .form-module {
+        {% if module.style.general.border.border_radius != null %}
+          border-radius: {{module.style.general.border.border_radius ~ 'px'}};
+        {% endif %}
+        {% if module.style.general.background.color.css %}
+          background-color: {{module.style.general.background.color.css}};
+        {% endif %}
+        {{module.style.general.border.border.css}}
+        {{module.style.general.spacing.spacing.css}}
+      }
+    {% endif %}
+
+    {% if module.style.input_label.font.color or module.style.help_text.font.color or module.style.placeholder.font.color %}
     .form-default {
       {% if module.style.input_label.font.color %}
         --form-label-color: {{module.style.input_label.font.color}};
@@ -25,63 +29,77 @@
         --form-placeholder-color: {{module.style.placeholder.font.color}};
       {% endif %}
     }
+    {% endif %}
 
-    .form-default .submitted-message,
-    .form-default .hs-richtext {
-      {% if module.style.general.text.font.size %}
-        font-size: {{module.style.general.text.font.size ~ 'px'}};
-      {% endif %}
-      {% if module.style.general.text.font.color %}
-        color: {{module.style.general.text.font.color}};
-      {% endif %}
-      {% if module.style.general.text.font.style %}
-        {{module.style.general.text.font.style}};
-      {% endif %}
-    }
+    {% if module.style.general.text.font.size or module.style.general.text.font.color or module.style.general.text.font.style %}
+      .form-default .submitted-message,
+      .form-default .hs-richtext {
+        {% if module.style.general.text.font.size %}
+          font-size: {{module.style.general.text.font.size ~ 'px'}};
+        {% endif %}
+        {% if module.style.general.text.font.color %}
+          color: {{module.style.general.text.font.color}};
+        {% endif %}
+        {% if module.style.general.text.font.style %}
+          {{module.style.general.text.font.style}};
+        {% endif %}
+      }
+    {% endif %}
 
     {# input label #}
-    .form-default .hs-form-field label:not(.hs-error-msg) {
-      {% if module.style.input_label.background.css %}
-        background-color: {{module.style.input_label.background.css}};
-      {% endif %}
-      {% if module.style.input_label.font.style %}
-        {{module.style.input_label.font.style}};
-      {% endif %}
-      {% if module.style.input_label.font.size %}
-        font-size: {{module.style.input_label.font.size ~ 'px'}};
-      {% endif %}
-      {{module.style.input_label.spacing.css}}
-    }
+    {% if module.style.input_label.background.css or module.style.input_label.font.style or module.style.input_label.font.size or module.style.input_label.spacing.css %}
+      .form-default label:not(.hs-error-msg) {
+        {% if module.style.input_label.background.css %}
+          background-color: {{module.style.input_label.background.css}};
+        {% endif %}
+        {% if module.style.input_label.font.style %}
+          {{module.style.input_label.font.style}};
+        {% endif %}
+        {% if module.style.input_label.font.size %}
+          font-size: {{module.style.input_label.font.size ~ 'px'}};
+        {% endif %}
+        {{module.style.input_label.spacing.css}}
+      }
+    {% endif %}
 
     {# help text #}
-    .form-default .hs-form-field .hs-field-desc {
-      {% if module.style.help_text.background.css %}
-        background-color: {{module.style.help_text.background.css}};
-      {% endif %}
-      {% if module.style.help_text.font.style %}
-        {{module.style.help_text.font.style}};
-      {% endif %}
-      {% if module.style.help_text.font.size %}
-        font-size: {{module.style.help_text.font.size ~ 'px'}};
-      {% endif %}
-      {{module.style.help_text.spacing.css}}
-    }
+    {% if module.style.help_text.background.css or module.style.help_text.font.style or module.style.help_text.font.size or module.style.help_text.spacing.css %}
+      .form-default .hs-field-desc {
+        {% if module.style.help_text.background.css %}
+          background-color: {{module.style.help_text.background.css}};
+        {% endif %}
+        {% if module.style.help_text.font.style %}
+          {{module.style.help_text.font.style}};
+        {% endif %}
+        {% if module.style.help_text.font.size %}
+          font-size: {{module.style.help_text.font.size ~ 'px'}};
+        {% endif %}
+        {{module.style.help_text.spacing.css}}
+      }
+    {% endif %}
+
 
     {# input field #}
-    .form-default div.hs-form-field .input .hs-input:not([type="radio"]):not([type="checkbox"]) {
-      {% if module.style.input_field.background.css %}
-        background-color: {{module.style.input_field.background.css}};
-      {% endif %}
-      {% if module.style.input_field.border_radius != null %}
-        border-radius: {{module.style.input_field.border_radius ~ 'px'}};
-      {% endif %}
-      {{module.style.input_field.border.css}}
-    }
-    .form-default div.hs-form-field .input .hs-input:not([type="radio"]):not([type="checkbox"]):not(select) {
-    {{module.style.input_field.spacing.css}}
-    }
+    {% if module.style.input_field.background.css or module.style.input_field.border_radius or module.style.input_field.border.css %}
+      .form-default input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="button"]):not([type="reset"]):not([type="submit"]),
+      .form-default textarea,
+      .form-default select {
+        {% if module.style.input_field.background.css %}
+          background-color: {{module.style.input_field.background.css}};
+        {% endif %}
+        {% if module.style.input_field.border_radius != null %}
+          border-radius: {{module.style.input_field.border_radius ~ 'px'}};
+        {% endif %}
+        {{module.style.input_field.border.css}}
+      }
+    {% endif %}
+
     {% if module.style.input_field.spacing.css %}
-      .form-default div.hs-form-field .input select.hs-input {
+      .form-default input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="button"]):not([type="reset"]):not([type="submit"]),
+      .form-default textarea {
+        {{module.style.input_field.spacing.css}}
+      }
+      .form-default select {
         {{module.style.input_field.spacing.css}}
         {% if module.style.input_field.spacing.padding.top.value %}
           padding-top:{{module.style.input_field.spacing.padding.top.value + 2 ~ 'px'}};
@@ -99,14 +117,24 @@
     {% endif %}
 
     {# placeholder #}
-    .form-default div.hs-form-field input.hs-input::placeholder {
-      {% if module.style.placeholder.font.style %}
-        {{module.style.placeholder.font.style}};
-      {% endif %}
-      {% if module.style.placeholder.font.size %}
-        font-size: {{module.style.placeholder.font.size ~ 'px'}};
-      {% endif %}
-    }
+    {% if module.style.placeholder.font.style or module.style.placeholder.font.size %}
+      .form-default input::placeholder {
+        {% if module.style.placeholder.font.style %}
+          {{module.style.placeholder.font.style}};
+        {% endif %}
+        {% if module.style.placeholder.font.size %}
+          font-size: {{module.style.placeholder.font.size ~ 'px'}};
+        {% endif %}
+      }
+    {% endif %}
+
+    {% if theme.forms.error.font.color %}
+      .form-default input.error:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="button"]):not([type="reset"]):not([type="submit"]),
+      .form-default textarea.error,
+      .form-default select.error {
+        border-color: {{theme.forms.error.font.color}};
+      }
+    {% endif %}
 
     {# button #}
     {% set btn_spacing = module.style.button.custom_theme_overrides.spacing.css %}
