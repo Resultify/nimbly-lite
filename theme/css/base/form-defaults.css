@@ -67,7 +67,8 @@
   }
 }
 
-.form-default label {
+.form-default label,
+.form-default .fakelabel {
   color: var(--_form-label-color);
   margin-bottom: 0.4rem;
   display: flex;
@@ -172,7 +173,9 @@
 
 .form-default :where(.hs-form-checkbox-display,
 .hs-form-booleancheckbox-display,
-.hs-form-radio-display) {
+.hs-form-radio-display,
+.fakelabel) {
+  display: flex;
   gap: 0.4rem;
   margin-bottom: 0.8rem;
   align-content: center;

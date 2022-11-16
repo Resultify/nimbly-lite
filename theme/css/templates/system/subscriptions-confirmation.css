@@ -1,0 +1,10 @@
+.subscriptions-confirmation {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.subscriptions-confirmation-module .success {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: green;
+}
