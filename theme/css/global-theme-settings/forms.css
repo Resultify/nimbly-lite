@@ -103,20 +103,20 @@
   }
 {% endif %}
 
-.form-default input:not(
-  [type="checkbox"],
-  [type="radio"],
-  [type="file"],
-  [type="button"],
-  [type="reset"],
-  [type="submit"]):focus,
-.form-default textarea:focus,
-.form-default select:focus {
-  {% if theme.forms.focus.color.color %}
-    border-color: {{theme.forms.focus.color.css}};
-    box-shadow: 0 0 0 0.25rem {{rgb(theme.forms.focus.color.color, 30)}};
-  {% endif %}
-}
+{% if theme.forms.focus.color.color %}
+  .form-default input:not(
+    [type="checkbox"],
+    [type="radio"],
+    [type="file"],
+    [type="button"],
+    [type="reset"],
+    [type="submit"]):focus,
+  .form-default textarea:focus,
+  .form-default select:focus {
+      border-color: {{theme.forms.focus.color.css}};
+      box-shadow: 0 0 0 0.25rem {{rgb(theme.forms.focus.color.color, 30)}};
+  }
+{% endif %}
 
 .form-default input::placeholder {
   {% if theme.forms.placeholder.font.style %}
