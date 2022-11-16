@@ -1,6 +1,6 @@
 {
   "global" : false,
-  "icon" : "../../images/module-icons/hero-image.svg",
+  "icon" : "../../images/module-icons/heroimage.svg",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "module_id" : 53809649600,
   "label" : "Hero image",
