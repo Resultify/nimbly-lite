@@ -1,3 +1,3 @@
-import { hubspotFetchModules } from '@resultify/hubspot-tools-theme-lib/lib/cmd/fetchModules.js'
+import { hubspotFetchModules } from '@resultify/hubspot-cms-lib/lib/cmd/fetchModules.js'
 
 hubspotFetchModules()

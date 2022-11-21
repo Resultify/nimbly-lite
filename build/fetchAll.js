@@ -1,3 +1,3 @@
-import { hubspotFetchAll } from '@resultify/hubspot-tools-theme-lib/lib/cmd/fetchAll.js'
+import { hubspotFetchAll } from '@resultify/hubspot-cms-lib/lib/cmd/fetchAll.js'
 
 hubspotFetchAll()
