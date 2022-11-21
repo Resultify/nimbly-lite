@@ -1,6 +1,7 @@
 .blog-post-section {
   padding: 0 12px;
 }
+
 .blog-post_wrp {
   margin: 50px auto;
   /* margin: 20px 0; */
@@ -9,6 +10,7 @@
 .blog-post__tags {
   margin: 10px 0;
 }
+
 .blog-post__meta {
   margin: 14px 0;
   display: flex;
