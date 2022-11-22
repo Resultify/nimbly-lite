@@ -584,7 +584,7 @@
                 "locked": false,
                 "required": false,
                 "default": {
-                  "size": 65,
+                  "size": 64,
                   "size_unit": "px"
                 }
               }
@@ -640,7 +640,7 @@
                 "locked": false,
                 "required": false,
                 "default": {
-                  "size": 55,
+                  "size": 54,
                   "size_unit": "px"
                 }
               }
@@ -2198,19 +2198,19 @@
                 "default": {
                   "padding": {
                     "top": {
-                      "value": 25,
+                      "value": 20,
                       "units": "px"
                     },
                     "right": {
-                      "value": 25,
+                      "value": 20,
                       "units": "px"
                     },
                     "bottom": {
-                      "value": 25,
+                      "value": 20,
                       "units": "px"
                     },
                     "left": {
-                      "value": 25,
+                      "value": 20,
                       "units": "px"
                     }
                   }
@@ -2255,19 +2255,19 @@
                 "default": {
                   "padding": {
                     "top": {
-                      "value": 35,
+                      "value": 25,
                       "units": "px"
                     },
                     "right": {
-                      "value": 35,
+                      "value": 25,
                       "units": "px"
                     },
                     "bottom": {
-                      "value": 35,
+                      "value": 25,
                       "units": "px"
                     },
                     "left": {
-                      "value": 35,
+                      "value": 25,
                       "units": "px"
                     }
                   }
