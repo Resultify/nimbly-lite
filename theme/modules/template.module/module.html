@@ -34,7 +34,7 @@
     .template-module--container {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 10px;
+      gap: 0 10px;
     }
     .template-module--item {
       flex-basis: 100%;
@@ -224,7 +224,7 @@
 
 {%- macro render_subheading() -%}
   {% if module.subheading.text %}
-    <div class="template-module__subheading template-module--item">
+    <div class="template-module__subheading template-module--item margin-collapse">
       {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module,
         {
           id: 'subheading',

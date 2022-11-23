@@ -41,7 +41,7 @@
     .heroimage-module__caption {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 10px;
+      gap: 0 10px;
     }
     .heroimage-module__caption--item {
       flex-basis: 100%;
@@ -316,7 +316,7 @@
 
 {%- macro render_subheading() -%}
   {% if module.subheading.text %}
-    <div class="heroimage-module__subheading heroimage-module__caption--item">
+    <div class="heroimage-module__subheading heroimage-module__caption--item margin-collapse">
       {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module,
         {
           id: 'subheading',
