@@ -2985,13 +2985,16 @@
         "suffix": "px",
         "min": 0,
         "required": false,
-        "default": 20
+        "default": 84
       }
     ],
     "display_width": null,
     "locked": false,
     "tab": "CONTENT",
     "expanded": false,
-    "required": false
+    "required": false,
+    "default": {
+      "vertical_spacing": 84
+    }
   }
 ]

@@ -4,7 +4,7 @@
 {% else %}
   {% set container_width = theme.layout.maximum_content_width ~ 'px' %}
 {% endif %}
-{% set vertical_spacing = theme.layout.vertical_spacing ~ 'px' %}
+{% set vertical_spacing = theme.layout.vertical_spacing %}
 
 .dnd-section > .row-fluid {
   max-width: {{container_width}};
@@ -13,13 +13,6 @@
 .dnd-section {
   margin-right: auto;
   margin-left: auto;
-}
-
-@media (min-width: 992px) {
-  .dnd-section {
-    padding-top: {{vertical_spacing}};
-    padding-bottom: {{vertical_spacing}};
-  }
 }
 
 .dnd-section > .row-fluid,
@@ -37,14 +30,6 @@
   max-width: 100%;
   padding-right: 12px;
   padding-left: 12px;
-}
-
-@media (max-width: 991.98px) {
-  .dnd-section > .row-fluid > *,
-  .dnd-row > .row-fluid > * {
-    padding-top: {{vertical_spacing}};
-    padding-bottom: {{vertical_spacing}};
-  }
 }
 
 .dnd-module.span12 {
@@ -132,5 +117,39 @@
   .dnd-column.span12 {
     flex: 0 0 auto;
     width: 100%;
+  }
+}
+
+/* vertical spacing setup */
+.dnd-section {
+  margin-bottom: {{vertical_spacing / 1.5 ~ 'px'}};
+  margin-top: {{vertical_spacing / 1.5 ~ 'px'}};
+}
+
+@media (min-width: 992px) {
+  .dnd-section {
+    margin-bottom: {{vertical_spacing ~ 'px'}};
+    margin-top: {{vertical_spacing ~ 'px'}};
+  }
+}
+
+.global-partial .dnd-section {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 991.98px) {
+  .dnd-section > .row-fluid > .dnd-column:not(.span12),
+  .dnd-row > .row-fluid > .dnd-column:not(.span12) {
+    padding-top: {{vertical_spacing / 4 ~ 'px'}};
+    padding-bottom: {{vertical_spacing / 4 ~ 'px'}};
+  }
+  .dnd-section > .row-fluid > .dnd-column:first-of-type:not(.span12),
+  .dnd-row > .row-fluid > .dnd-column:first-of-type:not(.span12) {
+    padding-top: 0;
+  }
+  .dnd-section > .row-fluid > .dnd-column:last-of-type:not(.span12),
+  .dnd-row > .row-fluid > .dnd-column:last-of-type:not(.span12) {
+    padding-bottom: 0;
   }
 }
