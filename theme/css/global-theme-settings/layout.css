@@ -123,19 +123,16 @@
 /* vertical spacing setup */
 .dnd-section {
   margin-bottom: {{vertical_spacing / 1.5 ~ 'px'}};
-  margin-top: {{vertical_spacing / 1.5 ~ 'px'}};
 }
 
 @media (min-width: 992px) {
   .dnd-section {
     margin-bottom: {{vertical_spacing ~ 'px'}};
-    margin-top: {{vertical_spacing ~ 'px'}};
   }
 }
 
 .global-partial .dnd-section {
   margin-bottom: 0;
-  margin-top: 0;
 }
 
 @media (max-width: 991.98px) {

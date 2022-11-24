@@ -1,0 +1,122 @@
+<!--
+  templateType: section
+  label: Site header
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/1colgrid--card--barner.png
+-->
+
+{% dnd_section
+  background_color="rgba(255, 255, 255, 1)"
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="/nimbly-lite/modules/site-header",
+        offset=0,
+        width=12,
+        buttons={
+          "button" : [ {
+            "accessible_link" : true,
+            "icon" : {
+              "icon" : { },
+              "icon_position" : "left"
+            },
+            "link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "#",
+                "type" : "EXTERNAL"
+              }
+            },
+            "text" : "GET NIMBLY NOW"
+          } ]
+        },
+        menu={
+          "menu" : 56774137571
+        },
+        style={
+          "button" : {
+            "presets" : {
+              "size" : "btn-small"
+            }
+          },
+          "logo" : {
+            "logo_on_mobile" : {
+              "alignment" : {
+                "alignment" : {
+                  "horizontal_align" : "CENTER"
+                }
+              }
+            }
+          },
+          "menu" : {
+            "alignment" : {
+              "alignment" : "center"
+            }
+          },
+          "search" : {
+            "search_button" : {
+              "background_hover" : {
+                "color" : "#EEEEEE",
+                "opacity" : 100
+              },
+              "color" : {
+                "color" : "#000000",
+                "opacity" : 100
+              }
+            },
+            "search_field" : {
+              "border" : {
+                "border" : {
+                  "bottom" : {
+                    "color" : "#FFFFFF",
+                    "opacity" : 100,
+                    "style" : "solid",
+                    "width" : {
+                      "units" : "px",
+                      "value" : 1
+                    }
+                  },
+                  "left" : {
+                    "color" : "#FFFFFF",
+                    "opacity" : 100,
+                    "style" : "solid",
+                    "width" : {
+                      "units" : "px",
+                      "value" : 1
+                    }
+                  },
+                  "right" : {
+                    "color" : "#FFFFFF",
+                    "opacity" : 100,
+                    "style" : "solid",
+                    "width" : {
+                      "units" : "px",
+                      "value" : 1
+                    }
+                  },
+                  "top" : {
+                    "color" : "#FFFFFF",
+                    "opacity" : 100,
+                    "style" : "solid",
+                    "width" : {
+                      "units" : "px",
+                      "value" : 1
+                    }
+                  }
+                },
+                "border_radius" : 48
+              },
+              "style" : "narrow"
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

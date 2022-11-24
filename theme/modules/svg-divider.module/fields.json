@@ -81,11 +81,11 @@
   "required" : true,
   "locked" : false,
   "display" : "select",
-  "choices" : [ [ "slanted_line_cover_top", "Slanted line - cover top elem" ], [ "slanted_line_cover_bottom", "Slanted line - cover bottom elem" ], [ "wave_cover_bottom", "Wave - cover bottom elem" ], [ "triple_wave_cover_top", "Triple wave - cover top elem" ], [ "custom", "Custom" ] ],
+  "choices" : [ [ "slanted_line_cover_top", "Slanted line - cover top elem" ], [ "slanted_line_cover_bottom", "Slanted line - cover bottom elem" ], [ "wave_cover_top", "Wave - cover top elem" ], [ "wave_cover_bottom", "Wave - cover bottom elem" ], [ "custom", "Custom" ] ],
   "multiple" : false,
   "reordering_enabled" : true,
   "type" : "choice",
-  "default" : "slanted_line_cover_top"
+  "default" : "wave_cover_top"
 }, {
   "id" : "c65b2ef2-41ba-fb8b-4fa8-3d6ec7ec94a1",
   "name" : "svg",

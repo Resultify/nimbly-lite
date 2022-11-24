@@ -41,11 +41,6 @@
   class='global-header global-partial'
 %}
 
-  {% dnd_section %}
-
-    {% dnd_module path='../../modules/site-header' %}
-    {% end_dnd_module %}
-
-  {% end_dnd_section %}
+  {% include_dnd_partial path='../../sections/site-header.html' context={} %}
 
 {% end_dnd_area %}

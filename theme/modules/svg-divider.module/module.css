@@ -1,11 +1,8 @@
 /* module css / no hubl variables */
-.svg-divider-module-container {
-  height: 30px;
-}
-
 .svg-divider-module_wrp {
   position: relative;
   z-index: 2;
+  height: 14px;
 }
 
 .svg-divider-module {
