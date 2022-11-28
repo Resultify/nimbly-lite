@@ -17,6 +17,10 @@ p {
 
 hr {
   color: inherit;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid;
+  width: 100%;
 }
 
 abbr[title] {

@@ -1,3 +1,5 @@
+{% include './global-theme-settings/root.css' %}
+{% include './global-theme-settings/general.css' %}
 {% include './global-theme-settings/layout.css' %}
 {% include './global-theme-settings/typography/page.css' %}
 {% include './global-theme-settings/typography/headings.css' %}
