@@ -17,10 +17,6 @@
 }
 
 /* inline editor tooltip bt hover */
-.hs-inline-edit .editor-tooltip:hover:after {
-  display: block;
-}
-
 .hs-inline-edit .editor-tooltip:after {
   font-weight: 400;
   font-size: 1rem;
@@ -38,6 +34,10 @@
   margin-left: 6px;
   text-align: center;
   z-index: 1200;
+}
+
+.hs-inline-edit .editor-tooltip:hover:after {
+  display: block;
 }
 
 .hs-inline-edit .editor-tooltip {

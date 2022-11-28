@@ -1,5 +1,3 @@
-{% import '../macros/macros.css' %}
-
 /* start normalize default HubSpot form styling */
 .form-default .hs-form fieldset {
   margin: initial;
@@ -7,6 +5,7 @@
   border: initial;
   max-width: initial;
 }
+
 .form-default :is(fieldset.form-columns-2, fieldset.form-columns-3) > div.hs-form-field {
   float: none;
   width: initial;
@@ -29,6 +28,7 @@
   width: 1.2em;
   float: none;
 }
+
 .form-default .inputs-list :is(.hs-form-checkbox-display,
 .hs-form-booleancheckbox-display,
 .hs-form-radio-display) > span {
@@ -74,7 +74,7 @@
   display: flex;
 }
 
-.form-default .hs-field-desc {
+.form-default .hs-field-desc { /* stylelint-disable-line */
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 0.875em;
@@ -87,12 +87,12 @@
 }
 
 .form-default input:not(
-  [type="checkbox"],
-  [type="radio"],
-  [type="file"],
-  [type="button"],
-  [type="reset"],
-  [type="submit"]),
+[type="checkbox"],
+[type="radio"],
+[type="file"],
+[type="button"],
+[type="reset"],
+[type="submit"]),
 .form-default textarea,
 .form-default select {
   display: block;
@@ -116,12 +116,12 @@
 
 @media (prefers-reduced-motion: reduce) {
   .form-default input:not(
-    [type="checkbox"],
-    [type="radio"],
-    [type="file"],
-    [type="button"],
-    [type="reset"],
-    [type="submit"]),
+  [type="checkbox"],
+  [type="radio"],
+  [type="file"],
+  [type="button"],
+  [type="reset"],
+  [type="submit"]),
   .form-default textarea,
   .form-default select {
     transition: none;
@@ -129,29 +129,15 @@
 }
 
 .form-default input.error:not(
-  [type="checkbox"],
-  [type="radio"],
-  [type="file"],
-  [type="button"],
-  [type="reset"],
-  [type="submit"]),
+[type="checkbox"],
+[type="radio"],
+[type="file"],
+[type="button"],
+[type="reset"],
+[type="submit"]),
 .form-default textarea.error,
 .form-default select.error {
-  border-color: var(--_form-error-color)!important;
-}
-
-.form-default input:not(
-  [type="checkbox"],
-  [type="radio"],
-  [type="file"],
-  [type="button"],
-  [type="reset"],
-  [type="submit"]):focus,
-.form-default textarea:focus,
-.form-default select:focus {
-  border-color: {{theme.global_colors.advanced.focus.color}};
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem {{rgb(theme.global_colors.advanced.focus.color, 30)}};
+  border-color: var(--_form-error-color) !important;
 }
 
 .form-default .inputs-list {
@@ -183,7 +169,9 @@
   justify-content: flex-start;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .form-default input[type="radio"],
+/* stylelint-disable-next-line no-descending-specificity */
 .form-default input[type="checkbox"] {
   width: 1.2em;
   height: 1.2em;
@@ -192,4 +180,3 @@
 .form-default input[type="file"]:not(:disabled) {
   cursor: pointer;
 }
-
