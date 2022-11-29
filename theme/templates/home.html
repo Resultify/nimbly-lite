@@ -14,17 +14,94 @@
     class='home-template'
   %}
 
-    {% include_dnd_partial path='../sections/3x3colgrid--card--imagetext.html' context={} %}
-    {% include_dnd_partial path='../sections/3colgrid--card--with-background-v3.html' context={} %}
-    {% include_dnd_partial path='../sections/2colgrid--card--image-left.html' context={} %}
-    {% include_dnd_partial path='../sections/1colgrid--card--banner.html' context={} %}
-    {% include_dnd_partial path='../sections/2colgrid--card--image-right.html' context={} %}
-    {% include_dnd_partial path='../sections/3colgrid--card--imagetext-with-topheading.html' context={} %}
-    {% include_dnd_partial path='../sections/3colgrid--card--with-background-v2.html' context={} %}
-    {% include_dnd_partial path='../sections/2x2colgrid--card--image-left-right.html' context={} %}
-    {% include_dnd_partial path='../sections/3colgrid--card--with-background.html' context={} %}
-    {% include_dnd_partial path='../sections/3x3colgrid--card--with-odd-background.html' context={} %}
-    {% include_dnd_partial path='../sections/3colgrid--card--imagetext.html' context={} %}
+    {% include_dnd_partial path='../sections/heroimage--v1.html' context={} %}
+    {% include_dnd_partial path='../sections/richtext--v1.html' context={} %}
+    {% include_dnd_partial path='../sections/cards--3col--v1.html' context={} %}
+
+    {% dnd_section
+      margin={
+        "default" : {
+          "bottom" : "0px",
+          "top" : "0px"
+        }
+      },
+      full_width=true
+    %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          "default" : {
+            "left" : "0px",
+            "right" : "0px"
+          }
+        }
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="/nimbly-lite/modules/svg-divider",
+            offset=0,
+            width=12,
+            divider="wave_cover_top",
+            style={
+              "background" : {
+                "color" : {
+                  "color" : "#3d2f52",
+                  "opacity" : 100
+                }
+              }
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {% include_dnd_partial path='../sections/text-richtext--4col--v1.html' context={} %}
+    {% include_dnd_partial path='../sections/imagecards--3row--v1.html' context={} %}
+    {% include_dnd_partial path='../sections/quote--v1.html' context={} %}
+    {% include_dnd_partial path='../sections/cards--3col--v2.html' context={} %}
+
+    {% dnd_section
+      margin={
+        "default" : {
+          "bottom" : "0px",
+          "top" : "0px"
+        }
+      },
+      full_width=true
+    %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          "default" : {
+            "left" : "0px",
+            "right" : "0px"
+          }
+        }
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="/nimbly-lite/modules/svg-divider",
+            offset=0,
+            width=12,
+            divider="wave_cover_bottom",
+            style={
+              "background" : {
+                "color" : {
+                  "color" : "#FFFFFF",
+                  "opacity" : 100
+                }
+              }
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {% include_dnd_partial path='../sections/text-form--2col--v1.html' context={} %}
 
   {% end_dnd_area %}
 
