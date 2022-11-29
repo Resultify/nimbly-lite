@@ -6,7 +6,8 @@
 -->
 
 {% dnd_section
-  background_color="rgba(255, 255, 255, 1)"
+  background_color="rgba(255, 255, 255, 1)",
+  full_width=false
 %}
   {% dnd_column
     offset=0,
@@ -32,8 +33,18 @@
                 "type" : "EXTERNAL"
               }
             },
-            "text" : "GET NIMBLY NOW"
+            "text" : "GET NIMBLY"
           } ]
+        },
+        logo={
+          "logo" : {
+            "alt" : "nimbly",
+            "height" : 42,
+            "override_inherited_src" : true,
+            "src" : "https://25257652.fs1.hubspotusercontent-eu1.net/hubfs/25257652/nimbly-logo-black-1.svg",
+            "suppress_company_name" : true,
+            "width" : 169
+          }
         },
         menu={
           "menu" : 56774137571
@@ -42,6 +53,24 @@
           "button" : {
             "presets" : {
               "size" : "btn-small"
+            }
+          },
+          "general" : {
+            "spacing" : {
+              "spacing" : {
+                "padding" : {
+                  "bottom" : {
+                    "units" : "px",
+                    "value" : 12
+                  },
+                  "left" : { },
+                  "right" : { },
+                  "top" : {
+                    "units" : "px",
+                    "value" : 12
+                  }
+                }
+              }
             }
           },
           "logo" : {
