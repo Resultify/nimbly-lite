@@ -2,12 +2,14 @@
   templateType: section
   label: HeroImage
   isAvailableForNewContent: true
-  screenshotPath: ../images/section-previews/1colgrid--card--barner.png
+  screenshotPath: ../images/section-previews/heroimage--v1.png
 -->
+
 {% dnd_section
-  margin={
+  padding={
     "default" : {
-      "bottom" : "30px"
+      "bottom" : "0px",
+      "top" : "0px"
     }
   },
   full_width=true
@@ -31,10 +33,13 @@
           "link" : {
             "no_follow" : false,
             "open_in_new_tab" : false,
+            "rel" : "",
+            "sponsored" : false,
             "url" : {
               "href" : "#",
               "type" : "EXTERNAL"
-            }
+            },
+            "user_generated_content" : false
           },
           "text" : "GET NIMBLY TODAY!"
         },

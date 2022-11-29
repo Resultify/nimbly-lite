@@ -122,20 +122,17 @@
 
 /* vertical spacing setup */
 .dnd-section {
-  margin-bottom: {{vertical_spacing / 1.5 ~ 'px'}};
+  padding: {{vertical_spacing ~ 'px'}} 0;
 }
 
-@media (min-width: 992px) {
-  .dnd-section {
-    margin-bottom: {{vertical_spacing ~ 'px'}};
-  }
-}
-
-.global-partial .dnd-section {
-  margin-bottom: 0;
+.global-header .dnd-section {
+  padding: 0;
 }
 
 @media (max-width: 991.98px) {
+  .dnd-section {
+    padding: {{vertical_spacing / 1.2 ~ 'px'}} 0;
+  }
   .dnd-section > .row-fluid > .dnd-column:not(.span12),
   .dnd-row > .row-fluid > .dnd-column:not(.span12) {
     padding-top: {{vertical_spacing / 4 ~ 'px'}};

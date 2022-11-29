@@ -2,18 +2,12 @@
   templateType: section
   label: Quote
   isAvailableForNewContent: true
-  screenshotPath: ../images/section-previews/1colgrid--card--barner.png
+  screenshotPath: ../images/section-previews/quote--v1.png
 -->
 
 {% dnd_section
-  max_width=900,
   background_color="rgba(61, 47, 82, 1)",
-  padding={
-    "default" : {
-      "bottom" : "80px",
-      "top" : "60px"
-    }
-  }
+  full_width=false
 %}
   {% dnd_column
     offset=0,
@@ -63,6 +57,7 @@
         },
         icon={
           "icon" : {
+            "icon_set" : "fontawesome-5.14.0",
             "name" : "quote-left",
             "type" : "SOLID",
             "unicode" : "f10d"
@@ -99,7 +94,13 @@
                 "font" : "Quicksand",
                 "font_set" : "GOOGLE",
                 "size" : 16,
-                "styles" : { },
+                "style" : "font-family: Quicksand, sans-serif; font-style: normal; font-weight: 700; text-decoration: none",
+                "styles" : {
+                  "font-family" : "Quicksand, sans-serif",
+                  "font-style" : "normal",
+                  "font-weight" : 700,
+                  "text-decoration" : "none"
+                },
                 "variant" : "700"
               }
             }

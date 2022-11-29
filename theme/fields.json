@@ -2985,7 +2985,7 @@
         "suffix": "px",
         "min": 0,
         "required": false,
-        "default": 84
+        "default": 42
       }
     ],
     "display_width": null,
@@ -2994,7 +2994,7 @@
     "expanded": false,
     "required": false,
     "default": {
-      "vertical_spacing": 84
+      "vertical_spacing": 42
     }
   }
 ]

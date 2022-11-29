@@ -2,7 +2,7 @@
   templateType: section
   label: Text and Form in 2 columns
   isAvailableForNewContent: true
-  screenshotPath: ../images/section-previews/1colgrid--card--barner.png
+  screenshotPath: ../images/section-previews/text-form--2col--v1.png
 -->
 
 {% dnd_section
@@ -12,14 +12,13 @@
   },
   padding={
     "default" : {
-      "top" : "0px"
+      "top" : "170px"
+    },
+    "mobile" : {
+      "top" : "80px"
     }
   },
-  margin={
-    "default" : {
-      "bottom" : "0px"
-    }
-  }
+  full_width=false
 %}
   {% dnd_column
     offset=0,
@@ -31,18 +30,7 @@
       }
     }
   %}
-    {% dnd_row
-      padding={
-        "default" : {
-          "bottom" : "60px",
-          "top" : "100px"
-        },
-        "mobile" : {
-          "top" : "60px"
-        }
-      }
-      vertical_alignment="MIDDLE"
-    %}
+    {% dnd_row %}
       {% dnd_column
         offset=0,
         width=6,
@@ -65,19 +53,33 @@
                   "font" : "Quicksand",
                   "font_set" : "GOOGLE",
                   "size" : 50,
-                  "styles" : { },
+                  "style" : "font-family: Quicksand, sans-serif; font-style: normal; font-weight: 300; text-decoration: none",
+                  "styles" : {
+                    "font-family" : "Quicksand, sans-serif",
+                    "font-style" : "normal",
+                    "font-weight" : 300,
+                    "text-decoration" : "none"
+                  },
                   "variant" : "300"
                 }
               }
             },
-            text="<br>\nEvolve your\n<br>\nbusiness\n<br>\ninsights"
+            text="Evolve your\n<br>\nbusiness\n<br>\ninsights"
           %}
           {% end_dnd_module %}
         {% end_dnd_row %}
       {% end_dnd_column %}
       {% dnd_column
         offset=6,
-        width=6
+        width=6,
+        padding={
+          "default" : {
+            "top" : "60px"
+          },
+          "mobile" : {
+            "top" : "20px"
+          }
+        }
       %}
         {% dnd_row %}
           {% dnd_module
