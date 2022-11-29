@@ -125,10 +125,6 @@
   padding: {{vertical_spacing ~ 'px'}} 0;
 }
 
-.global-header .dnd-section {
-  padding: 0;
-}
-
 @media (max-width: 991.98px) {
   .dnd-section {
     padding: {{vertical_spacing / 1.2 ~ 'px'}} 0;

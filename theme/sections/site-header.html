@@ -6,6 +6,12 @@
 -->
 
 {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "top" : "0px"
+    }
+  },
   background_color="rgba(255, 255, 255, 1)",
   full_width=false
 %}
@@ -15,7 +21,7 @@
   %}
     {% dnd_row %}
       {% dnd_module
-        path="/nimbly-lite/modules/site-header",
+        path="../modules/site-header",
         offset=0,
         width=12,
         buttons={
