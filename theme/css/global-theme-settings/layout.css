@@ -127,7 +127,7 @@
 
 @media (max-width: 991.98px) {
   .dnd-section {
-    padding: {{vertical_spacing / 1.2 ~ 'px'}} 0;
+    padding: {{vertical_spacing / 1.5 ~ 'px'}} 0;
   }
   .dnd-section > .row-fluid > .dnd-column:not(.span12),
   .dnd-row > .row-fluid > .dnd-column:not(.span12) {
