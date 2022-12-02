@@ -1,8 +1,8 @@
 <!--
   templateType: section
-  label: HeroImage
+  label: Home page banner
   isAvailableForNewContent: true
-  screenshotPath: ../images/section-previews/heroimage--v1.png
+  screenshotPath: ../images/section-previews/home-page-banner.png
 -->
 
 {% dnd_section
@@ -10,6 +10,11 @@
     "default" : {
       "bottom" : "0px",
       "top" : "0px"
+    }
+  },
+  margin={
+    "default" : {
+      "bottom" : "-20px"
     }
   },
   full_width=true
@@ -33,19 +38,16 @@
           "link" : {
             "no_follow" : false,
             "open_in_new_tab" : false,
-            "rel" : "",
-            "sponsored" : false,
             "url" : {
               "href" : "#",
               "type" : "EXTERNAL"
-            },
-            "user_generated_content" : false
+            }
           },
           "text" : "GET NIMBLY TODAY!"
         },
         figure={
           "image" : {
-            "alt" : "nimbly-icon",
+            "alt" : "Nimbly icon",
             "height" : 461,
             "max_height" : 461,
             "max_width" : 461,
@@ -54,18 +56,16 @@
           }
         },
         heading={
-          "display" : "",
+          "display" : "display-3",
           "heading_tag" : "h1",
           "text" : "Leading the way\u000Bin customer insights"
         },
         image={
           "image" : {
-            "alt" : "nimbly theme",
+            "alt" : "Nimbly Hero image",
             "height" : 700,
-            "loading" : "disabled",
             "max_height" : 797,
             "max_width" : 1920,
-            "size_type" : "exact",
             "src" : "../images/content/images/hero-image.png",
             "width" : 1686
           }
@@ -74,6 +74,21 @@
           "rich_text" : "<p><span style=\"font-size: 20px;\">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</span></p>"
         },
         style={
+          "button" : {
+            "spacing" : {
+              "spacing" : {
+                "padding" : {
+                  "bottom" : { },
+                  "left" : { },
+                  "right" : { },
+                  "top" : {
+                    "units" : "px",
+                    "value" : 20
+                  }
+                }
+              }
+            }
+          },
           "figure" : {
             "alignment" : {
               "alignment" : {

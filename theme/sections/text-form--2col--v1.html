@@ -1,24 +1,15 @@
 <!--
   templateType: section
-  label: Text and Form in 2 columns
+  label: Request a demo
   isAvailableForNewContent: true
-  screenshotPath: ../images/section-previews/text-form--2col--v1.png
+  screenshotPath: ../images/section-previews/request-demo.png
 -->
 
 {% dnd_section
   background_linear_gradient={
     "colors" : [ "rgba(97, 75, 129, 1)", "rgba(192, 153, 251, 1)" ],
     "direction" : "to bottom left"
-  },
-  padding={
-    "default" : {
-      "top" : "170px"
-    },
-    "mobile" : {
-      "top" : "80px"
-    }
-  },
-  full_width=false
+  }
 %}
   {% dnd_column
     offset=0,
@@ -30,7 +21,17 @@
       }
     }
   %}
-    {% dnd_row %}
+    {% dnd_row
+      padding={
+        "default" : {
+          "top" : "160px"
+        },
+        "mobile" : {
+          "top" : "40px"
+        }
+      },
+      vertical_alignment="MIDDLE"
+    %}
       {% dnd_column
         offset=0,
         width=6,
@@ -53,13 +54,7 @@
                   "font" : "Quicksand",
                   "font_set" : "GOOGLE",
                   "size" : 50,
-                  "style" : "font-family: Quicksand, sans-serif; font-style: normal; font-weight: 300; text-decoration: none",
-                  "styles" : {
-                    "font-family" : "Quicksand, sans-serif",
-                    "font-style" : "normal",
-                    "font-weight" : 300,
-                    "text-decoration" : "none"
-                  },
+                  "styles" : { },
                   "variant" : "300"
                 }
               }
@@ -71,15 +66,7 @@
       {% end_dnd_column %}
       {% dnd_column
         offset=6,
-        width=6,
-        padding={
-          "default" : {
-            "top" : "60px"
-          },
-          "mobile" : {
-            "top" : "20px"
-          }
-        }
+        width=6
       %}
         {% dnd_row %}
           {% dnd_module

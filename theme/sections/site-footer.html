@@ -2,14 +2,14 @@
   templateType: section
   label: Site footer
   isAvailableForNewContent: true
-  screenshotPath: ../images/section-previews/11111111.png
+  screenshotPath: ../images/section-previews/site-footer.png
 -->
 
 {% dnd_section
   background_color="rgba(61, 47, 82, 1)",
   padding={
     "default" : {
-      "bottom" : "60px"
+      "bottom" : "40px"
     }
   },
   full_width=false
@@ -62,7 +62,7 @@
             style={
               "custom_theme_overrides" : {
                 "color" : {
-                  "color" : "#ae7efb",
+                  "color" : "#d2b5ff",
                   "opacity" : 100
                 }
               }
@@ -258,7 +258,7 @@
             style={
               "custom_theme_overrides" : {
                 "color" : {
-                  "color" : "#ae7efb",
+                  "color" : "#d2b5ff",
                   "opacity" : 100
                 }
               }
@@ -272,6 +272,9 @@
             path="@hubspot/simple_menu",
             offset=0,
             width=12,
+            hidden={
+              "default" : false
+            },
             menu_tree=[ {
               "children" : [ ],
               "isPublished" : false,
@@ -320,7 +323,7 @@
             style={
               "custom_theme_overrides" : {
                 "color" : {
-                  "color" : "#ae7efb",
+                  "color" : "#d2b5ff",
                   "opacity" : 100
                 }
               }
@@ -445,6 +448,9 @@
             path="@hubspot/simple_menu",
             offset=0,
             width=12,
+            hidden={
+              "default" : false
+            },
             menu_tree=[ {
               "children" : [ ],
               "isPublished" : false,

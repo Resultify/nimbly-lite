@@ -6,14 +6,13 @@
 -->
 
 {% dnd_section
+  background_color="rgba(255, 255, 255, 1)",
   padding={
     "default" : {
-      "bottom" : "0px",
-      "top" : "0px"
+      "bottom" : "16px",
+      "top" : "16px"
     }
-  },
-  background_color="rgba(255, 255, 255, 1)",
-  full_width=false
+  }
 %}
   {% dnd_column
     offset=0,
@@ -35,43 +34,17 @@
               "no_follow" : false,
               "open_in_new_tab" : false,
               "url" : {
-                "href" : "#",
+                "href" : "",
                 "type" : "EXTERNAL"
               }
             },
             "text" : "GET NIMBLY"
           } ]
         },
-        logo={
-          "logo" : {
-            "override_inherited_src" : false
-          }
-        },
-        menu={
-          "menu" : 56774137571
-        },
         style={
           "button" : {
             "presets" : {
               "size" : "btn-small"
-            }
-          },
-          "general" : {
-            "spacing" : {
-              "spacing" : {
-                "padding" : {
-                  "bottom" : {
-                    "units" : "px",
-                    "value" : 12
-                  },
-                  "left" : { },
-                  "right" : { },
-                  "top" : {
-                    "units" : "px",
-                    "value" : 12
-                  }
-                }
-              }
             }
           },
           "logo" : {
@@ -92,10 +65,6 @@
             "search_button" : {
               "background_hover" : {
                 "color" : "#EEEEEE",
-                "opacity" : 100
-              },
-              "color" : {
-                "color" : "#000000",
                 "opacity" : 100
               }
             },
@@ -139,7 +108,7 @@
                     }
                   }
                 },
-                "border_radius" : 48
+                "border_radius" : 24
               },
               "style" : "narrow"
             }
