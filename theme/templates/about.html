@@ -1,0 +1,66 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  enableDomainStylesheets: false
+  label: About
+  screenshotPath: ../images/template-previews/about.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+  {% dnd_area 'dnd_area'
+    label='About template',
+    class='about-template'
+  %}
+
+    {% include_dnd_partial path='../sections/subpage-banner.html' context={} %}
+    {% include_dnd_partial path='../sections/about-us-text.html' context={} %}
+    {% include_dnd_partial path='../sections/why-our-services.html' context={} %}
+    {% include_dnd_partial path='../sections/our-team.html' context={} %}
+
+    {% dnd_section
+      padding={
+        "default" : {
+          "bottom" : "0px",
+          "top" : "0px"
+        }
+      },
+      full_width=true
+    %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          "default" : {
+            "left" : "0px",
+            "right" : "0px"
+          }
+        }
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="/nimbly-lite/modules/svg-divider",
+            offset=0,
+            width=12,
+            divider="wave_right_cover_bottom",
+            style={
+              "background" : {
+                "color" : {
+                  "color" : "#FFFFFF",
+                  "css" : "#FFFFFF",
+                  "opacity" : 100
+                }
+              }
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {% include_dnd_partial path='../sections/request-demo.html' context={} %}
+
+  {% end_dnd_area %}
+
+{% endblock body %}
