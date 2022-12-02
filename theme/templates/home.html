@@ -2,7 +2,7 @@
   templateType: page
   isAvailableForNewContent: true
   enableDomainStylesheets: false
-  label: Home page
+  label: Home
   screenshotPath: ../images/template-previews/home.png
 -->
 {% extends "./layouts/base.html" %}
@@ -14,15 +14,23 @@
     class='home-template'
   %}
 
-    {% include_dnd_partial path='../sections/heroimage--v1.html' context={} %}
-    {% include_dnd_partial path='../sections/richtext--v1.html' context={} %}
-    {% include_dnd_partial path='../sections/cards--3col--v1.html' context={} %}
+    {% include_dnd_partial path='../sections/home-page-banner.html' context={} %}
+    {% include_dnd_partial path='../sections/general-brand-text.html' context={} %}
+    {% include_dnd_partial path='../sections/general-features-in-3columns.html' context={} %}
 
     {% dnd_section
       padding={
         "default" : {
           "bottom" : "0px",
           "top" : "0px"
+        }
+      },
+      margin={
+        "default" : {
+          "top" : "-40px"
+        },
+        "mobile" : {
+          "top" : "-20px"
         }
       },
       full_width=true
@@ -57,16 +65,24 @@
       {% end_dnd_column %}
     {% end_dnd_section %}
 
-    {% include_dnd_partial path='../sections/text-richtext--4col--v1.html' context={} %}
-    {% include_dnd_partial path='../sections/imagecards--3row--v1.html' context={} %}
-    {% include_dnd_partial path='../sections/quote--v1.html' context={} %}
-    {% include_dnd_partial path='../sections/cards--3col--v2.html' context={} %}
+    {% include_dnd_partial path='../sections/product-in-numbers.html' context={} %}
+    {% include_dnd_partial path='../sections/card-with-image-in-3rows.html' context={} %}
+    {% include_dnd_partial path='../sections/quote.html' context={} %}
+    {% include_dnd_partial path='../sections/latest-insights.html' context={} %}
 
     {% dnd_section
       padding={
         "default" : {
           "bottom" : "0px",
           "top" : "0px"
+        }
+      },
+      margin={
+        "default" : {
+          "top" : "-40px"
+        },
+        "mobile" : {
+          "top" : "-20px"
         }
       },
       full_width=true
@@ -91,7 +107,6 @@
               "background" : {
                 "color" : {
                   "color" : "#FFFFFF",
-                  "css" : "#FFFFFF",
                   "opacity" : 100
                 }
               }
@@ -102,7 +117,7 @@
       {% end_dnd_column %}
     {% end_dnd_section %}
 
-    {% include_dnd_partial path='../sections/text-form--2col--v1.html' context={} %}
+    {% include_dnd_partial path='../sections/request-demo.html' context={} %}
 
   {% end_dnd_area %}
 
