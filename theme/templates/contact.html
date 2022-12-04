@@ -2,8 +2,8 @@
   templateType: page
   isAvailableForNewContent: true
   enableDomainStylesheets: false
-  label: About
-  screenshotPath: ../images/template-previews/about.png
+  label: Contact
+  screenshotPath: ../images/template-previews/contact.png
 -->
 {% extends "./layouts/base.html" %}
 
@@ -14,10 +14,9 @@
     class='about-template'
   %}
 
-    {% include_dnd_partial path='../sections/subpage-banner.html' context={} %}
-    {% include_dnd_partial path='../sections/about-us-text.html' context={} %}
-    {% include_dnd_partial path='../sections/why-our-services.html' context={} %}
-    {% include_dnd_partial path='../sections/our-team.html' context={} %}
+    {% include_dnd_partial path='../sections/subpage-banner.html' context={headingText:"Contact us"} %}
+    {% include_dnd_partial path='../sections/address.html' context={} %}
+    {% include_dnd_partial path='../sections/contacts.html' context={} %}
 
     {% dnd_section
       padding={
@@ -59,7 +58,7 @@
       {% end_dnd_column %}
     {% end_dnd_section %}
 
-    {% include_dnd_partial path='../sections/request-demo.html' context={} %}
+    {% include_dnd_partial path='../sections/contact-form.html' context={} %}
 
   {% end_dnd_area %}
 

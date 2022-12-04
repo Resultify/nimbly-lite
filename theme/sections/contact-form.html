@@ -1,0 +1,143 @@
+<!--
+  templateType: section
+  label: Contact form
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/contact-form.png
+-->
+
+{% dnd_section
+  max_width=800,
+  full_width=false,
+  background_linear_gradient={
+    "colors" : [ "rgba(192, 153, 251, 1)", "rgba(97, 75, 129, 1)" ],
+    "direction" : "to bottom"
+  },
+  padding={
+    "default" : {
+      "top" : "160px"
+    },
+    "mobile" : {
+      "top" : "80px"
+    }
+  }
+%}
+  {% dnd_column
+    offset=0,
+    width=12,
+    padding={
+      "default" : {
+        "left" : "0px",
+        "right" : "0px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_column
+        offset=0,
+        width=12
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/heading",
+            offset=0,
+            width=12,
+            display="display-6",
+            style={
+              "alignment" : {
+                "alignment" : {
+                  "horizontal_align" : "CENTER"
+                }
+              },
+              "custom_theme_overrides" : {
+                "color" : {
+                  "color" : "#FFFFFF",
+                  "opacity" : 100
+                }
+              }
+            },
+            text="Contact form"
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/text",
+            offset=0,
+            width=12,
+            style={
+              "alignment" : {
+                "alignment" : {
+                  "horizontal_align" : "CENTER"
+                }
+              },
+              "custom_theme_overrides" : {
+                "font" : {
+                  "color" : "#FFFFFF"
+                }
+              }
+            },
+            text="Get in touch with us using this form and we get back to you within 24 hours"
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_column
+        offset=0,
+        width=12,
+        padding={
+          "default" : {
+            "top" : "40px"
+          }
+        }
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/form",
+            offset=0,
+            width=12,
+            form={
+              "form_id" : "",
+              "form_type" : "HUBSPOT",
+              "message" : "Thanks for submitting the form.",
+              "response_type" : "inline"
+            },
+            style={
+              "button" : {
+                "alignment" : {
+                  "alignment" : {
+                    "horizontal_align" : "CENTER"
+                  }
+                },
+                "presets" : {
+                  "style" : "btn-secondary3"
+                },
+                "spacing" : {
+                  "spacing" : {
+                    "padding" : {
+                      "bottom" : { },
+                      "left" : { },
+                      "right" : { },
+                      "top" : {
+                        "units" : "px",
+                        "value" : 20
+                      }
+                    }
+                  }
+                }
+              },
+              "input_label" : {
+                "font" : {
+                  "color" : "#FFFFFF",
+                  "font_set" : "DEFAULT"
+                }
+              }
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
