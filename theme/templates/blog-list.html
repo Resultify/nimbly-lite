@@ -14,53 +14,78 @@
     class='blog-list-template'
   %}
 
-    {% dnd_section
-      background_color="rgba(238, 238, 238, 1)"
-    %}
+    {% include_dnd_partial path='../sections/subpage-banner.html' context={headingText:"Blog"} %}
+
+    {% dnd_section %}
       {% dnd_column
         offset=0,
-        width=12
+        width=12,
+        padding={
+          "default" : {
+            "left" : "0px",
+            "right" : "0px"
+          }
+        }
       %}
         {% dnd_row %}
           {% dnd_module
-            path="../modules/heroimage",
+            path="../modules/blog-list",
             offset=0,
             width=12,
-            heading={
-              "text" : "Blog",
-              "heading_tag" : "h1"
-            },
-            richtext={
-              "rich_text" : "<p style=\"text-align: center;\"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elementum iaculis dui, ut dictum nibh ultrices eu. Sed consectetur hendrerit leo eu mattis. Proin hendrerit nisi at molestie tempor. Etiam in ultricies nisi. Curabitur dignissim rhoncus risus, a accumsan justo convallis id. In quis nisi ut ligula congue laoreet eu vitae nisi. Aenean varius rhoncus ipsum pretium dictum. Donec vulputate nunc purus. Praesent consequat ipsum sed dignissim ornare.</span></p>"
+            blog_components=[ {
+              "component" : "Image",
+              "show" : true
+            }, {
+              "component" : "Tags",
+              "show" : true
+            }, {
+              "component" : "Heading",
+              "show" : true
+            }, {
+              "component" : "Date",
+              "show" : false
+            }, {
+              "component" : "Author",
+              "show" : false
+            }, {
+              "component" : "Author and Date",
+              "show" : false
+            }, {
+              "component" : "Description",
+              "show" : true
+            } ],
+            button={
+              "show" : true
             },
             style={
-              "general" : {
+              "button" : {
+                "presets" : {
+                  "size" : "btn-small",
+                  "style" : "btn-secondary2"
+                }
+              },
+              "heading" : {
+                "custom_theme_overrides" : {
+                  "color" : {
+                    "color" : "#000000",
+                    "opacity" : 100
+                  }
+                }
+              },
+              "link" : {
                 "spacing" : {
                   "spacing" : {
                     "padding" : {
-                      "bottom" : {
-                        "units" : "px",
-                        "value" : 100
-                      },
+                      "bottom" : { },
                       "left" : { },
                       "right" : { },
                       "top" : {
                         "units" : "px",
-                        "value" : 100
+                        "value" : 16
                       }
                     }
                   }
                 }
-              },
-              "heading" : {
-                "alignment" : {
-                  "alignment" : {
-                    "horizontal_align" : "CENTER"
-                  }
-                }
-              },
-              "text_body" : {
-                "caption_width" : 100
               }
             }
           %}
@@ -69,23 +94,14 @@
       {% end_dnd_column %}
     {% end_dnd_section %}
 
-    {% dnd_section %}
-      {% dnd_column
-        offset=0,
-        width=12
-      %}
-        {% dnd_row %}
-          {% dnd_module
-            path="../modules/blog-list",
-            offset=0,
-            width=12
-          %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-      {% end_dnd_column %}
-    {% end_dnd_section %}
-
-    {% dnd_section %}
+    {% dnd_section
+      padding={
+        "default" : {
+          "top" : "0px"
+        }
+      },
+      full_width=false
+    %}
       {% dnd_column
         offset=0,
         width=12

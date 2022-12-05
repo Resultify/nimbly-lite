@@ -55,7 +55,78 @@
   <div class="blog-related-posts_wrp">
     <div class="blog-related-posts blog-post-section">
       {% module 'related_posts'
-        path='../modules/blog-related'
+        path="../modules/blog-related",
+        offset=0,
+        width=12,
+        blog_components=[ {
+          "component" : "Image",
+          "show" : true
+        }, {
+          "component" : "Tags",
+          "show" : true
+        }, {
+          "component" : "Date",
+          "show" : true
+        }, {
+          "component" : "Heading",
+          "show" : true
+        }, {
+          "component" : "Author",
+          "show" : false
+        }, {
+          "component" : "Author and Date",
+          "show" : false
+        }, {
+          "component" : "Description",
+          "show" : true
+        } ],
+        general_heading={
+          "display" : "h1",
+          "text" : "Related articles"
+        },
+        layout={
+          "number_of_posts" : 3
+        },
+        style={
+          "button" : {
+            "presets" : {
+              "size" : "btn-small",
+              "style" : "btn-secondary2"
+            }
+          },
+          "general" : {
+            "spacing" : {
+              "spacing" : {
+                "padding" : {
+                  "bottom" : {
+                    "units" : "px",
+                    "value" : 60
+                  },
+                  "left" : { },
+                  "right" : { },
+                  "top" : {
+                    "units" : "px",
+                    "value" : 60
+                  }
+                }
+              }
+            }
+          },
+          "heading" : {
+            "custom_theme_overrides" : {
+              "color" : {
+                "color" : "#000000",
+                "opacity" : 100
+              }
+            }
+          },
+          "image" : {
+            "custom_image_fit" : {
+              "image_aspect_ratio" : "16/9",
+              "image_fit" : "cover"
+            }
+          }
+        }
       %}
     </div>
   </div>

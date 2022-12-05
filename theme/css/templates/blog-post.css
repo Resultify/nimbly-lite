@@ -4,7 +4,6 @@
 
 .blog-post_wrp {
   margin: 50px auto;
-  /* margin: 20px 0; */
 }
 
 .blog-post__tags {
@@ -16,15 +15,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 10px;
 }
 
 .blog-post__meta-info {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .blog-post__meta-author-avatar_wrp {
-  padding-right: 10px;
+  display: inline-flex;
 }
 
 .blog-post__meta-author-avatar {
@@ -32,8 +33,7 @@
 }
 
 .blog-related-posts_wrp {
-  background: #eee;
-  padding: 60px 0;
+  background: #F6F4FC;
 }
 
 .blog-post__body img {
