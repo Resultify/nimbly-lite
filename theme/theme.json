@@ -1,5 +1,5 @@
 {
-  "label": "nimbly-lite",
+  "label": "Nimbly Lite",
   "name": "nimbly-lite",
   "preview_path": "./templates/home.html",
   "screenshot_path": "./images/template-previews/home.png",
@@ -12,8 +12,6 @@
       "url":"https://www.resultify.se/"
   },
   "is_available_for_new_content":true,
-  "documentation_url":"https://www.nimbly.tech/",
-  "example_url":"https://www.nimbly.tech/",
   "responsive_breakpoints": [
     {
       "name": "mobile",
