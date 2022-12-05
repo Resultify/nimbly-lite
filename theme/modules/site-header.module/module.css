@@ -17,6 +17,7 @@
   transition: box-shadow 0.15s ease-in-out;
   background: transparent;
   border: none;
+  min-width: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -223,6 +224,12 @@
   margin: 0;
   border: 1px solid #999;
   background: #fff;
+  border-radius: 0;
+}
+
+.header-search__form-input:focus-visible {
+  outline-width: 1px;
+  outline-offset: 0;
 }
 
 .header-search__form-btn {

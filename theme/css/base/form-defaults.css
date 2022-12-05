@@ -23,6 +23,10 @@
   width: 100%;
 }
 
+.form-default form fieldset.form-columns-2 .hs-form-field .input .hs-input {
+  width: 100%;
+}
+
 .form-default fieldset.form-columns-1 .input input[type="radio"],
 .form-default fieldset.form-columns-1 .input input[type="checkbox"] {
   width: 1.2em;
