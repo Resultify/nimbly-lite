@@ -1,7 +1,7 @@
 # Create a new module
 
 ## Steps
-1. Clone existed Nimbly module or template module
+1. Clone existed Nimbly module or Template module
 2. Move the newly created module to the child theme
 3. Rename if you need a new module or keep the same name if you need to adjust the existing module
 
