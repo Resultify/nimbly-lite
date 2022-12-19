@@ -1,5 +1,6 @@
 {
   "global" : false,
+  "icon" : "../../images/module-icons/template.svg",
   "host_template_types" : [ "PAGE" ],
   "module_id" : 53809688287,
   "label" : "Template",
