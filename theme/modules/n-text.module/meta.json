@@ -2,12 +2,12 @@
   "global" : false,
   "placeholder" : {
     "show_module_icon" : true,
-    "title" : "Heading",
-    "description" : "Add heading element"
+    "title" : "Text",
+    "description" : "Add text element"
   },
-  "icon" : "../../images/module-icons/heading.svg",
+  "icon" : "../../images/module-icons/text.svg",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "module_id" : 53809587158,
-  "label" : "Heading",
+  "module_id" : 58315510465,
+  "label" : "Text",
   "is_available_for_new_content" : true
 }

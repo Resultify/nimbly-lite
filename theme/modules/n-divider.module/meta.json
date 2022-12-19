@@ -2,7 +2,7 @@
   "global" : false,
   "icon" : "../../images/module-icons/divider.svg",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "module_id" : 57119117787,
+  "module_id" : 58314605798,
   "label" : "Divider",
   "is_available_for_new_content" : true
 }
