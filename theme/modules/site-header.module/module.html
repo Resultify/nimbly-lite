@@ -5,9 +5,9 @@
 {% import '../../css/macros/macros.css' %}
 
 {%- macro render_logo() -%}
-  {% if site_settings.company_domain %}
+  {% if site_settings.company_domain and module.logo.override_inherited_src == false %}
     {% set link = site_settings.company_domain %}
-  {% elif module.logo.link.href %}
+  {% elif module.logo.link.href != '' %}
     {% set link = module.logo.link.href %}
   {% else %}
     {% set link = '/' %}
