@@ -9,9 +9,8 @@
   "scripts": {
     "prepare": "husky install",
     "lint-src-css": "stylelint 'src/css/**/*.css' 'theme/css/base/**/*.css' 'theme/modules/**/*.css' ",
-    "lint-theme-modules-css": "stylelint 'theme/modules/**/*.css'",
     "lint-js": "standard -v 'src/js/**/*.js build/**/*.js theme/**/*.js'",
-    "lint-all": "npm run lint-src-css && npm run lint-theme-modules-css && npm run lint-js",
+    "lint-all": "npm run lint-src-css && npm run lint-js",
     "test": "npm run lint-all",
     "build": "node build/build.js",
     "upload": "node build/upload.js",
@@ -25,17 +24,17 @@
     "simplelightbox": "~2.11.0"
   },
   "devDependencies": {
-    "@resultify/hubspot-cms-lib": "1.0.0",
+    "@resultify/hubspot-cms-lib": "1.0.3",
     "browserslist": "~4.21.4",
-    "husky": "~8.0.2",
+    "husky": "~8.0.3",
     "standard": "~17.0.0",
-    "stylelint": "~14.15.0",
+    "stylelint": "~14.16.1",
     "stylelint-config-standard": "~29.0.0",
     "stylelint-no-unsupported-browser-features": "~6.0.1"
   },
   "engines": {
-    "node": ">=16.13.0",
-    "npm": ">=8.19.3"
+    "node": ">=16.13",
+    "npm": ">=8.19"
   },
   "browserslist": [
     "> 1.5%"
