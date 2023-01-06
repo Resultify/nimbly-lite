@@ -1,13 +1,13 @@
 # Nimbly Lite
 ***
 
-## Quick start
+## Requirements
 
 1. Create a HubSpot development sandbox for testing and development purposes. [Link](https://app.hubspot.com/signup-hubspot/cms-developers)
 
 2. Create a personal CMS access key to enable authenticated access to your account. [Link](https://app.hubspot.com/l/personal-access-key)
 
-### Development
+### Quick start
 
 1. `npm install` - install all development dependencies
 2. Add to `.env` file your portal name and `PERSONAL_ACCESS_KEY` [Read more](#custom-multi-account-authentication)
@@ -34,7 +34,7 @@
 ### `.env` file example
 
 ```
-hub_sandbox=personal_access_key for sandbox portal
-hub_project1=personal_access_key for project1 portal
-hub_project2=personal_access_key for project2 portal
+hub_sandbox=personal_access_key
+hub_project1=personal_access_key
+hub_project2=personal_access_key
 ```
