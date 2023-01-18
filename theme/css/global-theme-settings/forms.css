@@ -132,7 +132,8 @@
   }
 {% endif %}
 
-.form-default input::placeholder {
+.form-default input::placeholder,
+.form-default textarea::placeholder {
   {% if theme.forms.placeholder.font.style %}
     {{theme.forms.placeholder.font.style}};
   {% endif %}
