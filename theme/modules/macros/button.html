@@ -207,7 +207,7 @@
           {%- if data.icon.icon_position == 'left' -%}
             {{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
               {
-                id: 'button'
+                id: options.id is truthy ? "button-" ~ options.id : "button"
               }
             )}}
           {%- endif -%}
@@ -217,7 +217,7 @@
           {%- if data.icon.icon_position == 'right' -%}
             {{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
               {
-                id: 'button'
+                id: options.id is truthy ? "button-" ~ options.id : "button"
               }
              )}}
           {%- endif -%}
