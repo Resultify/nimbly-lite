@@ -484,7 +484,7 @@
   "help_text" : "Button link",
   "required" : false,
   "locked" : false,
-  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "CALL_TO_ACTION" ],
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
   "show_advanced_rel_options" : false,
   "type" : "link",
   "default" : {
