@@ -64,19 +64,19 @@
           </button>
 
           <ul role="list" class="dropdown-menu header-language__list">
-            <li class="header-language__list-item header-language__list-item--current">
-              <a class="header-language__list-item-link header-language__list-item-link--current hs-skip-lang-url-rewrite"
-              lang="{{content.language.languageTag}}" hreflang="{{content.language.languageTag}}"
-              href="{{content.absolute_url}}">
-                {% if module.language_switcher.dropdown.show_current_language %}
+            {% if module.language_switcher.dropdown.show_current_language %}
+              <li class="header-language__list-item header-language__list-item--current">
+                <a class="header-language__list-item-link header-language__list-item-link--current hs-skip-lang-url-rewrite"
+                  lang="{{content.language.languageTag}}" hreflang="{{content.language.languageTag}}"
+                  href="{{content.absolute_url}}">
                   {% if module.language_switcher.dropdown.show_language_code %}
                     {{content.language.languageTag|upper}}
                   {% else %}
                     {{locale_name(content.language)}}
                   {% endif %}
-                {% endif %}
-              </a>
-            </li>
+                </a>
+              </li>
+            {% endif %}
 
             {% for item in content.translated_content.values()|selectattr('published') %}
               {% if module.language_switcher.dropdown.show_language_code %}
