@@ -31,6 +31,16 @@
       {{module.style.secondary_link.spacing.spacing.css}}
     }
 
+    .pagination-module__page-link--active .g-module-macros-link {
+      {% if module.style.secondary_link.active.background.css %}
+        background-color: {{module.style.secondary_link.active.background.css}};
+      {% endif %}
+      {{module.style.secondary_link.active.border.css}}
+      {% if module.style.secondary_link.active.border_radius %}
+        border-radius: {{module.style.secondary_link.active.border_radius ~ 'px'}};
+      {% endif %}
+    }
+
   {% end_scope_css %}
 </style>
 
