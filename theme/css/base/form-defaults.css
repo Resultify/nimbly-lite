@@ -157,7 +157,8 @@
   color: var(--_form-error-color);
 }
 
-.form-default input::placeholder {
+.form-default input::placeholder,
+.form-default textarea::placeholder {
   color: var(--_form-placeholder-color);
 }
 
