@@ -358,14 +358,28 @@
         "step" : 1,
         "suffix" : "%",
         "type" : "number",
-        "default" : 80
+        "default" : 80,
+        "visibility": {
+          "operator": "EQUAL",
+          "controlling_field": "9d7a51bd-ab83-22f3-7f99-5ae8fb284bad",
+          "controlling_value_regex": "false"
+         }
+      }, {
+        "type": "boolean",
+        "id": "9d7a51bd-ab83-22f3-7f99-5ae8fb284bad",
+        "default": false,
+        "display": "checkbox",
+        "label": "Image width",
+        "name": "image_width",
+        "help_text" : "Sets internal width to the width of the image"
       } ],
       "tab" : "STYLE",
       "expanded" : false,
       "type" : "group",
       "default" : {
         "column_width" : 50,
-        "internal_width" : 80
+        "internal_width" : 80,
+        "image_width" : false
       }
     }, {
       "id" : "style.image.custom_image_fit",
@@ -429,7 +443,8 @@
       "border" : { },
       "width" : {
         "column_width" : 50,
-        "internal_width" : 80
+        "internal_width" : 80,
+        "image_width" : false
       },
       "custom_image_fit" : { }
     }
@@ -3498,7 +3513,8 @@
       "border" : { },
       "width" : {
         "column_width" : 50,
-        "internal_width" : 80
+        "internal_width" : 80,
+        "image_width" : false
       },
       "custom_image_fit" : { }
     },

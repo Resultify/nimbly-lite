@@ -34,9 +34,6 @@
     .image-card-module__image .g-module-macros-image_wrp {
       display: flex;
     }
-    .image-card-module__image .g-module-macros-image {
-      flex: 0 0 100%;
-    }
   </style>
 {% end_require_css %}
 
@@ -70,14 +67,21 @@
         flex-basis: {{module.style.image.width.column_width ~ '%'}};
       {% endif %}
     }
+
     .image-card-module__image {
       {% if module.style.image.background.color.css %}
         background-color: {{module.style.image.background.color.css}};
       {% endif %}
-      {% if module.style.image.width.internal_width %}
+      {% if not module.style.image.width.image_width and module.style.image.width.internal_width %}
         flex-basis: {{module.style.image.width.internal_width ~ '%'}};
       {% endif %}
       {{module.style.image.spacing.spacing.css}}
+    }
+
+    .image-card-module__image .g-module-macros-image {
+      {% if not module.style.image.width.image_width %}
+        flex: 0 0 100%;
+      {% endif %}
     }
 
     .image-card-module__text-column_wrp {
@@ -112,11 +116,12 @@
       .image-card-module {
         flex-direction: column;
       }
-      .image-card-module__image,
+      {% if not module.style.image.width.image_width %}
+        .image-card-module__image {
+          flex-basis: 100%;
+        }
+      {% endif %}
       .image-card-module__text-column {
-        flex-basis: 100%;
-      }
-      .image-card-module__image {
         flex-basis: 100%;
       }
       .image-card-module__image_wrp {
