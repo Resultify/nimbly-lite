@@ -34,15 +34,22 @@
     .image-card-module__image .g-module-macros-image_wrp {
       display: flex;
     }
-    .image-card-module__image .g-module-macros-image {
-      flex: 0 0 100%;
-    }
   </style>
 {% end_require_css %}
 
 {# module scope css #}
 <style>
   {% scope_css %}
+
+    .image-card-module__image .g-module-macros-image_wrp {
+      justify-content: {{module.style.image.image.alignment.alignment.horizontal_align}};
+    }
+    {% if module.style.image.image.alignment.full_width %}
+      .image-card-module__image .g-module-macros-image {
+        flex: 1;
+      }
+    {% endif %}
+
     .image-card-module {
       {% if module.style.general.border.border_radius != null %}
         border-radius: {{module.style.general.border.border_radius ~ 'px'}};
@@ -71,6 +78,7 @@
       {% endif %}
     }
     .image-card-module__image {
+      text-align: {{module.style.image.image.alignment.alignment.horizontal_align}};
       {% if module.style.image.background.color.css %}
         background-color: {{module.style.image.background.color.css}};
       {% endif %}
@@ -112,19 +120,18 @@
       .image-card-module {
         flex-direction: column;
       }
-      .image-card-module__image,
-      .image-card-module__text-column {
-        flex-basis: 100%;
-      }
-      .image-card-module__image {
-        flex-basis: 100%;
-      }
       .image-card-module__image_wrp {
         {% if module.style.image.alignment.position_on_mobile == 'top' %}
             order: 1;
           {% else %}
             order: 3;
         {% endif %}
+      }
+      .image-card-module__image {
+        text-align: {{module.style.image.image.alignment.mobile_alignment.horizontal_align}};
+      }
+      .image-card-module__image .g-module-macros-image_wrp {
+        justify-content: {{module.style.image.image.alignment.mobile_alignment.horizontal_align}};
       }
       .image-card-module__text-column {
         flex-basis: 100%;
@@ -336,7 +343,7 @@
 {%- macro image_column() -%}
   <div class="image-card-module__image_wrp">
     <div class="image-card-module__image">
-      {{image_macros.render_image_tmpl(module.image, module.style.image, module,
+      {{image_macros.render_image_tmpl(module.image, module.style.image.image, module,
         {
           stretched_link: image_stretched_link
         }

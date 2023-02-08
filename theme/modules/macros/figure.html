@@ -89,12 +89,13 @@
     <style>
       {%- scope_css -%}
         {% if data.caption.rich_text %}
-          .{{figure_class}} {
+          .g-module-macros-figure {
             display: inline-flex;
             flex-direction: column;
           }
-          .{{figure_class}} + .g-module-macros-figure__caption_wrp {
-            padding-top: 0.5rem;
+          .g-module-macros-figure__caption_wrp {
+            padding: 0.3rem 0;
+            line-height: 1.1;
           }
         {% endif %}
 
