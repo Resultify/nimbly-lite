@@ -56,12 +56,40 @@
         "locked" : false,
         "type" : "spacing",
         "default" : { }
+      }, {
+        "id" : "4de37c82-3f97-01d4-6122-867646261bf0",
+        "name" : "vertical_gap",
+        "display_width" : "half_width",
+        "label" : "Columns gap",
+        "help_text" : "Columns vertical gap",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "suffix" : "px",
+        "type" : "number",
+        "default" : 0
+      }, {
+        "id" : "7a52a2bd-b4bb-ecc0-6c01-7b086a804afa",
+        "name" : "horizontal_gap",
+        "display_width" : "half_width",
+        "label" : "Mobile gap",
+        "help_text" : "Mobile horizontal gap",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "suffix" : "px",
+        "type" : "number",
+        "default" : 10
       } ],
       "tab" : "STYLE",
       "expanded" : false,
       "type" : "group",
       "default" : {
-        "spacing" : { }
+        "spacing" : { },
+        "vertical_gap" : 0,
+        "horizontal_gap" : 10
       }
     }, {
       "id" : "830e7366-cfa0-a37e-976d-cedf4211de9c",
@@ -165,7 +193,9 @@
     "default" : {
       "presets" : { },
       "spacing" : {
-        "spacing" : { }
+        "spacing" : { },
+        "vertical_gap" : 0,
+        "horizontal_gap" : 10
       },
       "background" : {
         "color" : {
@@ -199,22 +229,9 @@
       "required" : false,
       "locked" : false,
       "children" : [ {
-        "id" : "07cf4f0b-2881-61d4-c0dc-4fd270912276",
-        "name" : "alignment",
-        "display_width" : null,
-        "label" : "Alignment",
-        "required" : false,
-        "locked" : false,
-        "alignment_direction" : "BOTH",
-        "type" : "alignment",
-        "default" : {
-          "horizontal_align" : "CENTER",
-          "vertical_align" : "MIDDLE"
-        }
-      }, {
         "id" : "e6dc0677-397e-cdf3-d888-f21aa87df985",
         "name" : "position",
-        "display_width" : null,
+        "display_width" : "half_width",
         "label" : "Position",
         "required" : true,
         "locked" : false,
@@ -227,8 +244,8 @@
       }, {
         "id" : "9721d88f-5973-2236-c481-070f7667492e",
         "name" : "position_on_mobile",
-        "display_width" : null,
-        "label" : "Position on mobile",
+        "display_width" : "half_width",
+        "label" : "On mobile",
         "required" : true,
         "locked" : false,
         "display" : "select",
@@ -237,17 +254,112 @@
         "reordering_enabled" : true,
         "type" : "choice",
         "default" : "top"
+      }, {
+        "id" : "3d52f831-6116-61e6-98ff-e837e2f46e09",
+        "name" : "vertical",
+        "display_width" : null,
+        "label" : "Vertical column alignment ",
+        "required" : false,
+        "locked" : false,
+        "alignment_direction" : "VERTICAL",
+        "type" : "alignment",
+        "default" : {
+          "vertical_align" : "MIDDLE"
+        }
+      }, {
+        "id" : "2c9fb291-7eb9-5851-f2fd-14d8abdc43a9",
+        "name" : "internal_width",
+        "display_width" : "half_width",
+        "label" : "Desktop",
+        "help_text" : "Internal width. Change internal Image column width inside general Image|Card two-column layout",
+        "inline_help_text" : "Internal width",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "min" : 0,
+        "max" : 100,
+        "step" : 1,
+        "suffix" : "%",
+        "type" : "number",
+        "default" : 100
+      }, {
+        "id" : "style.image.alignment.mobile_internal_width",
+        "name" : "mobile_internal_width",
+        "display_width" : "half_width",
+        "label" : "Mobile",
+        "help_text" : "Internal width on mobile. Change internal Image column width inside general Image|Card two-column layout",
+        "inline_help_text" : "Internal width",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "min" : 0,
+        "max" : 100,
+        "step" : 1,
+        "suffix" : "%",
+        "type" : "number",
+        "default" : 100
+      }, {
+        "id" : "07cf4f0b-2881-61d4-c0dc-4fd270912276",
+        "name" : "desktop_alignment",
+        "display_width" : "half_width",
+        "label" : "Desktop",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "2c9fb291-7eb9-5851-f2fd-14d8abdc43a9",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "100",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
+        "alignment_direction" : "HORIZONTAL",
+        "type" : "alignment",
+        "default" : {
+          "horizontal_align" : "CENTER",
+          "vertical_align" : "MIDDLE"
+        }
+      }, {
+        "id" : "c7be8b55-29dc-56df-a923-1258e1a2a7aa",
+        "name" : "mobile_alignment",
+        "display_width" : "half_width",
+        "label" : "Mobile",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "style.image.alignment.mobile_internal_width",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "100",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
+        "alignment_direction" : "HORIZONTAL",
+        "type" : "alignment",
+        "default" : {
+          "horizontal_align" : "CENTER"
+        }
       } ],
       "tab" : "STYLE",
       "expanded" : false,
       "type" : "group",
       "default" : {
-        "alignment" : {
+        "position" : "left",
+        "position_on_mobile" : "top",
+        "vertical" : {
+          "vertical_align" : "MIDDLE"
+        },
+        "internal_width" : 100,
+        "mobile_internal_width" : 100,
+        "desktop_alignment" : {
           "horizontal_align" : "CENTER",
           "vertical_align" : "MIDDLE"
         },
-        "position" : "left",
-        "position_on_mobile" : "top"
+        "mobile_alignment" : {
+          "horizontal_align" : "CENTER"
+        }
       }
     }, {
       "id" : "11a3087a-72da-0c6c-ccb6-32518b8a54c1",
@@ -308,15 +420,15 @@
       "name" : "width",
       "display_width" : null,
       "label" : "Width",
-      "help_text" : "Column width",
+      "help_text" : "",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "10c061b7-f9ba-42a5-b873-df793a16dd86",
         "name" : "column_width",
-        "display_width" : "half_width",
-        "label" : "Width",
-        "help_text" : "Image column width. The width of the text column will be calculated automatically.",
+        "display_width" : null,
+        "label" : "Image column width",
+        "inline_help_text" : "Text column width will be calculated automatically based on this value",
         "required" : false,
         "locked" : false,
         "display" : "text",
@@ -326,27 +438,12 @@
         "suffix" : "%",
         "type" : "number",
         "default" : 50
-      }, {
-        "id" : "9be7f665-c442-aeda-2e48-a6f2f7a61871",
-        "name" : "internal_width",
-        "display_width" : "half_width",
-        "label" : "Internal width",
-        "required" : false,
-        "locked" : false,
-        "display" : "text",
-        "min" : 0,
-        "max" : 100,
-        "step" : 1,
-        "suffix" : "%",
-        "type" : "number",
-        "default" : 80
       } ],
       "tab" : "STYLE",
       "expanded" : false,
       "type" : "group",
       "default" : {
-        "column_width" : 50,
-        "internal_width" : 80
+        "column_width" : 50
       }
     }, {
       "id" : "d9de71b6-50ba-d17e-f045-e95b1d8e5513",
@@ -363,10 +460,22 @@
         "required" : false,
         "locked" : false,
         "children" : [ {
-          "id" : "ceb44ace-5187-71f0-083c-89136a649953",
-          "name" : "alignment",
+          "id" : "43383c81-f76e-943d-8cab-66a281086388",
+          "name" : "full_width",
           "display_width" : null,
-          "label" : "Alignment",
+          "label" : "Full width",
+          "help_text" : "",
+          "inline_help_text" : "Stretch the image to the full width of the column. The image size will depend on the width of the image column, and the \"Content Tab -> Image -> Custom size\" option will be ignored.",
+          "required" : false,
+          "locked" : false,
+          "display" : "toggle",
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "id" : "ceb44ace-5187-71f0-083c-89136a649953",
+          "name" : "desktop_alignment",
+          "display_width" : "half_width",
+          "label" : "Desktop",
           "required" : false,
           "locked" : false,
           "visibility" : {
@@ -386,8 +495,8 @@
         }, {
           "id" : "ab92f278-447c-9d20-dfd7-a8896e63987e",
           "name" : "mobile_alignment",
-          "display_width" : null,
-          "label" : "Mobile Alignment",
+          "display_width" : "half_width",
+          "label" : "Mobile",
           "required" : false,
           "locked" : false,
           "visibility" : {
@@ -404,30 +513,18 @@
           "default" : {
             "horizontal_align" : "LEFT"
           }
-        }, {
-          "id" : "43383c81-f76e-943d-8cab-66a281086388",
-          "name" : "full_width",
-          "display_width" : null,
-          "label" : "Full width",
-          "help_text" : "",
-          "inline_help_text" : "Stretch the image to the full width of the column. The image size will depend on the width of the image column, and the \"Content Tab -> Image -> Custom size\" option will be ignored.",
-          "required" : false,
-          "locked" : false,
-          "display" : "toggle",
-          "type" : "boolean",
-          "default" : false
         } ],
         "tab" : "STYLE",
         "expanded" : false,
         "type" : "group",
         "default" : {
-          "alignment" : {
+          "full_width" : false,
+          "desktop_alignment" : {
             "horizontal_align" : "LEFT"
           },
           "mobile_alignment" : {
             "horizontal_align" : "LEFT"
-          },
-          "full_width" : false
+          }
         }
       }, {
         "id" : "35ebfc87-04d3-85aa-14ef-b80f0752a100",
@@ -495,13 +592,13 @@
       "type" : "group",
       "default" : {
         "alignment" : {
-          "alignment" : {
+          "full_width" : false,
+          "desktop_alignment" : {
             "horizontal_align" : "LEFT"
           },
           "mobile_alignment" : {
             "horizontal_align" : "LEFT"
-          },
-          "full_width" : false
+          }
         },
         "border" : { },
         "custom_image_fit" : { }
@@ -512,12 +609,20 @@
     "type" : "group",
     "default" : {
       "alignment" : {
-        "alignment" : {
+        "position" : "left",
+        "position_on_mobile" : "top",
+        "vertical" : {
+          "vertical_align" : "MIDDLE"
+        },
+        "internal_width" : 100,
+        "mobile_internal_width" : 100,
+        "desktop_alignment" : {
           "horizontal_align" : "CENTER",
           "vertical_align" : "MIDDLE"
         },
-        "position" : "left",
-        "position_on_mobile" : "top"
+        "mobile_alignment" : {
+          "horizontal_align" : "CENTER"
+        }
       },
       "spacing" : {
         "spacing" : { }
@@ -529,18 +634,17 @@
         }
       },
       "width" : {
-        "column_width" : 50,
-        "internal_width" : 80
+        "column_width" : 50
       },
       "image" : {
         "alignment" : {
-          "alignment" : {
+          "full_width" : false,
+          "desktop_alignment" : {
             "horizontal_align" : "LEFT"
           },
           "mobile_alignment" : {
             "horizontal_align" : "LEFT"
-          },
-          "full_width" : false
+          }
         },
         "border" : { },
         "custom_image_fit" : { }
@@ -554,33 +658,71 @@
     "required" : false,
     "locked" : false,
     "children" : [ {
-      "id" : "39b05323-fbc9-2b5d-d074-ab2c931e7a26",
+      "id" : "3d61bc6d-6910-ff43-96e4-779e209a3966",
       "name" : "alignment",
       "display_width" : null,
       "label" : "Alignment",
+      "help_text" : "Column alignment",
       "required" : false,
       "locked" : false,
       "children" : [ {
-        "id" : "cd8fdb2c-2dd7-3724-809f-9c3935016232",
-        "name" : "alignment",
+        "id" : "a39527c8-00aa-a2f0-f5ff-631cc03c55a7",
+        "name" : "vertical",
         "display_width" : null,
-        "label" : "Alignment",
+        "label" : "Vertical column alignment ",
         "required" : false,
         "locked" : false,
-        "alignment_direction" : "BOTH",
+        "alignment_direction" : "VERTICAL",
         "type" : "alignment",
         "default" : {
-          "horizontal_align" : "CENTER",
           "vertical_align" : "MIDDLE"
         }
       }, {
         "id" : "style.text_body.alignment.inline_alignment",
         "name" : "inline_alignment",
-        "display_width" : null,
-        "label" : "Inline alignment",
+        "display_width" : "half_width",
+        "label" : "Inline",
         "help_text" : "Align inline elements if 'inline' is enabled. For links and buttons.",
         "required" : false,
         "locked" : false,
+        "visibility_rules" : "ADVANCED",
+        "advanced_visibility" : {
+          "boolean_operator" : "OR",
+          "criteria" : [ {
+            "controlling_field" : "58a52428-371e-ce16-a218-9eec38853cfd",
+            "controlling_field_path" : null,
+            "controlling_value_regex" : "true",
+            "property" : null,
+            "operator" : "EQUAL",
+            "access" : null,
+            "hidden_subfields" : null
+          }, {
+            "controlling_field" : "8a10a919-910c-27f9-9ae1-3212597273c8",
+            "controlling_field_path" : null,
+            "controlling_value_regex" : "true",
+            "property" : null,
+            "operator" : "EQUAL",
+            "access" : null,
+            "hidden_subfields" : null
+          }, {
+            "controlling_field" : "9ab2dca9-f3fb-0786-6d8e-4fa765643a40",
+            "controlling_field_path" : null,
+            "controlling_value_regex" : "true",
+            "property" : null,
+            "operator" : "EQUAL",
+            "access" : null,
+            "hidden_subfields" : null
+          }, {
+            "controlling_field" : "ac2fa2d5-7c7e-15ec-caee-1f0e7a36792f",
+            "controlling_field_path" : null,
+            "controlling_value_regex" : "true",
+            "property" : null,
+            "operator" : "EQUAL",
+            "access" : null,
+            "hidden_subfields" : null
+          } ],
+          "children" : [ ]
+        },
         "display" : "select",
         "choices" : [ [ "flex-start", "Start" ], [ "center", "Center" ], [ "flex-end", "End" ], [ "space-around", "Space around" ], [ "space-evenly", "Space evenly" ], [ "space-between", "Space between" ] ],
         "multiple" : false,
@@ -588,30 +730,150 @@
         "type" : "choice",
         "default" : "flex-start"
       }, {
-        "id" : "406f53b9-4775-b44f-6816-23d9adf5f3a4",
-        "name" : "mobile_alignment",
-        "display_width" : null,
-        "label" : "Mobile alignment",
-        "help_text" : "Text column internal alignment on mobile",
+        "id" : "style.text_body.alignment.mobile_inline_alignment",
+        "name" : "mobile_inline_alignment",
+        "display_width" : "half_width",
+        "label" : "Mobile",
+        "help_text" : "Align inline elements on mobile if 'inline' is enabled. For links and buttons.",
         "required" : false,
         "locked" : false,
+        "visibility_rules" : "ADVANCED",
+        "advanced_visibility" : {
+          "boolean_operator" : "OR",
+          "criteria" : [ {
+            "controlling_field" : "58a52428-371e-ce16-a218-9eec38853cfd",
+            "controlling_field_path" : null,
+            "controlling_value_regex" : "true",
+            "property" : null,
+            "operator" : "EQUAL",
+            "access" : null,
+            "hidden_subfields" : null
+          }, {
+            "controlling_field" : "8a10a919-910c-27f9-9ae1-3212597273c8",
+            "controlling_field_path" : null,
+            "controlling_value_regex" : "true",
+            "property" : null,
+            "operator" : "EQUAL",
+            "access" : null,
+            "hidden_subfields" : null
+          }, {
+            "controlling_field" : "9ab2dca9-f3fb-0786-6d8e-4fa765643a40",
+            "controlling_field_path" : null,
+            "controlling_value_regex" : "true",
+            "property" : null,
+            "operator" : "EQUAL",
+            "access" : null,
+            "hidden_subfields" : null
+          }, {
+            "controlling_field" : "ac2fa2d5-7c7e-15ec-caee-1f0e7a36792f",
+            "controlling_field_path" : null,
+            "controlling_value_regex" : "true",
+            "property" : null,
+            "operator" : "EQUAL",
+            "access" : null,
+            "hidden_subfields" : null
+          } ],
+          "children" : [ ]
+        },
+        "display" : "select",
+        "choices" : [ [ "flex-start", "Start" ], [ "center", "Center" ], [ "flex-end", "End" ], [ "space-around", "Space around" ], [ "space-evenly", "Space evenly" ], [ "space-between", "Space between" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "type" : "choice",
+        "default" : "flex-start"
+      }, {
+        "id" : "ce772a60-8b41-e31b-63b2-3aed31b9d063",
+        "name" : "internal_width",
+        "display_width" : "half_width",
+        "label" : "Desktop",
+        "help_text" : "Internal width. Change internal Text column width inside general Image|Card two-column layout",
+        "inline_help_text" : "Internal width",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "min" : 0,
+        "max" : 100,
+        "step" : 1,
+        "suffix" : "%",
+        "type" : "number",
+        "default" : 80
+      }, {
+        "id" : "style.text_body.alignment.mobile_internal_width",
+        "name" : "mobile_internal_width",
+        "display_width" : "half_width",
+        "label" : "Mobile",
+        "help_text" : "Internal width on mobile. Change internal Text column width inside general Image|Card two-column layout",
+        "inline_help_text" : "Internal width",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "min" : 0,
+        "max" : 100,
+        "step" : 1,
+        "suffix" : "%",
+        "type" : "number",
+        "default" : 100
+      }, {
+        "id" : "a2294a1b-7f8f-e770-2ecc-7d7476832e6e",
+        "name" : "desktop_alignment",
+        "display_width" : "half_width",
+        "label" : "Desktop",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "ce772a60-8b41-e31b-63b2-3aed31b9d063",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "100",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : "CENTER",
+          "vertical_align" : "MIDDLE"
+        }
+      }, {
+        "id" : "2c9af66b-297a-9fe2-8ac4-1d8fe42b733b",
+        "name" : "mobile_alignment",
+        "display_width" : "half_width",
+        "label" : "Mobile",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "style.text_body.alignment.mobile_internal_width",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "100",
+          "property" : null,
+          "operator" : "NOT_EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
+        "alignment_direction" : "HORIZONTAL",
+        "type" : "alignment",
+        "default" : {
+          "horizontal_align" : "CENTER"
         }
       } ],
       "tab" : "STYLE",
       "expanded" : false,
       "type" : "group",
       "default" : {
-        "alignment" : {
-          "horizontal_align" : "CENTER",
+        "vertical" : {
           "vertical_align" : "MIDDLE"
         },
         "inline_alignment" : "flex-start",
+        "mobile_inline_alignment" : "flex-start",
+        "internal_width" : 80,
+        "mobile_internal_width" : 100,
+        "desktop_alignment" : {
+          "horizontal_align" : "CENTER",
+          "vertical_align" : "MIDDLE"
+        },
         "mobile_alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : "CENTER"
         }
       }
     }, {
@@ -619,6 +881,7 @@
       "name" : "spacing",
       "display_width" : null,
       "label" : "Spacing",
+      "help_text" : "Column spacing",
       "required" : false,
       "locked" : false,
       "children" : [ {
@@ -642,6 +905,7 @@
       "name" : "background",
       "display_width" : null,
       "label" : "Background",
+      "help_text" : "Column background",
       "required" : false,
       "locked" : false,
       "children" : [ {
@@ -667,32 +931,33 @@
         }
       }
     }, {
-      "id" : "f3bba980-a65e-21fc-9828-5719414fd4de",
-      "name" : "width",
+      "id" : "13eb55f7-24dc-eadd-e26f-7e7c16269907",
+      "name" : "text",
       "display_width" : null,
-      "label" : "Width",
+      "label" : "Text",
       "required" : false,
       "locked" : false,
       "children" : [ {
-        "id" : "6821f2c1-064b-3982-1d8a-9e771b1655f9",
-        "name" : "internal_width",
+        "id" : "406f53b9-4775-b44f-6816-23d9adf5f3a4",
+        "name" : "mobile_alignment",
         "display_width" : null,
-        "label" : "Internal width",
+        "label" : "Mobile alignment",
+        "help_text" : "Align all text at once on mobile devices",
         "required" : false,
         "locked" : false,
-        "display" : "text",
-        "min" : 0,
-        "max" : 100,
-        "step" : 1,
-        "suffix" : "%",
-        "type" : "number",
-        "default" : 80
+        "alignment_direction" : "HORIZONTAL",
+        "type" : "alignment",
+        "default" : {
+          "horizontal_align" : "LEFT"
+        }
       } ],
       "tab" : "STYLE",
       "expanded" : false,
       "type" : "group",
       "default" : {
-        "internal_width" : 80
+        "mobile_alignment" : {
+          "horizontal_align" : "LEFT"
+        }
       }
     } ],
     "tab" : "STYLE",
@@ -700,13 +965,19 @@
     "type" : "group",
     "default" : {
       "alignment" : {
-        "alignment" : {
-          "horizontal_align" : "CENTER",
+        "vertical" : {
           "vertical_align" : "MIDDLE"
         },
         "inline_alignment" : "flex-start",
+        "mobile_inline_alignment" : "flex-start",
+        "internal_width" : 80,
+        "mobile_internal_width" : 100,
+        "desktop_alignment" : {
+          "horizontal_align" : "CENTER",
+          "vertical_align" : "MIDDLE"
+        },
         "mobile_alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : "CENTER"
         }
       },
       "spacing" : {
@@ -718,8 +989,10 @@
           "opacity" : null
         }
       },
-      "width" : {
-        "internal_width" : 80
+      "text" : {
+        "mobile_alignment" : {
+          "horizontal_align" : "LEFT"
+        }
       }
     }
   }, {
@@ -3572,7 +3845,9 @@
     "general" : {
       "presets" : { },
       "spacing" : {
-        "spacing" : { }
+        "spacing" : { },
+        "vertical_gap" : 0,
+        "horizontal_gap" : 10
       },
       "background" : {
         "color" : {
@@ -3592,12 +3867,20 @@
     },
     "image" : {
       "alignment" : {
-        "alignment" : {
+        "position" : "left",
+        "position_on_mobile" : "top",
+        "vertical" : {
+          "vertical_align" : "MIDDLE"
+        },
+        "internal_width" : 100,
+        "mobile_internal_width" : 100,
+        "desktop_alignment" : {
           "horizontal_align" : "CENTER",
           "vertical_align" : "MIDDLE"
         },
-        "position" : "left",
-        "position_on_mobile" : "top"
+        "mobile_alignment" : {
+          "horizontal_align" : "CENTER"
+        }
       },
       "spacing" : {
         "spacing" : { }
@@ -3609,18 +3892,17 @@
         }
       },
       "width" : {
-        "column_width" : 50,
-        "internal_width" : 80
+        "column_width" : 50
       },
       "image" : {
         "alignment" : {
-          "alignment" : {
+          "full_width" : false,
+          "desktop_alignment" : {
             "horizontal_align" : "LEFT"
           },
           "mobile_alignment" : {
             "horizontal_align" : "LEFT"
-          },
-          "full_width" : false
+          }
         },
         "border" : { },
         "custom_image_fit" : { }
@@ -3628,13 +3910,19 @@
     },
     "text_body" : {
       "alignment" : {
-        "alignment" : {
-          "horizontal_align" : "CENTER",
+        "vertical" : {
           "vertical_align" : "MIDDLE"
         },
         "inline_alignment" : "flex-start",
+        "mobile_inline_alignment" : "flex-start",
+        "internal_width" : 80,
+        "mobile_internal_width" : 100,
+        "desktop_alignment" : {
+          "horizontal_align" : "CENTER",
+          "vertical_align" : "MIDDLE"
+        },
         "mobile_alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : "CENTER"
         }
       },
       "spacing" : {
@@ -3646,8 +3934,10 @@
           "opacity" : null
         }
       },
-      "width" : {
-        "internal_width" : 80
+      "text" : {
+        "mobile_alignment" : {
+          "horizontal_align" : "LEFT"
+        }
       }
     },
     "icon" : {
