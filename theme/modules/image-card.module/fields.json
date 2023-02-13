@@ -4365,10 +4365,7 @@
     "show_loading" : true,
     "type" : "image",
     "default" : {
-      "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
+      "src" : ""
     }
   }, {
     "id" : "9bdcbbe4-01ca-feb7-15cb-73b668191d1c",
@@ -4456,10 +4453,7 @@
   "type" : "group",
   "default" : {
     "image" : {
-      "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
+      "src" : ""
     },
     "caption" : { },
     "link" : {
@@ -4491,9 +4485,7 @@
     "icon_set" : "fontawesome-5.14.0",
     "type" : "icon",
     "default" : {
-      "name" : "File Invoice",
-      "unicode" : "f570",
-      "type" : "SOLID"
+      "name" : ""
     }
   }, {
     "id" : "63d37b28-4a1c-bf6e-97ea-757b421bf89b",
@@ -4559,9 +4551,7 @@
   "type" : "group",
   "default" : {
     "icon" : {
-      "name" : "File Invoice",
-      "unicode" : "f570",
-      "type" : "SOLID"
+      "name" : ""
     },
     "accessibility_options" : {
       "purpose" : "decorative"
