@@ -1,0 +1,26 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  enableDomainStylesheets: false
+  label: Site brand book
+  screenshotPath: ../images/template-previews/brand-book.png
+-->
+
+{% set template_css = '../../css/templates/brand-book.css' %}
+{% extends "./layouts/blank.html" %}
+
+  {% block body %}
+
+  {% dnd_area 'dnd_area'
+    label='Site brand book template',
+    class='site-brand-book-template'
+  %}
+
+    {% include_dnd_partial path='../sections/brand-book-colors.html' context={} %}
+    {% include_dnd_partial path='../sections/brand-book-typography.html' context={} %}
+    {% include_dnd_partial path='../sections/brand-book-buttons.html' context={} %}
+
+  {% end_dnd_area %}
+
+
+{% endblock body %}

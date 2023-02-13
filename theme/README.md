@@ -20,7 +20,7 @@ _Order and naming conventions for fields/groups in the **Content** tab_
 _Order and naming conventions for fields/groups in the **Style** tab_
 
 - Each module can consist of one or more **components** (heading, image, button), which may have their own style options.
-- Every component can inherit some global theme styles, which we can rewrite specifically for the particular module in the `Custom styling` group in the component options.
+- Every component can inherit some global theme styles, which we can rewrite specifically for the particular module in the `Custom theme overrides` group in the component options.
 - Module can have a `General` group of options to change the style for all components in the module at once.
 - In addition, there is a possible scenario where we may have a component inside a component that we have named a `Subcomponent`.
 
@@ -57,9 +57,9 @@ Summing up all the above we have this structure of fields or groups of fields.
 5. Color `[group_name: color]`
     - Color `[field_name: color]`
 6. Text [group_name: text]
-    - Font [field_name: font]
-    - Font color [field_name: font_color]
-    - Font size [field_name: font_size]
+    - Font `[field_name: font]`
+    - Font color `[field_name: font_color]`
+    - Font size `[field_name: font_size]`
 7. Border `[group_name: border]`
     1. Border `[field_name: border]`
     2. Border radius `[field_name: border_radius]`
