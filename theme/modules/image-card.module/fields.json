@@ -1002,6 +1002,15 @@
     "label" : "Icon",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "84f1102b-180a-8e38-9d23-23eefdde0e48",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : "name",
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "a658f0fe-f743-ca28-f769-160f39b5234b",
       "name" : "presets",
@@ -1276,6 +1285,15 @@
     "label" : "Text",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "text.text",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "style.text.alignment",
       "name" : "alignment",
@@ -1443,6 +1461,15 @@
     "label" : "Heading",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "cfc6438b-6407-8f6f-0e7e-37bbbea6b65d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "135a767b-f6f5-fed8-931a-3c6751741915",
       "name" : "alignment",
@@ -1735,6 +1762,15 @@
     "label" : "Subheading",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "94bc7fba-5435-cfd8-5126-ca3f00c3d360",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "e4577151-8383-f5bc-5531-15c99dc37aa6",
       "name" : "alignment",
@@ -2027,6 +2063,15 @@
     "label" : "Rich text",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "fc05ac1d-2a5a-27a5-8609-72606b0e92d4",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "08f2c22b-5a5c-6aee-4df1-811c5e6dee45",
       "name" : "spacing",
@@ -2102,6 +2147,15 @@
     "label" : "Link",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "27a775aa-aa7c-2ef7-e041-3a699be53455",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "45410e40-42fb-361b-95be-d8e2a3197cb0",
       "name" : "alignment",
@@ -2481,6 +2535,15 @@
     "label" : "Secondary link",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "54904dd5-767e-a525-1f04-535ab400764d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "4d0074b1-e2c3-79f8-6486-a8d9f5ecd60a",
       "name" : "alignment",
@@ -2860,6 +2923,15 @@
     "label" : "Button",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "f405d893-38fb-ebb6-a9ed-b822456ce94c",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "a4b21e19-d8c2-f923-a007-e6a978d68bee",
       "name" : "presets",
@@ -3352,6 +3424,15 @@
     "label" : "Secondary button",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "f6d11478-7c64-fc5c-5b25-e73b2f103f0c",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "a51f758b-43d0-3f1f-f04a-4400e0dfb4bd",
       "name" : "presets",
@@ -4296,6 +4377,15 @@
     "label" : "Caption",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "795f1aff-f48e-bfe1-b5f2-a9476530caf7",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : "src",
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "fa7871c9-06a6-2f77-7e8f-7a8a3137e1dc",
       "name" : "rich_text",
@@ -4317,6 +4407,15 @@
     "label" : "Link",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "795f1aff-f48e-bfe1-b5f2-a9476530caf7",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : "src",
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "fbc9d3dd-841b-0b83-b070-5fe06c8ac09d",
       "name" : "link",
@@ -4403,6 +4502,15 @@
     "label" : "Accessibility options",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "84f1102b-180a-8e38-9d23-23eefdde0e48",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : "name",
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "3cc537ee-fec5-c746-2b42-c47533729cf1",
       "name" : "purpose",
@@ -4516,6 +4624,15 @@
     "label" : "Link",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "cfc6438b-6407-8f6f-0e7e-37bbbea6b65d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "ecc2e038-2c93-ddc0-13d5-a7ee7cc488ac",
       "name" : "link",
@@ -4571,6 +4688,15 @@
     "help_text" : "Heading icon",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "cfc6438b-6407-8f6f-0e7e-37bbbea6b65d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "cfe076bd-1cad-3c47-c9d9-d5668bf5c078",
       "name" : "icon",
@@ -4738,6 +4864,15 @@
     "label" : "Link",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "94bc7fba-5435-cfd8-5126-ca3f00c3d360",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "4c6dd547-72b7-3490-07fd-5e5ab597e732",
       "name" : "link",
@@ -4793,6 +4928,15 @@
     "help_text" : "Heading icon",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "94bc7fba-5435-cfd8-5126-ca3f00c3d360",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "cd6b7420-9154-a587-f6db-2825f4785f43",
       "name" : "icon",
@@ -4951,6 +5095,15 @@
     "help_text" : "Number of characters to truncate the text",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "fc05ac1d-2a5a-27a5-8609-72606b0e92d4",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "display" : "text",
     "step" : 1,
     "type" : "number"
@@ -5013,9 +5166,18 @@
     "name" : "icon",
     "display_width" : null,
     "label" : "Icon",
-    "help_text" : "Heading icon",
+    "help_text" : "",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "27a775aa-aa7c-2ef7-e041-3a699be53455",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "2f38ccb8-ce95-4e5e-47ef-b1966c1bfdf1",
       "name" : "icon",
@@ -5124,6 +5286,15 @@
     "help_text" : "Heading icon",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "54904dd5-767e-a525-1f04-535ab400764d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "8a306304-5cc9-a624-9b59-afe4e3ad8cd5",
       "name" : "icon",
@@ -5247,6 +5418,15 @@
     "help_text" : "Button icon",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "f405d893-38fb-ebb6-a9ed-b822456ce94c",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "ccc73184-b435-7c9a-5753-a11588ed3052",
       "name" : "icon",
@@ -5371,6 +5551,15 @@
     "help_text" : "Button icon",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : "f6d11478-7c64-fc5c-5b25-e73b2f103f0c",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
     "children" : [ {
       "id" : "66f878b9-ebd8-c7a0-4e09-a53c6fd1756f",
       "name" : "icon",
