@@ -3,7 +3,7 @@
     "default": false,
     "display": "toggle",
     "display_width": null,
-    "label": "Sticky",
+    "label": "",
     "locked": false,
     "name": "value",
     "required": false,
