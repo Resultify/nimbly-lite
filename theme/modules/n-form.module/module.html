@@ -46,6 +46,12 @@
       }
     {% endif %}
 
+    {% if module.style.general.text.font.color %}
+      .form-default .form-title {
+        color: {{module.style.general.text.font.color}};
+      }
+    {% endif %}
+
     {# input label #}
     {% if module.style.input_label.background.css or module.style.input_label.font.style or module.style.input_label.font.size or module.style.input_label.spacing.css %}
       .form-default label:not(.hs-error-msg) {

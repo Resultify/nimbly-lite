@@ -53,6 +53,12 @@
   {% endif %}
 }
 
+.form-default .form-title {
+  {% if theme.forms.text.font.color %}
+    color: {{theme.forms.text.font.color}};
+  {% endif %}
+}
+
 .form-default label:not(.hs-error-msg):not(.hs-main-font-element),
 .form-default .fakelabel {
   {% if theme.forms.input_label.background.css %}
