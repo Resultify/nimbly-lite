@@ -1,0 +1,30 @@
+name: Validation
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  validation:
+    name: Marketplace validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js v${{ matrix.node }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - run: npm ci
+
+      - name: Run Marketplace validation
+        env:
+          HUBSPOT_PORTAL_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
+          HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
+        run: npm run validate -- --themeConfirm=true
+
+      - name: PKG versions
+        run: |
+          node -v
+          npm -v
