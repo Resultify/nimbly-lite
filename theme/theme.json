@@ -2,7 +2,7 @@
   "label": "Nimbly Lite",
   "name": "nimbly-lite",
   "preview_path": "./templates/home.html",
-  "screenshot_path": "./images/template-previews/home.png",
+  "screenshot_path": "./images/template-previews/home.jpg",
   "enable_domain_stylesheets": false,
   "license": "MIT",
   "version":"1.0.0",
