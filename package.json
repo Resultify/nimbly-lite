@@ -14,9 +14,11 @@
     "test": "npm run lint-all",
     "build": "node build/build.js",
     "upload": "node build/upload.js",
-    "fetchModules": "node build/fetchModules.js",
+    "lighthouse": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/lighthouse.exec.js",
+    "validate": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/validate.exec.js",
+    "fetchModules": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fetchModules.exec.js",
     "fetchDraftModules": "MODE=draft npm run fetchModules",
-    "fetchAll": "node build/fetchAll.js",
+    "fetchAll": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fetchAll.exec.js",
     "watch": "node build/watch.js"
   },
   "dependencies": {
@@ -57,7 +59,6 @@
       "selector-class-pattern": null,
       "selector-pseudo-element-colon-notation": "single",
       "comment-empty-line-before": null,
-      "max-line-length": 180,
       "plugin/no-unsupported-browser-features": true
     },
     "ignoreFiles": [
