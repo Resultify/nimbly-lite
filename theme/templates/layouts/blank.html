@@ -7,11 +7,17 @@
     <meta charset="utf-8">
     {% if page_meta.html_title %}
       <title>{{page_meta.html_title}}</title>
+    {% else %}
+      <title>Nimbly page template</title>
     {% endif %}
     {% if site_settings.favicon_src %}
       <link rel="shortcut icon" href="{{site_settings.favicon_src}}"/>
     {% endif %}
-    <meta name="description" content="{{page_meta.meta_description}}">
+    {% if page_meta.meta_description %}
+      <meta name="description" content="{{page_meta.meta_description}}">
+    {% else %}
+      <meta name="description" content="Nimbly page template meta description">
+    {% endif %}
 
     {{require_css(get_asset_url("../../css/base.css"))}}
     {{require_css(get_asset_url("../../css/global-theme-settings.css"))}}
