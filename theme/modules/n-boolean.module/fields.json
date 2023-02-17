@@ -1,12 +1,11 @@
-[
-  {
-    "default": false,
-    "display": "toggle",
-    "display_width": null,
-    "label": "",
-    "locked": false,
-    "name": "value",
-    "required": false,
-    "type": "boolean"
-   }
-]
+[ {
+  "id" : "boolean",
+  "name" : "boolean",
+  "display_width" : null,
+  "label" : "",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+} ]

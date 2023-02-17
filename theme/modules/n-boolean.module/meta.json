@@ -1,15 +1,7 @@
 {
-  "global": false,
-  "content_tags": [],
-  "css_assets": [],
-  "editable_contexts": [],
-  "external_js": [],
-  "host_template_types": [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "is_available_for_new_content": false,
-  "js_assets": [],
-  "other_assets": [],
-  "smart_type": "NOT_SMART",
-  "tags": [],
-  "label": "",
-  "icon" : "../../images/module-icons/button.svg"
+  "global" : false,
+  "icon" : "../../images/module-icons/button.svg",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 61709497542,
+  "is_available_for_new_content" : false
 }
