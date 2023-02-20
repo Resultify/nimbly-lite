@@ -33,6 +33,7 @@
         "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice"
       } ],
       "tab" : "STYLE",
@@ -457,6 +458,7 @@
         "choices" : [ [ "1/1", "1/1" ], [ "1.91/1", "1.91/1" ], [ "2/1", "2/1" ], [ "3/2", "3/2" ], [ "4/3", "4/3" ], [ "4/5", "4/5" ], [ "5/4", "5/4" ], [ "9/16", "9/16" ], [ "16/9", "16/9" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice"
       }, {
         "id" : "style.image.custom_image_fit.image_fit",
@@ -469,6 +471,7 @@
         "choices" : [ [ "contain", "Contain" ], [ "cover", "Cover" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice"
       } ],
       "tab" : "STYLE",
@@ -625,6 +628,7 @@
         "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : ""
       }, {
@@ -659,6 +663,7 @@
           "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
           "multiple" : false,
           "reordering_enabled" : true,
+          "preset" : null,
           "type" : "choice",
           "default" : ""
         } ],
@@ -1190,6 +1195,7 @@
         "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : ""
       }, {
@@ -1224,6 +1230,7 @@
           "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
           "multiple" : false,
           "reordering_enabled" : true,
+          "preset" : null,
           "type" : "choice",
           "default" : ""
         } ],
@@ -1553,6 +1560,7 @@
         "choices" : [ [ "btn-primary", "Primary" ], [ "btn-secondary1", "Secondary 1" ], [ "btn-secondary2", "Secondary 2" ], [ "btn-secondary3", "Secondary 3" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "btn-primary"
       }, {
@@ -1568,6 +1576,7 @@
         "choices" : [ [ "btn-small", "Small" ], [ "btn-regular", "Medium" ], [ "btn-large", "Large" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "btn-regular"
       } ],
@@ -2127,6 +2136,7 @@
   "choices" : [ [ "recent_posts", "Recent posts" ], [ "recent_posts_by_tag", "Recent posts by tag" ] ],
   "multiple" : false,
   "reordering_enabled" : true,
+  "preset" : null,
   "type" : "choice",
   "default" : "recent_posts"
 }, {
@@ -2180,6 +2190,7 @@
     "choices" : [ [ "h1", "Heading 1 (H1)" ], [ "h2", "Heading 2 (H2)" ], [ "h3", "Heading 3 (H3)" ], [ "h4", "Heading 4 (H4)" ], [ "h5", "Heading 5 (H5)" ], [ "h6", "Heading 6 (H6)" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
+    "preset" : null,
     "type" : "choice",
     "default" : "h2"
   }, {
@@ -2195,6 +2206,7 @@
     "choices" : [ [ "h1", "Heading 1" ], [ "h2", "Heading 2" ], [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ], [ "display-1", "Heading display 1" ], [ "display-2", "Heading display 2" ], [ "display-3", "Heading display 3" ], [ "display-4", "Heading display 4" ], [ "display-5", "Heading display 5" ], [ "display-6", "Heading display 6" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
+    "preset" : null,
     "type" : "choice",
     "default" : ""
   } ],
@@ -2282,6 +2294,7 @@
     "choices" : [ [ "basic-grid", "Basic grid" ], [ "mosaic-grid", "Mosaic grid" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
+    "preset" : null,
     "type" : "choice",
     "default" : "basic-grid"
   }, {

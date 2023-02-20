@@ -33,6 +33,7 @@
         "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice"
       } ],
       "tab" : "STYLE",
@@ -151,6 +152,7 @@
         "choices" : [ [ "768", "768px" ], [ "992", "992px" ], [ "1200", "1200px" ], [ "1400", "1400px" ], [ "custom", "Custom" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "992"
       }, {
@@ -466,6 +468,7 @@
         "choices" : [ [ "flex-end", "Right" ], [ "flex-start", "Left" ], [ "center", "Center" ], [ "space-around", "Space around" ], [ "space-between", "Space between" ], [ "space-evenly", "Space evenly" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "flex-end"
       } ],
@@ -2381,6 +2384,7 @@
         "choices" : [ [ "wide", "Wide" ], [ "narrow", "Narrow" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "wide"
       } ],
@@ -2740,6 +2744,7 @@
         "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : ""
       }, {
@@ -2774,6 +2779,7 @@
           "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
           "multiple" : false,
           "reordering_enabled" : true,
+          "preset" : null,
           "type" : "choice",
           "default" : ""
         } ],
@@ -2992,6 +2998,7 @@
         "choices" : [ [ "btn-primary", "Primary" ], [ "btn-secondary1", "Secondary 1" ], [ "btn-secondary2", "Secondary 2" ], [ "btn-secondary3", "Secondary 3" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "btn-primary"
       }, {
@@ -3007,6 +3014,7 @@
         "choices" : [ [ "btn-small", "Small" ], [ "btn-regular", "Medium" ], [ "btn-large", "Large" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "btn-regular"
       } ],
@@ -3397,6 +3405,7 @@
         "choices" : [ [ "btn-primary", "Primary" ], [ "btn-secondary1", "Secondary 1" ], [ "btn-secondary2", "Secondary 2" ], [ "btn-secondary3", "Secondary 3" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "btn-primary"
       }, {
@@ -3412,6 +3421,7 @@
         "choices" : [ [ "btn-small", "Small" ], [ "btn-regular", "Medium" ], [ "btn-large", "Large" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "btn-regular"
       } ],
@@ -3800,6 +3810,7 @@
         "choices" : [ [ "left", "Top left corner" ], [ "right", "Top right corner" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "left"
       } ],
@@ -4918,6 +4929,7 @@
       "choices" : [ [ "localized", "Localized" ], [ "pageLang", "PageLang" ], [ "hybrid", "Hybrid" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
+      "preset" : null,
       "type" : "choice",
       "default" : "localized"
     } ],
@@ -4978,6 +4990,7 @@
     "choices" : [ [ "website", "Website pages" ], [ "landing", "Landing pages" ], [ "blog", "Blog posts" ], [ "knowledge", "Knowledge base" ] ],
     "multiple" : true,
     "reordering_enabled" : true,
+    "preset" : null,
     "type" : "choice",
     "default" : [ "blog", "website" ]
   } ],
@@ -5079,6 +5092,7 @@
         "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "left"
       } ],
@@ -5237,6 +5251,7 @@
         "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "left"
       } ],
@@ -5367,6 +5382,7 @@
         "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : "left"
       } ],

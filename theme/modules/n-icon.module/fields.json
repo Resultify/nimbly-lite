@@ -23,6 +23,7 @@
       "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
+      "preset" : null,
       "type" : "choice",
       "default" : "primary"
     }, {
@@ -36,6 +37,7 @@
       "choices" : [ [ "small", "Small" ], [ "regular", "Regular" ], [ "large", "Large" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
+      "preset" : null,
       "type" : "choice",
       "default" : "regular"
     }, {
@@ -49,6 +51,7 @@
       "choices" : [ [ "circle", "Circle" ], [ "square", "Square" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
+      "preset" : null,
       "type" : "choice",
       "default" : "circle"
     }, {
@@ -63,6 +66,7 @@
       "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
+      "preset" : null,
       "type" : "choice"
     } ],
     "tab" : "STYLE",
@@ -314,6 +318,7 @@
     "choices" : [ [ "decorative", "Ignored by screen reader (Decorative images)" ], [ "semantic", "Read by screen reader (Informative images)" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
+    "preset" : null,
     "type" : "choice",
     "default" : "decorative"
   }, {
