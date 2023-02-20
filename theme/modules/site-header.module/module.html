@@ -31,7 +31,11 @@
       height="{{module.logo.logo.height}}"
       width="{{module.logo.logo.width}}">
     {% elif !module.logo.logo.suppress_company_name %}
-      <h1 class="header-logo__company-name">{{site_settings.company_name}}</h1>
+        {% if site_settings.company_name %}
+          <h1 class="header-logo__company-name">{{site_settings.company_name}}</h1>
+        {% else %}
+          <h1 class="header-logo__company-name">Company name</h1>
+        {% endif %}
     {% endif %}
 
     {% if link %}
