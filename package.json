@@ -14,12 +14,14 @@
     "test": "npm run lint-all",
     "build": "node build/build.js",
     "upload": "node build/upload.js",
+    "fields": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fields.exec.js",
     "lighthouse": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/lighthouse.exec.js",
     "validate": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/validate.exec.js",
     "fetchModules": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fetchModules.exec.js",
     "fetchDraftModules": "MODE=draft npm run fetchModules",
     "fetchAll": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fetchAll.exec.js",
-    "watch": "node build/watch.js"
+    "watch": "node build/watch.js",
+    "checkJs": "tsc -p jsconfig.json --maxNodeModuleJsDepth 0"
   },
   "dependencies": {
     "bootstrap": "~5.1.3",
@@ -32,10 +34,12 @@
     "standard": "~17.0.0",
     "stylelint": "~15.1.0",
     "stylelint-config-standard": "~30.0.1",
-    "stylelint-no-unsupported-browser-features": "~6.1.0"
+    "stylelint-no-unsupported-browser-features": "~6.1.0",
+    "@types/node": "^18.14.4",
+    "typescript": "^4.9.5"
   },
   "engines": {
-    "node": ">=16.13",
+    "node": ">=16.14",
     "npm": ">=8.19"
   },
   "browserslist": [
