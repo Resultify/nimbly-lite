@@ -24,6 +24,7 @@
       "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
+      "preset" : null,
       "type" : "choice"
     } ],
     "tab" : "STYLE",
@@ -152,6 +153,7 @@
       "choices" : [ [ "1/1", "1/1" ], [ "1.91/1", "1.91/1" ], [ "2/1", "2/1" ], [ "3/2", "3/2" ], [ "4/3", "4/3" ], [ "4/5", "4/5" ], [ "5/4", "5/4" ], [ "9/16", "9/16" ], [ "16/9", "16/9" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
+      "preset" : null,
       "type" : "choice"
     }, {
       "id" : "style.custom_image_fit.image_fit",
@@ -164,6 +166,7 @@
       "choices" : [ [ "contain", "Contain" ], [ "cover", "Cover" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
+      "preset" : null,
       "type" : "choice"
     } ],
     "tab" : "STYLE",

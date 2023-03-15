@@ -1,5 +1,6 @@
 {
   "global" : false,
+  "master_language" : "en",
   "placeholder" : {
     "show_module_icon" : true,
     "title" : "Button",

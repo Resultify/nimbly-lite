@@ -1,4 +1,81 @@
 
+#### v2.0.0 `February 21, 2023`
+
+**New Features:**
+- The `Image|Card` module now respects image size by default, with an additional option to make it full width of the image column. Please note that this is a **breaking change**, and you should be careful when implementing it.
+- The `Theme` settings template has been replaced with the site `Brand-book` template with a new design.
+- A new supported type for links and buttons has been added: `Pop-up Call To Action`
+
+**Improvements:**
+- Default Title and Meta-description have been added for all templates.
+- Default English translations for all modules have been added.
+- Template preview and content default images have been optimized and compressed.
+- Standard HubSpot modules that duplicate functionality of Nimbly have been **hidden**.
+- Preview image has been simplified for the `Blank` template.
+- The placeholder company name will now be displayed if no real company name is found in the account settings.
+- The `Form` module will now show nothing if no form is selected.
+- Color contrast accessibility for sections has been improved.
+
+**Bug Fixes:**
+- A height attribute has been added for the background image in the `Heroimage` module to fix cumulative layout shift and pagespeed issues.
+- The boolean module inside global header settings no longer has a `styles` tab.
+- Duplicated `meta viewport` tag has been removed.
+- Styling for the skip-to-main-content link has been fixed.
+- The dropdown current language item will now only be rendered if "show current language" is true.
+- The styling inheritance issue for a secondary button in modules has been fixed.
+- Style settings from the HubSpot Style editor will now be applied to the active link in the `Blog pagination` module.
+- Textarea placeholder styles have been added to make it editable the same as inputs in the `Form` module.
+- Broken styles for `icon macros` have been fixed.
+
+**Changelog:**
+
+- **[TASK]** update @resultify/hubspot-cms-lib, update npm deps ([8aa8c29](https://github.com/Resultify/nimbly-lite/commit/8aa8c29))
+- **[TEST]** add new deploy and validate github actions ([69be4ad](https://github.com/Resultify/nimbly-lite/commit/69be4ad))
+- **[TASK]** show the placeholder company name if there is no real in the account profile ([bbbb3f3](https://github.com/Resultify/nimbly-lite/commit/bbbb3f3))
+- **[TASK]** show nothing if no form selected in the form module ([495f55f](https://github.com/Resultify/nimbly-lite/commit/495f55f))
+- **[BUGFIX]** fix broken styles for icon macros ([902b35d](https://github.com/Resultify/nimbly-lite/commit/902b35d))
+- **[TASK]** improve color contrast accessibility for sections ([e66465e](https://github.com/Resultify/nimbly-lite/commit/e66465e))
+- **[TEST]** add marketplace validation and lighthouse CI tests ([8ccace2](https://github.com/Resultify/nimbly-lite/commit/8ccace2))
+- **[TASK]** update hubspot-cms-lib to v2 ([941bd98](https://github.com/Resultify/nimbly-lite/commit/941bd98))
+- **[TASK]** add height attribute for heroimage module background image, use tag <img> instead of hubl image tag ([d837497](https://github.com/Resultify/nimbly-lite/commit/d837497))
+- **[TASK]** add default title and meta_description for all templates ([1e403bd](https://github.com/Resultify/nimbly-lite/commit/1e403bd))
+- **[TASK]** add default en translations for all modules ([5979c56](https://github.com/Resultify/nimbly-lite/commit/5979c56))
+- **[TASK]** optimize and compress images ([b144c89](https://github.com/Resultify/nimbly-lite/commit/b144c89))
+- **[TASK]** update config for boolean module, add dnd_area to global header settings ([ea431ee](https://github.com/Resultify/nimbly-lite/commit/ea431ee))
+- **[TASK]** add marketplace-validate and lighthouse score tasks ([372816d](https://github.com/Resultify/nimbly-lite/commit/372816d))
+- **[TASK]** update npm deps ([9d05ae4](https://github.com/Resultify/nimbly-lite/commit/9d05ae4))
+- **[BUGFIX]** fix the issue with the boolean module having 'styles' tab (#55) ([2d340a1](https://github.com/Resultify/nimbly-lite/commit/2d340a1))
+- **[TASK]** remove theme settings template ([cf5c2c0](https://github.com/Resultify/nimbly-lite/commit/cf5c2c0))
+- **[TASK]** hide standard HubSpot modules that duplicate functionality ([24f6085](https://github.com/Resultify/nimbly-lite/commit/24f6085))
+- **[BUGFIX]** remove duplicated tag meta viewport ([0c2a644](https://github.com/Resultify/nimbly-lite/commit/0c2a644))
+- **[TASK]** remove branding and simplify preview image for blank template ([360a788](https://github.com/Resultify/nimbly-lite/commit/360a788))
+- **[FEATURE]** add site-brand-book template ([a412325](https://github.com/Resultify/nimbly-lite/commit/a412325))
+- **[BUGFIX]** fix class name for skip-to-main-content link ([ffbada1](https://github.com/Resultify/nimbly-lite/commit/ffbada1))
+- **[TASK]** add new supported type for links and buttons (#52) ([e7ac452](https://github.com/Resultify/nimbly-lite/commit/e7ac452))
+- **[BUGFIX]** render dropdown current language item only if show_current_l… (#48) ([3bb25ea](https://github.com/Resultify/nimbly-lite/commit/3bb25ea))
+- **[FEATURE]** add 'secondary' class for a secondary button in a module (#51) ([ea12bb8](https://github.com/Resultify/nimbly-lite/commit/ea12bb8))
+- **[BUGFIX]** apply settings for active link in blog pagination module (#50) ([4c4b49e](https://github.com/Resultify/nimbly-lite/commit/4c4b49e))
+- **[BUGFIX]** add textarea:placeholder styles so it editable same as inputs (#49) ([f6f82af](https://github.com/Resultify/nimbly-lite/commit/f6f82af))
+- **[TASK]** typo Headquarters (#47) ([d76a676](https://github.com/Resultify/nimbly-lite/commit/d76a676))
+- **[TASK]** add upload to HubSpot github action ([375406c](https://github.com/Resultify/nimbly-lite/commit/375406c))
+- **[TASK]** update npm deps ([7feadd3](https://github.com/Resultify/nimbly-lite/commit/7feadd3))
+- **[TEST]** update github action npm test, use checkout@v3 and setup-node@v3 with cache enabled ([3677236](https://github.com/Resultify/nimbly-lite/commit/3677236))
+- **[BUGFIX]** use modules to define global partial content instead of sections due to an unknown bug and not being able to edit global content because of this ([d4f8912](https://github.com/Resultify/nimbly-lite/commit/d4f8912))
+- **[BUGFIX]** check for logo.override_inherited_src when defining a logo link ([196fb93](https://github.com/Resultify/nimbly-lite/commit/196fb93))
+- **[TASK]** add example_url and documentation_url to theme.json ([39e1131](https://github.com/Resultify/nimbly-lite/commit/39e1131))
+- **[TASK]** use bigger width 1900px for template-previews screenshots ([abf6e60](https://github.com/Resultify/nimbly-lite/commit/abf6e60))
+- **[TASK]** rename (heading,icon,button,form,text,divider) nimbly modules to have different names compared to Hubspot default modules names ([a964f71](https://github.com/Resultify/nimbly-lite/commit/a964f71))
+- **[TASK]** use one style for all module icons, add nimbly branding for each icon ([a6d41f9](https://github.com/Resultify/nimbly-lite/commit/a6d41f9))
+- **[TASK]** change global partials dnd_area names to fix warnings ([896a5e1](https://github.com/Resultify/nimbly-lite/commit/896a5e1))
+- **[TASK]** use only relative path for all includes, ([9ec509e](https://github.com/Resultify/nimbly-lite/commit/9ec509e))
+- **[TASK]** add description to all sections ([4951fe3](https://github.com/Resultify/nimbly-lite/commit/4951fe3))
+- **[BUGFIX]** rename image caption text field on image-card module, text -> rich_text (#46) ([67fe9dc](https://github.com/Resultify/nimbly-lite/commit/67fe9dc))
+
+:heavy_exclamation_mark:**Breaking Changes:**
+- **[!!!]** **[FEATURE]** respect image size in the image card module as a default behavior,  with an additional option to make it the full width of the image column (#54) ([27706e7](https://github.com/Resultify/nimbly-lite/commit/27706e7))
+
+***
+
 #### v1.0.0 `December 5, 2022`
 
 - **[DOC]** add repo README with quick-start info, cmd list and authentication instruction ([d5054c9](https://github.com/Resultify/nimbly-lite/commit/d5054c9))

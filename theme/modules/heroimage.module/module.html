@@ -18,8 +18,9 @@
 {% endmacro %}
 
 {% if module.image.image.src %}
-  {% set loadingAttr = module.image.image.loading != 'disabled' ? '{{data.image.loading}}' : '' %}
-  {% set styleAttr = module.image.image.size_type != 'exact' ? 'width: 100%; height: auto;' : 'width: 100%; object-fit: cover;' %}
+  {% set loadingAttr = module.image.image.loading != 'disabled' ? 'loading="{{data.image.loading}}"' : '' %}
+  {% set styleAttr = module.image.image.size_type != 'exact' ? 'style="width: 100%; height: auto;"' : 'style="width: 100%; object-fit: cover;"' %}
+
   {% set widthAttr = module.image.image.width %}
   {% set heightAttr = module.image.image.height %}
 
@@ -429,17 +430,15 @@
     </div>
 
     <div class="heroimage-module__image_wrp">
-      {% image
-        'image'
-        extra_classes='heroimage-module__image'
-        label='Image',
-        alt='{{module.image.image.alt}}',
-        src='{{module.image.image.src}}',
-        width='{{widthAttr}}',
-        height='{{heightAttr}}',
-        loading='{{loadingAttr}}',
-        style='{{styleAttr}}'
-      %}
+      <div class="heroimage-module__image">
+        <img alt="{{module.image.image.alt}}"
+          src="{{module.image.image.src}}"
+          width="{{widthAttr}}"
+          height="{{heightAttr}}"
+          height="{{heightAttr}}"
+          {{loadingAttr}}
+          {{styleAttr}}>
+      </div>
     </div>
 
   </div>

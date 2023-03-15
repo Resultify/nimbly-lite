@@ -24,6 +24,7 @@
       "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
+      "preset" : null,
       "type" : "choice"
     } ],
     "tab" : "STYLE",
@@ -151,6 +152,7 @@
       "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
+      "preset" : null,
       "type" : "choice",
       "default" : ""
     }, {
@@ -185,6 +187,7 @@
         "choices" : [ [ "underline", "Underline" ], [ "none", "None" ] ],
         "multiple" : false,
         "reordering_enabled" : true,
+        "preset" : null,
         "type" : "choice",
         "default" : ""
       } ],
@@ -452,6 +455,7 @@
     "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
+    "preset" : null,
     "type" : "choice",
     "default" : "left"
   } ],

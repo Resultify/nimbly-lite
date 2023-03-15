@@ -1,6 +1,6 @@
 {
   "name": "nimbly-lite",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Hubspot theme",
   "license": "MIT",
   "authors": "Resultify",
@@ -14,26 +14,32 @@
     "test": "npm run lint-all",
     "build": "node build/build.js",
     "upload": "node build/upload.js",
-    "fetchModules": "node build/fetchModules.js",
+    "fields": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fields.exec.js",
+    "lighthouse": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/lighthouse.exec.js",
+    "validate": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/validate.exec.js",
+    "fetchModules": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fetchModules.exec.js",
     "fetchDraftModules": "MODE=draft npm run fetchModules",
-    "fetchAll": "node build/fetchAll.js",
-    "watch": "node build/watch.js"
+    "fetchAll": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fetchAll.exec.js",
+    "watch": "node build/watch.js",
+    "checkJs": "tsc -p jsconfig.json --maxNodeModuleJsDepth 0"
   },
   "dependencies": {
     "bootstrap": "~5.1.3",
     "simplelightbox": "~2.11.0"
   },
   "devDependencies": {
-    "@resultify/hubspot-cms-lib": "1.0.3",
+    "@resultify/hubspot-cms-lib": "~2.0.1",
     "browserslist": "~4.21.4",
     "husky": "~8.0.3",
     "standard": "~17.0.0",
-    "stylelint": "~14.16.1",
-    "stylelint-config-standard": "~29.0.0",
-    "stylelint-no-unsupported-browser-features": "~6.0.1"
+    "stylelint": "~15.1.0",
+    "stylelint-config-standard": "~30.0.1",
+    "stylelint-no-unsupported-browser-features": "~6.1.0",
+    "@types/node": "^18.14.4",
+    "typescript": "^4.9.5"
   },
   "engines": {
-    "node": ">=16.13",
+    "node": ">=16.14",
     "npm": ">=8.19"
   },
   "browserslist": [
@@ -57,7 +63,6 @@
       "selector-class-pattern": null,
       "selector-pseudo-element-colon-notation": "single",
       "comment-empty-line-before": null,
-      "max-line-length": 180,
       "plugin/no-unsupported-browser-features": true
     },
     "ignoreFiles": [

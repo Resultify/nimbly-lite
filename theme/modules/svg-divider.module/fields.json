@@ -24,6 +24,7 @@
       "choices" : [ [ "preset1", "Preset 1" ], [ "preset2", "Preset 2" ], [ "preset3", "Preset 3" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
+      "preset" : null,
       "type" : "choice"
     } ],
     "tab" : "STYLE",
@@ -84,6 +85,7 @@
   "choices" : [ [ "slanted_line_left_cover_top", "Slanted line (left) - cover top elem" ], [ "slanted_line_left_cover_bottom", "Slanted line (left) - cover bottom elem" ], [ "slanted_line_right_cover_top", "Slanted line (right) - cover top elem" ], [ "slanted_line_right_cover_bottom", "Slanted line (right) - cover bottom elem" ], [ "wave_left_cover_top", "Wave (left) - cover top elem" ], [ "wave_left_cover_bottom", "Wave (left) - cover bottom elem" ], [ "wave_right_cover_top", "Wave (right) - cover top elem" ], [ "wave_right_cover_bottom", "Wave (right) - cover bottom elem" ], [ "custom", "Custom" ] ],
   "multiple" : false,
   "reordering_enabled" : true,
+  "preset" : null,
   "type" : "choice",
   "default" : "wave_right_cover_top"
 }, {
@@ -127,6 +129,7 @@
   "choices" : [ [ "top", "Cover top element" ], [ "bottom", "Cover bottom element" ] ],
   "multiple" : false,
   "reordering_enabled" : true,
+  "preset" : null,
   "type" : "choice",
   "default" : "top"
 } ]
