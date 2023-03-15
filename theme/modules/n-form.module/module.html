@@ -1,4 +1,5 @@
 {% import '../../css/macros/macros.css' %}
+{% import '../macros/heading.html' as heading_macros %}
 
 {# module scope css #}
 <style>
@@ -46,9 +47,13 @@
       }
     {% endif %}
 
-    {% if module.style.general.text.font.color %}
-      .form-default .form-title {
-        color: {{module.style.general.text.font.color}};
+    {% if module.style.heading.background.color.css or module.style.heading.alignment.alignment.horizontal_align or module.style.heading.spacing.spacing.css %}
+      .form-module__heading {
+        {% if module.style.heading.background.color.css %}
+          background-color: {{module.style.heading.background.color.css}};
+        {% endif %}
+        text-align: {{module.style.heading.alignment.alignment.horizontal_align}};
+        {{module.style.heading.spacing.spacing.css}}
       }
     {% endif %}
 
@@ -225,12 +230,6 @@
   {% end_scope_css %}
 </style>
 
-{% if module.title is truthy %}
-  {% set no_title = False %}
-{% else %}
-  {% set no_title = True %}
-{% endif %}
-
 {% if module.style.button.presets.style %}
   {% set button_preset_style = 'form--' ~ module.style.button.presets.style %}
 {% else %}
@@ -243,12 +242,20 @@
   {% set button_preset_size = theme.forms.button.presets.size %}
 {% endif %}
 
+{% set no_title = True %}
+
 <div class="form-module_wrp">
   <div class="form-module form-module--{{module_id}}
     form-default
     {{button_preset_style}}
     {{button_preset_size}}
     {{module.style.general.presets.custom_preset}}">
+
+    {% if module.heading.text %}
+      <div class="form-module__heading">
+        {{heading_macros.render_heading_tmpl(module.heading, module.style.heading, module)}}
+      </div>
+    {% endif %}
 
     {% if module.form.form_id %}
       {% form
