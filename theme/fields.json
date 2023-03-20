@@ -2524,6 +2524,59 @@
         "required": false
       },
       {
+        "label": "Heading",
+        "name": "heading",
+        "type": "group",
+        "children": [
+          {
+            "label": "Spacing",
+            "name": "spacing",
+            "type": "spacing",
+            "display_width": null,
+            "locked": false,
+            "required": false,
+            "default": {}
+          },
+          {
+            "label": "Background",
+            "name": "background",
+            "type": "color",
+            "display_width": null,
+            "locked": false,
+            "required": false,
+            "default": {
+              "color": null,
+              "opacity": null
+            }
+          },
+          {
+            "label": "Font",
+            "name": "font",
+            "type": "font",
+            "display_width": null,
+            "load_external_fonts": true,
+            "locked": false,
+            "required": false,
+            "default": {
+              "size": null,
+              "styles": null,
+              "fallback": null,
+              "size_unit": null,
+              "color": null,
+              "variant": null,
+              "font": null,
+              "style": null,
+              "font_set": "DEFAULT"
+            }
+          }
+        ],
+        "display_width": null,
+        "locked": false,
+        "tab": "CONTENT",
+        "expanded": false,
+        "required": false
+      },
+      {
         "label": "Border",
         "name": "border",
         "type": "group",
