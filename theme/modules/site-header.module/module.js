@@ -221,6 +221,8 @@ if (
 // ===========================
 function headerSearch () {
   const headerSearch = document.getElementById('headerSearch')
+  if (!headerSearch) return
+
   const searchForm = headerSearch.querySelector('.header-search__form')
   const searchFormInput = headerSearch.querySelector('.header-search__form-input')
   const searchFormBtn = headerSearch.querySelector('.header-search__form-btn')
