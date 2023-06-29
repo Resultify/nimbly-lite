@@ -247,8 +247,7 @@
     "controlling_value_regex" : "false",
     "property" : null,
     "operator" : "EQUAL",
-    "access" : null,
-    "hidden_subfields" : null
+    "access" : null
   },
   "children" : [ {
     "id" : "efb01309-56fa-c643-18ca-b13ecd5a955c",

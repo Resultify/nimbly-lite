@@ -367,8 +367,7 @@
       "controlling_value_regex" : "^((?!auto).)*$",
       "property" : null,
       "operator" : "MATCHES_REGEX",
-      "access" : null,
-      "hidden_subfields" : null
+      "access" : null
     },
     "children" : [ {
       "id" : "cfd66b72-34dc-2d93-ca30-6a287c65fc0f",
@@ -1667,8 +1666,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
@@ -2048,8 +2046,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
@@ -2477,8 +2474,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
@@ -2500,8 +2496,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "display" : "toggle",
         "type" : "boolean",
@@ -2520,8 +2515,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "display" : "toggle",
         "type" : "boolean",
@@ -2971,8 +2965,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
@@ -2994,8 +2987,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "display" : "toggle",
         "type" : "boolean",
@@ -3014,8 +3006,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "display" : "toggle",
         "type" : "boolean",
@@ -3411,8 +3402,7 @@
         "controlling_value_regex" : "^.*http.*$",
         "property" : null,
         "operator" : "MATCHES_REGEX",
-        "access" : null,
-        "hidden_subfields" : null
+        "access" : null
       },
       "display" : "select",
       "choices" : [ [ "cover", "Caption text covers the hero image" ], [ "before", "Caption text before the hero image" ], [ "after", "Caption text after the hero image" ] ],
@@ -3878,8 +3868,7 @@
     "controlling_value_regex" : "^((?!auto).)*$",
     "property" : null,
     "operator" : "MATCHES_REGEX",
-    "access" : null,
-    "hidden_subfields" : null
+    "access" : null
   },
   "children" : [ {
     "id" : "8018f437-7972-df0a-c3ae-a617ca5205a7",
@@ -4038,8 +4027,7 @@
         "controlling_value_regex" : "semantic",
         "property" : null,
         "operator" : "EQUAL",
-        "access" : null,
-        "hidden_subfields" : null
+        "access" : null
       },
       "allow_new_line" : false,
       "show_emoji_picker" : false,
@@ -4236,8 +4224,7 @@
           "controlling_value_regex" : "semantic",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "allow_new_line" : false,
         "show_emoji_picker" : false,
@@ -4462,8 +4449,7 @@
           "controlling_value_regex" : "semantic",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "allow_new_line" : false,
         "show_emoji_picker" : false,

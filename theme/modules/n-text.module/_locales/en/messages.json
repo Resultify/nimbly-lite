@@ -286,32 +286,32 @@
   },
   "text.default" : {
     "message" : "",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "text.help_text" : {
     "message" : "",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "text.inline_help_text" : {
     "message" : "",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "text.label" : {
     "message" : "Text",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "text.placeholder" : {
     "message" : "",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "text.validation_regex" : {
     "message" : "",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   }
 }

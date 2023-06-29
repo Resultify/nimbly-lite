@@ -168,8 +168,7 @@
           "controlling_value_regex" : "custom",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "display" : "text",
         "step" : 1,
@@ -4732,8 +4731,7 @@
       "controlling_value_regex" : "^.*http.*$",
       "property" : null,
       "operator" : "MATCHES_REGEX",
-      "access" : null,
-      "hidden_subfields" : null
+      "access" : null
     },
     "supported_types" : [ "EXTERNAL", "CONTENT" ],
     "type" : "url",
@@ -4839,8 +4837,7 @@
       "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
-      "access" : null,
-      "hidden_subfields" : null
+      "access" : null
     },
     "display" : "toggle",
     "type" : "boolean",
@@ -4868,8 +4865,7 @@
       "controlling_value_regex" : "true",
       "property" : null,
       "operator" : "EQUAL",
-      "access" : null,
-      "hidden_subfields" : null
+      "access" : null
     },
     "icon_set" : "fontawesome-5.14.0",
     "type" : "icon",
@@ -4922,8 +4918,7 @@
         "controlling_value_regex" : "false",
         "property" : null,
         "operator" : "EQUAL",
-        "access" : null,
-        "hidden_subfields" : null
+        "access" : null
       },
       "display" : "select",
       "choices" : [ [ "localized", "Localized" ], [ "pageLang", "PageLang" ], [ "hybrid", "Hybrid" ] ],

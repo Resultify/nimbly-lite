@@ -1668,8 +1668,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
@@ -2049,8 +2048,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
@@ -2478,8 +2476,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
@@ -2501,8 +2498,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "display" : "toggle",
         "type" : "boolean",
@@ -2521,8 +2517,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "display" : "toggle",
         "type" : "boolean",
@@ -2972,8 +2967,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
@@ -2995,8 +2989,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "display" : "toggle",
         "type" : "boolean",
@@ -3015,8 +3008,7 @@
           "controlling_value_regex" : "false",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "display" : "toggle",
         "type" : "boolean",
@@ -4048,8 +4040,7 @@
       "controlling_value_regex" : "false",
       "property" : null,
       "operator" : "EQUAL",
-      "access" : null,
-      "hidden_subfields" : null
+      "access" : null
     },
     "children" : [ {
       "id" : "efb01309-56fa-c643-18ca-b13ecd5a955c",
@@ -4191,8 +4182,7 @@
         "controlling_value_regex" : "semantic",
         "property" : null,
         "operator" : "EQUAL",
-        "access" : null,
-        "hidden_subfields" : null
+        "access" : null
       },
       "allow_new_line" : false,
       "show_emoji_picker" : false,
@@ -4388,8 +4378,7 @@
           "controlling_value_regex" : "semantic",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "allow_new_line" : false,
         "show_emoji_picker" : false,
@@ -4640,8 +4629,7 @@
           "controlling_value_regex" : "semantic",
           "property" : null,
           "operator" : "EQUAL",
-          "access" : null,
-          "hidden_subfields" : null
+          "access" : null
         },
         "allow_new_line" : false,
         "show_emoji_picker" : false,

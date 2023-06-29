@@ -359,154 +359,169 @@
     "description" : "",
     "placeholders" : null
   },
+  "heading.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "heading.display.choices.display-1" : {
     "message" : "Heading display 1",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.choices.display-2" : {
     "message" : "Heading display 2",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.choices.display-3" : {
     "message" : "Heading display 3",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.choices.display-4" : {
     "message" : "Heading display 4",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.choices.display-5" : {
     "message" : "Heading display 5",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.choices.display-6" : {
     "message" : "Heading display 6",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.choices.h1" : {
     "message" : "Heading 1",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.choices.h2" : {
     "message" : "Heading 2",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.choices.h3" : {
     "message" : "Heading 3",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.choices.h4" : {
     "message" : "Heading 4",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.choices.h5" : {
     "message" : "Heading 5",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.choices.h6" : {
     "message" : "Heading 6",
-    "description" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "heading.display.default" : {
+    "message" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.help_text" : {
     "message" : "Display different heading styles not related to semantic heading type (tag h1-h6)",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.inline_help_text" : {
     "message" : "Display different heading style",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.label" : {
     "message" : "Display",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.display.placeholder" : {
     "message" : "",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.heading_tag.choices.h1" : {
     "message" : "Heading 1 (H1)",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.heading_tag.choices.h2" : {
     "message" : "Heading 2 (H2)",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.heading_tag.choices.h3" : {
     "message" : "Heading 3 (H3)",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.heading_tag.choices.h4" : {
     "message" : "Heading 4 (H4)",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.heading_tag.choices.h5" : {
     "message" : "Heading 5 (H5)",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.heading_tag.choices.h6" : {
     "message" : "Heading 6 (H6)",
-    "description" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "heading.heading_tag.default" : {
+    "message" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.heading_tag.help_text" : {
     "message" : "Semantic heading tag (h1-h6)",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.heading_tag.inline_help_text" : {
     "message" : "",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.heading_tag.label" : {
     "message" : "Tag",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.heading_tag.placeholder" : {
     "message" : "",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.help_text" : {
     "message" : "",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.inline_help_text" : {
     "message" : "",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.label" : {
     "message" : "Heading",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "heading.placeholder" : {
     "message" : "",
-    "description" : "",
+    "description" : null,
     "placeholders" : null
   },
   "layout.columns.help_text" : {

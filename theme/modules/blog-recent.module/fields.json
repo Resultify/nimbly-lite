@@ -2152,8 +2152,7 @@
     "controlling_value_regex" : "recent_posts_by_tag",
     "property" : null,
     "operator" : "EQUAL",
-    "access" : null,
-    "hidden_subfields" : null
+    "access" : null
   },
   "tag_value" : "SLUG",
   "type" : "tag"
@@ -2311,8 +2310,7 @@
       "controlling_value_regex" : "basic-grid",
       "property" : null,
       "operator" : "EQUAL",
-      "access" : null,
-      "hidden_subfields" : null
+      "access" : null
     },
     "display" : "text",
     "step" : 1,
@@ -2332,8 +2330,7 @@
       "controlling_value_regex" : "mosaic-grid",
       "property" : null,
       "operator" : "EQUAL",
-      "access" : null,
-      "hidden_subfields" : null
+      "access" : null
     },
     "display" : "text",
     "step" : 1,

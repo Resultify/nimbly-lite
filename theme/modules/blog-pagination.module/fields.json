@@ -939,8 +939,7 @@
     "controlling_value_regex" : "true",
     "property" : null,
     "operator" : "EQUAL",
-    "access" : null,
-    "hidden_subfields" : null
+    "access" : null
   },
   "placeholder" : "First label",
   "allow_new_line" : false,
@@ -961,8 +960,7 @@
     "controlling_value_regex" : "true",
     "property" : null,
     "operator" : "EQUAL",
-    "access" : null,
-    "hidden_subfields" : null
+    "access" : null
   },
   "placeholder" : "Last label",
   "allow_new_line" : false,
@@ -993,8 +991,7 @@
     "controlling_value_regex" : "true",
     "property" : null,
     "operator" : "EQUAL",
-    "access" : null,
-    "hidden_subfields" : null
+    "access" : null
   },
   "placeholder" : "Next label",
   "allow_new_line" : false,
@@ -1015,8 +1012,7 @@
     "controlling_value_regex" : "true",
     "property" : null,
     "operator" : "EQUAL",
-    "access" : null,
-    "hidden_subfields" : null
+    "access" : null
   },
   "placeholder" : "Previous label",
   "allow_new_line" : false,

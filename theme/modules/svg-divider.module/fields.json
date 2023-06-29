@@ -103,8 +103,7 @@
     "controlling_value_regex" : "custom",
     "property" : null,
     "operator" : "EQUAL",
-    "access" : null,
-    "hidden_subfields" : null
+    "access" : null
   },
   "allow_new_line" : true,
   "show_emoji_picker" : false,
@@ -122,8 +121,7 @@
     "controlling_value_regex" : "custom",
     "property" : null,
     "operator" : "EQUAL",
-    "access" : null,
-    "hidden_subfields" : null
+    "access" : null
   },
   "display" : "select",
   "choices" : [ [ "top", "Cover top element" ], [ "bottom", "Cover bottom element" ] ],
