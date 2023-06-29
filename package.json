@@ -29,14 +29,13 @@
   },
   "devDependencies": {
     "@resultify/hubspot-cms-lib": "~2.0.1",
-    "browserslist": "~4.21.4",
+    "browserslist": "~4.21.9",
     "husky": "~8.0.3",
-    "standard": "~17.0.0",
-    "stylelint": "~15.1.0",
-    "stylelint-config-standard": "~30.0.1",
+    "standard": "~17.1.0",
+    "stylelint": "~15.9.0",
+    "stylelint-config-recommended": "~12.0.0",
     "stylelint-no-unsupported-browser-features": "~6.1.0",
-    "@types/node": "^18.14.4",
-    "typescript": "^4.9.5"
+    "typescript": "~5.1.6"
   },
   "engines": {
     "node": ">=16.14",
@@ -53,7 +52,7 @@
   },
   "stylelint": {
     "extends": [
-      "stylelint-config-standard"
+      "stylelint-config-recommended"
     ],
     "plugins": [
       "stylelint-no-unsupported-browser-features"
