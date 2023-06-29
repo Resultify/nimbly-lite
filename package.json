@@ -10,7 +10,8 @@
     "prepare": "husky install",
     "lint-src-css": "stylelint 'src/css/**/*.css' 'theme/css/base/**/*.css' 'theme/modules/**/*.css' ",
     "lint-js": "standard -v 'src/js/**/*.js build/**/*.js theme/**/*.js'",
-    "lint-all": "npm run lint-src-css && npm run lint-js",
+    "checkJs": "tsc -p jsconfig.json --maxNodeModuleJsDepth 0",
+    "lint-all": "npm run lint-src-css && npm run lint-js && npm run checkJs",
     "test": "npm run lint-all",
     "build": "node build/build.js",
     "upload": "node build/upload.js",
@@ -20,8 +21,7 @@
     "fetchModules": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fetchModules.exec.js",
     "fetchDraftModules": "MODE=draft npm run fetchModules",
     "fetchAll": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fetchAll.exec.js",
-    "watch": "node build/watch.js",
-    "checkJs": "tsc -p jsconfig.json --maxNodeModuleJsDepth 0"
+    "watch": "node build/watch.js"
   },
   "dependencies": {
     "bootstrap": "~5.1.3",

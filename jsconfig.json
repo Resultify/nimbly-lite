@@ -6,7 +6,8 @@
     "checkJs": true,
     "forceConsistentCasingInFileNames": true,
     "useUnknownInCatchVariables": false,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "noImplicitAny": false
   },
   "include": ["theme/modules/**/fields.js", "build/**/*"],
 }
