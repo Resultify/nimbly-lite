@@ -158,7 +158,7 @@
             )}}
           {%- endif -%}
         {%- endif -%}
-        {{data.text}}
+        <span class="g-module-macros-link__text">{{data.text}}</span>
         {%- if data.icon.icon.name %}
           {%- if data.icon.icon_position == 'right' -%}
             {{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
