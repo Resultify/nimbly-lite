@@ -28,7 +28,7 @@
     "simplelightbox": "~2.11.0"
   },
   "devDependencies": {
-    "@resultify/hubspot-cms-lib": "~2.0.1",
+    "@resultify/hubspot-cms-lib": "~2.1.0",
     "browserslist": "~4.21.9",
     "husky": "~8.0.3",
     "standard": "~17.1.0",
