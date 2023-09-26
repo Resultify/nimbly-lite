@@ -29,6 +29,41 @@
     "description" : "",
     "placeholders" : null
   },
+  "link_group.icon.image.default.loading" : {
+    "message" : "disabled",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link_group.icon.image.default.size_type" : {
+    "message" : "exact",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link_group.icon.image.default.src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link_group.icon.image_svg_.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link_group.icon.image_svg_.default.loading" : {
+    "message" : "disabled",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link_group.icon.image_svg_.default.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link_group.icon.image_svg_.default.src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "link_group.icon.inline_help_text" : {
     "message" : "",
     "description" : "",
@@ -39,9 +74,44 @@
     "description" : "",
     "placeholders" : null
   },
+  "link_group.icon.name" : {
+    "message" : "social-links",
+    "description" : "",
+    "placeholders" : null
+  },
   "link_group.icon.placeholder" : {
     "message" : "",
     "description" : "",
+    "placeholders" : null
+  },
+  "link_group.icon.svg.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link_group.icon.svg.help_text" : {
+    "message" : "Add custom SVG to override icon",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link_group.icon.svg.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link_group.icon.svg.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link_group.icon.svg.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link_group.icon.svg.validation_regex" : {
+    "message" : "",
+    "description" : null,
     "placeholders" : null
   },
   "link_group.inline_help_text" : {
