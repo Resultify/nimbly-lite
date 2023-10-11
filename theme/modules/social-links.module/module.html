@@ -106,7 +106,7 @@
          >
 
           <div class="social-links-module__icon">
-            {{icon_macros.render_icon_tmpl(icon_data()|fromjson, module.style.icon, item)}}
+            {{icon_macros.render_icon_tmpl(icon_data()|fromjson, module.style.icon, item, null, item.icon.svg)}}
             <span class="visually-hidden">{{item.link_label.link_label}}</span>
 
             {% if item.link.link.open_in_new_tab %}

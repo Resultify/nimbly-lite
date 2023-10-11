@@ -628,6 +628,19 @@
         "unicode" : "f39e",
         "type" : "REGULAR"
       }
+    }, {
+      "id" : "cf6868bc-4799-60a5-cf51-d5c2f3351613",
+      "name" : "svg",
+      "display_width" : null,
+      "label" : "Inline SVG",
+      "help_text" : "Add custom SVG to override icon",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : ""
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
@@ -637,7 +650,8 @@
         "name" : "Facebook F",
         "unicode" : "f39e",
         "type" : "REGULAR"
-      }
+      },
+      "svg" : ""
     }
   } ],
   "tab" : "CONTENT",
@@ -664,7 +678,8 @@
         "name" : "Facebook F",
         "unicode" : "f39e",
         "type" : "REGULAR"
-      }
+      },
+      "svg" : ""
     }
   }, {
     "link_label" : {
@@ -687,7 +702,8 @@
         "name" : "Instagram",
         "unicode" : "f16d",
         "type" : "REGULAR"
-      }
+      },
+      "svg" : ""
     }
   }, {
     "link_label" : {
@@ -710,7 +726,8 @@
         "name" : "Twitter",
         "unicode" : "f099",
         "type" : "REGULAR"
-      }
+      },
+      "svg" : ""
     }
   }, {
     "link_label" : {
@@ -733,7 +750,8 @@
         "name" : "LinkedIn",
         "unicode" : "f08c",
         "type" : "REGULAR"
-      }
+      },
+      "svg" : ""
     }
   } ]
 } ]

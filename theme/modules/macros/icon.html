@@ -33,13 +33,15 @@
 }%} #}
 {# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
 
+{# 5 #}
+{# inline svg #}
 
 {# example #}
-{# {{render_icon_tmpl(module.icon, module.style.icon, module, options)}} #}
+{# {{render_icon_tmpl(module.icon, module.style.icon, module, options, inline_svg)}} #}
 {# ========================= #}
 
 
-{%- macro render_icon_tmpl(data, style, global_data, options) -%}
+{%- macro render_icon_tmpl(data, style, global_data, options, inline_svg) -%}
   {%- if data.icon.name -%}
 
     {%- if options.id -%}
@@ -123,15 +125,19 @@
 
     {%- set extra_classes = 'g-module-macros-icon icon ' ~ icon_class ~ ' ' ~ icon_size ~ ' ' ~ icon_color ~ ' ' ~ icon_shape ~ ' ' ~ class ~ ' editor-tooltip editor-hs-tooltip'  -%}
 
-    {%- icon
-      extra_classes={{extra_classes}}
-      name={{data.icon.name}}
-      purpose={{data.accessibility_options.purpose}}
-      style={{data.icon.type}}
-      title={{data.accessibility_options.title}}
-      unicode={{data.icon.unicode}}
-      icon_set={{data.icon.icon_set}}
-      no_wrapper={{no_wrapper}}
-    %}
+    {%- if inline_svg == true -%}
+      <span class="{{extra_classes}}" name="{{data.accessibility_options.title}}" data-hs-cos-general-type="widget" data-hs-cos-type="icon">{{inline_svg}}</span>
+    {%- else -%}
+      {%- icon
+        extra_classes={{extra_classes}}
+        name={{data.icon.name}}
+        purpose={{data.accessibility_options.purpose}}
+        style={{data.icon.type}}
+        title={{data.accessibility_options.title}}
+        unicode={{data.icon.unicode}}
+        icon_set={{data.icon.icon_set}}
+        no_wrapper={{no_wrapper}}
+      %}
+    {%- endif -%}
   {%- endif -%}
 {%- endmacro -%}
