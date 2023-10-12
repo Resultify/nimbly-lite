@@ -3,7 +3,7 @@
   "master_language" : "en",
   "icon" : "../../images/module-icons/divider.svg",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "module_id" : 95925093973,
+  "module_id" : 58314605798,
   "label" : "Divider.",
   "is_available_for_new_content" : true
 }
