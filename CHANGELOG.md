@@ -1,3 +1,20 @@
+### v3.0.0 `October 12, 2023`
+* **[TASK]** add 30m timeout for all github actions [`8da6288`](https://github.com/Resultify/nimbly-lite/commit/8da6288) (dmh)
+* **[FEATURE]** Add possibility to insert icons in richText module [`8b93b1d`](https://github.com/Resultify/nimbly-lite/commit/8b93b1d) (dmh)
+* **[BUGFIX]** fix upload script by updating resultify/hubspot-cms-lib pkg [`c0d09e8`](https://github.com/Resultify/nimbly-lite/commit/c0d09e8) (dmh)
+* **[TASK]** rename some module labels to be different from the default module labels [`6425262`](https://github.com/Resultify/nimbly-lite/commit/6425262) (dmh)
+* **[TASK]** add support for inline SVG to icon-macro and social-links module (#64) [`77a5ebd`](https://github.com/Resultify/nimbly-lite/commit/77a5ebd) (pxamike)
+* **[BUGFIX]** site-header module, logo_on_mobile.size.width was set on height (#63) [`277cf15`](https://github.com/Resultify/nimbly-lite/commit/277cf15) (pxamike)
+* **[TASK]** add quick-release config [`9f0f796`](https://github.com/Resultify/nimbly-lite/commit/9f0f796) (dmh)
+* **[TASK]** update theme with new HubSpot Marketplace requirements [`1982588`](https://github.com/Resultify/nimbly-lite/commit/1982588) (dmh)
+* **[BUGFIX]** blog-pagination - add wrapper to linktext in macro, update style selector (#62) [`a029db2`](https://github.com/Resultify/nimbly-lite/commit/a029db2) (pxamike)
+* **[BUGFIX]** change to relative path to modules in brand book sections (#59) [`ee04ef7`](https://github.com/Resultify/nimbly-lite/commit/ee04ef7) (Jasmine Silfver)
+* **[BUGFIX]** handle disabled search component in site-header (#60) [`b87e85f`](https://github.com/Resultify/nimbly-lite/commit/b87e85f) (pxamike)
+* **[TASK]** update jsconfig - add noImplicitAny_false [`5be16c2`](https://github.com/Resultify/nimbly-lite/commit/5be16c2) (dmh)
+* **[TASK]** update jsconfig, add fields cmd to compile fields.js from fields.json [`ab17021`](https://github.com/Resultify/nimbly-lite/commit/ab17021) (dmh)
+
+***
+
 
 #### v2.0.0 `February 21, 2023`
 

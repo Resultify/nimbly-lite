@@ -5,13 +5,13 @@
   "screenshot_path": "./images/template-previews/home.jpg",
   "enable_domain_stylesheets": false,
   "license": "MIT",
-  "version":"2.0.0",
-  "author":{
-      "name":"Resultify",
-      "email":"info@resultify.se",
-      "url":"https://www.resultify.se/"
+  "version": "3.0.0",
+  "author": {
+    "name": "Resultify",
+    "email": "info@resultify.se",
+    "url": "https://www.resultify.se/"
   },
-  "is_available_for_new_content":true,
+  "is_available_for_new_content": true,
   "responsive_breakpoints": [
     {
       "name": "mobile",
@@ -21,7 +21,7 @@
       }
     }
   ],
-   "hidden_modules": [
+  "hidden_modules": [
     "@hubspot/rich_text",
     "@hubspot/button",
     "@hubspot/form",
@@ -34,6 +34,6 @@
     "@hubspot/section_header",
     "@hubspot/header"
   ],
-  "documentation_url":"https://nimbly-lite.hs-sites.com/getting-started-guide",
-  "example_url":"https://nimbly-lite.hs-sites.com"
+  "documentation_url": "https://nimbly-lite.hs-sites.com/getting-started-guide",
+  "example_url": "https://nimbly-lite.hs-sites.com"
 }
