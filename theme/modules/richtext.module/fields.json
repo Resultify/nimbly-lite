@@ -107,7 +107,6 @@
   "label" : "Rich text",
   "required" : false,
   "locked" : false,
-  "enabled_features" : [ "bulleted_list", "emoji", "underline", "indent", "superscript", "font_size", "lineheight", "link", "hr", "video", "charmap", "italic", "cta", "outdent", "nonbreaking_space", "block", "strikethrough", "embed", "table", "image", "code_format", "subscript", "visual_blocks", "bold", "personalize", "numbered_list", "background_color", "anchor", "font_family", "text_color", "alignment", "source_code" ],
   "type" : "richtext"
 }, {
   "id" : "ef254a2b-b69e-fa9d-5ed5-5f49aa483756",
