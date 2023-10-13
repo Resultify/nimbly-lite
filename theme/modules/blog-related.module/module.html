@@ -160,7 +160,7 @@
             "text":tag.name,"accessible_link":true,
             "link":{"url":{"href":blogTagUrl,"type":"EXTERNAL"},"open_in_new_tab":false,"rel":""},
             "icon":{
-              "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
+              "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-6.4.2"},
               "icon_position":"left"
             }
           }%}{{link_macros.render_link_tmpl(link_data, module.style.link, module)}}
@@ -179,7 +179,7 @@
       "display":module.heading.display,"heading_tag":module.heading.heading_tag,"text":content.name,
       "link":{"link":{"url":{"href":content.absolute_url,"type":"EXTERNAL"},"open_in_new_tab":false,"rel":""},"accessible_link":true},
       "icon":{
-        "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
+        "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-6.4.2"},
         "icon_position":"left","accessibility_options":{"purpose":"decorative"}
       }
     }%}{{heading_macros.render_heading_tmpl(heading_data, module.style.heading, module)}}
@@ -213,7 +213,7 @@
           "text":content.blog_author.display_name,"accessible_link":true,
           "link":{"url":{"href":blog_author_url(group.id, content.blog_post_author.slug),"type":"EXTERNAL"},"open_in_new_tab":false,"rel":""},
           "icon":{
-            "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
+            "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-6.4.2"},
             "icon_position":"left"
           }
         }%}{{link_macros.render_link_tmpl(author_link_data, module.style.secondary_link, module,
@@ -259,7 +259,7 @@
             "text":content.blog_author.display_name,"accessible_link":true,
             "link":{"url":{"href":blog_author_url(group.id, content.blog_post_author.slug),"type":"EXTERNAL"},"open_in_new_tab":false,"rel":""},
             "icon":{
-              "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
+              "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-6.4.2"},
               "icon_position":"left"
             }
           }%}{{link_macros.render_link_tmpl(author_link_data, module.style.secondary_link, module,
@@ -291,7 +291,7 @@
       "text":module.button.text,"accessible_link_label":"Read full post: {{content.name}}","accessible_link":true,
       "link":{"url":{"href":content.absolute_url,"type":"EXTERNAL"},"open_in_new_tab":false,"rel":""},
       "icon":{
-        "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
+        "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-6.4.2"},
         "icon_position":"left","accessibility_options":{"purpose":"decorative"}
       }
     }%}{{button_macros.render_btn_tmpl(button_data, module.style.button, module)}}

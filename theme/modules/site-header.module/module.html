@@ -56,7 +56,7 @@
             type="button" data-bs-toggle="dropdown" aria-expanded="false">
             {% if module.language_switcher.show_language_icon %}
               {%- set icon_data = {
-                "icon":{"name":module.language_switcher.icon.name,"unicode":module.language_switcher.icon.unicode,"type":module.language_switcher.icon.type,"icon_set":"fontawesome-5.14.0"},
+                "icon":{"name":module.language_switcher.icon.name,"unicode":module.language_switcher.icon.unicode,"type":module.language_switcher.icon.type,"icon_set":"fontawesome-6.4.2"},
                 "accessibility_options":{"purpose":"semantic", "title":"Change language"}
               }%}{{icon_macros.render_icon_tmpl(icon_data, module.style.language_switcher.icon, module)}}
             {%- endif %}
