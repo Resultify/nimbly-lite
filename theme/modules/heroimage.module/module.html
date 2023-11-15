@@ -82,6 +82,9 @@
           }
           .heroimage-module__caption-position {
             height: auto;
+            {% if module.style.additional_settings.min_height_on_mobile > 0 and module.style.additional_settings.caption_om_mobile == 'cover' %}
+              min-height: {{module.style.additional_settings.min_height_on_mobile}}px;
+            {% endif %}
           }
           {% if module.style.additional_settings.caption_om_mobile != 'cover' %}
             .heroimage-module {
