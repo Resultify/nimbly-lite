@@ -1574,6 +1574,31 @@
     "description" : "",
     "placeholders" : null
   },
+  "style.additional_settings.min_height_on_mobile.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.additional_settings.min_height_on_mobile.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.additional_settings.min_height_on_mobile.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.additional_settings.min_height_on_mobile.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.additional_settings.min_height_on_mobile.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "style.additional_settings.placeholder" : {
     "message" : "",
     "description" : "",

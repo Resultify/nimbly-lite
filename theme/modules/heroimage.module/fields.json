@@ -3411,6 +3411,25 @@
       "preset" : null,
       "type" : "choice",
       "default" : "cover"
+    }, {
+      "id" : "1d95d1a4-fecb-789e-3840-7570844ab1f9",
+      "name" : "min_height_on_mobile",
+      "display_width" : null,
+      "label" : "Minimum height on small screens",
+      "help_text" : "Minimum height on small screens when text covers the hero image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "style.additional_settings.caption_om_mobile",
+        "controlling_value_regex" : "cover",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "step" : 1,
+      "type" : "number"
     } ],
     "tab" : "STYLE",
     "expanded" : false,
