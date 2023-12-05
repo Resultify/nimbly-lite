@@ -221,6 +221,35 @@
               "size_unit": "px",
               "color": "#1d1d1d"
             }
+          },
+          {
+            "label": "Secondary global font",
+            "name": "secondary_global_font",
+            "type": "font",
+            "help_text": "Use it to add a 'bold' variant for the global font to use the 'bold' style in the RTE module.",
+            "inline_help_text": "Use it only if the main font is external.",
+            "visibility": {
+              "hidden_subfields": {
+                "size": true,
+                "color": true,
+                "italic": true,
+                "underline": true,
+                "bold": true
+              }
+            },
+            "default": {
+              "variant": "700"
+            },
+            "inherited_value": {
+              "property_value_paths": {
+                "font": "theme.typography.text.font.font",
+                "font_set": "theme.typography.text.font.font_set"
+              }
+            },
+            "display_width": null,
+            "load_external_fonts": true,
+            "locked": true,
+            "required": false
           }
         ],
         "display_width": null,

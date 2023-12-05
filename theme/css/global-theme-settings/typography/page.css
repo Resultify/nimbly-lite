@@ -20,3 +20,8 @@ body {
     {{main_text_font.style}};
   {% endif %}
 }
+
+/* Automatically add a bold variant of the global external font if defined to add the ability to use a "bold" text style in the RTE module. */
+.secondary-global-font {
+  {{theme.typography.text.secondary_global_font.style}};
+}
