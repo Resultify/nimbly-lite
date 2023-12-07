@@ -41,6 +41,10 @@
       flex-basis: auto;
       align-self: center;
     }
+    .card-module--item .hs_cos_wrapper_type_cta {
+      display: inline-block;
+      vertical-align: bottom;
+    }
   </style>
 {% end_require_css %}
 
@@ -139,6 +143,16 @@
         background-color: {{module.style.secondary_button.background.color.css}};
       {% endif %}
       {{module.style.secondary_button.spacing.spacing.css}}
+    }
+  
+    .card-module__cta {
+      text-align: {{module.style.cta.alignment.alignment.horizontal_align}};
+      {{module.style.cta.spacing.spacing.css}}
+    }
+  
+    .card-module__secondary-cta {
+      text-align: {{module.style.secondary_cta.alignment.alignment.horizontal_align}};
+      {{module.style.secondary_cta.spacing.spacing.css}}
     }
 
     {# #2 part filter content #}
@@ -289,6 +303,24 @@
   {% endif %}
 {%- endmacro -%}
 
+{%- macro render_cta() -%}
+  {% if module.cta.cta %}
+    <div class="card-module__cta card-module--item
+    {{' card-module--item-inline' if module.style.cta.alignment.inline}}">
+      {% cta guid="{{ module.cta.cta }}" %}
+    </div>
+    {% endif %}
+{%- endmacro -%}
+
+{%- macro render_secondarycta() -%}
+  {% if module.secondary_cta.cta %}
+    <div class="card-module__secondary-cta card-module--item
+    {{' card-module--item-inline' if module.style.secondary_cta.alignment.inline}}">
+      {% cta guid="{{ module.secondary_cta.cta }}" %}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
 <div class="card-module_wrp {{filter_content_classes}}">
   <div class="card-module card-module--container card-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
     {% for card_component in module.card_components %}
@@ -312,6 +344,10 @@
         {{render_button() if card_component.show}}
       {% elif card_component.component|cut(" ")|lower == 'secondarybutton' %}
         {{render_secondarybutton() if card_component.show}}
+      {% elif card_component.component|lower == 'cta' %}
+        {{render_cta() if card_component.show}}
+      {% elif card_component.component|cut(" ")|lower == 'secondarycta' %}
+        {{render_secondarycta() if card_component.show}}
       {% endif %}
     {% endfor %}
   </div>
