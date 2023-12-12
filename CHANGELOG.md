@@ -1,3 +1,12 @@
+### v4.0.0 `December 12, 2023`
+* **[TASK]** add CTA option to card and image card modules (#68) [`8790b82`](https://github.com/Resultify/nimbly-lite/commit/8790b82) (Jasmine Silfver)
+* **[TASK]** add bold variant of the global external font to add the ability to use a "bold" text style in the RTE module [`4aa9f1e`](https://github.com/Resultify/nimbly-lite/commit/4aa9f1e) (dmh)
+* **[BUGFIX]** fix sticky header functionality, fix #57 [`694a684`](https://github.com/Resultify/nimbly-lite/commit/694a684) (dmh)
+* **[TASK]** adds new style setting minimum height on small screens (#67) [`c3f64c5`](https://github.com/Resultify/nimbly-lite/commit/c3f64c5) (Mats Svensson)
+* **[BUGFIX]** remove vertical alignment on regular links (#66) [`1aabfdd`](https://github.com/Resultify/nimbly-lite/commit/1aabfdd) (pxamike)
+
+***
+
 ### v3.0.0 `October 12, 2023`
 * **[TASK]** add 30m timeout for all github actions [`8da6288`](https://github.com/Resultify/nimbly-lite/commit/8da6288) (dmh)
 * **[FEATURE]** Add possibility to insert icons in richText module [`8b93b1d`](https://github.com/Resultify/nimbly-lite/commit/8b93b1d) (dmh)
