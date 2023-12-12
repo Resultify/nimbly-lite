@@ -33,6 +33,10 @@
     .image-card-module__image .g-module-macros-image_wrp {
       display: flex;
     }
+    .image-card-module--item .hs_cos_wrapper_type_cta {
+      display: inline-block;
+      vertical-align: bottom;
+    }
   </style>
 {% end_require_css %}
 
@@ -265,6 +269,16 @@
       {{module.style.secondary_button.spacing.spacing.css}}
     }
 
+    .image-card-module__cta {
+      text-align: {{module.style.cta.alignment.alignment.horizontal_align}};
+      {{module.style.cta.spacing.spacing.css}}
+    }
+
+    .image-card-module__secondary-cta {
+      text-align: {{module.style.secondary_cta.alignment.alignment.horizontal_align}};
+      {{module.style.secondary_cta.spacing.spacing.css}}
+    }
+
   {% end_scope_css %}
 </style>
 
@@ -359,6 +373,24 @@
   {% endif %}
 {%- endmacro -%}
 
+{%- macro render_cta() -%}
+  {% if module.cta.cta %}
+    <div class="image-card-module__cta image-card-module--item
+    {{' image-card-module--item-inline' if module.style.cta.alignment.inline}}">
+      {% cta guid="{{ module.cta.cta }}" %}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_secondarycta() -%}
+  {% if module.secondary_cta.cta %}
+    <div class="image-card-module__secondary-cta image-card-module--item
+    {{' image-card-module--item-inline' if module.style.secondary_cta.alignment.inline}}">
+      {% cta guid="{{ module.secondary_cta.cta }}" %}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
 {%- macro text_column() -%}
   <div class="image-card-module__text-column_wrp">
     <div class="image-card-module__text-column">
@@ -381,6 +413,10 @@
           {{render_button() if imagecard_component.show}}
         {% elif imagecard_component.component|cut(" ")|lower == 'secondarybutton' %}
           {{render_secondarybutton() if imagecard_component.show}}
+        {% elif imagecard_component.component|lower == 'cta' %}
+          {{render_cta() if imagecard_component.show}}
+        {% elif imagecard_component.component|cut(" ")|lower == 'secondarycta' %}
+          {{render_secondarycta() if imagecard_component.show}}
         {% endif %}
       {% endfor %}
     </div>

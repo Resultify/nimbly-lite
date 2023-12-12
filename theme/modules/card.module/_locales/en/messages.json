@@ -1379,6 +1379,56 @@
     "description" : "",
     "placeholders" : null
   },
+  "secondary_cta.cta.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "secondary_cta.cta.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "secondary_cta.cta.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "secondary_cta.cta.label" : {
+    "message" : "CTA",
+    "description" : null,
+    "placeholders" : null
+  },
+  "secondary_cta.cta.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "secondary_cta.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "secondary_cta.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "secondary_cta.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "secondary_cta.label" : {
+    "message" : "CTA copy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "secondary_cta.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "secondary_link.accessible_link.help_text" : {
     "message" : "Accessible link. Inform when a link opens a new window.",
     "description" : "",
@@ -1537,6 +1587,36 @@
   "secondary_link.text.validation_regex" : {
     "message" : "",
     "description" : "",
+    "placeholders" : null
+  },
+  "style.alignment.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.alignment.default.horizontal_align" : {
+    "message" : "LEFT",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.alignment.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.alignment.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.alignment.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.alignment.placeholder" : {
+    "message" : "",
+    "description" : null,
     "placeholders" : null
   },
   "style.button.alignment.alignment.default.horizontal_align" : {
@@ -2176,6 +2256,71 @@
   },
   "style.button.spacing.spacing.placeholder" : {
     "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.cta.alignment.alignment_copy.default.horizontal_align" : {
+    "message" : "LEFT",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.cta.alignment.alignment_copy.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.cta.alignment.alignment_copy.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.cta.alignment.alignment_copy.label" : {
+    "message" : "Alignment copy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.cta.alignment.alignment_copy.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.cta.alignment.name" : {
+    "message" : "card",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.cta.alignment_field.default" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.cta.alignment_field.default.horizontal_align" : {
+    "message" : "LEFT",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.cta.alignment_field.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.cta.alignment_field.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.cta.alignment_field.label" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.cta.alignment_field.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.cta.name" : {
+    "message" : "card",
     "description" : "",
     "placeholders" : null
   },
@@ -4129,6 +4274,11 @@
     "description" : "",
     "placeholders" : null
   },
+  "style.name" : {
+    "message" : "card",
+    "description" : "",
+    "placeholders" : null
+  },
   "style.placeholder" : {
     "message" : "",
     "description" : "",
@@ -4872,6 +5022,131 @@
   "style.secondary_button.spacing.spacing.placeholder" : {
     "message" : "",
     "description" : "",
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.inline.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.inline.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.inline.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.inline.label" : {
+    "message" : "Inline",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.inline.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.label" : {
+    "message" : "Alignment",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.label" : {
+    "message" : "CTA copy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.spacing.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.spacing.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.spacing.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.spacing.label" : {
+    "message" : "Spacing",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.spacing.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.spacing.spacing.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.spacing.spacing.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.spacing.spacing.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.spacing.spacing.label" : {
+    "message" : "Spacing",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.spacing.spacing.placeholder" : {
+    "message" : "",
+    "description" : null,
     "placeholders" : null
   },
   "style.secondary_link.alignment.alignment.default.horizontal_align" : {
