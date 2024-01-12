@@ -8,34 +8,33 @@
   "type": "module",
   "scripts": {
     "prepare": "husky install",
-    "lint-src-css": "stylelint 'src/css/**/*.css' 'theme/css/base/**/*.css' 'theme/modules/**/*.css' ",
+    "lint-css": "stylelint 'src/css/**/*.css' 'theme/css/base/**/*.css' 'theme/modules/**/*.css' ",
     "lint-js": "standard -v 'src/js/**/*.js build/**/*.js theme/**/*.js'",
-    "checkJs": "tsc -p jsconfig.json --maxNodeModuleJsDepth 0",
-    "lint-all": "npm run lint-src-css && npm run lint-js && npm run checkJs",
+    "check-js": "tsc -p jsconfig.json --maxNodeModuleJsDepth 0",
+    "lint-all": "npm run lint-css && npm run lint-js && npm run check-js",
     "test": "npm run lint-all",
-    "build": "node build/build.js",
-    "upload": "node build/upload.js",
-    "fields": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fields.exec.js",
-    "lighthouse": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/lighthouse.exec.js",
-    "validate": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/validate.exec.js",
-    "fetchModules": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fetchModules.exec.js",
-    "fetchDraftModules": "MODE=draft npm run fetchModules",
-    "fetchAll": "node node_modules/@resultify/hubspot-cms-lib/lib/cmd/fetchAll.exec.js",
-    "watch": "node build/watch.js"
+    "build": "node -e 'import(`@resultify/hubspot-cms-lib/build`)'",
+    "upload": "node -e 'import(`@resultify/hubspot-cms-lib/upload`)'",
+    "fields": "node -e 'import(`@resultify/hubspot-cms-lib/fields`)'",
+    "validate": "node -e 'import(`@resultify/hubspot-cms-lib/validate`)'",
+    "lighthouse": "node -e 'import(`@resultify/hubspot-cms-lib/lighthouse`)'",
+    "fetchModules": "node -e 'import(`@resultify/hubspot-cms-lib/fetchModules`)'",
+    "fetch": "node -e 'import(`@resultify/hubspot-cms-lib/fetch`)'",
+    "watch": "node -e 'import(`@resultify/hubspot-cms-lib/watch`)'"
   },
   "dependencies": {
     "bootstrap": "~5.1.3",
     "simplelightbox": "~2.11.0"
   },
   "devDependencies": {
-    "@resultify/hubspot-cms-lib": "~2.1.1",
-    "browserslist": "~4.21.9",
+    "@resultify/hubspot-cms-lib": "~3.0.1",
+    "browserslist": "~4.22.2",
     "husky": "~8.0.3",
     "standard": "~17.1.0",
-    "stylelint": "~15.9.0",
-    "stylelint-config-recommended": "~12.0.0",
-    "stylelint-no-unsupported-browser-features": "~6.1.0",
-    "typescript": "~5.1.6"
+    "stylelint": "~16.1.0",
+    "stylelint-config-recommended": "~14.0.0",
+    "stylelint-no-unsupported-browser-features": "~8.0.0",
+    "typescript": "~5.3.3"
   },
   "engines": {
     "node": ">=16.14",
@@ -68,5 +67,25 @@
       "src/tmp/**/*.css",
       "theme/assets/**/*.css"
     ]
+  },
+  "cmslib": {
+    "themeFolder": "theme",
+    "vendorSrc": "src",
+    "vendorDest": "theme/assets",
+    "js": {
+      "external": ["@popperjs/core"],
+      "replace": {
+        "global.SimpleLightbox": "window.SimpleLightbox"
+      },
+      "globals": {
+        "@popperjs/core": "Popper = () => {}"
+      }
+    },
+    "lighthouse": {
+      "performance": 75,
+      "accessibility": 90,
+      "bestPractices": 90,
+      "seo": 80
+    }
   }
 }
