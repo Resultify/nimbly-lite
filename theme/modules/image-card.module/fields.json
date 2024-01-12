@@ -5845,10 +5845,10 @@
   "required" : false,
   "locked" : false,
   "occurrence" : {
-    "min" : 11,
+    "min" : 9,
     "max" : 11,
     "sorting_label_field" : null,
-    "default" : 11
+    "default" : 9
   },
   "children" : [ {
     "id" : "imagecard_components.component",
