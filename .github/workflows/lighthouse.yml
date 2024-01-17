@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js v${{ matrix.node }}
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
       - run: npm ci
 
@@ -23,7 +23,7 @@ jobs:
         env:
           HUBSPOT_PORTAL_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
           HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
-        run: npm run lighthouse -- --themeConfirm=true
+        run: npm run lighthouse
 
       - name: PKG versions
         run: |
