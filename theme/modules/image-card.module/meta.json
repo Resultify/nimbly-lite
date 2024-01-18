@@ -1,5 +1,6 @@
 {
   "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "master_language" : "en",
   "inline_help_text" : "This module consists of an image and a card divided into two columns with additional styling options",
   "icon" : "../../images/module-icons/image-card.svg",
