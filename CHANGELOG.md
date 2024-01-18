@@ -1,3 +1,18 @@
+### v5.0.0 `January 18, 2024`
+* **[TASK]** add Nimbly Lite meta tag for easy identifying nimbly based sites [`199f770`](https://github.com/Resultify/nimbly-lite/commit/199f770) (dmh)
+* **[TASK]** uprate compatible browsers list, update gitignore and editorconfig [`0a5dbdd`](https://github.com/Resultify/nimbly-lite/commit/0a5dbdd) (dmh)
+* **[TASK]** update @resultify/hubspot-cms-lib to v3.1.1 [`1d8679d`](https://github.com/Resultify/nimbly-lite/commit/1d8679d) (dmh)
+* **[TEST]** adapt lighthouse score threshold for github actions [`0956a26`](https://github.com/Resultify/nimbly-lite/commit/0956a26) (dmh)
+* **[TASK]** add content_types prop as a new version of host_template_types to each module [`0ab633d`](https://github.com/Resultify/nimbly-lite/commit/0ab633d) (dmh)
+* **[TEST]** update github deploy action, use commands with no flags [`4be3c9d`](https://github.com/Resultify/nimbly-lite/commit/4be3c9d) (dmh)
+* **[TASK]** update @resultify/hubspot-cms-lib to v3.1.0 [`9aa960e`](https://github.com/Resultify/nimbly-lite/commit/9aa960e) (dmh)
+* **[TEST]** update github actions config, use node v20 [`381d8fb`](https://github.com/Resultify/nimbly-lite/commit/381d8fb) (dmh)
+* **[TASK]** update cmslib configuration, update hubspot-cms-lib commands in package.json scripts [`9d19168`](https://github.com/Resultify/nimbly-lite/commit/9d19168) (dmh)
+* **[TASK]** use new hubspot-cms-lib version, update other npm dependencies [`85f2b28`](https://github.com/Resultify/nimbly-lite/commit/85f2b28) (dmh)
+* **[BUGFIX]** change min occurrence of components in card and image card m… (#69) [`f0443fe`](https://github.com/Resultify/nimbly-lite/commit/f0443fe) (Jasmine Silfver)
+
+***
+
 ### v4.0.0 `December 12, 2023`
 * **[TASK]** add CTA option to card and image card modules (#68) [`8790b82`](https://github.com/Resultify/nimbly-lite/commit/8790b82) (Jasmine Silfver)
 * **[TASK]** add bold variant of the global external font to add the ability to use a "bold" text style in the RTE module [`4aa9f1e`](https://github.com/Resultify/nimbly-lite/commit/4aa9f1e) (dmh)

@@ -1,6 +1,6 @@
 {
   "name": "nimbly-lite",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Hubspot theme",
   "license": "MIT",
   "authors": "Resultify",
@@ -73,7 +73,9 @@
     "vendorSrc": "src",
     "vendorDest": "theme/assets",
     "js": {
-      "external": ["@popperjs/core"],
+      "external": [
+        "@popperjs/core"
+      ],
       "replace": {
         "global.SimpleLightbox": "window.SimpleLightbox"
       },
