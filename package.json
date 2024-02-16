@@ -18,6 +18,7 @@
     "fetch": "cmslib --fetch",
     "fetchModules": "cmslib --fetchModules",
     "upload": "cmslib --upload",
+    "cleanUpload": "cmslib --cleanUpload",
     "validate": "cmslib --validate",
     "lighthouse": "cmslib --lighthouse",
     "fields": "cmslib --fields",
