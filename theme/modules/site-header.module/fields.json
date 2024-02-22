@@ -3784,6 +3784,45 @@
       }
     }
   }, {
+    "id" : "1e7bfe18-8a16-f568-4044-9ba01ae870e4",
+    "name" : "cta",
+    "display_width" : null,
+    "label" : "CTA",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "1a40de40-3f96-14bd-1cc8-97ce9b1a5c06",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "6f7eb44f-2281-2cae-0bd9-5007693cab09",
+        "name" : "spacing",
+        "display_width" : null,
+        "label" : "Spacing",
+        "required" : false,
+        "locked" : false,
+        "type" : "spacing",
+        "default" : { }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "spacing" : { }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : {
+        "spacing" : { }
+      }
+    }
+  }, {
     "id" : "093d4147-4d6c-c47e-71bc-4168460bfbe9",
     "name" : "mobile_menu_toggler",
     "display_width" : null,
@@ -4650,6 +4689,11 @@
         }
       }
     },
+    "cta" : {
+      "spacing" : {
+        "spacing" : { }
+      }
+    },
     "mobile_menu_toggler" : {
       "alignment" : {
         "alignment" : "left"
@@ -5450,6 +5494,32 @@
     }
   }
 }, {
+  "id" : "7b54f75f-8df1-fecf-07d3-83434a0b6b4c",
+  "name" : "ctas",
+  "display_width" : null,
+  "label" : "CTAs",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "90e225b2-b6df-4b3b-5043-20bca56d5e88",
+    "name" : "cta",
+    "display_width" : null,
+    "label" : "CTA",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : 3,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "type" : "cta"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+}, {
   "id" : "6b9c9de8-cdc8-2934-3a74-6aa13691c703",
   "name" : "site_header_components",
   "display_width" : null,
@@ -5458,7 +5528,7 @@
   "locked" : false,
   "occurrence" : {
     "min" : 4,
-    "max" : 4,
+    "max" : 5,
     "sorting_label_field" : "2375f489-d5c3-e7b5-d816-82c665909efe",
     "default" : 4
   },
@@ -5499,6 +5569,9 @@
     "show" : true
   }, {
     "component" : "Buttons",
+    "show" : true
+  }, {
+    "component" : "CTAs",
     "show" : true
   } ]
 } ]
