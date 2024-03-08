@@ -1,0 +1,14 @@
+.blog-post-2-template .blog-post-header,
+.blog-post-2-template .blog-post-header-wrp.blog-post-header-wrp-featured-image:before {
+  background-color: {{theme.blog.header_background_color.css}};
+}
+
+.blog-post-2-template .blog-post__heading,
+.blog-post-2-template .blog-post__meta {
+  color: {{theme.blog.header_text_color.css}};
+}
+
+.blog-post-2-template .blog-post__tags a,
+.blog-post-2-template .blog-post__meta a {
+  color: {{theme.blog.header_link_color.css}};
+}
