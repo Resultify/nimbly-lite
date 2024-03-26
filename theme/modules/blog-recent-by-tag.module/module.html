@@ -257,7 +257,9 @@
 {# Description #}
 {%- macro render_description(content) -%}
   <div class="blog-recent-by-tag-module__article-description">
-    {{content.post_summary|truncatehtml(module.description.truncate)|sanitize_html("STRIP")}}
+    <p>
+      {{content.post_summary|truncatehtml(module.description.truncate)|sanitize_html("STRIP")}}
+    </p>
   </div>
 {%- endmacro -%}
 
