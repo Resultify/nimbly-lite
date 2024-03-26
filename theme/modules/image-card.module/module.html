@@ -107,6 +107,20 @@
         width: 100%;
       }
     {% endif %}
+    {% if module.style.image.image.alignment.full_height %}
+      .image-card-module__image,
+      .g-module-macros-image_wrp {
+        height: 100%;
+      }
+      .image-card-module__image img {
+        object-fit: cover;
+        {% if module.style.image.image.alignment.image_position == 'left' %}
+          object-position: left;
+        {% elif module.style.image.image.alignment.image_position == 'right' %}
+          object-position: right;
+        {% endif %}
+      }
+    {% endif %}
 
     .image-card-module {
       row-gap: {{module.style.general.spacing.horizontal_gap ~ 'px'}};
