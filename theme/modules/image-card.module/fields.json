@@ -931,11 +931,24 @@
       "required" : false,
       "locked" : false,
       "children" : [ {
+        "id" : "669ff5ac-7529-e86c-7bb0-f57bff0fd3ea",
+        "name" : "desktop_alignment",
+        "display_width" : null,
+        "label" : "Desktop alignment",
+        "help_text" : "Align all components at once on desktop. Will be overriden by individual alignment.",
+        "required" : false,
+        "locked" : false,
+        "alignment_direction" : "HORIZONTAL",
+        "type" : "alignment",
+        "default" : {
+          "horizontal_align" : "LEFT"
+        }
+      }, {
         "id" : "406f53b9-4775-b44f-6816-23d9adf5f3a4",
         "name" : "mobile_alignment",
         "display_width" : null,
         "label" : "Mobile alignment",
-        "help_text" : "Align all text at once on mobile devices",
+        "help_text" : "Align all components at once on mobile devices. Will be overriden by individual alignment.",
         "required" : false,
         "locked" : false,
         "alignment_direction" : "HORIZONTAL",
@@ -948,6 +961,9 @@
       "expanded" : false,
       "type" : "group",
       "default" : {
+        "desktop_alignment" : {
+          "horizontal_align" : "LEFT"
+        },
         "mobile_alignment" : {
           "horizontal_align" : "LEFT"
         }
@@ -983,6 +999,9 @@
         }
       },
       "text" : {
+        "desktop_alignment" : {
+          "horizontal_align" : "LEFT"
+        },
         "mobile_alignment" : {
           "horizontal_align" : "LEFT"
         }
@@ -1078,7 +1097,7 @@
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       } ],
       "tab" : "STYLE",
@@ -1086,7 +1105,7 @@
       "type" : "group",
       "default" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       }
     }, {
@@ -1248,7 +1267,7 @@
       },
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       },
       "spacing" : {
@@ -1305,7 +1324,7 @@
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       } ],
       "tab" : "STYLE",
@@ -1313,7 +1332,7 @@
       "type" : "group",
       "default" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       }
     }, {
@@ -1427,7 +1446,7 @@
     "default" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       },
       "spacing" : {
@@ -1480,7 +1499,7 @@
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       } ],
       "tab" : "STYLE",
@@ -1488,7 +1507,7 @@
       "type" : "group",
       "default" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       }
     }, {
@@ -1714,7 +1733,7 @@
     "default" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       },
       "spacing" : {
@@ -1780,7 +1799,7 @@
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       } ],
       "tab" : "STYLE",
@@ -1788,7 +1807,7 @@
       "type" : "group",
       "default" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       }
     }, {
@@ -2014,7 +2033,7 @@
     "default" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       },
       "spacing" : {
@@ -2171,7 +2190,7 @@
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       }, {
         "id" : "58a52428-371e-ce16-a218-9eec38853cfd",
@@ -2190,7 +2209,7 @@
       "type" : "group",
       "default" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "inline" : false
       }
@@ -2480,7 +2499,7 @@
     "default" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "inline" : false
       },
@@ -2559,7 +2578,7 @@
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       }, {
         "id" : "8a10a919-910c-27f9-9ae1-3212597273c8",
@@ -2578,7 +2597,7 @@
       "type" : "group",
       "default" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "inline" : false
       }
@@ -2868,7 +2887,7 @@
     "default" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "inline" : false
       },
@@ -2995,7 +3014,7 @@
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       }, {
         "id" : "style.button.button_full_width",
@@ -3042,7 +3061,7 @@
       "type" : "group",
       "default" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "full_width" : false,
         "inline" : false
@@ -3364,7 +3383,7 @@
       },
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "full_width" : false,
         "inline" : false
@@ -3494,7 +3513,7 @@
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       }, {
         "id" : "67bcef02-231a-ca6a-e1e7-a3226a6ba568",
@@ -3541,7 +3560,7 @@
       "type" : "group",
       "default" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "full_width" : false,
         "inline" : false
@@ -3863,7 +3882,7 @@
       },
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "full_width" : false,
         "inline" : false
@@ -3945,7 +3964,7 @@
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       }, {
         "id" : "b66ecb8c-17c3-5fa6-ded4-81e6441e7029",
@@ -3963,7 +3982,7 @@
       "type" : "group",
       "default" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "inline" : false
       }
@@ -3995,7 +4014,7 @@
     "default" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "inline" : false
       },
@@ -4041,7 +4060,7 @@
         "alignment_direction" : "HORIZONTAL",
         "type" : "alignment",
         "default" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       }, {
         "id" : "ff498406-ac6c-81b0-7897-67c9c45e0211",
@@ -4059,7 +4078,7 @@
       "type" : "group",
       "default" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "inline" : false
       }
@@ -4091,7 +4110,7 @@
     "default" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "inline" : false
       },
@@ -4195,6 +4214,9 @@
         }
       },
       "text" : {
+        "desktop_alignment" : {
+          "horizontal_align" : "LEFT"
+        },
         "mobile_alignment" : {
           "horizontal_align" : "LEFT"
         }
@@ -4208,7 +4230,7 @@
       },
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       },
       "spacing" : {
@@ -4236,7 +4258,7 @@
     "text" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       },
       "spacing" : {
@@ -4260,7 +4282,7 @@
     "heading" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       },
       "spacing" : {
@@ -4297,7 +4319,7 @@
     "subheading" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         }
       },
       "spacing" : {
@@ -4345,7 +4367,7 @@
     "link" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "inline" : false
       },
@@ -4387,7 +4409,7 @@
     "secondary_link" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "inline" : false
       },
@@ -4433,7 +4455,7 @@
       },
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "full_width" : false,
         "inline" : false
@@ -4482,7 +4504,7 @@
       },
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "full_width" : false,
         "inline" : false
@@ -4527,7 +4549,7 @@
     "cta" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "inline" : false
       },
@@ -4536,7 +4558,7 @@
     "secondary_cta" : {
       "alignment" : {
         "alignment" : {
-          "horizontal_align" : "LEFT"
+          "horizontal_align" : null
         },
         "inline" : false
       },

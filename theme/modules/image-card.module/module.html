@@ -64,6 +64,12 @@
       .image-card-module__text-column {
         justify-content: {{module.style.text_body.alignment.inline_alignment}};
       }
+      {# all text on desktop #}
+      .image-card-module__text-column > div,
+      .image-card-module__text-column .g-module-macros-richtext > div,
+      .image-card-module__text-column .g-module-macros-richtext p {
+        text-align: {{module.style.text_body.text.desktop_alignment.horizontal_align}};
+      }
     }
     @media (max-width: 991.98px) {
       {# image column #}
@@ -85,7 +91,7 @@
       .image-card-module__text-column > div,
       .image-card-module__text-column .g-module-macros-richtext > div,
       .image-card-module__text-column .g-module-macros-richtext p {
-        text-align: {{module.style.text_body.text.mobile_alignment.horizontal_align}}!important;
+        text-align: {{module.style.text_body.text.mobile_alignment.horizontal_align}};
       }
       {# inline links and buttons alignment #}
       .image-card-module__text-column {
@@ -199,7 +205,7 @@
     }
 
     .image-card-module__icon {
-      text-align: {{module.style.icon.alignment.alignment.horizontal_align}};
+      text-align: {{module.style.icon.alignment.alignment.horizontal_align}}!important;
       {% if module.style.icon.background.color.css %}
         background-color: {{module.style.icon.background.color.css}};
       {% endif %}
@@ -207,26 +213,26 @@
     }
 
     .image-card-module__text {
+      text-align: {{module.style.text.alignment.alignment.horizontal_align}}!important;
       {% if module.style.text.background.color.css %}
         background-color: {{module.style.text.background.color.css}};
       {% endif %}
-      text-align: {{module.style.text.alignment.alignment.horizontal_align}};
       {{module.style.text.spacing.spacing.css}}
     }
 
     .image-card-module__heading {
+      text-align: {{module.style.heading.alignment.alignment.horizontal_align}}!important;
       {% if module.style.heading.background.color.css %}
         background-color: {{module.style.heading.background.color.css}};
       {% endif %}
-      text-align: {{module.style.heading.alignment.alignment.horizontal_align}};
       {{module.style.heading.spacing.spacing.css}}
     }
 
     .image-card-module__subheading {
+      text-align: {{module.style.subheading.alignment.alignment.horizontal_align}}!important;
       {% if module.style.subheading.background.color.css %}
         background-color: {{module.style.subheading.background.color.css}};
       {% endif %}
-      text-align: {{module.style.subheading.alignment.alignment.horizontal_align}};
       {{module.style.subheading.spacing.spacing.css}}
     }
 
@@ -238,7 +244,7 @@
     }
 
     .image-card-module__link {
-      text-align: {{module.style.link.alignment.alignment.horizontal_align}};
+      text-align: {{module.style.link.alignment.alignment.horizontal_align}}!important;
       {% if module.style.link.background.color.css %}
         background-color: {{module.style.link.background.color.css}};
       {% endif %}
@@ -246,7 +252,7 @@
     }
 
     .image-card-module__secondary-link {
-      text-align: {{module.style.secondary_link.alignment.alignment.horizontal_align}};
+      text-align: {{module.style.secondary_link.alignment.alignment.horizontal_align}}!important;
       {% if module.style.secondary_link.background.color.css %}
         background-color: {{module.style.secondary_link.background.color.css}};
       {% endif %}
@@ -254,7 +260,7 @@
     }
 
     .image-card-module__button {
-      text-align: {{module.style.button.alignment.alignment.horizontal_align}};
+      text-align: {{module.style.button.alignment.alignment.horizontal_align}}!important;
       {% if module.style.button.background.color.css %}
         background-color: {{module.style.button.background.color.css}};
       {% endif %}
@@ -262,7 +268,7 @@
     }
 
     .image-card-module__secondary-button {
-      text-align: {{module.style.secondary_button.alignment.alignment.horizontal_align}};
+      text-align: {{module.style.secondary_button.alignment.alignment.horizontal_align}}!important;
       {% if module.style.secondary_button.background.color.css %}
         background-color: {{module.style.secondary_button.background.color.css}};
       {% endif %}
@@ -270,12 +276,12 @@
     }
 
     .image-card-module__cta {
-      text-align: {{module.style.cta.alignment.alignment.horizontal_align}};
+      text-align: {{module.style.cta.alignment.alignment.horizontal_align}}!important;
       {{module.style.cta.spacing.spacing.css}}
     }
 
     .image-card-module__secondary-cta {
-      text-align: {{module.style.secondary_cta.alignment.alignment.horizontal_align}};
+      text-align: {{module.style.secondary_cta.alignment.alignment.horizontal_align}}!important;
       {{module.style.secondary_cta.spacing.spacing.css}}
     }
 

@@ -1605,7 +1605,7 @@
     "placeholders" : null
   },
   "style.button.alignment.alignment.default.horizontal_align" : {
-    "message" : "LEFT",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -1620,7 +1620,7 @@
     "placeholders" : null
   },
   "style.button.alignment.alignment.label" : {
-    "message" : "Alignment",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -2244,6 +2244,31 @@
     "description" : "",
     "placeholders" : null
   },
+  "style.cta.alignment.alignment.default.horizontal_align" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.cta.alignment.alignment.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.cta.alignment.alignment.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.cta.alignment.alignment.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.cta.alignment.alignment.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "style.cta.alignment.inline.default" : {
     "message" : "",
     "description" : null,
@@ -2775,7 +2800,7 @@
     "placeholders" : null
   },
   "style.heading.alignment.alignment.default.horizontal_align" : {
-    "message" : "LEFT",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -2790,7 +2815,7 @@
     "placeholders" : null
   },
   "style.heading.alignment.alignment.label" : {
-    "message" : "Alignment",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -3145,7 +3170,7 @@
     "placeholders" : null
   },
   "style.icon.alignment.alignment.default.horizontal_align" : {
-    "message" : "LEFT",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -3160,7 +3185,7 @@
     "placeholders" : null
   },
   "style.icon.alignment.alignment.label" : {
-    "message" : "Alignment",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -3874,6 +3899,11 @@
     "description" : "",
     "placeholders" : null
   },
+  "style.image.image.alignment.name" : {
+    "message" : "image-card",
+    "description" : "",
+    "placeholders" : null
+  },
   "style.image.image.alignment.placeholder" : {
     "message" : "",
     "description" : "",
@@ -4160,7 +4190,7 @@
     "placeholders" : null
   },
   "style.link.alignment.alignment.default.horizontal_align" : {
-    "message" : "LEFT",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -4175,7 +4205,7 @@
     "placeholders" : null
   },
   "style.link.alignment.alignment.label" : {
-    "message" : "Alignment",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -4689,6 +4719,11 @@
     "description" : "",
     "placeholders" : null
   },
+  "style.richtext.name" : {
+    "message" : "image-card",
+    "description" : "",
+    "placeholders" : null
+  },
   "style.richtext.placeholder" : {
     "message" : "",
     "description" : "",
@@ -4735,7 +4770,7 @@
     "placeholders" : null
   },
   "style.secondary_button.alignment.alignment.default.horizontal_align" : {
-    "message" : "LEFT",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -4750,7 +4785,7 @@
     "placeholders" : null
   },
   "style.secondary_button.alignment.alignment.label" : {
-    "message" : "Alignment",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -5374,8 +5409,33 @@
     "description" : "",
     "placeholders" : null
   },
+  "style.secondary_cta.alignment.alignment.default.horizontal_align" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.alignment.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.alignment.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.alignment.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.secondary_cta.alignment.alignment.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "style.secondary_link.alignment.alignment.default.horizontal_align" : {
-    "message" : "LEFT",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -5390,7 +5450,7 @@
     "placeholders" : null
   },
   "style.secondary_link.alignment.alignment.label" : {
-    "message" : "Alignment",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -5840,7 +5900,7 @@
     "placeholders" : null
   },
   "style.subheading.alignment.alignment.default.horizontal_align" : {
-    "message" : "LEFT",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -5855,7 +5915,7 @@
     "placeholders" : null
   },
   "style.subheading.alignment.alignment.label" : {
-    "message" : "Alignment",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -6205,7 +6265,7 @@
     "placeholders" : null
   },
   "style.text.alignment.alignment.default.horizontal_align" : {
-    "message" : "LEFT",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -6220,7 +6280,7 @@
     "placeholders" : null
   },
   "style.text.alignment.alignment.label" : {
-    "message" : "Alignment",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -6769,6 +6829,31 @@
     "description" : "",
     "placeholders" : null
   },
+  "style.text_body.text.desktop_alignment.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_body.text.desktop_alignment.help_text" : {
+    "message" : "Align all text at once on desktop",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_body.text.desktop_alignment.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_body.text.desktop_alignment.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_body.text.desktop_alignment.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "style.text_body.text.help_text" : {
     "message" : "",
     "description" : "",
@@ -6806,6 +6891,36 @@
   },
   "style.text_body.text.mobile_alignment.placeholder" : {
     "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_body.text.mobile_alignment_copy.default.horizontal_align" : {
+    "message" : "LEFT",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_body.text.mobile_alignment_copy.help_text" : {
+    "message" : "Align all text at once on mobile devices",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_body.text.mobile_alignment_copy.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_body.text.mobile_alignment_copy.label" : {
+    "message" : "Mobile alignment copy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_body.text.mobile_alignment_copy.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_body.text.name" : {
+    "message" : "image-card",
     "description" : "",
     "placeholders" : null
   },
