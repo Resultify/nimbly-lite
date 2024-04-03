@@ -473,6 +473,40 @@
           "type" : "boolean",
           "default" : false
         }, {
+          "id" : "b634a6bd-6957-7896-ad20-5b4972f5c15d",
+          "name" : "full_height",
+          "display_width" : null,
+          "label" : "Full height",
+          "help_text" : "",
+          "inline_help_text" : "Stretch the image to the full height of the column. This can cause the image to be cut in unwanted places. Setting image position to either left or right might help with this.",
+          "required" : false,
+          "locked" : false,
+          "display" : "toggle",
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "id" : "da2500e6-cf28-fadf-dec8-ce03ed84a33e",
+          "name" : "image_position",
+          "display_width" : null,
+          "label" : "Image position",
+          "required" : false,
+          "locked" : false,
+          "visibility" : {
+            "controlling_field" : null,
+            "controlling_field_path" : "style.image.image.alignment.full_height",
+            "controlling_value_regex" : "true",
+            "property" : null,
+            "operator" : "EQUAL",
+            "access" : null
+          },
+          "display" : "select",
+          "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+          "multiple" : false,
+          "reordering_enabled" : true,
+          "preset" : null,
+          "type" : "choice",
+          "default" : ""
+        }, {
           "id" : "ceb44ace-5187-71f0-083c-89136a649953",
           "name" : "desktop_alignment",
           "display_width" : "half_width",
@@ -518,6 +552,8 @@
         "type" : "group",
         "default" : {
           "full_width" : false,
+          "full_height" : false,
+          "image_position" : "",
           "desktop_alignment" : {
             "horizontal_align" : "LEFT"
           },
@@ -594,6 +630,8 @@
       "default" : {
         "alignment" : {
           "full_width" : false,
+          "full_height" : false,
+          "image_position" : "",
           "desktop_alignment" : {
             "horizontal_align" : "LEFT"
           },
@@ -640,6 +678,8 @@
       "image" : {
         "alignment" : {
           "full_width" : false,
+          "full_height" : false,
+          "image_position" : "",
           "desktop_alignment" : {
             "horizontal_align" : "LEFT"
           },
@@ -3988,7 +4028,7 @@
       "expanded" : false,
       "type" : "group",
       "default" : { }
-    } ],
+          } ],
     "tab" : "STYLE",
     "expanded" : false,
     "type" : "group",
@@ -4084,7 +4124,7 @@
       "expanded" : false,
       "type" : "group",
       "default" : { }
-    } ],
+          } ],
     "tab" : "STYLE",
     "expanded" : false,
     "type" : "group",
@@ -4157,6 +4197,8 @@
       "image" : {
         "alignment" : {
           "full_width" : false,
+          "full_height" : false,
+          "image_position" : "",
           "desktop_alignment" : {
             "horizontal_align" : "LEFT"
           },
@@ -5904,7 +5946,7 @@
   }, {
     "component" : "Secondary button",
     "show" : true
-  }, {
+}, {
     "component" : "CTA",
     "show" : true
   }, {

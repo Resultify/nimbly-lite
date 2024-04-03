@@ -271,21 +271,23 @@
   padding: 5px 10px;
 }
 
-.header-search__suggestions a:hover {
-  background-color: rgb(0 0 0 / 10%);
-}
-
 .siteheader-module__link {
   margin: 0.5rem 0;
 }
 
 .siteheader-module__button,
-.siteheader-module__secondary-button {
+.siteheader-module__secondary-button,
+.siteheader-module__cta {
   margin: 0.5rem 0;
 }
 
 .siteheader-module__button .g-module-macros-btn,
-.siteheader-module__secondary-button .g-module-macros-btn {
+.siteheader-module__secondary-button .g-module-macros-btn,
+.siteheader-module__cta a {
   display: block;
   width: 100%;
+}
+
+.header-search__suggestions a:hover {
+  background-color: rgb(0 0 0 / 10%);
 }

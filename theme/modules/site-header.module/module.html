@@ -551,7 +551,8 @@
       .siteheader-module__main-nav,
       .siteheader-module__language,
       .siteheader-module__links,
-      .siteheader-module__buttons {
+      .siteheader-module__buttons,
+      .siteheader-module__ctas {
         order: 2;
       }
       .siteheader-module__search {
@@ -589,13 +590,9 @@
       }
 
       .siteheader-module__language {}
-      .siteheader-module__links {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
-
-      .siteheader-module__buttons {
+      .siteheader-module__links,
+      .siteheader-module__buttons,
+      .siteheader-module__ctas {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -617,6 +614,12 @@
         margin: 0;
         padding: 0;
         {{module.style.button.spacing.spacing.css}}
+      }
+      
+      .siteheader-module__cta {
+        margin: 0;
+        padding: 0;
+        {{module.style.cta.spacing.spacing.css}}
       }
 
       .siteheader-module__secondary-button {
@@ -833,6 +836,16 @@
   </div>
 {%- endmacro -%}
 
+{%- macro render_ctas() -%}
+  <div class="siteheader-module__ctas">
+    {% for item in module.ctas.cta %}
+      <div class="siteheader-module__cta">
+        {% cta guid="{{ item }}" %}
+      </div>
+    {% endfor %}
+  </div>
+{%- endmacro -%}
+
 <div class="siteheader-module_wrp">
   <nav class="siteheader-module navbar siteheader-module--{{module_id}} {{module.style.general.presets.custom_preset}}" id="main-navigation" aria-label="Primary">
 
@@ -864,6 +877,8 @@
           {{render_links() if component.show}}
         {% elif component.component|lower == 'buttons' %}
           {{render_buttons() if component.show}}
+        {% elif component.component|lower == 'ctas' %}
+          {{render_ctas() if component.show}}
         {% endif %}
       {% endfor %}
 
@@ -871,6 +886,3 @@
 
   </nav>
 </div>
-
-
-
