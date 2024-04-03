@@ -3839,6 +3839,31 @@
     "description" : "",
     "placeholders" : null
   },
+  "style.image.image.alignment.full_height.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.image.image.alignment.full_height.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.image.image.alignment.full_height.inline_help_text" : {
+    "message" : "Stretch the image to the full height of the column. This can cause the image to be cut in unwanted places. Setting image position to either left or right might help with this.",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.image.image.alignment.full_height.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.image.image.alignment.full_height.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "style.image.image.alignment.full_width.help_text" : {
     "message" : "",
     "description" : "",
@@ -3862,6 +3887,41 @@
   "style.image.image.alignment.help_text" : {
     "message" : "",
     "description" : "",
+    "placeholders" : null
+  },
+  "style.image.image.alignment.image_position.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.image.image.alignment.image_position.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.image.image.alignment.image_position.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.image.image.alignment.image_position.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.image.image.alignment.image_position.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.image.image.alignment.image_position.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.image.image.alignment.image_position.placeholder" : {
+    "message" : "",
+    "description" : null,
     "placeholders" : null
   },
   "style.image.image.alignment.inline_help_text" : {
