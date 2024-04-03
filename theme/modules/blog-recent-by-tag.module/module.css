@@ -34,7 +34,6 @@
 
 /* grid */
 .blog-recent-by-tag-module__article_wrp {
-  color: red;
   width: calc((100% - (var(--cols) - 1)* var(--column-gap)) / var(--cols))
 
 }
