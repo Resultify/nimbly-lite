@@ -1,3 +1,14 @@
+### v6.0.0 `April 11, 2024`
+* **[TASK]** add option to align all components at the same time on desktop… (#74) [`0602354`](https://github.com/Resultify/nimbly-lite/commit/0602354) (Jasmine Silfver)
+* **[TEST]** update github actions actions/setup-node and actions/checkout to v4 (#72) [`5b6a41c`](https://github.com/Resultify/nimbly-lite/commit/5b6a41c) (Dmytro Hrynevych)
+* **[TASK]** add CTA option to site header module (#70) [`6f41f19`](https://github.com/Resultify/nimbly-lite/commit/6f41f19) (Jasmine Silfver)
+* **[TASK]** add option to make image full height in image card module (#73) [`e0a7a52`](https://github.com/Resultify/nimbly-lite/commit/e0a7a52) (Jasmine Silfver)
+* **[TASK]** add new blog post template (#71) [`4024cfb`](https://github.com/Resultify/nimbly-lite/commit/4024cfb) (Jasmine Silfver)
+* **[TASK]** update @resultify/hubspot-cms-lib, update npm deps [`5778cdd`](https://github.com/Resultify/nimbly-lite/commit/5778cdd) (dmh)
+* **[TEST]** add cleanUpload cmd to upload theme to CI account [`4a62e52`](https://github.com/Resultify/nimbly-lite/commit/4a62e52) (dmh)
+
+***
+
 ### v5.0.0 `January 18, 2024`
 * **[TASK]** add Nimbly Lite meta tag for easy identifying nimbly based sites [`199f770`](https://github.com/Resultify/nimbly-lite/commit/199f770) (dmh)
 * **[TASK]** uprate compatible browsers list, update gitignore and editorconfig [`0a5dbdd`](https://github.com/Resultify/nimbly-lite/commit/0a5dbdd) (dmh)
