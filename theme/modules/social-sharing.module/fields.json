@@ -575,9 +575,9 @@
   }
 }, {
   "id" : "6afd210f-0313-af34-8fe9-5ca1fc4eb62b",
-  "name" : "social_media",
+  "name" : "social_sharing",
   "display_width" : null,
-  "label" : "Social media",
+  "label" : "Social sharing on",
   "required" : false,
   "locked" : false,
   "occurrence" : {
@@ -611,7 +611,7 @@
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "social_media.share_on",
+      "controlling_field_path" : "social_sharing.share_on",
       "controlling_value_regex" : "facebook",
       "property" : null,
       "operator" : "EQUAL",
@@ -631,7 +631,7 @@
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "social_media.share_on",
+      "controlling_field_path" : "social_sharing.share_on",
       "controlling_value_regex" : "twitter",
       "property" : null,
       "operator" : "EQUAL",
@@ -651,7 +651,7 @@
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "social_media.share_on",
+      "controlling_field_path" : "social_sharing.share_on",
       "controlling_value_regex" : "linkedin",
       "property" : null,
       "operator" : "EQUAL",
@@ -671,7 +671,7 @@
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "social_media.share_on",
+      "controlling_field_path" : "social_sharing.share_on",
       "controlling_value_regex" : "pinterest",
       "property" : null,
       "operator" : "EQUAL",
@@ -691,7 +691,7 @@
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : null,
-      "controlling_field_path" : "social_media.share_on",
+      "controlling_field_path" : "social_sharing.share_on",
       "controlling_value_regex" : "email",
       "property" : null,
       "operator" : "EQUAL",
@@ -701,6 +701,53 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "default" : "mailto:?subject=Check out {{ social_link_url|urlencode }} &body=Check out {{ social_link_url|urlencode }}"
+  }, {
+    "id" : "7e92b2ba-7c1b-4369-f23e-7c28bdce9033",
+    "name" : "twitter_icon",
+    "display_width" : null,
+    "label" : "Twitter icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "social_sharing.share_on",
+      "controlling_value_regex" : "twitter",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "radio",
+    "choices" : [ [ "twitter", "Twitter bird" ], [ "x-twitter", "X logo" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "x-twitter"
+  }, {
+    "id" : "93fb8bed-585d-73be-f2c8-a8e53a77247b",
+    "name" : "pinterest_pin_image",
+    "display_width" : null,
+    "label" : "Pin image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "social_sharing.share_on",
+      "controlling_value_regex" : "pinterest",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "exact",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -711,7 +758,14 @@
     "twitter_link" : "https://twitter.com/intent/tweet?original_referer={{ social_link_url|urlencode }}&url={{ social_link_url|urlencode }}&source=tweetbutton&text={{ social_page_title|urlencode }}",
     "linkedin_link" : "https://www.linkedin.com/shareArticle?mini=true&url={{ social_link_url|urlencode }}",
     "pinterest_link" : "https://pinterest.com/pin/create/button/?url={{ social_link_url|urlencode }}&media={{ pinterest_media }}",
-    "email_link" : "mailto:?subject=Check out {{ social_link_url|urlencode }} &body=Check out {{ social_link_url|urlencode }}"
+    "email_link" : "mailto:?subject=Check out {{ social_link_url|urlencode }} &body=Check out {{ social_link_url|urlencode }}",
+    "twitter_icon" : "x-twitter",
+    "pinterest_pin_image" : {
+      "size_type" : "exact",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
   } ]
 }, {
   "id" : "7dcb5377-0b35-6eb6-dc6c-d5de76702933",
