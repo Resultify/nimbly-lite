@@ -75,6 +75,74 @@
 </style>
 <div class="social-sharing-module_wrp">
   <div class="social-sharing-module social-sharing-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
+    {% for item in module.social_sharing %}
+      {% if item.share_on is equalto 'facebook' %}
+        {% set href = item.facebook_link %}
+        {% set icon_name = "Facebook F" %}
+        {% set icon_unicode = "f39e" %}
+        {% set icon_type = "REGULAR" %}
+      {% endif %}
+      {% if item.share_on is equalto 'linkedin' %}
+        {% set href = item.linkedin_link %}
+        {% set icon_name = "LinkedIn" %}
+        {% set icon_unicode = "f08c" %}
+        {% set icon_type = "REGULAR" %}
+      {% endif %}
+      {% if item.share_on is equalto 'twitter' %}
+        {% set href = item.twitter_link %}
+        {% if item.twitter_icon is equalto 'x-twitter' %}
+          {% set icon_name = "X-Twitter" %}
+          {% set icon_unicode = "e61b" %}
+          {% set icon_type = "REGULAR" %}
+        {% else %}
+          {% set icon_name = "Twitter" %}
+          {% set icon_unicode = "f099" %}
+          {% set icon_type = "REGULAR" %}
+          {% endif %}
+      {% endif %}
+      {% if item.share_on is equalto 'pinterest' %}
+        {% set href = item.pinterest_link %}
+        {% set icon_name = "Pinterest P" %}
+        {% set icon_unicode = "f231" %}
+        {% set icon_type = "REGULAR" %}
+      {% endif %}
+      {% if item.share_on is equalto 'email' %}
+        {% set href = item.email_link %}
+        {% set icon_name = "Envelope" %}
+        {% set icon_unicode = "f113" %}
+        {% set icon_type = "REGULAR" %}
+      {% endif %}
+
+      {% set rel = [] %}
+      {% do rel.append("nofollow") %}
+
+      {%- macro icon_data() -%}
+        {
+          "icon":{"name":"{{icon_name}}","unicode":"{{icon_unicode}}","type":"{{icon_type}}","icon_set":"fontawesome-6.4.2"},
+          "accessibility_options":{"purpose":"semantic", "title":"{{item.share_on}}"}
+        }
+      {%- endmacro -%}
+
+      <a href="{{ href }}"
+         class="social-sharing-module__link" target="_blank"
+         {% if rel %}rel="{{ rel|join(' ') }}"{% endif %}
+      >
+
+          <div class="social-sharing-module__icon">
+            {{icon_macros.render_icon_tmpl(icon_data()|fromjson, module.style.icon, item, null, item.icon.svg)}}
+            <span class="visually-hidden">{{item.link_label.link_label}}</span>
+
+            {% if item.link.link.open_in_new_tab %}
+              {% if item.link.accessible_link %}
+                {{target_blank_macros.render_target_blank_tmpl('1em')}}
+              {% endif %}
+            {% endif %}
+          </div>
+
+      </a>
+
+    {% endfor %}
+
     {% for item in module.link_group %}
 
       {% set href = item.link.link.url.href %}
@@ -91,7 +159,7 @@
         {% set open_in_new_tab_class = "target-blank-link" %}
       {% endif %}
 
-      {%- macro icon_data() -%}
+      {%- macro icon_data2() -%}
         {
           "icon":{"name":"{{item.icon.icon.name}}","unicode":"{{item.icon.icon.unicode}}","type":"{{item.icon.icon.type}}","icon_set":"fontawesome-5.14.0"},
           "accessibility_options":{"purpose":"semantic", "title":"{{item.link_label.link_label}}"}
@@ -105,7 +173,7 @@
          >
 
           <div class="social-sharing-module__icon">
-            {{icon_macros.render_icon_tmpl(icon_data()|fromjson, module.style.icon, item, null, item.icon.svg)}}
+            {{icon_macros.render_icon_tmpl(icon_data2()|fromjson, module.style.icon, item, null, item.icon.svg)}}
             <span class="visually-hidden">{{item.link_label.link_label}}</span>
 
             {% if item.link.link.open_in_new_tab %}
