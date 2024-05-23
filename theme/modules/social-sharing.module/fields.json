@@ -38,6 +38,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group",
       "default" : { }
     }, {
@@ -72,6 +73,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group",
       "default" : {
         "horizontal_alignment" : {
@@ -99,6 +101,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group",
       "default" : {
         "spacing" : { }
@@ -125,6 +128,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group",
       "default" : {
         "color" : {
@@ -135,6 +139,7 @@
     } ],
     "tab" : "STYLE",
     "expanded" : false,
+    "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
       "presets" : { },
@@ -213,6 +218,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group",
       "default" : {
         "icon_color" : "primary",
@@ -238,6 +244,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group",
       "default" : {
         "spacing" : { }
@@ -264,6 +271,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group",
       "default" : {
         "color" : {
@@ -305,6 +313,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group",
       "default" : {
         "background" : {
@@ -398,6 +407,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group",
       "default" : {
         "spacing" : { },
@@ -414,6 +424,7 @@
     } ],
     "tab" : "STYLE",
     "expanded" : false,
+    "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
       "presets" : {
@@ -456,6 +467,7 @@
   } ],
   "tab" : "STYLE",
   "expanded" : false,
+  "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
     "general" : {
@@ -529,51 +541,6 @@
   "show_emoji_picker" : false,
   "type" : "text"
 }, {
-  "id" : "0ca5f661-e7be-22a1-2509-8aa99ebfb8ac",
-  "name" : "facebook",
-  "display_width" : null,
-  "label" : "Facebook",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "eb7479bf-b56f-e65a-0375-81cdd4786256",
-    "name" : "facebook_enable",
-    "display_width" : null,
-    "label" : "Enable",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "default" : false
-  }, {
-    "id" : "8000c054-123a-09b6-2242-1b161f4a7e2c",
-    "name" : "facebook_link",
-    "display_width" : null,
-    "label" : "Link",
-    "required" : true,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "facebook.facebook_enable",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "https://www.facebook.com/share.php?u={{ social_link_url|urlencode }}"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : {
-    "facebook_enable" : false,
-    "facebook_link" : "https://www.facebook.com/share.php?u={{ social_link_url|urlencode }}"
-  }
-}, {
   "id" : "6afd210f-0313-af34-8fe9-5ca1fc4eb62b",
   "name" : "social_sharing",
   "display_width" : null,
@@ -640,7 +607,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "https://twitter.com/intent/tweet?original_referer={{ social_link_url|urlencode }}&url={{ social_link_url|urlencode }}&source=tweetbutton&text={{ social_page_title|urlencode }}"
+    "default" : "https://x.com/intent/tweet?original_referer={{ social_link_url|urlencode }}&url={{ social_link_url|urlencode }}&source=tweetbutton&text={{ social_page_title|urlencode }}"
   }, {
     "id" : "788d5f67-3eea-9f69-14ff-0086b21a24e2",
     "name" : "linkedin_link",
@@ -751,11 +718,12 @@
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
+  "group_occurrence_meta" : null,
   "type" : "group",
   "default" : [ {
     "share_on" : "facebook",
     "facebook_link" : "https://www.facebook.com/share.php?u={{ social_link_url|urlencode }}",
-    "twitter_link" : "https://twitter.com/intent/tweet?original_referer={{ social_link_url|urlencode }}&url={{ social_link_url|urlencode }}&source=tweetbutton&text={{ social_page_title|urlencode }}",
+    "twitter_link" : "https://x.com/intent/tweet?original_referer={{ social_link_url|urlencode }}&url={{ social_link_url|urlencode }}&source=tweetbutton&text={{ social_page_title|urlencode }}",
     "linkedin_link" : "https://www.linkedin.com/shareArticle?mini=true&url={{ social_link_url|urlencode }}",
     "pinterest_link" : "https://pinterest.com/pin/create/button/?url={{ social_link_url|urlencode }}&media={{ pinterest_media }}",
     "email_link" : "mailto:?subject=Check out {{ social_link_url|urlencode }} &body=Check out {{ social_link_url|urlencode }}",
@@ -765,245 +733,6 @@
       "src" : "",
       "alt" : null,
       "loading" : "lazy"
-    }
-  } ]
-}, {
-  "id" : "7dcb5377-0b35-6eb6-dc6c-d5de76702933",
-  "name" : "link_group",
-  "display_width" : null,
-  "label" : "Social sharing",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : 1,
-    "max" : null,
-    "sorting_label_field" : "d7ce239c-7d84-a8fd-14b1-0a2d21b455b3",
-    "default" : 4
-  },
-  "children" : [ {
-    "id" : "d7ce239c-7d84-a8fd-14b1-0a2d21b455b3",
-    "name" : "link_label",
-    "display_width" : null,
-    "label" : "Label",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "2df86b91-b7ce-11da-964c-dafa72f9d07d",
-      "name" : "link_label",
-      "display_width" : null,
-      "label" : "Label",
-      "required" : true,
-      "locked" : false,
-      "validation_regex" : "",
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "default" : "Facebook"
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "type" : "group",
-    "default" : {
-      "link_label" : "Facebook"
-    }
-  }, {
-    "id" : "d100505c-dc30-973d-9db8-55adbd294ca8",
-    "name" : "link",
-    "display_width" : null,
-    "label" : "Link",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "d4e69732-3beb-b42e-5391-4989fa9f9bee",
-      "name" : "link",
-      "display_width" : null,
-      "label" : "Link",
-      "required" : true,
-      "locked" : false,
-      "supported_types" : [ "EXTERNAL", "EMAIL_ADDRESS", "CONTENT" ],
-      "show_advanced_rel_options" : false,
-      "type" : "link",
-      "default" : {
-        "url" : {
-          "type" : "EXTERNAL",
-          "href" : "https://www.facebook.com",
-          "content_id" : null
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "id" : "abbeeac5-da77-dd4d-5f60-caf6a8c8e10d",
-      "name" : "accessible_link",
-      "display_width" : null,
-      "label" : "Accessible link",
-      "help_text" : "Accessible link. Inform when a link opens a new window.",
-      "required" : false,
-      "locked" : false,
-      "display" : "toggle",
-      "type" : "boolean",
-      "default" : false
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "type" : "group",
-    "default" : {
-      "link" : {
-        "url" : {
-          "type" : "EXTERNAL",
-          "href" : "https://www.facebook.com",
-          "content_id" : null
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "accessible_link" : false
-    }
-  }, {
-    "id" : "ad761c32-0759-a723-0cdc-82302a05d65e",
-    "name" : "icon",
-    "display_width" : null,
-    "label" : "Icon",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "84f1102b-180a-8e38-9d23-23eefdde0e48",
-      "name" : "icon",
-      "display_width" : null,
-      "label" : "Icon",
-      "required" : true,
-      "locked" : false,
-      "icon_set" : "fontawesome-5.14.0",
-      "type" : "icon",
-      "default" : {
-        "name" : "Facebook F",
-        "unicode" : "f39e",
-        "type" : "REGULAR"
-      }
-    }, {
-      "id" : "cf6868bc-4799-60a5-cf51-d5c2f3351613",
-      "name" : "svg",
-      "display_width" : null,
-      "label" : "Inline SVG",
-      "help_text" : "Add custom SVG to override icon",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text",
-      "default" : ""
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "type" : "group",
-    "default" : {
-      "icon" : {
-        "name" : "Facebook F",
-        "unicode" : "f39e",
-        "type" : "REGULAR"
-      },
-      "svg" : ""
-    }
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : [ {
-    "link_label" : {
-      "link_label" : "Facebook"
-    },
-    "link" : {
-      "link" : {
-        "url" : {
-          "type" : "EXTERNAL",
-          "href" : "https://www.facebook.com",
-          "content_id" : null
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "accessible_link" : false
-    },
-    "icon" : {
-      "icon" : {
-        "name" : "Facebook F",
-        "unicode" : "f39e",
-        "type" : "REGULAR"
-      },
-      "svg" : ""
-    }
-  }, {
-    "link_label" : {
-      "link_label" : "Instagram"
-    },
-    "link" : {
-      "link" : {
-        "url" : {
-          "type" : "EXTERNAL",
-          "href" : "https://www.instagram.com",
-          "content_id" : null
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "accessible_link" : false
-    },
-    "icon" : {
-      "icon" : {
-        "name" : "Instagram",
-        "unicode" : "f16d",
-        "type" : "REGULAR"
-      },
-      "svg" : ""
-    }
-  }, {
-    "link_label" : {
-      "link_label" : "Twitter"
-    },
-    "link" : {
-      "link" : {
-        "url" : {
-          "type" : "EXTERNAL",
-          "href" : "https://www.twitter.com",
-          "content_id" : null
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "accessible_link" : false
-    },
-    "icon" : {
-      "icon" : {
-        "name" : "Twitter",
-        "unicode" : "f099",
-        "type" : "REGULAR"
-      },
-      "svg" : ""
-    }
-  }, {
-    "link_label" : {
-      "link_label" : "LinkedIn"
-    },
-    "link" : {
-      "link" : {
-        "url" : {
-          "type" : "EXTERNAL",
-          "href" : "https://www.linkedin.com",
-          "content_id" : null
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      },
-      "accessible_link" : false
-    },
-    "icon" : {
-      "icon" : {
-        "name" : "LinkedIn",
-        "unicode" : "f08c",
-        "type" : "REGULAR"
-      },
-      "svg" : ""
     }
   } ]
 } ]

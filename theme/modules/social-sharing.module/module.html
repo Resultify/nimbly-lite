@@ -77,41 +77,36 @@
   <div class="social-sharing-module social-sharing-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
     {% for item in module.social_sharing %}
       {% if item.share_on is equalto 'facebook' %}
+        {% set link_text = "Share on Facebook" %}
         {% set href = item.facebook_link %}
-        {% set icon_name = "Facebook F" %}
-        {% set icon_unicode = "f39e" %}
-        {% set icon_type = "REGULAR" %}
+        {% set icon = {"name" : "Facebook F", "unicode" : "f39e", "type" : "REGULAR" }%}
       {% endif %}
       {% if item.share_on is equalto 'linkedin' %}
+        {% set link_text = "Share on LinkedIn" %}
         {% set href = item.linkedin_link %}
-        {% set icon_name = "LinkedIn" %}
-        {% set icon_unicode = "f08c" %}
-        {% set icon_type = "REGULAR" %}
+        {% set icon = {"name" : "LinkedIn", "unicode" : "f08c", "type" : "REGULAR" }%}
       {% endif %}
       {% if item.share_on is equalto 'twitter' %}
         {% set href = item.twitter_link %}
         {% if item.twitter_icon is equalto 'x-twitter' %}
-          {% set icon_name = "X-Twitter" %}
-          {% set icon_unicode = "e61b" %}
-          {% set icon_type = "REGULAR" %}
+          {% set link_text = "Share on X" %}
+          {% set icon = {"name" : "X-Twitter", "unicode" : "e61b", "type" : "REGULAR" }%}
         {% else %}
-          {% set icon_name = "Twitter" %}
-          {% set icon_unicode = "f099" %}
-          {% set icon_type = "REGULAR" %}
-          {% endif %}
+          {% set link_text = "Share on Twitter" %}
+          {% set icon = {"name" : "Twitter", "unicode" : "f099", "type" : "REGULAR" }%}
+        {% endif %}
       {% endif %}
       {% if item.share_on is equalto 'pinterest' %}
-        {% set pinterest_media = item.pinterest_pin_image.src %}
+        {# used in pinterest url #}
+        {% set link_text = "Share on Pinterest" %}
         {% set href = item.pinterest_link %}
-        {% set icon_name = "Pinterest P" %}
-        {% set icon_unicode = "f231" %}
-        {% set icon_type = "REGULAR" %}
+        {% set icon = {"name" : "Pinterest P", "unicode" : "f231", "type" : "REGULAR" }%}
+        {% set pinterest_media = item.pinterest_pin_image.src %}
       {% endif %}
       {% if item.share_on is equalto 'email' %}
+        {% set link_text = "Share via email" %}
         {% set href = item.email_link %}
-        {% set icon_name = "Envelope" %}
-        {% set icon_unicode = "f113" %}
-        {% set icon_type = "REGULAR" %}
+        {% set icon = {"name" : "Envelope", "unicode" : "f113", "type" : "REGULAR" }%}
       {% endif %}
 
       {% set urlOperator = "&" if "?" in page_meta.canonical_url else "?" %}
@@ -126,8 +121,8 @@
 
       {%- macro icon_data() -%}
         {
-          "icon":{"name":"{{icon_name}}","unicode":"{{icon_unicode}}","type":"{{icon_type}}","icon_set":"fontawesome-6.4.2"},
-          "accessibility_options":{"purpose":"semantic", "title":"{{item.share_on}}"}
+          "icon":{"name":"{{icon.name}}","unicode":"{{icon.unicode}}","type":"{{icon.type}}","icon_set":"fontawesome-6.4.2"},
+          "accessibility_options":{"purpose":"semantic", "title":"{{link_text}}"}
         }
       {%- endmacro -%}
 
@@ -138,7 +133,7 @@
 
         <div class="social-sharing-module__icon">
           {{icon_macros.render_icon_tmpl(icon_data()|fromjson, module.style.icon, item, null, item.icon.svg)}}
-          <span class="visually-hidden">{{item.icon_name}}</span>
+          <span class="visually-hidden">{{link_text}}</span>
 
           {% if item.link.link.open_in_new_tab %}
             {% if item.link.accessible_link %}
