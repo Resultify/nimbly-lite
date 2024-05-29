@@ -562,7 +562,7 @@
     "locked" : false,
     "display" : "select",
     "placeholder" : "Select social media",
-    "choices" : [ [ "facebook", "Facebook" ], [ "linkedin", "LinkedIn" ], [ "twitter", "Twitter / X" ], [ "pinterest", "Pinterest" ], [ "email", "E-mail" ] ],
+    "choices" : [ [ "facebook", "Facebook" ], [ "linkedin", "LinkedIn" ], [ "twitter", "X / Twitter" ], [ "pinterest", "Pinterest" ], [ "email", "E-mail" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
@@ -672,7 +672,7 @@
     "id" : "7e92b2ba-7c1b-4369-f23e-7c28bdce9033",
     "name" : "twitter_icon",
     "display_width" : null,
-    "label" : "Twitter icon",
+    "label" : "Social icon",
     "required" : false,
     "locked" : false,
     "visibility" : {
@@ -684,7 +684,7 @@
       "access" : null
     },
     "display" : "radio",
-    "choices" : [ [ "twitter", "Twitter bird" ], [ "x-twitter", "X logo" ] ],
+    "choices" : [ [ "x-twitter", "X symbol" ], [ "twitter", "Twitter bird" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
