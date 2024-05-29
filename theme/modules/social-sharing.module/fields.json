@@ -532,7 +532,7 @@
   "name" : "link_url",
   "display_width" : null,
   "label" : "Link URL",
-  "help_text" : "",
+  "help_text" : "Use this to share a different URL than the current page.",
   "required" : false,
   "locked" : false,
   "validation_regex" : "",
@@ -573,7 +573,9 @@
     "name" : "facebook_link",
     "display_width" : null,
     "label" : "Link",
-    "required" : true,
+    "help_text" : "To modify the share link, copy the code below into the field and modify it.",
+    "inline_help_text" : "https://www.facebook.com/share.php?u={{ social_link_url|urlencode }}",
+    "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "visibility" : {
@@ -584,16 +586,19 @@
       "operator" : "EQUAL",
       "access" : null
     },
+    "placeholder" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "https://www.facebook.com/share.php?u={{ social_link_url|urlencode }}"
+    "default" : ""
   }, {
     "id" : "53a0e8e9-1715-f914-ae05-b852f70e56d8",
     "name" : "twitter_link",
     "display_width" : null,
     "label" : "Link",
-    "required" : true,
+    "help_text" : "To modify the share link, copy the code below into the field and modify it.",
+    "inline_help_text" : "https://x.com/intent/tweet?original_referer={{ social_link_url|urlencode }}&url={{ social_link_url|urlencode }}&source=tweetbutton&text={{ social_page_title|urlencode }}",
+    "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "visibility" : {
@@ -604,16 +609,19 @@
       "operator" : "EQUAL",
       "access" : null
     },
+    "placeholder" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "https://x.com/intent/tweet?original_referer={{ social_link_url|urlencode }}&url={{ social_link_url|urlencode }}&source=tweetbutton&text={{ social_page_title|urlencode }}"
+    "default" : ""
   }, {
     "id" : "788d5f67-3eea-9f69-14ff-0086b21a24e2",
     "name" : "linkedin_link",
     "display_width" : null,
     "label" : "Link",
-    "required" : true,
+    "help_text" : "To modify the share link, copy the code below into the field and modify it.",
+    "inline_help_text" : "https://www.linkedin.com/shareArticle?mini=true&url={{ social_link_url|urlencode }}",
+    "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "visibility" : {
@@ -624,16 +632,19 @@
       "operator" : "EQUAL",
       "access" : null
     },
+    "placeholder" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "https://www.linkedin.com/shareArticle?mini=true&url={{ social_link_url|urlencode }}"
+    "default" : ""
   }, {
     "id" : "2c28a1cb-0710-b9a7-dd60-1f991d008fb1",
     "name" : "pinterest_link",
     "display_width" : null,
     "label" : "Link",
-    "required" : true,
+    "help_text" : "To modify the share link, copy the code below into the field and modify it.",
+    "inline_help_text" : "https://pinterest.com/pin/create/button/?url={{ social_link_url|urlencode }}&media={{ pinterest_media }}",
+    "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "visibility" : {
@@ -644,16 +655,19 @@
       "operator" : "EQUAL",
       "access" : null
     },
+    "placeholder" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "https://pinterest.com/pin/create/button/?url={{ social_link_url|urlencode }}&media={{ pinterest_media }}"
+    "default" : ""
   }, {
     "id" : "738a4f6d-de4e-37b9-0877-5f73871dd0b9",
     "name" : "email_link",
     "display_width" : null,
     "label" : "Link",
-    "required" : true,
+    "help_text" : "To modify the share link, copy the code below into the field and modify it.",
+    "inline_help_text" : "mailto:?subject=Check out {{ social_link_url|urlencode }} &body=Check out {{ social_link_url|urlencode }}",
+    "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "visibility" : {
@@ -664,10 +678,11 @@
       "operator" : "EQUAL",
       "access" : null
     },
+    "placeholder" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "mailto:?subject=Check out {{ social_link_url|urlencode }} &body=Check out {{ social_link_url|urlencode }}"
+    "default" : ""
   }, {
     "id" : "7e92b2ba-7c1b-4369-f23e-7c28bdce9033",
     "name" : "twitter_icon",
@@ -722,11 +737,11 @@
   "type" : "group",
   "default" : [ {
     "share_on" : "facebook",
-    "facebook_link" : "https://www.facebook.com/share.php?u={{ social_link_url|urlencode }}",
-    "twitter_link" : "https://x.com/intent/tweet?original_referer={{ social_link_url|urlencode }}&url={{ social_link_url|urlencode }}&source=tweetbutton&text={{ social_page_title|urlencode }}",
-    "linkedin_link" : "https://www.linkedin.com/shareArticle?mini=true&url={{ social_link_url|urlencode }}",
-    "pinterest_link" : "https://pinterest.com/pin/create/button/?url={{ social_link_url|urlencode }}&media={{ pinterest_media }}",
-    "email_link" : "mailto:?subject=Check out {{ social_link_url|urlencode }} &body=Check out {{ social_link_url|urlencode }}",
+    "facebook_link" : "",
+    "twitter_link" : "",
+    "linkedin_link" : "",
+    "pinterest_link" : "",
+    "email_link" : "",
     "twitter_icon" : "x-twitter",
     "pinterest_pin_image" : {
       "size_type" : "exact",

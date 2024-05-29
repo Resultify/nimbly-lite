@@ -110,7 +110,7 @@
     "placeholders" : null
   },
   "link_url.help_text" : {
-    "message" : "",
+    "message" : "Use this to share a different URL than the current page.",
     "description" : null,
     "placeholders" : null
   },
