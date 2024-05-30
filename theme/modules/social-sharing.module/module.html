@@ -73,21 +73,30 @@
 
   {% end_scope_css %}
 </style>
+
+{% set default_links = {
+  facebook_link:'https://www.facebook.com/share.php?u={{ social_link_url|urlencode }}',
+  linkedin_link:'https://www.linkedin.com/shareArticle?mini=true&url={{ social_link_url|urlencode }}',
+  twitter_link:'https://x.com/intent/tweet?original_referer={{ social_link_url|urlencode }}&url={{ social_link_url|urlencode }}&source=tweetbutton&text={{ social_page_title|urlencode }}',
+  pinterest_link:'https://pinterest.com/pin/create/button/?url={{ social_link_url|urlencode }}&media={{ pinterest_media }}',
+  email_link:'mailto:?subject=Check out {{ social_link_url|urlencode }} &body=Check out {{ social_link_url|urlencode }}'
+} %}
+
 <div class="social-sharing-module_wrp">
   <div class="social-sharing-module social-sharing-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
     {% for item in module.social_sharing %}
       {% if item.share_on is equalto 'facebook' %}
         {% set link_text = "Share on Facebook" %}
-        {% set href = item.facebook_link %}
+        {% set href = item.facebook_link ? item.facebook_link : default_links.facebook_link %}
         {% set icon = {"name" : "Facebook F", "unicode" : "f39e", "type" : "REGULAR" }%}
       {% endif %}
       {% if item.share_on is equalto 'linkedin' %}
         {% set link_text = "Share on LinkedIn" %}
-        {% set href = item.linkedin_link %}
+        {% set href = item.linkedin_link ? item.linkedin_link : default_links.linkedin_link %}
         {% set icon = {"name" : "LinkedIn", "unicode" : "f08c", "type" : "REGULAR" }%}
       {% endif %}
       {% if item.share_on is equalto 'twitter' %}
-        {% set href = item.twitter_link %}
+        {% set href = item.twitter_link ? item.twitter_link : default_links.twitter_link %}
         {% if item.twitter_icon is equalto 'x-twitter' %}
           {% set link_text = "Share on X" %}
           {% set icon = {"name" : "X-Twitter", "unicode" : "e61b", "type" : "REGULAR" }%}
@@ -97,15 +106,15 @@
         {% endif %}
       {% endif %}
       {% if item.share_on is equalto 'pinterest' %}
-        {# used in pinterest url #}
         {% set link_text = "Share on Pinterest" %}
-        {% set href = item.pinterest_link %}
+        {% set href = item.pinterest_link ? item.pinterest_link : default_links.pinterest_link %}
         {% set icon = {"name" : "Pinterest P", "unicode" : "f231", "type" : "REGULAR" }%}
+        {# used in pinterest url #}
         {% set pinterest_media = item.pinterest_pin_image.src %}
       {% endif %}
       {% if item.share_on is equalto 'email' %}
         {% set link_text = "Share via email" %}
-        {% set href = item.email_link %}
+        {% set href = item.email_link ? item.email_link : default_links.email_link %}
         {% set icon = {"name" : "Envelope", "unicode" : "f113", "type" : "REGULAR" }%}
       {% endif %}
 
