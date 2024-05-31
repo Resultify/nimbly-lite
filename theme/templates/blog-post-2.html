@@ -63,12 +63,140 @@
 
         {% module "blog_post_audio" path="@hubspot/blog_audio", overrideable=False %}
 
-        {% if blog.show_social_link_twitter or blog.show_social_link_linkedin or blog.show_social_link_twitter %}
-           <div class="blog-post__sharing-buttons">
-            {% blog_social_sharing "blog_social_sharing" %}
-          </div>
-        {% endif %}
-
+        {% module "social-sharing"
+          path="../modules/social-sharing",
+          offset=0,
+          width=12,
+          social_sharing=[ {
+            "email_link" : "",
+            "facebook_link" : "",
+            "linkedin_link" : "",
+            "pinterest_link" : "",
+            "pinterest_pin_image" : {
+              "loading" : "lazy",
+              "size_type" : "exact",
+              "src" : ""
+            },
+            "share_on" : "facebook",
+            "twitter_icon" : "x-twitter",
+            "twitter_link" : ""
+          }, {
+            "email_link" : "",
+            "facebook_link" : "",
+            "linkedin_link" : "",
+            "pinterest_link" : "",
+            "pinterest_pin_image" : {
+              "loading" : "lazy",
+              "size_type" : "exact",
+              "src" : ""
+            },
+            "share_on" : "linkedin",
+            "twitter_icon" : "x-twitter",
+            "twitter_link" : ""
+          }, {
+            "email_link" : "",
+            "facebook_link" : "",
+            "linkedin_link" : "",
+            "pinterest_link" : "",
+            "pinterest_pin_image" : {
+              "loading" : "lazy",
+              "size_type" : "exact",
+              "src" : ""
+            },
+            "share_on" : "twitter",
+            "twitter_icon" : "x-twitter",
+            "twitter_link" : ""
+          }, {
+            "email_link" : "",
+            "facebook_link" : "",
+            "linkedin_link" : "",
+            "pinterest_link" : "",
+            "pinterest_pin_image" : {
+              "loading" : "lazy",
+              "size_type" : "exact",
+              "src" : ""
+            },
+            "share_on" : "pinterest",
+            "twitter_icon" : "x-twitter",
+            "twitter_link" : ""
+          }, {
+            "email_link" : "",
+            "facebook_link" : "",
+            "linkedin_link" : "",
+            "pinterest_link" : "",
+            "pinterest_pin_image" : {
+              "loading" : "lazy",
+              "size_type" : "exact",
+              "src" : ""
+            },
+            "share_on" : "email",
+            "twitter_icon" : "x-twitter",
+            "twitter_link" : ""
+          } ],
+          style={
+            "general" : {
+              "spacing" : {
+                "spacing" : {
+                  "padding" : {
+                    "bottom" : { },
+                    "left" : { },
+                    "right" : { },
+                    "top" : {
+                      "units" : "px",
+                      "value" : 20
+                    }
+                  }
+                }
+              }
+            },
+            "icon" : {
+              "custom_theme_overrides" : {
+                "background" : {
+                  "color" : "#ae7efb",
+                  "opacity" : 100
+                },
+                "color" : {
+                  "color" : "#fff",
+                  "opacity" : 100
+                },
+                "size" : 20,
+                "spacing" : {
+                  "padding" : {
+                    "bottom" : {
+                      "units" : "px",
+                      "value" : 8
+                    },
+                    "left" : {
+                      "units" : "px",
+                      "value" : 8
+                    },
+                    "right" : {
+                      "units" : "px",
+                      "value" : 8
+                    },
+                    "top" : {
+                      "units" : "px",
+                      "value" : 8
+                    }
+                  }
+                }
+              },
+              "spacing" : {
+                "spacing" : {
+                  "padding" : {
+                    "bottom" : { },
+                    "left" : { },
+                    "right" : {
+                      "units" : "px",
+                      "value" : 8
+                    },
+                    "top" : { }
+                  }
+                }
+              }
+            }
+          }
+        %}
       </article>
     </div>
 
