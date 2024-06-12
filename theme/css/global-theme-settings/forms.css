@@ -53,6 +53,22 @@
   {% endif %}
 }
 
+.form-default .form-module__heading .g-module-macros-heading {
+  {% if theme.forms.heading.background.css %}
+    background-color: {{theme.forms.heading.background.css}};
+  {% endif %}
+  {% if theme.forms.heading.font.style %}
+    {{theme.forms.heading.font.style}};
+  {% endif %}
+  {% if theme.forms.heading.font.size %}
+    font-size: {{theme.forms.heading.font.size ~ 'px'}};
+  {% endif %}
+  {% if theme.forms.heading.font.color %}
+    color: {{theme.forms.heading.font.color}};
+  {% endif %}
+  {{theme.forms.heading.spacing.css}}
+}
+
 .form-default label:not(.hs-error-msg):not(.hs-main-font-element),
 .form-default .fakelabel {
   {% if theme.forms.input_label.background.css %}
