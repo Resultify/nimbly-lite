@@ -1,4 +1,9 @@
 {
+  "filter.default.tag_filter" : {
+    "message" : "AND",
+    "description" : "",
+    "placeholders" : null
+  },
   "blog_components.component.default" : {
     "message" : "Image",
     "description" : "",
@@ -177,6 +182,66 @@
   "description.truncate.placeholder" : {
     "message" : "",
     "description" : "",
+    "placeholders" : null
+  },
+  "filter.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter.label" : {
+    "message" : "Filter",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter.tag_filter.choices.AND" : {
+    "message" : "Match all tags (AND)",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter.tag_filter.choices.OR" : {
+    "message" : "Match any tag (OR)",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter.tag_filter.default" : {
+    "message" : "AND",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter.tag_filter.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter.tag_filter.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter.tag_filter.label" : {
+    "message" : "Tag filter",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter.tag_filter.placeholder" : {
+    "message" : "",
+    "description" : null,
     "placeholders" : null
   },
   "general_heading.display.choices.display-1" : {
@@ -3262,6 +3327,16 @@
   "style.text.spacing.spacing.placeholder" : {
     "message" : "",
     "description" : "",
+    "placeholders" : null
+  },
+  "tag_filter.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "tag_filter.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
     "placeholders" : null
   }
 }
