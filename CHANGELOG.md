@@ -1,3 +1,8 @@
+### v6.0.1 `October 25, 2024`
+* **[TASK]** unlock component fields for some modules to be able to translate component names back into english after ai translate mistranslates them [`5796eea`](https://github.com/Resultify/nimbly-lite/commit/5796eea) (dmh)
+
+***
+
 ### v6.0.0 `April 11, 2024`
 * **[TASK]** add option to align all components at the same time on desktop… (#74) [`0602354`](https://github.com/Resultify/nimbly-lite/commit/0602354) (Jasmine Silfver)
 * **[TEST]** update github actions actions/setup-node and actions/checkout to v4 (#72) [`5b6a41c`](https://github.com/Resultify/nimbly-lite/commit/5b6a41c) (Dmytro Hrynevych)
