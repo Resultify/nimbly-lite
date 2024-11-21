@@ -6,8 +6,8 @@
   <head>
     <meta charset="utf-8">
     <!-- Nimbly Lite by Resultify | nimbly.tech | resultify.se -->
-    {% if page_meta.html_title %}
-      <title>{{page_meta.html_title}}</title>
+    {% if page_meta.html_title or pageTitle %}
+      <title>{{ page_meta.html_title or pageTitle }}</title>
     {% else %}
       <title>Nimbly page template</title>
     {% endif %}
