@@ -29,6 +29,7 @@
     } ],
     "tab" : "STYLE",
     "expanded" : false,
+    "group_occurrence_meta" : null,
     "type" : "group",
     "default" : { }
   }, {
@@ -53,6 +54,7 @@
     } ],
     "tab" : "STYLE",
     "expanded" : false,
+    "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
       "alignment" : {
@@ -78,6 +80,7 @@
     } ],
     "tab" : "STYLE",
     "expanded" : false,
+    "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
       "spacing" : { }
@@ -105,6 +108,7 @@
     } ],
     "tab" : "STYLE",
     "expanded" : false,
+    "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
       "color" : {
@@ -145,6 +149,7 @@
     } ],
     "tab" : "STYLE",
     "expanded" : false,
+    "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
       "spacing" : { },
@@ -244,6 +249,7 @@
       } ],
       "tab" : "STYLE",
       "expanded" : false,
+      "group_occurrence_meta" : null,
       "type" : "group",
       "default" : {
         "spacing" : { },
@@ -260,6 +266,7 @@
     } ],
     "tab" : "STYLE",
     "expanded" : false,
+    "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
       "custom_theme_overrides" : {
@@ -278,6 +285,7 @@
   } ],
   "tab" : "STYLE",
   "expanded" : false,
+  "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
     "presets" : { },
@@ -402,6 +410,7 @@
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
+  "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
     "link" : {
@@ -492,6 +501,7 @@
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
+    "group_occurrence_meta" : null,
     "type" : "group",
     "default" : {
       "purpose" : "decorative"
@@ -499,6 +509,7 @@
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
+  "group_occurrence_meta" : null,
   "type" : "group",
   "default" : {
     "icon" : { },
