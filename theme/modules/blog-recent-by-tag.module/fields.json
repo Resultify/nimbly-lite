@@ -2566,6 +2566,34 @@
     "number_of_posts" : 3
   }
 }, {
+  "id" : "94b44943-196c-d769-408b-7fa720d7bdc4",
+  "name" : "filter",
+  "display_width" : null,
+  "label" : "Filter",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a82e859b-223f-d469-b694-3f9d69133d34",
+    "name" : "tag_filter",
+    "display_width" : null,
+    "label" : "Tag filter",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "AND", "Match all tags (AND)" ], [ "OR", "Match any tag (OR)" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "AND"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "tag_filter" : "AND"
+  }
+}, {
   "id" : "edda9167-14cd-611b-b450-57be5e63e12f",
   "name" : "blog_components",
   "display_width" : null,
