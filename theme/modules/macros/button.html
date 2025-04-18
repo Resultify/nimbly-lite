@@ -13,7 +13,7 @@
   "text":"","accessible_link_label":"","accessible_link":true,
   "link":{"url":{"href":"#","type":"EXTERNAL"},"open_in_new_tab":false,"rel":""},
   "icon":{
-    "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0"},
+    "icon":{"name":"","unicode":"","type":"REGULAR","icon_set":"fontawesome-5.14.0","svg":""},
     "icon_position":"left","accessibility_options":{"purpose":"decorative"}
   }
 }%} #}
@@ -41,7 +41,6 @@
 {# id - macro id to add a unique class if we have two or more same macros in one module as a components #}
 {# stretched_link - enable/disable stretched_link option #}
 {# is_btn - button tag or link with 'a' tag #}
-
 
 {# example #}
 {# {{render_btn_tmpl(module.button, module.style.button, module, options)}} #}
@@ -208,7 +207,7 @@
             {{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
               {
                 id: options.id is truthy ? "button-" ~ options.id : "button"
-              }
+              }, data.icon.svg
             )}}
           {%- endif -%}
         {%- endif -%}
@@ -218,7 +217,7 @@
             {{icon_macros.render_icon_tmpl(data.icon, style.icon, global_data,
               {
                 id: options.id is truthy ? "button-" ~ options.id : "button"
-              }
+              }, data.icon.svg
              )}}
           {%- endif -%}
         {%- endif -%}
