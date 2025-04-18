@@ -318,7 +318,8 @@
 
     <div class="blog-recent-by-tag-module__article-container">
       {% set posts_amount = module.layout.number_of_posts %}
-      {% set init_recent_by_tag_posts = blog_recent_tag_posts(group.id, content.tag_list, posts_amount + 1, "AND") %}
+      {% set filter_operator = module.filter.tag_filter %}
+      {% set init_recent_by_tag_posts = blog_recent_tag_posts(group.id, content.tag_list, posts_amount + 1, filter_operator) %}
       {% set recent_by_tag__posts = init_recent_by_tag_posts|selectattr("id", "!=", content.id) %}
       {% if recent_by_tag__posts|length > posts_amount %}
         {% do recent_by_tag__posts.pop(posts_amount) %}
