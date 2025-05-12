@@ -1,0 +1,39 @@
+{
+  "label": "Nimbly Lite",
+  "name": "nimbly-lite",
+  "preview_path": "./templates/home.html",
+  "screenshot_path": "./images/template-previews/home.jpg",
+  "enable_domain_stylesheets": false,
+  "license": "MIT",
+  "version": "7.0.0",
+  "author": {
+    "name": "Resultify",
+    "email": "info@resultify.se",
+    "url": "https://www.resultify.se/"
+  },
+  "is_available_for_new_content": true,
+  "responsive_breakpoints": [
+    {
+      "name": "mobile",
+      "mediaQuery": "@media (max-width: 991.98px)",
+      "previewWidth": {
+        "value": 720
+      }
+    }
+  ],
+  "hidden_modules": [
+    "@hubspot/rich_text",
+    "@hubspot/button",
+    "@hubspot/form",
+    "@hubspot/linked_image",
+    "@hubspot/icon",
+    "@hubspot/divider",
+    "@hubspot/horizontal_spacer",
+    "@hubspot/text",
+    "@hubspot/page_footer",
+    "@hubspot/section_header",
+    "@hubspot/header"
+  ],
+  "documentation_url": "https://nimbly-lite.hs-sites.com/getting-started-guide",
+  "example_url": "https://nimbly-lite.hs-sites.com"
+}

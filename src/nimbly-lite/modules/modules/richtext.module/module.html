@@ -1,0 +1,28 @@
+{% import '../macros/richtext.html' as richtext_macros %}
+
+{# module scope css #}
+<style>
+  {% scope_css %}
+
+    .richtext-module {
+      {% if module.style.background.color.css %}
+        background-color: {{module.style.background.color.css}};
+      {% endif %}
+      {{module.style.spacing.spacing.css}}
+    }
+
+  {% end_scope_css %}
+</style>
+
+
+{% if module.rich_text %}
+  <div class="richtext-module_wrp">
+    <div class="richtext-module richtext-module--{{module_id}} {{module.style.presets.custom_preset}}">
+
+      {{richtext_macros.render_richtext_tmpl(module, module.style)}}
+
+    </div>
+  </div>
+{% else %}
+  {% editor_placeholder %}
+{% endif %}

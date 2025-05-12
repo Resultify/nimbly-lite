@@ -1,0 +1,54 @@
+
+.subscription-preferences {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.subscription-preferences-module {
+  {% if theme.forms.text.font.size %}
+    font-size: {{theme.forms.text.font.size ~ 'px'}};
+  {% endif %}
+  {% if theme.forms.text.font.color %}
+    color: {{theme.forms.text.font.color}};
+  {% endif %}
+  {% if theme.forms.text.font.style %}
+    {{theme.forms.text.font.style}};
+  {% endif %}
+}
+
+.subscription-preferences-module .localization-language {
+  margin-bottom: 1rem;
+}
+
+.subscription-preferences-module .fakelabel {
+  margin-bottom: 0.3rem;
+}
+
+.subscription-preferences-module .subscribe-options > p > label {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.8rem;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.subscription-preferences-module .email-prefs .item-inner > p {
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: var(--_form-help-text-color);
+  {% if theme.forms.help_text.background.css %}
+    background-color: {{theme.forms.help_text.background.css}};
+  {% endif %}
+  {% if theme.forms.help_text.font.style %}
+    {{theme.forms.help_text.font.style}};
+  {% endif %}
+  {% if theme.forms.help_text.font.size %}
+    font-size: {{theme.forms.help_text.font.size ~ 'px'}};
+  {% endif %}
+  {{theme.forms.help_text.spacing.css}}
+}
+
+.subscription-preferences-module .page-header {
+  margin-bottom: 1rem;
+}

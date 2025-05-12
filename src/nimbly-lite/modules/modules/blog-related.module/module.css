@@ -1,0 +1,29 @@
+/* module css / no hubl variables */
+
+.basic-grid .blog-related-module__article-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+}
+
+.blog-related-module__article-author {
+  display: flex;
+  align-items: center;
+}
+
+.blog-related-module__article-author-link {
+  flex-grow: 1;
+}
+
+.blog-related-module__article-date {
+  display: block;
+}
+
+.blog-related-module__article-authordate {
+  display: flex;
+  align-items: center;
+}
+
+.blog-related-module__article-authordate-info {
+  flex-grow: 1;
+}

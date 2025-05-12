@@ -1,0 +1,53 @@
+.site-brand-book-template .brand-book-colors h1.g-module-macros-heading {
+  color: {{theme.global_colors.primary.color}};
+}
+
+.site-brand-book-template .brand-book-colors h2.g-module-macros-heading {
+  color: {{theme.global_colors.secondary1.color}};
+}
+
+.site-brand-book-template .brand-book-colors h3.g-module-macros-heading {
+  color: {{theme.global_colors.secondary2.color}};
+}
+
+.site-brand-book-template .brand-book-colors h4.g-module-macros-heading {
+  color: {{theme.global_colors.secondary3.color}};
+}
+
+@media (max-width: 991.98px) {
+  .site-brand-book-template .brand-book-colors > .row-fluid > .span3 {
+    width: 50%;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  .site-brand-book-template .brand-book-typography > .row-fluid > .span6:first-child .widget-span  {
+    width: auto;
+    display: flex ;
+    flex-direction: column ;
+    justify-content: center;
+    padding-bottom: 8px;
+    padding-top: 8px;
+  }
+
+  .site-brand-book-template .brand-book-typography > .row-fluid > .span6:last-child .span2 {
+    width: auto;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    display: flex ;
+    flex-direction: column ;
+    justify-content: center;
+  }
+
+  .site-brand-book-template .brand-book-buttons > .row-fluid > .span3 {
+    width: auto;
+    padding-bottom: 15px!important;
+    padding-top: 15px!important;
+  }
+}
+
+@media (max-width: 500px) {
+  .site-brand-book-template .brand-book-colors > .row-fluid > .span3 {
+    width: 100%;
+  }
+}

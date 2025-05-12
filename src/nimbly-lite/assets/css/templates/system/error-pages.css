@@ -1,0 +1,19 @@
+/* Error pages */
+.error-page {
+  padding: 15rem 0;
+  position: relative;
+  text-align: center;
+}
+
+.error-page:before {
+  color: #F3F6F9;
+  content: attr(data-error);
+  font-size: 20vw;
+  font-weight: bold;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: -1;
+}

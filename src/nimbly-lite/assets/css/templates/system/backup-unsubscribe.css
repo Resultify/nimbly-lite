@@ -1,0 +1,29 @@
+.backup-unsubscribe {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.backup-unsubscribe input.email-edit {
+  {% if theme.forms.input_field.spacing.padding.top.value %}
+    padding-top:{{theme.forms.input_field.spacing.padding.top.value ~ 'px!important'}};
+  {% endif %}
+  {% if theme.forms.input_field.spacing.padding.bottom.value %}
+    padding-bottom:{{theme.forms.input_field.spacing.padding.bottom.value ~ 'px!important'}};
+  {% endif %}
+  {% if theme.forms.input_field.spacing.padding.left.value %}
+    padding-left:{{theme.forms.input_field.spacing.padding.left.value ~ 'px!important'}};
+  {% endif %}
+  {% if theme.forms.input_field.spacing.padding.right.valu %}
+    padding-right:{{theme.forms.input_field.spacing.padding.right.value ~ 'px!important'}};
+  {% endif %}
+  width: 100%!important;
+}
+
+.backup-unsubscribe input::placeholder {
+  {% if theme.forms.placeholder.font.style %}
+    {{theme.forms.placeholder.font.style}};
+  {% endif %}
+  {% if theme.forms.placeholder.font.size %}
+    font-size: {{theme.forms.placeholder.font.size ~ 'px!important'}};
+  {% endif %}
+}

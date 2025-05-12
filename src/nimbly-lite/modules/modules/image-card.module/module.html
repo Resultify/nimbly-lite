@@ -1,0 +1,470 @@
+{% import '../macros/image.html' as image_macros %}
+{% import '../macros/icon.html' as icon_macros %}
+{% import '../macros/heading.html' as heading_macros %}
+{% import '../macros/text.html' as text_macros %}
+{% import '../macros/richtext.html' as richtext_macros %}
+{% import '../macros/link.html' as link_macros %}
+{% import '../macros/button.html' as button_macros %}
+
+{# module global css #}
+{% require_css %}
+  <style>
+    .image-card-module {
+      position: relative;
+      display: flex;
+    }
+    .image-card-module__image_wrp,
+    .image-card-module__text-column_wrp {
+      display: flex;
+      flex: 1;
+    }
+    .image-card-module__text-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 10px;
+    }
+    .image-card-module--item {
+      flex-basis: 100%;
+    }
+    .image-card-module--item-inline {
+      flex-basis: auto;
+      align-self: center;
+    }
+    .image-card-module__image .g-module-macros-image_wrp {
+      display: flex;
+    }
+    .image-card-module--item .hs_cos_wrapper_type_cta {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+  </style>
+{% end_require_css %}
+
+{# module scope css #}
+<style>
+  {% scope_css %}
+    {# all alignments#}
+      @media (min-width: 992px) {
+      {# image column #}
+      .image-card-module__image_wrp {
+        justify-content: {{module.style.image.alignment.desktop_alignment.horizontal_align}};
+      }
+      {# image column -> image #}
+      .image-card-module__image {
+        text-align: {{module.style.image.image.alignment.desktop_alignment.horizontal_align}};
+      }
+      .image-card-module__image .g-module-macros-image_wrp {
+        justify-content: {{module.style.image.image.alignment.desktop_alignment.horizontal_align}};
+      }
+      {# text column #}
+      .image-card-module__text-column_wrp {
+        justify-content: {{module.style.text_body.alignment.desktop_alignment.horizontal_align}};
+      }
+      {# inline links and buttons alignment #}
+      .image-card-module__text-column {
+        justify-content: {{module.style.text_body.alignment.inline_alignment}};
+      }
+      {# all text on desktop #}
+      .image-card-module__text-column > div,
+      .image-card-module__text-column .g-module-macros-richtext > div,
+      .image-card-module__text-column .g-module-macros-richtext p {
+        text-align: {{module.style.text_body.text.desktop_alignment.horizontal_align}};
+      }
+    }
+    @media (max-width: 991.98px) {
+      {# image column #}
+      .image-card-module__image_wrp {
+        justify-content: {{module.style.image.alignment.mobile_alignment.horizontal_align}};
+      }
+      {# image column -> image #}
+      .image-card-module__image {
+        text-align: {{module.style.image.image.alignment.mobile_alignment.horizontal_align}};
+      }
+      .image-card-module__image .g-module-macros-image_wrp {
+        justify-content: {{module.style.image.image.alignment.mobile_alignment.horizontal_align}};
+      }
+      {# text column #}
+      .image-card-module__text-column_wrp {
+        justify-content: {{module.style.text_body.alignment.mobile_alignment.horizontal_align}}!important;
+      }
+      {# all text on mobile #}
+      .image-card-module__text-column > div,
+      .image-card-module__text-column .g-module-macros-richtext > div,
+      .image-card-module__text-column .g-module-macros-richtext p {
+        text-align: {{module.style.text_body.text.mobile_alignment.horizontal_align}};
+      }
+      {# inline links and buttons alignment #}
+      .image-card-module__text-column {
+        justify-content: {{module.style.text_body.alignment.mobile_inline_alignment}};
+      }
+    }
+
+    {% if module.image.caption.rich_text and module.style.image.image.alignment.full_width %}
+      .image-card-module__image .g-module-macros-image_wrp {
+        width: 100%;
+      }
+      .image-card-module__image .g-module-macros-image__caption_wrp {
+        max-width: 100% !important;
+      }
+    {% endif %}
+    {% if module.style.image.image.alignment.full_width %}
+      .image-card-module__image .g-module-macros-image,
+      .image-card-module__image .g-module-macros-image__link {
+        width: 100%;
+      }
+    {% endif %}
+    {% if module.style.image.image.alignment.full_height %}
+      .image-card-module__image,
+      .g-module-macros-image_wrp {
+        height: 100%;
+      }
+      .image-card-module__image img {
+        object-fit: cover;
+        {% if module.style.image.image.alignment.image_position == 'left' %}
+          object-position: left;
+        {% elif module.style.image.image.alignment.image_position == 'right' %}
+          object-position: right;
+        {% endif %}
+      }
+    {% endif %}
+
+    .image-card-module {
+      row-gap: {{module.style.general.spacing.horizontal_gap ~ 'px'}};
+      column-gap: {{module.style.general.spacing.vertical_gap ~ 'px'}};
+      {% if module.style.general.border.border_radius != null %}
+        border-radius: {{module.style.general.border.border_radius ~ 'px'}};
+      {% endif %}
+      {% if module.style.general.background.color.css %}
+        background-color: {{module.style.general.background.color.css}};
+      {% endif %}
+      {{module.style.general.border.border.css}}
+      {{module.style.general.spacing.spacing.css}}
+    }
+
+    .image-card-module__image_wrp {
+      {% if module.style.image.alignment.vertical.vertical_align %}
+        {% if module.style.image.alignment.vertical.vertical_align == 'TOP' %}
+          {% set align = 'start'%}
+        {% elif module.style.image.alignment.vertical.vertical_align == 'BOTTOM' %}
+          {% set align = 'end'%}
+        {% else %}
+          {% set align = 'center'%}
+        {% endif %}
+        align-items: {{align}};
+      {% endif %}
+      {% if module.style.image.width.column_width %}
+        flex-basis: {{module.style.image.width.column_width ~ '%'}};
+      {% endif %}
+    }
+    .image-card-module__image {
+      {% if module.style.image.background.color.css %}
+        background-color: {{module.style.image.background.color.css}};
+      {% endif %}
+      {% if module.style.image.alignment.internal_width %}
+        flex-basis: {{module.style.image.alignment.internal_width ~ '%'}};
+      {% endif %}
+      {{module.style.image.spacing.spacing.css}}
+    }
+
+    .image-card-module__text-column_wrp {
+      {% if module.style.text_body.alignment.vertical.vertical_align %}
+        {% if module.style.text_body.alignment.vertical.vertical_align == 'TOP' %}
+          {% set align = 'start'%}
+        {% elif module.style.text_body.alignment.vertical.vertical_align == 'BOTTOM' %}
+          {% set align = 'end'%}
+        {% else %}
+          {% set align = 'center'%}
+        {% endif %}
+        align-items: {{align}};
+      {% endif %}
+      {% if module.style.image.width.column_width %}
+        flex-basis: {{100 - module.style.image.width.column_width ~ '%'}};
+      {% endif %}
+    }
+
+    .image-card-module__text-column {
+      {% if module.style.text_body.background.color.css %}
+        background-color: {{module.style.text_body.background.color.css}};
+      {% endif %}
+      {% if module.style.text_body.alignment.internal_width %}
+         flex-basis: {{module.style.text_body.alignment.internal_width ~ '%'}};
+      {% endif %}
+      {{module.style.text_body.spacing.spacing.css}}
+    }
+
+    @media (max-width: 991.98px) {
+      .image-card-module {
+        flex-direction: column;
+      }
+      .image-card-module__image_wrp {
+        {% if module.style.image.alignment.position_on_mobile == 'top' %}
+            order: 1;
+          {% else %}
+            order: 3;
+        {% endif %}
+      }
+      {% if module.style.image.alignment.mobile_internal_width %}
+        .image-card-module__image {
+          flex-basis: {{module.style.image.alignment.mobile_internal_width ~ '%'}};
+        }
+      {% endif %}
+      {% if module.style.text_body.alignment.mobile_internal_width %}
+        .image-card-module__text-column {
+          flex-basis: {{module.style.text_body.alignment.mobile_internal_width ~ '%'}};
+        }
+      {% endif %}
+      .image-card-module__text-column_wrp {
+        order: 2;
+      }
+    }
+
+    .image-card-module__icon {
+      text-align: {{module.style.icon.alignment.alignment.horizontal_align}}!important;
+      {% if module.style.icon.background.color.css %}
+        background-color: {{module.style.icon.background.color.css}};
+      {% endif %}
+      {{module.style.icon.spacing.spacing.css}}
+    }
+
+    .image-card-module__text {
+      text-align: {{module.style.text.alignment.alignment.horizontal_align}}!important;
+      {% if module.style.text.background.color.css %}
+        background-color: {{module.style.text.background.color.css}};
+      {% endif %}
+      {{module.style.text.spacing.spacing.css}}
+    }
+
+    .image-card-module__heading {
+      text-align: {{module.style.heading.alignment.alignment.horizontal_align}}!important;
+      {% if module.style.heading.background.color.css %}
+        background-color: {{module.style.heading.background.color.css}};
+      {% endif %}
+      {{module.style.heading.spacing.spacing.css}}
+    }
+
+    .image-card-module__subheading {
+      text-align: {{module.style.subheading.alignment.alignment.horizontal_align}}!important;
+      {% if module.style.subheading.background.color.css %}
+        background-color: {{module.style.subheading.background.color.css}};
+      {% endif %}
+      {{module.style.subheading.spacing.spacing.css}}
+    }
+
+    .image-card-module__richtext {
+      {% if module.style.richtext.background.color.css %}
+        background-color: {{module.style.richtext.background.color.css}};
+      {% endif %}
+      {{module.style.richtext.spacing.spacing.css}}
+    }
+
+    .image-card-module__link {
+      text-align: {{module.style.link.alignment.alignment.horizontal_align}}!important;
+      {% if module.style.link.background.color.css %}
+        background-color: {{module.style.link.background.color.css}};
+      {% endif %}
+      {{module.style.link.spacing.spacing.css}}
+    }
+
+    .image-card-module__secondary-link {
+      text-align: {{module.style.secondary_link.alignment.alignment.horizontal_align}}!important;
+      {% if module.style.secondary_link.background.color.css %}
+        background-color: {{module.style.secondary_link.background.color.css}};
+      {% endif %}
+      {{module.style.secondary_link.spacing.spacing.css}}
+    }
+
+    .image-card-module__button {
+      text-align: {{module.style.button.alignment.alignment.horizontal_align}}!important;
+      {% if module.style.button.background.color.css %}
+        background-color: {{module.style.button.background.color.css}};
+      {% endif %}
+      {{module.style.button.spacing.spacing.css}}
+    }
+
+    .image-card-module__secondary-button {
+      text-align: {{module.style.secondary_button.alignment.alignment.horizontal_align}}!important;
+      {% if module.style.secondary_button.background.color.css %}
+        background-color: {{module.style.secondary_button.background.color.css}};
+      {% endif %}
+      {{module.style.secondary_button.spacing.spacing.css}}
+    }
+
+    .image-card-module__cta {
+      text-align: {{module.style.cta.alignment.alignment.horizontal_align}}!important;
+      {{module.style.cta.spacing.spacing.css}}
+    }
+
+    .image-card-module__secondary-cta {
+      text-align: {{module.style.secondary_cta.alignment.alignment.horizontal_align}}!important;
+      {{module.style.secondary_cta.spacing.spacing.css}}
+    }
+
+  {% end_scope_css %}
+</style>
+
+{%- macro render_icon() -%}
+  {% if module.icon.icon.name %}
+    <div class="image-card-module__icon image-card-module--item">
+      {{icon_macros.render_icon_tmpl(module.icon, module.style.icon, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_heading() -%}
+  {% if module.heading.text %}
+    <div class="image-card-module__heading image-card-module--item">
+      {{heading_macros.render_heading_tmpl(module.heading, module.style.heading, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_subheading() -%}
+  {% if module.subheading.text %}
+    <div class="image-card-module__subheading image-card-module--item margin-collapse">
+      {{heading_macros.render_heading_tmpl(module.subheading, module.style.subheading, module,
+        {
+          id: 'subheading',
+          tooltip: 'Subheading'
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_text() -%}
+  {% if module.text.text %}
+    <div class="image-card-module__text image-card-module--item">
+      {{text_macros.render_text_tmpl(module.text, module.style.text, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_richtext() -%}
+  {% if module.richtext.rich_text %}
+    <div class="image-card-module__richtext image-card-module--item">
+      {{richtext_macros.render_richtext_tmpl(module.richtext, module.style.richtext, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_link() -%}
+  {% if module.link.text %}
+    <div class="image-card-module__link image-card-module--item
+    {{' image-card-module--item-inline' if module.style.link.alignment.inline}}">
+      {{link_macros.render_link_tmpl(module.link, module.style.link, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_secondarylink() -%}
+  {% if module.secondary_link.text %}
+    <div class="image-card-module__secondary-link image-card-module--item
+    {{' image-card-module--item-inline' if module.style.secondary_link.alignment.inline}}">
+      {{link_macros.render_link_tmpl(module.secondary_link, module.style.secondary_link, module,
+        {
+          id: 'secondary',
+          tooltip: 'Secondary-link'
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_button() -%}
+  {% if module.button.text %}
+    <div class="image-card-module__button image-card-module--item
+    {{' image-card-module--item-inline' if module.style.button.alignment.inline}}">
+      {{button_macros.render_btn_tmpl(module.button, module.style.button, module)}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_secondarybutton() -%}
+  {% if module.secondary_button.text %}
+    <div class="image-card-module__secondary-button image-card-module--item
+      {{' image-card-module--item-inline' if module.style.secondary_button.alignment.inline}}">
+      {{button_macros.render_btn_tmpl(module.secondary_button, module.style.secondary_button, module,
+        {
+          id: 'secondary',
+          tooltip: 'Secondary-button'
+        }
+      )}}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_cta() -%}
+  {% if module.cta.cta %}
+    <div class="image-card-module__cta image-card-module--item
+    {{' image-card-module--item-inline' if module.style.cta.alignment.inline}}">
+      {% cta guid="{{ module.cta.cta }}" %}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro render_secondarycta() -%}
+  {% if module.secondary_cta.cta %}
+    <div class="image-card-module__secondary-cta image-card-module--item
+    {{' image-card-module--item-inline' if module.style.secondary_cta.alignment.inline}}">
+      {% cta guid="{{ module.secondary_cta.cta }}" %}
+    </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro text_column() -%}
+  <div class="image-card-module__text-column_wrp">
+    <div class="image-card-module__text-column">
+      {% for imagecard_component in module.imagecard_components %}
+        {% if imagecard_component.component|lower == 'icon' %}
+          {{render_icon() if imagecard_component.show}}
+        {% elif imagecard_component.component|lower == 'text' %}
+          {{render_text() if imagecard_component.show}}
+        {% elif imagecard_component.component|lower == 'heading' %}
+          {{render_heading() if imagecard_component.show}}
+        {% elif imagecard_component.component|lower == 'subheading' %}
+          {{render_subheading() if imagecard_component.show}}
+        {% elif imagecard_component.component|cut(" ")|lower == 'richtext' %}
+          {{render_richtext() if imagecard_component.show}}
+        {% elif imagecard_component.component|lower == 'link' %}
+          {{render_link() if imagecard_component.show}}
+        {% elif imagecard_component.component|cut(" ")|lower == 'secondarylink' %}
+          {{render_secondarylink() if imagecard_component.show}}
+        {% elif imagecard_component.component|lower == 'button' %}
+          {{render_button() if imagecard_component.show}}
+        {% elif imagecard_component.component|cut(" ")|lower == 'secondarybutton' %}
+          {{render_secondarybutton() if imagecard_component.show}}
+        {% elif imagecard_component.component|lower == 'cta' %}
+          {{render_cta() if imagecard_component.show}}
+        {% elif imagecard_component.component|cut(" ")|lower == 'secondarycta' %}
+          {{render_secondarycta() if imagecard_component.show}}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{%- endmacro -%}
+
+{%- macro image_column() -%}
+  <div class="image-card-module__image_wrp">
+    <div class="image-card-module__image">
+      {{image_macros.render_image_tmpl(module.image, module.style.image.image, module,
+        {
+          stretched_link: image_stretched_link
+        }
+      )}}
+    </div>
+  </div>
+{%- endmacro -%}
+
+<div class="image-card-module_wrp">
+  <div class="image-card-module image-card-module--{{module_id}} {{module.style.general.presets.custom_preset}}">
+
+    {% if module.style.image.alignment.position == 'left' %}
+      {{image_column()}}
+      {{text_column()}}
+    {% else %}
+      {{text_column()}}
+      {{image_column()}}
+    {% endif %}
+
+  </div>
+</div>
