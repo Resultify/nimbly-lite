@@ -14,7 +14,7 @@
     "lint-all": "npm run lint-css && npm run lint-js && npm run check-js",
     "test": "npm run lint-all",
     "build": "cd src/nimbly-lite && npm run build",
-    "upload": "hs upload src/nimbly-lite nimbly-lite",
+    "upload": "hs project upload src/nimbly-lite nimbly-lite",
     "build-upload": "npm run build && npm run upload",
     "npm-install:all": "npm install && cd src/nimbly-lite && npm install",
     "npm-start": "cd src/nimbly-lite && npm start",
