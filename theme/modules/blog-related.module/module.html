@@ -280,7 +280,7 @@
 {# Description #}
 {%- macro render_description(content) -%}
   <div class="blog-related-module__article-description">
-    {%- set richtext_data = {"rich_text":content.post_list_content,"truncate":module.description.truncate}%}{{richtext_macros.render_richtext_tmpl(richtext_data, module.style.richtext, module)}}
+    {%- set richtext_data = {"rich_text":content.post_list_content,"truncate":module.description.truncate}%}{{richtext_macros.render_richtext_tmpl(richtext_data, module.style.richtext, module)|sanitize_html("STRIP")}}
   </div>
 {%- endmacro -%}
 
