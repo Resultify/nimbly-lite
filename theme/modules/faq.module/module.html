@@ -44,10 +44,10 @@
       <details class="faq-module__details">
         <summary class="faq-module__text">
           <span class="faq-module__arrow"></span>
-          {{text_macros.render_text_tmpl(item.text, module.style.text, module)}}
+          {{text_macros.render_text_tmpl(item.text, module.style.text, module, {})}}
         </summary>
         <div class="faq-module__richtext">
-          {{richtext_macros.render_richtext_tmpl(item.richtext, module.style.richtext, module)}}
+          {{richtext_macros.render_richtext_tmpl(item.richtext, module.style.richtext, module, {})}}
         </div>
       </details>
     {% endfor %}
